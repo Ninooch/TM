@@ -5,5 +5,7 @@ var mainMenuState = {
         bg = this.add.sprite(0,0,"mainBg");
         bg.width = 800;
         bg.height = 450;
+        
+        initButtons(gameRef.main.langue); //voir initMenu.js 
     }
 };

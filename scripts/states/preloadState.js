@@ -13,7 +13,9 @@ var preloadState = {
         //this.load.setPreloadSprite(loadBar); // pour render la barre en même temps que les fichiers chargent, expérimental
 
         //chargements 
-        game.load.image("mainBg","assets/sprites/main.png");
+        game.load.image("mainBg","assets/sprites/game/main.png");
+        game.load.spritesheet("boutons","assets/sprites/game/boutons.png",240,50);
+        
 
     },
     create: function(){
@@ -21,3 +23,7 @@ var preloadState = {
         game.state.start("mainMenu");
     }
 };
+
+function myfunction(){
+    alert("pouet");
+}

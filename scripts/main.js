@@ -8,10 +8,14 @@ var config = {
 var game = new Phaser.Game(config); //src : https://phaser.io/examples/v2/misc/game-config
 
 //déclaration des variables globales :
-
+//MENU PRINCIPAL :  
+//BOUTONS: 
+    var playButton; 
+    var optionButton;
 // création des states du jeu, (son nom, l'objet à référencer)
 game.state.add("boot",bootState);
 game.state.add("preload",preloadState);
 game.state.add("mainMenu",mainMenuState);
+
 
 game.state.start("boot");  // src:  http://www.emanueleferonato.com/2014/08/28/phaser-tutorial-understanding-phaser-states/
