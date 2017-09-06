@@ -1,34 +1,37 @@
-function initButtons(langue){
-    switch(langue){
-        case 0:
-            playButton = game.add.button(game.world.centerX - 120,200,"boutons",myfunction,this,0,1,2);
-            optionButton = game.add.button(game.world.centerX-120,260,"boutons",function(){destroyButtons("mainMenu")},this,3,4,5);
-            //helpButton ?
+function initButtons(langue, where){ //mainMenu , options, choixLangue
+    switch(where){
+        case "mainMenu":
+            switch(langue){
+                case 0: //fr
+                    playButton = game.add.button(game.world.centerX - 120,200,"boutons",myfunction,this,0,1,2);
+                    optionButton = game.add.button(game.world.centerX-120,260,"boutons",function(){initButtons(langue,"options");},this,3,4,5);
+                    //helpButton ?
+                    break;
+                case 1 : //en
+                    break; 
+                         }
             break;
-        case 1:
-            break;
-                 }
-}
-/*
-function initOptionsButtons(langue){
-    destroyButtons("mainMenu");
-    switch(langue){
-        case 0: 
-            // languageButton = game.add.button
-            // 
-            break;
-        case 1: 
-            // languageButton = 
-            // 
-            break;
-                 } 
-}
 
-function initChoixLangueButtons(langue){
-    destroyButtons("options");
-    // var FrButton = game.add.button
-    //var EnButton = game.add.button 
-} 
+        case "options":
+            destroyButtons("mainMenu");
+            switch(langue){
+                case 0 :
+                    alert("options-0");
+                    break;
+                case 1: 
+                    alert("options-1");
+                    break;
+                         }
+            break;
+            
+        case "choixLangue":
+            destroyButtons("options");
+            //var frButton = ... 
+            //var enButton = ... 
+            break;
+                }
+
+}
 
 function choixLangue(langue){
     switch(langue){
@@ -43,7 +46,7 @@ function choixLangue(langue){
             initOptionsButtons(langue);
                  }
 }
-*/
+
 
 function destroyButtons(where){ //where : mainMenu, options, choixLangue
     switch(where){

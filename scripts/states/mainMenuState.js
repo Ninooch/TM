@@ -6,6 +6,6 @@ var mainMenuState = {
         bg.width = 800;
         bg.height = 450;
         
-        initButtons(gameRef.main.langue); //voir initMenu.js 
+        initButtons(gameRef.main.langue,"mainMenu"); //voir initMenu.js 
     }
 };

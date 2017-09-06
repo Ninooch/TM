@@ -26,4 +26,5 @@ var preloadState = {
 
 function myfunction(){
     alert("pouet");
+    //destroyButtons("mainMenu");
 }
