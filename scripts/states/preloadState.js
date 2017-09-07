@@ -3,14 +3,12 @@ var preloadState = {
         //fond 
         game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
         loadBg = this.add.sprite(0,0,"loadBg");
-        loadBg.width = 800;
-        loadBg.height = 450;
+        loadBg.scale.setTo(1/0.375);
         
         //barre de chargement
         loadBar = this.add.sprite(40,324,"loadBar");
-        loadBar.width = 720;
-        loadBar.height = 40;
-        //this.load.setPreloadSprite(loadBar); // pour render la barre en même temps que les fichiers chargent, expérimental
+        loadBar.scale.setTo(1/0.375);
+        this.load.setPreloadSprite(loadBar); // pour render la barre en même temps que les fichiers chargent, expérimental
 
         //chargements 
         game.load.image("mainBg","assets/sprites/game/main.png");
