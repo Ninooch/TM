@@ -15,6 +15,7 @@ var optionButton;
 var langueButton; 
 var frButton;
 var enButton;
+var backButton;
 // création des states du jeu, (son nom, l'objet à référencer)
 game.state.add("boot",bootState);
 game.state.add("preload",preloadState);
