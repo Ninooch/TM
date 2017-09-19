@@ -24,13 +24,13 @@
 *spritesheet Pangloss
 *spritesheet Cunégonde
 *spritesheet Baron
-*spritesheet Baronne + face
+*spritesheet Baronne + face //face fait 
 *spritesheet frère + face
-*spritesheet "habitants"
+*spritesheet "habitants" + face habitants //même animations, différentes couleurs etc...
 *tileset terrain 
 *tilset maisons intérieur + extérieur , taverne
 *tileset château intérieur + extérieur
-* objets ( nourriture : pain etc... , mouchoir de Cunégonde );
+*objets ( nourriture : pain etc... , mouchoir de Cunégonde ) //éventuellement
 
 ## 2ème partie : la guerre (2ème state)
 
