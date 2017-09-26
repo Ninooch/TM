@@ -14,6 +14,9 @@ var preloadState = {
         game.load.image("mainBg","assets/sprites/game/main.png");
         game.load.spritesheet("boutons","assets/sprites/game/boutons.png",240,50);
         game.load.bitmapFont("candideFont","assets/sprites/fonts/candideFont/candideFont.png","assets/sprites/fonts/candideFont/candideFont.fnt"); // src: https://www.joshmorony.com/adding-custom-fonts-to-your-phaser-game/
+        
+        game.load.tilemap("testmap","assets/maps/test.json",null,Phaser.Tilemap.TILED_JSON);
+        game.load.image("terrain","assets/sprites/tilesets/terrain1.png");
 
 
 
@@ -26,6 +29,7 @@ var preloadState = {
 };
 
 function myfunction(){
-    alert("pouet");
+    //alert("pouet");
+       this.game.state.start("game");
     //destroyButtons("mainMenu");
 }

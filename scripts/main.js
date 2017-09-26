@@ -20,6 +20,7 @@ var backButton;
 game.state.add("boot",bootState);
 game.state.add("preload",preloadState);
 game.state.add("mainMenu",mainMenuState);
+game.state.add("game",gameState);
 
 
 game.state.start("boot");  // src:  http://www.emanueleferonato.com/2014/08/28/phaser-tutorial-understanding-phaser-states/
