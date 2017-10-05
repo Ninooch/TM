@@ -9,7 +9,9 @@ var gameState = {
         fond = map.createLayer("Calque de Tile 1");
         fond.resizeWorld();
         
-        pnjTest = new Pnj(this,30,150,"pnjTest",0,"coucouTEst",["bonjour je suis un test!! youhou!!"]);
+        pnjTest = new Pnj(90,150,"pnjTest",0,"Bonjour",["bonjour je suis un test!! youhou!!"]);
+        this.game.add.existing(pnjTest) // ok c'est important donc feuille de pnj sur un autre script et appeler en fonction des besoins.
+        pnjTest.bulle();
         initPlayer(70,150);
         
         
