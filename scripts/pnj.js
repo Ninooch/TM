@@ -11,7 +11,7 @@ class Pnj extends Phaser.Sprite{ //catchphrse = "", dialogs = objet contenant un
     bulle(){
         var bulle = game.add.sprite(this.x + 20,this.y,"bulle");
         bulle.anchor.setTo(0.5,1);
-        var catchphrase = game.add.bitmapText(this.x + 20 ,this.y,"candideFont",this.catchphrase,30);
+        var catchphrase = game.add.bitmapText(this.x + 20 ,this.y,"candideFont",this.catchphrase,80);
         catchphrase.anchor.setTo(0.5,1);
         catchphrase.alignIn(bulle,Phaser.LEFT_CENTER,-10,2);
     }
