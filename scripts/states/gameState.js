@@ -23,13 +23,15 @@ var gameState = {
         dialog = new Dialog();
 
 
+
         initPlayer(180,150);
- 
-       
+
+
 
     },
     update: function(){
         updatePlayer();
+
     }
 };
 var pnjTest;

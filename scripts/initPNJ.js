@@ -10,30 +10,41 @@ class Pnj extends Phaser.Sprite{ //catchphrse = "", dialogs = objet contenant un
     }
 
 
-    bulle(){ //ça marche qu'une seule fois...
+    createBulle(){ //ça marche
         this.bulleIsOnScreen = true;
         this.bulle = game.add.sprite(this.x + 20,this.y,"bulle");
         this.bulle.anchor.setTo(0.5,1);
+
         this.catchphrase = game.add.bitmapText(this.x + 20 ,this.y,"candideFont","...",41);
         this.catchphrase.anchor.setTo(0.5,1);
         this.catchphrase.alignIn(this.bulle,Phaser.LEFT_CENTER,-10,5);
+
+        this.waitTriangle = game.add.sprite(this.x,this.y,"dialogTriangle");
+        this.waitTriangle.animations.add("waiting",[0,1],4);
+        this.waitTriangle.alignIn(this.bulle,Phaser.RIGHT_CENTER,-10,0);
+        this.waitTriangle.animations.play("waiting",4,true);
     }
-    
-    destroyBulle(){ // ça marche qu'une seule fois....
+
+    destroyBulle(){ // ça marche 
         this.bulle.destroy();
         this.catchphrase.destroy();
+        this.waitTriangle.destroy();
         this.bulleIsOnScreen = false;
     }
-    
+
     update(){
         if(checkOverlap(this,player) && !this.bulleIsOnScreen){
-            this.bulle();
-            if(input.enter.isDown){
-                dialog.startDesc();
-            }
+            this.createBulle();
         }
         else if (!checkOverlap(this,player) && this.bulleIsOnScreen){
-             this.destroyBulle();
+            this.destroyBulle();
+        }
+
+        if(this.bulleIsOnScreen && !dialog.onscreen){
+            if(input.enter.isDown){
+                alert("you typed enter");
+                dialog.startDesc();
+            }
         }
 
     }

@@ -48,7 +48,7 @@ function initButtons(langue, where){ //mainMenu , options, choixLangue
             enButton = game.add.button(game.world.centerX-120,260,"boutons",function(){
                 choixLangue(1);
             },this,9,10,11); 
-            
+
             switch(langue){
                 case 0:
                     backButton = game.add.button(game.world.centerX-120,320,"boutons",function(){
@@ -86,12 +86,12 @@ function choixLangue(langue){
 function destroyButtons(where){ //where : mainMenu, options, choixLangue
     switch(where){
         case "mainMenu":
-           // alert("destroying mainMenuButtons");
+            // alert("destroying mainMenuButtons");
             playButton.destroy();
             optionButton.destroy();
             break;
         case "options":
-          //  alert("destroying optionsButtons")
+            //  alert("destroying optionsButtons")
             langueButton.destroy();
             backButton.destroy();
             break;

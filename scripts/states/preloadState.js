@@ -17,7 +17,7 @@ var preloadState = {
         game.load.image("bulle","assets/sprites/game/bulle.png");
         game.load.image("dialogBox","assets/sprites/game/dialogBg.png");
         game.load.image("nameBox","assets/sprites/game/nameBg.png");
-        game.load.image("dialogTriangle","assets/sprites/game/dialogTriangle.png");
+        game.load.spritesheet("dialogTriangle","assets/sprites/game/dialogTriangle.png",9,9);
         
         //tilemaps
         game.load.tilemap("testmap","assets/maps/test.json",null,Phaser.Tilemap.TILED_JSON);
