@@ -41,8 +41,3 @@ var preloadState = {
     }
 };
 
-function myfunction(){
-    //alert("pouet");
-       this.game.state.start("game");
-    //destroyButtons("mainMenu");
-}

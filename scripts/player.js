@@ -2,7 +2,6 @@ var player;
 
 function initPlayer(x,y){
     player = game.add.sprite(x,y,"player");
-    player.frame = 0;
 
     game.physics.enable(player,Phaser.Physics.ARCADE);
     player.body.collideWorldBounds = true;
@@ -34,7 +33,7 @@ function updatePlayer(){
 		player.body.velocity.y = -player.customProps.speed; 
 		player.animations.play("walkUp",player.animationSpeed,true);
 		return;
-	}
+       }
       if(input.down.isDown){
 		player.body.velocity.y = player.customProps.speed; 
 		player.animations.play("walkDown",player.customProps.animationSpeed,true);
