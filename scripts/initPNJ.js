@@ -1,9 +1,11 @@
 class Pnj extends Phaser.Sprite{ //catchphrse = "", dialogs = objet contenant un array //voir feuille de dialogues
-    constructor(x,y,key,frame,dialogs){ // faire en sorte que ça soit dépendant de la langue
+    constructor(x,y,key,frame,name,dialogs,faceAnimKey){ // faire en sorte que ça soit dépendant de la langue
         super(game,x,y,key,frame);
         this.dialogs = dialogs; // sera un array
         this.currentIndex = 0; // sert pour les dialogues // voir feuille de dialogues, exemple : si telle action a été faite, mettre l'index à ... ; ou encore suivant les phases du jeu etc...
         this.bulleIsOnScreen = false;
+        this.name = name;
+        this.faceAnimation = game.make.sprite(x,y,faceAnimKey,0);
 
         game.physics.enable(this,Phaser.Physics.ARCADE);
         pnjGroup.add(this);
@@ -40,10 +42,11 @@ class Pnj extends Phaser.Sprite{ //catchphrse = "", dialogs = objet contenant un
             this.destroyBulle();
         }
 
-        if(this.bulleIsOnScreen && !dialog.onscreen){
+        if(this.bulleIsOnScreen && !dialogManager.onscreen){
             if(input.enter.isDown){
-                alert("you typed enter");
-                dialog.startDesc();
+                //alert("you typed enter");
+                //dialogManager.start();
+                dialogManager.startDialog(this);
             }
         }
 

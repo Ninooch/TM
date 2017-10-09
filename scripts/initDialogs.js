@@ -5,24 +5,53 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
     // méthode pour les pnjs plus complexes , gestion des states etc... 
     // à utiliser également pour les descriptions et interactions avec l'environnement 
     constructor(){
-        this.onscreen = false;
+        this.onscreen = false; // sert à ce que la boîte ne s'affiche qu'une seule fois quand elle est appellée avec enter, cf initPNJ.js 
     }
 
-    startDesc(){
+    start(){
         //ajoute la boîte de dialogue sur l'écran
         player.customProps.canMove = false;
         this.onscreen = true;
-        this.dialBox = game.add.image((game.camera.width)/2,(game.camera.height)/2,"dialogBox");
+        this.dialBox = game.add.image((game.camera.width)/2,(game.camera.height),"dialogBox");
         this.dialBox.anchor.setTo(0.5,1);
+
+        //affiches les textes des dialogues
+        this.bmpText = game.add.bitmapText(0,0,"candideFont", "", 50);
+        this.bmpText.alignIn(this.dialBox, Phaser.TOP_LEFT, -100, -5);
+        this.bmpText.maxWidth = this.dialBox.width -15;
+
     } // dépendant de l'objet à inspecter (?) 
 
-    stopDesc(){}
-    startDialog(pnj,index){}
-    startDialogSpe(pnj,state,index){}
-    stopDialog(){} // à utiliser pour dialog et dialog spe
+    stop(){
+        player.customProps.canMove = true;
+        this.onscreen = false;
+        this.dialBox.destroy();
+    }
+
+    displayText(texts,index,isDialog,faceAnim){ // le texte est stocké dans un array , isDialog pour gérer les animations,
+        if(isDialog){
+            this.faceAnimation = game.add.existing(faceAnim);
+            this.faceAnimation.alignIn(this.dialBox,Phaser.LEFT_CENTER,0,0);
+        }
+    } 
+
+    startDialog(pnj){
+        pnj.destroyBulle();
+        this.start();
+        this.displayText(pnj.dialogs,pnj.currentIndex,true,pnj.faceAnimation);
+        //gérer les animations
+    }
+
+    startDialogSpe(pnjSpe,state,index){
+        pnjSpe.destroyBulle();
+        this.displayText(pnjSpe.state.dialogs,pnjSpe.currentIndex,true);
+    }
+
+    stopDialog(){
+    } // à utiliser pour dialog et dialog spe
 
 
 
 }
 
-var dialog;
+var dialogManager;

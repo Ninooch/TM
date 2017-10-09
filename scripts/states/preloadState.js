@@ -28,6 +28,7 @@ var preloadState = {
         
         //pnjs
         game.load.spritesheet("pnjTest","assets/sprites/sprite_animations/pnjTest.png",35,67);
+        game.load.spritesheet("martinFaceAnimation","assets/sprites/faces_animations/martinFaceAnimation.png",110,130);
         
         
 
