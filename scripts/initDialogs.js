@@ -6,6 +6,8 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
     // à utiliser également pour les descriptions et interactions avec l'environnement 
     constructor(){
         this.onscreen = false; // sert à ce que la boîte ne s'affiche qu'une seule fois quand elle est appellée avec enter, cf initPNJ.js 
+        this.waitTriangle = game.make.sprite(0,0,"dialogTriangle");
+        this.waitTriangle.animations.add("wait",[0,1],4);
     }
 
     start(){
@@ -17,8 +19,8 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
 
         //affiches le texte
         this.bmpText = game.add.bitmapText(0,0,"candideFont", "", 50);
-        this.bmpText.alignIn(this.dialBox, Phaser.TOP_LEFT, -100, -5);
-        this.bmpText.maxWidth = this.dialBox.width -15;
+        this.bmpText.alignIn(this.dialBox, Phaser.TOP_LEFT, -120, -5);
+        this.bmpText.maxWidth = this.dialBox.width -125;
 
     } // dépendant de l'objet à inspecter (?) 
 
@@ -34,17 +36,43 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
             this.faceAnimation.alignIn(this.dialBox,Phaser.LEFT_CENTER,0,0);
             this.faceAnimation.animations.play("talk",9,true);
         }
-        
+
         var textArray = texts[index].split(" "); //sépare le texte par mots
         var compteurMots = 0;
-        
-        this.bmpText.text += textArray[compteurMots];
-        
-        
+
+        this.bmpText.text = "";
+
+        this.wordTimer = game.time.create();
+
+        this.wordTimer.repeat(100,textArray.length,function(){
+            //alert("entré dans la boucle");
+            this.bmpText.text += textArray[compteurMots] + " ";
+
+            if(this.bmpText.text.length >= 184){
+                this.wait();
+                this.wordTimer.pause();
+            }
+            compteurMots ++;
+        },this);
+
+        this.wordTimer.start();
+
     } 
+
+    wait(isDialog){
+        if(isDialog){
+            this.faceAnimation.animations.play("blink",9,true);
+        }
+        game.add.existing(this.waitTriangle);
+        this.waitTriangle.scale.setTo(2);
+        this.waitTriangle.alignIn(this.dialBox,Phaser.RIGHT_CENTER,-3,0);
+        this.waitTriangle.animations.play("wait",4,true);
+
+    }
 
     startDialog(pnj){
         pnj.destroyBulle();
+        pnj.canBulle = false;
         this.start();
         this.displayText(pnj.dialogs,pnj.currentIndex,true,pnj.faceAnimation);
         //gérer les animations

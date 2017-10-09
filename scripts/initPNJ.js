@@ -5,12 +5,14 @@ class Pnj extends Phaser.Sprite{ //catchphrse = "", dialogs = objet contenant un
         this.currentIndex = 0; // sert pour les dialogues // voir feuille de dialogues, exemple : si telle action a été faite, mettre l'index à ... ; ou encore suivant les phases du jeu etc...
         this.bulleIsOnScreen = false;
         this.name = name;
-        
+
+        this.canBulle = true;
+
         this.rectangle = new Phaser.Rectangle(x-32,y-32, this.width +64, this.height + 32);
-        
+
         this.faceAnimation = game.make.sprite(x,y,faceAnimKey,0);
-        this.faceAnimation.animations.add("blink",[0,1,2,3,4,5,6],9);
-        this.faceAnimation.animations.add("talk",[7,8,9,10,11,12,13,14,15,16],9);
+        this.faceAnimation.animations.add("blink",[0,1,2,3,4,5,6,21,22,23,24,25,26,27],9);
+        this.faceAnimation.animations.add("talk",[7,8,9,10,11,12,13,14,15,16,17,18,19,20],9);
 
         game.physics.enable(this,Phaser.Physics.ARCADE);
         pnjGroup.add(this);
@@ -40,21 +42,22 @@ class Pnj extends Phaser.Sprite{ //catchphrse = "", dialogs = objet contenant un
     }
 
     update(){
-        if(checkPnjOverlap(this,player) && !this.bulleIsOnScreen){
-            this.createBulle();
-        }
-        else if (!checkPnjOverlap(this,player) && this.bulleIsOnScreen){
-            this.destroyBulle();
-        }
+        if(this.canBulle){
+            if(checkPnjOverlap(this,player) && !this.bulleIsOnScreen){
+                this.createBulle();
+            }
+            else if (!checkPnjOverlap(this,player) && this.bulleIsOnScreen){
+                this.destroyBulle();
+            }
 
-        if(this.bulleIsOnScreen && !dialogManager.onscreen){
-            if(input.enter.isDown){
-                //alert("you typed enter");
-                //dialogManager.start();
-                dialogManager.startDialog(this);
+            if(this.bulleIsOnScreen && !dialogManager.onscreen){
+                if(input.enter.isDown){
+                    //alert("you typed enter");
+                    //dialogManager.start();
+                    dialogManager.startDialog(this);
+                }
             }
         }
-
     }
 }
 
@@ -72,7 +75,7 @@ function checkSpriteOverlap(spriteA, spriteB) {
 function checkPnjOverlap(pnj,spriteB){
     var boundsA = pnj.rectangle; 
     var boundsB = spriteB.getBounds();
-    
+
     return Phaser.Rectangle.intersects(boundsA,boundsB);
 }
 
