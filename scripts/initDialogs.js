@@ -49,7 +49,7 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
             this.bmpText.text += textArray[compteurMots] + " ";
 
             if(this.bmpText.text.length >= 184){
-                this.wait();
+                this.wait(isDialog);
                 this.wordTimer.pause();
             }
             compteurMots ++;
