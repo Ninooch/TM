@@ -5,7 +5,12 @@ class Pnj extends Phaser.Sprite{ //catchphrse = "", dialogs = objet contenant un
         this.currentIndex = 0; // sert pour les dialogues // voir feuille de dialogues, exemple : si telle action a été faite, mettre l'index à ... ; ou encore suivant les phases du jeu etc...
         this.bulleIsOnScreen = false;
         this.name = name;
+        
+        this.rectangle = new Phaser.Rectangle(x-32,y-32, this.width +64, this.height + 32);
+        
         this.faceAnimation = game.make.sprite(x,y,faceAnimKey,0);
+        this.faceAnimation.animations.add("blink",[0,1,2,3,4,5,6],9);
+        this.faceAnimation.animations.add("talk",[7,8,9,10,11,12,13,14,15,16],9);
 
         game.physics.enable(this,Phaser.Physics.ARCADE);
         pnjGroup.add(this);
@@ -35,10 +40,10 @@ class Pnj extends Phaser.Sprite{ //catchphrse = "", dialogs = objet contenant un
     }
 
     update(){
-        if(checkOverlap(this,player) && !this.bulleIsOnScreen){
+        if(checkPnjOverlap(this,player) && !this.bulleIsOnScreen){
             this.createBulle();
         }
-        else if (!checkOverlap(this,player) && this.bulleIsOnScreen){
+        else if (!checkPnjOverlap(this,player) && this.bulleIsOnScreen){
             this.destroyBulle();
         }
 
@@ -55,12 +60,19 @@ class Pnj extends Phaser.Sprite{ //catchphrse = "", dialogs = objet contenant un
 
 var pnjGroup;
 
-function checkOverlap(spriteA, spriteB) {
+function checkSpriteOverlap(spriteA, spriteB) {
 
     var boundsA = spriteA.getBounds();
     var boundsB = spriteB.getBounds();
 
     return Phaser.Rectangle.intersects(boundsA,boundsB);
 
+}
+
+function checkPnjOverlap(pnj,spriteB){
+    var boundsA = pnj.rectangle; 
+    var boundsB = spriteB.getBounds();
+    
+    return Phaser.Rectangle.intersects(boundsA,boundsB);
 }
 

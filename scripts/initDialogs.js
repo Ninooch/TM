@@ -15,7 +15,7 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
         this.dialBox = game.add.image((game.camera.width)/2,(game.camera.height),"dialogBox");
         this.dialBox.anchor.setTo(0.5,1);
 
-        //affiches les textes des dialogues
+        //affiches le texte
         this.bmpText = game.add.bitmapText(0,0,"candideFont", "", 50);
         this.bmpText.alignIn(this.dialBox, Phaser.TOP_LEFT, -100, -5);
         this.bmpText.maxWidth = this.dialBox.width -15;
@@ -32,7 +32,15 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
         if(isDialog){
             this.faceAnimation = game.add.existing(faceAnim);
             this.faceAnimation.alignIn(this.dialBox,Phaser.LEFT_CENTER,0,0);
+            this.faceAnimation.animations.play("talk",9,true);
         }
+        
+        var textArray = texts[index].split(" "); //sépare le texte par mots
+        var compteurMots = 0;
+        
+        this.bmpText.text += textArray[compteurMots];
+        
+        
     } 
 
     startDialog(pnj){
