@@ -6,12 +6,10 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
     // à utiliser également pour les descriptions et interactions avec l'environnement 
     constructor(){
         this.onscreen = false; // sert à ce que la boîte ne s'affiche qu'une seule fois quand elle est appellée avec enter, cf initPNJ.js 
-        this.waitTriangle = game.make.sprite(0,0,"dialogTriangle");
-        this.waitTriangle.animations.add("wait",[0,1],4);
     }
 
     start(){
-        //ajoute la boîte de dialogue sur l'écran
+        //alert("started");
         player.customProps.canMove = false;
         this.onscreen = true;
         this.dialBox = game.add.image((game.camera.width)/2,(game.camera.height),"dialogBox");
@@ -24,15 +22,26 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
 
     } // dépendant de l'objet à inspecter (?) 
 
-    stop(){
+    stop(isDialog){
+        // alert("stopped");
         player.customProps.canMove = true;
         this.onscreen = false;
         this.dialBox.destroy();
+        this.bmpText.destroy();
+        this.waitTriangle.destroy();
+        if(isDialog){
+            this.faceAnimation.destroy();
+            game.time.events.add(300,function(){
+                this.pnj.canBulle = true;
+            },this);
+        }
     }
 
     displayText(texts,index,isDialog,faceAnim){ // le texte est stocké dans un array , isDialog pour gérer les animations,
         if(isDialog){
-            this.faceAnimation = game.add.existing(faceAnim);
+           
+            this.faceAnimation = game.add.existing(faceAnim); //ça ne se crée qu'une seule fois!!
+             //alert(this.faceAnimation.exists);
             this.faceAnimation.alignIn(this.dialBox,Phaser.LEFT_CENTER,0,0);
             this.faceAnimation.animations.play("talk",9,true);
         }
@@ -49,44 +58,65 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
             this.bmpText.text += textArray[compteurMots] + " ";
 
             if(this.bmpText.text.length >= 184){
-                this.wait(isDialog);
+                this.wait(isDialog,false);
                 this.wordTimer.pause();
             }
             compteurMots ++;
         },this);
 
+        this.wordTimer.onComplete.add(function(){
+            //alert("timer fini");
+            this.wait(isDialog,true);
+        },this); //THIS EST IMPORTANT
+
         this.wordTimer.start();
 
     } 
 
-    wait(isDialog){
+    wait(isDialog,isLast){
         if(isDialog){
             this.faceAnimation.animations.play("blink",9,true);
         }
-        game.add.existing(this.waitTriangle);
+        this.waitTriangle = game.add.sprite(0,0,"dialogTriangle");
+        this.waitTriangle.animations.add("wait",[0,1],4);
         this.waitTriangle.scale.setTo(2);
         this.waitTriangle.alignIn(this.dialBox,Phaser.RIGHT_CENTER,-3,0);
         this.waitTriangle.animations.play("wait",4,true);
 
+        input.enter.onDown.addOnce(function(){ //permet de passer à la feuille de dialogue suivante. lorsqu'on presse sur enter, l'événement ne se produit qu'une fois et se détruit.
+            if(isLast){
+                //alert("last");
+                this.stop(isDialog);
+            }
+            else{
+                this.resume(isDialog); 
+            }
+        },this); // important de préciser ce "This" sinon celui au dessus ne fonctionne pas!!
+    }
+
+    resume(isDialog){
+      //  alert("resumed");
+        if(isDialog){
+            this.faceAnimation.animations.play("talk",9,true);
+        }
+        this.waitTriangle.destroy();
+        this.bmpText.text = "";
+        this.wordTimer.resume();
     }
 
     startDialog(pnj){
+        this.pnj = pnj;
         pnj.destroyBulle();
         pnj.canBulle = false;
         this.start();
         this.displayText(pnj.dialogs,pnj.currentIndex,true,pnj.faceAnimation);
-        //gérer les animations
+      
     }
 
     startDialogSpe(pnjSpe,state,index){
         pnjSpe.destroyBulle();
         this.displayText(pnjSpe.state.dialogs,pnjSpe.currentIndex,true);
     }
-
-    stopDialog(){
-    } // à utiliser pour dialog et dialog spe
-
-
 
 }
 
