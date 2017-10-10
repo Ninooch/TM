@@ -31,7 +31,9 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
         this.waitTriangle.destroy();
         if(isDialog){
             this.faceAnimation.destroy();
-            game.time.events.add(300,function(){
+            this.nameHolder.destroy();
+            this.namePnj.destroy();
+            game.time.events.add(300,function(){ // pour éviter que le dialogue se relance en boucle car toutes les autres conditions pour lancer le dialogues sont remplies
                 this.pnj.canBulle = true;
             },this);
         }
@@ -39,14 +41,23 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
 
     displayText(texts,index,isDialog,faceAnim){ // le texte est stocké dans un array , isDialog pour gérer les animations,
         if(isDialog){
-           
+
             this.faceAnimation = game.add.existing(faceAnim); //ça ne se crée qu'une seule fois!!
-             //alert(this.faceAnimation.exists);
+            //alert(this.faceAnimation.exists);
             this.faceAnimation.alignIn(this.dialBox,Phaser.LEFT_CENTER,0,0);
             this.faceAnimation.animations.play("talk",9,true);
         }
 
-        var textArray = texts[index].split(" "); //sépare le texte par mots
+
+        if(typeof texts[index] == "string"){
+            var textArray = texts[index].split(" "); //sépare le texte par mots
+        }
+        else {
+            var textArray = texts[index][0].split(" ");
+            this.texts = texts;
+            this.index = index;
+        }
+
         var compteurMots = 0;
 
         this.bmpText.text = "";
@@ -58,25 +69,34 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
             this.bmpText.text += textArray[compteurMots] + " ";
 
             if(this.bmpText.text.length >= 184){
-                this.wait(isDialog,false);
+                this.wait(isDialog,false,false);
                 this.wordTimer.pause();
             }
             compteurMots ++;
         },this);
 
-        this.wordTimer.onComplete.add(function(){
-            //alert("timer fini");
-            this.wait(isDialog,true);
-        },this); //THIS EST IMPORTANT
+        if(typeof texts[index] == "string"){
+            this.wordTimer.onComplete.add(function(){
+                //alert("timer fini");
+                this.wait(isDialog,true,false);
+            },this); //THIS EST IMPORTANT
+        }
+        else{
+            this.wordTimer.onComplete.add(function(){
+                this.wait(isDialog,false,true);
+            },this);
+        }
+
 
         this.wordTimer.start();
 
     } 
 
-    wait(isDialog,isLast){
+    wait(isDialog,isLast,isQuestion){
         if(isDialog){
             this.faceAnimation.animations.play("blink",9,true);
         }
+
         this.waitTriangle = game.add.sprite(0,0,"dialogTriangle");
         this.waitTriangle.animations.add("wait",[0,1],4);
         this.waitTriangle.scale.setTo(2);
@@ -84,18 +104,23 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
         this.waitTriangle.animations.play("wait",4,true);
 
         input.enter.onDown.addOnce(function(){ //permet de passer à la feuille de dialogue suivante. lorsqu'on presse sur enter, l'événement ne se produit qu'une fois et se détruit.
-            if(isLast){
-                //alert("last");
-                this.stop(isDialog);
+            if(!isQuestion){
+                if(isLast){
+                    //alert("last");
+                    this.stop(isDialog);
+                }
+                else{
+                    this.resume(isDialog); 
+                }
             }
             else{
-                this.resume(isDialog); 
+                this.question(this.texts,this.index);
             }
-        },this); // important de préciser ce "This" sinon celui au dessus ne fonctionne pas!!
+        },this); // important de préciser ce "this" sinon celui au dessus ne fonctionne pas!!
     }
 
     resume(isDialog){
-      //  alert("resumed");
+        //  alert("resumed");
         if(isDialog){
             this.faceAnimation.animations.play("talk",9,true);
         }
@@ -103,15 +128,42 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
         this.bmpText.text = "";
         this.wordTimer.resume();
     }
+    question(texts,index){ 
+        //alert("question");
+        this.waitTriangle.destroy();
+        this.answerList = [];
+
+        for(var k=0;k<texts[index][1].length;k++){ // créer une réponse pour chaque possibilité
+            var answerBox = game.add.image(0,0,"answerBox");
+            answerBox.alignTo(this.dialBox,Phaser.TOP_RIGHT,0,(k*50));
+            
+            var answer = game.add.bitmapText(0,0,"candideFont",texts[index][1][k],50);
+            answer.alignIn(answerBox,Phaser.LEFT_CENTER,-15,-10);
+            
+            this.answerList.push(answer);
+            this.answerList.push(answerBox);
+
+
+
+        }
+    }
 
     startDialog(pnj){
         this.pnj = pnj;
         pnj.destroyBulle();
         pnj.canBulle = false;
-        pnj.createFaceAnimation();
-        this.start();
+        pnj.createFaceAnimation(); // pour pouvoir utiliser l'animation du pnj
+
+        this.start(); //important de mettre start() avant parce que sinon this.dialbox n'existe pas !!!
+
+        this.nameHolder = game.add.sprite(0,0,"nameBox");
+        this.nameHolder.alignTo(this.dialBox,Phaser.TOP_LEFT,0,0);
+        this.namePnj = game.add.bitmapText(0,0,"candideFont",pnj.name,45);
+        this.namePnj.alignIn(this.nameHolder,Phaser.LEFT_CENTER,0,0);
+
+
         this.displayText(pnj.dialogs,pnj.currentIndex,true,pnj.faceAnimation);
-      
+
     }
 
     startDialogSpe(pnjSpe,state,index){
