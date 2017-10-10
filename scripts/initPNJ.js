@@ -6,18 +6,22 @@ class Pnj extends Phaser.Sprite{ //catchphrse = "", dialogs = objet contenant un
         this.bulleIsOnScreen = false;
         this.name = name;
 
+        this.faceAnimKey = faceAnimKey;
+
         this.canBulle = true;
 
         this.rectangle = new Phaser.Rectangle(x-32,y-32, this.width +64, this.height + 32);
-
-        this.faceAnimation = game.make.sprite(x,y,faceAnimKey,0);
-        this.faceAnimation.animations.add("blink",[0,1,2,3,4,5,6,21,22,23,24,25,26,27],9);
-        this.faceAnimation.animations.add("talk",[7,8,9,10,11,12,13,14,15,16,17,18,19,20],9);
 
         game.physics.enable(this,Phaser.Physics.ARCADE);
         pnjGroup.add(this);
     }
 
+    createFaceAnimation(){
+        this.faceAnimation = game.make.sprite(0,0,this.faceAnimKey,0);
+        this.faceAnimation.animations.add("blink",[0,1,2,3,4,5,6,21,22,23,24,25,26,27],9);
+        this.faceAnimation.animations.add("talk",[7,8,9,10,11,12,13,14,15,16,17,18,19,20],9);
+
+    }
 
     createBulle(){ //ça marche
         this.bulleIsOnScreen = true;

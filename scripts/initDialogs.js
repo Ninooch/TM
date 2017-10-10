@@ -108,6 +108,7 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
         this.pnj = pnj;
         pnj.destroyBulle();
         pnj.canBulle = false;
+        pnj.createFaceAnimation();
         this.start();
         this.displayText(pnj.dialogs,pnj.currentIndex,true,pnj.faceAnimation);
       
