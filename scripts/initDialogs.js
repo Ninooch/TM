@@ -22,7 +22,7 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
 
     } // dépendant de l'objet à inspecter (?) 
 
-    stop(isDialog){
+    stop(isDialog,canBulle){
         // alert("stopped");
         player.customProps.canMove = true;
         this.onscreen = false;
@@ -33,9 +33,11 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
             this.faceAnimation.destroy();
             this.nameHolder.destroy();
             this.namePnj.destroy();
-            game.time.events.add(300,function(){ // pour éviter que le dialogue se relance en boucle car toutes les autres conditions pour lancer le dialogues sont remplies
-                this.pnj.canBulle = true;
-            },this);
+            if(canBulle){
+                game.time.events.add(300,function(){ // pour éviter que le dialogue se relance en boucle car toutes les autres conditions pour lancer le dialogues sont remplies
+                    this.pnj.canBulle = true;
+                },this);
+            }
         }
     }
 
@@ -106,8 +108,8 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
         input.enter.onDown.addOnce(function(){ //permet de passer à la feuille de dialogue suivante. lorsqu'on presse sur enter, l'événement ne se produit qu'une fois et se détruit.
             if(!isQuestion){
                 if(isLast){
-                    //alert("last");
-                    this.stop(isDialog);
+                    alert("last");
+                    this.stop(isDialog,true);
                 }
                 else{
                     this.resume(isDialog); 
@@ -174,10 +176,15 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
         input.enter.onDown.addOnce(function(){
             for(let k=0;k<this.answerBoxes.length;k++){
                 if(checkSpriteOverlap(this.selectionBox,this.answerBoxes[k])){
-                    alert("la selBox touche la boite " + k);
+                    //  alert("la selBox touche la boite " + k);
                     texts[index][2][k]();
                 }
             }
+            for(let d=0;d<this.answerBoxes.length;d++){
+                this.answerBoxes[d].destroy();
+                this.answerList[d].destroy();
+            }
+            this.selectionBox.destroy();
         },this);
     } 
 
