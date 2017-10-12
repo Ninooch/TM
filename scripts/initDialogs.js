@@ -1,9 +1,10 @@
-class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stade du jeu, des choix déjà fait du joueurs et de l'index du dialogs qui est un array.
+class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stade du jeu,
     // les textes dépendants des choix du joueurs seront directement exprimés par les pnj dans leur configurations, le changement sera surement indiqué par l'index.
-    // créer une méthode pour les choix
-    // méthode pour les pnj simples , avec index,
+    // créer une méthode pour les choix --> fait
+    // méthode pour les pnj simples , avec index,  --> fait
     // méthode pour les pnjs plus complexes , gestion des states etc... 
-    // à utiliser également pour les descriptions et interactions avec l'environnement 
+    // à utiliser également pour les descriptions et interactions avec l'environnement --> à voir
+
     constructor(){
         this.onscreen = false; // sert à ce que la boîte ne s'affiche qu'une seule fois quand elle est appellée avec enter, cf initPNJ.js 
     }
@@ -20,7 +21,7 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
         this.bmpText.alignIn(this.dialBox, Phaser.TOP_LEFT, -120, -5);
         this.bmpText.maxWidth = this.dialBox.width -125;
 
-    } // dépendant de l'objet à inspecter (?) 
+    } 
 
     stop(isDialog,canBulle){
         // alert("stopped");
@@ -116,6 +117,7 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
                 }
             }
             else{
+                alert("isQuestion");
                 this.question(this.texts,this.index);
             }
         },this); // important de préciser ce "this" sinon celui au dessus ne fonctionne pas!!
@@ -192,7 +194,7 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
         this.pnj = pnj;
         pnj.destroyBulle();
         pnj.canBulle = false;
-        pnj.createFaceAnimation(); // pour pouvoir utiliser l'animation du pnj
+        pnj.createFaceAnimation(); // pour pouvoir utiliser l'animation du pnj avec add.existing
 
         this.start(); //important de mettre start() avant parce que sinon this.dialbox n'existe pas !!!
 
