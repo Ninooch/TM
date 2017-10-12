@@ -132,21 +132,54 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
         //alert("question");
         this.waitTriangle.destroy();
         this.answerList = [];
+        this.answerBoxes = [];
 
         for(var k=0;k<texts[index][1].length;k++){ // créer une réponse pour chaque possibilité
             var answerBox = game.add.image(0,0,"answerBox");
-            answerBox.alignTo(this.dialBox,Phaser.TOP_RIGHT,0,(k*50));
-            
+            answerBox.alignTo(this.dialBox,Phaser.TOP_RIGHT,0,(k*50)+k*1);
+
             var answer = game.add.bitmapText(0,0,"candideFont",texts[index][1][k],50);
             answer.alignIn(answerBox,Phaser.LEFT_CENTER,-15,-10);
-            
+
             this.answerList.push(answer);
-            this.answerList.push(answerBox);
-
-
-
+            this.answerBoxes.push(answerBox);
         }
+        this.selectionBox = game.add.sprite(this.answerBoxes[0].x,this.answerBoxes[0].y,"selection");   
+        this.selection(texts,index);
     }
+
+    selection(texts,index){
+        input.enter.onDown.removeAll(this);
+        input.up.onDown.removeAll(this);
+        input.down.onDown.removeAll(this);
+
+        var max = this.answerBoxes.length;
+
+        input.up.onDown.addOnce(function(){
+            //alert("up");
+            if(this.selectionBox.y > this.answerBoxes[max -1].y){
+                this.selectionBox.y -=51;
+            }
+            this.selection(texts,index);
+        },this);
+
+        input.down.onDown.addOnce(function(){
+            //alert("down");
+            if(this.selectionBox.y < this.answerBoxes[0].y){
+                this.selectionBox.y +=51; 
+            }
+            this.selection(texts,index);
+        },this);
+
+        input.enter.onDown.addOnce(function(){
+            for(let k=0;k<this.answerBoxes.length;k++){
+                if(checkSpriteOverlap(this.selectionBox,this.answerBoxes[k])){
+                    alert("la selBox touche la boite " + k);
+                    texts[index][2][k]();
+                }
+            }
+        },this);
+    } 
 
     startDialog(pnj){
         this.pnj = pnj;
@@ -174,3 +207,4 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
 }
 
 var dialogManager;
+
