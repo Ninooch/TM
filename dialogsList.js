@@ -3,7 +3,6 @@
 var pnjTestDialogs = [];
 
 var callback1 = function(){
-
     pnjTest.currentIndex = 1;
     dialogManager.stop(true,false);
     dialogManager.startDialog(pnjTest);

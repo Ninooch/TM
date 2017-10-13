@@ -109,7 +109,7 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
         input.enter.onDown.addOnce(function(){ //permet de passer à la feuille de dialogue suivante. lorsqu'on presse sur enter, l'événement ne se produit qu'une fois et se détruit.
             if(!isQuestion){
                 if(isLast){
-                    alert("last");
+                    // alert("last");
                     this.stop(isDialog,true);
                 }
                 else{
@@ -117,7 +117,7 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
                 }
             }
             else{
-                alert("isQuestion");
+                //alert("isQuestion");
                 this.question(this.texts,this.index);
             }
         },this); // important de préciser ce "this" sinon celui au dessus ne fonctionne pas!!
@@ -153,6 +153,7 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
     }
 
     selection(texts,index){
+       // alert("selection");
         input.enter.onDown.removeAll(this);
         input.up.onDown.removeAll(this);
         input.down.onDown.removeAll(this);
@@ -176,6 +177,9 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
         },this);
 
         input.enter.onDown.addOnce(function(){
+            //alert("enterSelection");
+            input.up.onDown.removeAll(this);
+            input.down.onDown.removeAll(this);
             for(let k=0;k<this.answerBoxes.length;k++){
                 if(checkSpriteOverlap(this.selectionBox,this.answerBoxes[k])){
                     //  alert("la selBox touche la boite " + k);
