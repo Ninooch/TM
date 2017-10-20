@@ -33,11 +33,14 @@ function updatePlayer(){
         if(input.up.isDown){
             player.body.velocity.y = -player.customProps.speed; 
             player.animations.play("walkUp",player.animationSpeed,true);
+            terrainManager.clearMap();
             return;
         }
         if(input.down.isDown){
             player.body.velocity.y = player.customProps.speed; 
             player.animations.play("walkDown",player.customProps.animationSpeed,true);
+            // dialogManager.start();
+            // dialogManager.displayText(["ceci description"],0,false);
             return;
         }
 

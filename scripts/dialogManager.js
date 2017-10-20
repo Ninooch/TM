@@ -18,7 +18,7 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
 
         //affiches le texte
         this.bmpText = game.add.bitmapText(0,0,"candideFont", "", 50);
-        this.bmpText.alignIn(this.dialBox, Phaser.TOP_LEFT, -120, -5);
+        this.bmpText.alignIn(this.dialBox, Phaser.TOP_LEFT, -15, -5);
         this.bmpText.maxWidth = this.dialBox.width -125;
 
     } 
@@ -44,7 +44,7 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
 
     displayText(texts,index,isDialog,faceAnim){ // le texte est stocké dans un array , isDialog pour gérer les animations,
         if(isDialog){
-
+            this.bmpText.alignIn(this.dialBox, Phaser.TOP_LEFT, -120, -5);
             this.faceAnimation = game.add.existing(faceAnim); //ça ne se crée qu'une seule fois!!
             //alert(this.faceAnimation.exists);
             this.faceAnimation.alignIn(this.dialBox,Phaser.LEFT_CENTER,0,0);

@@ -13,7 +13,6 @@ class Pnj extends Phaser.Sprite{ //catchphrse = "", dialogs = objet contenant un
         this.rectangle = new Phaser.Rectangle(x-32,y-32, this.width +64, this.height + 32);
 
         game.physics.enable(this,Phaser.Physics.ARCADE);
-        pnjGroup.add(this);
     }
 
     createFaceAnimation(){

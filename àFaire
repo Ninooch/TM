@@ -1,0 +1,4 @@
+à faire : 
+-améliorer le dialogManager pour faire en sorte qu'une callback soit appelée à la fin, si on en propose une.
+- améliorer le système de terrains
+- créer une classe pour les objets de type warps avec une méthode qui appelle une réaction en chaîne du terrainManager--> voir dans Tiled pour les objets
