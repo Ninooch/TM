@@ -1,4 +1,20 @@
 à faire : 
+
+général : 
+- faire un scénario 
+- écrire les dialogues
+
+code :
 -améliorer le dialogManager pour faire en sorte qu'une callback soit appelée à la fin, si on en propose une.
 - améliorer le système de terrains
 - créer une classe pour les objets de type warps avec une méthode qui appelle une réaction en chaîne du terrainManager--> voir dans Tiled pour les objets
+
+assets : 
+- créer les bases des animations de dialogues
+- créer les bases des sprites des persos
+- créer les bases des tilesets 
+
+détails : 
+-
+-
+-
