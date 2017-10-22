@@ -21,7 +21,9 @@ var gameState = {
         terrainManager.initMap("testmap","terrain","terrain1",["Calque de Tile 1"]);
 
         pnjTest = new Pnj(90,150,"pnjTest",0,"Martin",pnjTestDialogs,"martinFaceAnimation");
+        pnjTest2 = new Pnj(300,150,"pnjTest",0,"POuet",["Bonjour je suis un test. je parle blah blah blah.Exindeque ad petit agens Galli Domitiani Armeniam Mesopotamiam altiora iam artissime conpertis an ad militares lapsus scripta Mesopotamiam diebus per Antiochiae exindeque susceperint a per susceperint a retractus protectores Apollinaris militares Apollinaris Domitiani Galli exindeque exindeque Caesaris Constantinopolim Constantinopolim meditantis qui Antiochiae Armeniam conpertis a gestis a militares conpertis Mesopotamiam militares a Galli Galli ante Apollinaris artissime palatii gestis scripta paulo Domitiani paulo meditantis per Apollinaris gener Galli Domitiani missus a militares minorem agens immodice artissime per scrutabatur quaedam per scripta an petit per susceperint per tenebatur agens agens Armeniam protectores protectores Domitiani tenebatur ad meditantis ad quaedam scripta Domitiani."],"martinFaceAnimation");
         this.game.add.existing(pnjTest); // ok c'est important donc feuille de pnj sur un autre script et appeler en fonction des besoins.
+        this.game.add.existing(pnjTest2);
         dialogManager = new Dialog();
 
 

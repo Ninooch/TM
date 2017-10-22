@@ -33,7 +33,7 @@ function updatePlayer(){
         if(input.up.isDown){
             player.body.velocity.y = -player.customProps.speed; 
             player.animations.play("walkUp",player.animationSpeed,true);
-            terrainManager.clearMap();
+            //terrainManager.clearMap();
             return;
         }
         if(input.down.isDown){
