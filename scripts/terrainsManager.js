@@ -22,6 +22,10 @@ class Terrain {
             this.layers.push(this.map.createLayer(layers[l]));
             this.layers[l].resizeWorld();
         }
+        
+        for(let l in pnjs){
+            game.add.existing(pnjs[l]);
+        }
 
 
     }
