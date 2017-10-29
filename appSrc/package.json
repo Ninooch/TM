@@ -1,0 +1,21 @@
+{
+  "name": "Candide",
+  "version": "1.0.0",
+  "description": "travail de maturité 2017-2018. But : création d'un jeu vidéo inspiré de l'ouvrage Candide apr Voltaire. Ce repo servira uniquement de sauvegarde externe de la progression du jeu.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ninooch/TM.git"
+  },
+  "author": "Nina Ionescu",
+  "bugs": {
+    "url": "https://github.com/Ninooch/TM/issues"
+  },
+  "homepage": "https://github.com/Ninooch/TM#readme",
+  "dependencies": {
+    "electron-prebuilt": "^1.4.13"
+  }
+}
