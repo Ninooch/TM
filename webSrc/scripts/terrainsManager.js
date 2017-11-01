@@ -1,9 +1,10 @@
 class Terrain {
     constructor(){
-        this.layers = [];
-        this.map;
-        this.pnjs = [];
+        this.currentLayers = [];
+        this.currentMap;
+        this.currentPnjs = [];
         this.graphicGroup;
+        this.rectangle;
 
     }
     initGroup(){
@@ -12,64 +13,84 @@ class Terrain {
     }
     clearMap(){ 
         // console.log("destroying map")
-        this.map.destroy();
-        for(let l in this.layers){
-            this.layers[l].destroy();
+        this.currentMap.destroy();
+        for(let l in this.currentLayers){
+            this.currentLayers[l].destroy();
         }
         //détruire les pnjs 
-        for(let l in this.pnjs){
-            this.pnjs[l].destroy();
+        for(let l in this.currentPnjs){
+            this.currentPnjs[l].destroy();
         }
     }
 
-    fade(In){ //In = bool
+    drawRect(){
+        this.rectangle =  game.add.graphics(0,0);
+        this.rectangle.beginFill(0x000000);
+        this.rectangle.drawRect(game.camera.x,game.camera.y,game.camera.width,game.camera.height);
+        this.rectangle.endFill();
+        this.graphicGroup.add(this.rectangle);
+
+        game.world.bringToTop(this.graphicGroup);
+    }
+    clearRect(){
+        this.graphicGroup.removeAll(true);
+        this.rectangle.destroy();
+    }
+
+    fade(In,hasCallback,callback){ //In = bool, hasCallback = bool
+        this.drawRect();
         if(In){
-            this.rectangle =  game.add.graphics(0,0);
-            this.rectangle.beginFill(0x000000);
-            this.rectangle.drawRect(0,0,game.camera.width,game.camera.height);
-            this.rectangle.endFill();
-            this.graphicGroup.add(this.rectangle);
-
-            game.world.bringToTop(this.graphicGroup);
-
-            this.rectTween = game.add.tween(this.rectangle);
-            this.rectTween.to({alpha: 0}, 1000, null, true);
-            this.rectTween.onComplete.addOnce(function(){
-                this.rectangle.destroy();
+            this.rectTweenIn = game.add.tween(this.rectangle);
+            this.rectTweenIn.to({alpha: 0}, 1000, null, true);
+            this.rectTweenIn.onComplete.addOnce(function(){
+                if(hasCallback){
+                    callback();
+                }
+                this.clearRect();
             },this);
         }
         else {
-            this.rectangle =  game.add.graphics(0,0);
-            this.rectangle.beginFill(0x000000);
             this.rectangle.alpha = 0;
-            this.rectangle.drawRect(0,0,game.camera.width,game.camera.height);
-            this.rectangle.endFill();
-
-            game.world.bringToTop(this.graphicGroup);
-
-            this.rectTween = game.add.tween(this.rectangle);
-            this.rectTween.to({alpha: 0.9}, 1000, null, true);
-            this.rectTween.onComplete.add(function(){
-                this.rectangle.destroy();
+            this.rectTweenOut = game.add.tween(this.rectangle);
+            this.rectTweenOut.to({alpha: 1}, 1000, null, true);
+            this.rectTweenOut.onComplete.addOnce(function(){
+                if(hasCallback){
+                    callback();
+                }
+                this.clearRect();
             },this);
         }
     }
 
-    initMap(map,tilesetImKey,tilesetIm,layers,pnjs){ //dépendra aussi des pnjs, des objets de Tiled et éventuellement des animations, à voir , prendre en compte la musique aussi
+    initMap(map){ //dépendra aussi des pnjs, des objets de Tiled et éventuellement des animations, à voir , prendre en compte la musique aussi
         //l'argument layers est un array qui contient tout les noms des couches de la map
-        this.map =  game.add.tilemap(map);
-        this.map.addTilesetImage(tilesetIm,tilesetImKey); // tilesetIm c'est le "nom".pnj et tileseImKey c'est le nom dans le cache de Phaser, faire en sorte qu'ils portent le même nom, comme ça un argument en moins dans la fonction
-
-        for(let l in layers){
-            this.layers.push(this.map.createLayer(layers[l]));
-            this.layers[l].resizeWorld();
+        this.currentMap =  game.add.tilemap(map);
+        for(let l in map.tilesets){
+            this.currentMap.addTilesetImage(map.tilesets[l]); // tilesetIm c'est le "nom".pnj et tileseImKey c'est le nom dans le cache de Phaser, faire en sorte qu'ils portent le même nom, comme ça un argument en moins dans la fonction
+        }
+        
+        for(let l in map.layers){
+            this.currentLayers.push(this.currentMap.createLayer(map.layers[l]));
+            this.currentLayers[l].resizeWorld();
         }
 
-        for(let l in pnjs){
-            game.add.existing(pnjs[l]);
-            this.pnjs.push(pnjs[l]);
+        for(let l in map.pnjs){
+            game.add.existing(map.pnjs[l]);
+            this.currentPnjs.push(map.pnjs[l]);
         }
     }
+    
+    changeMap(newMap){
+        this.fade(true,true,function(){
+            this.clearMap();
+            this.initMap(newMap);
+            this.fade(false,false);
+        });
+        
+    }
+    
+    
+
 }
 
 var terrainManager = new Terrain();

@@ -11,8 +11,29 @@
          "width":33,
          "x":0,
          "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "name":"Calque d'objets 1",
+         "objects":[
+                {
+                 "height":62,
+                 "id":4,
+                 "name":"warpMap2",
+                 "rotation":0,
+                 "type":"warp",
+                 "visible":true,
+                 "width":96,
+                 "x":128,
+                 "y":0
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
         }],
- "nextobjectid":1,
+ "nextobjectid":6,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.0.3",

@@ -30,6 +30,10 @@ var gameState = {
         //this.game.add.existing(pnjTest); // ok c'est important donc feuille de pnj sur un autre script et appeler en fonction des besoins.
         //this.game.add.existing(pnjTest2);
         dialogManager = new Dialog();
+        
+        var sparkles = game.add.sprite(250,250,"sparkles");
+        sparkles.animations.add("shine",[0,1,2,3,4,5],10);
+        sparkles.animations.play("shine",10,true);
 
 
 
