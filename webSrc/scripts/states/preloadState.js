@@ -24,7 +24,8 @@ var preloadState = {
 
         //tilemaps
         game.load.tilemap("testmap","assets/maps/test.json",null,Phaser.Tilemap.TILED_JSON);
-        game.load.spritesheet("terrain","assets/sprites/tilesets/terrain1.png",32,32);
+        game.load.tilemap("testmap2","assets/maps/test2.json",null,Phaser.Tilemap.TILED_JSON);
+        game.load.spritesheet("terrain1","assets/sprites/tilesets/terrain1.png",32,32);
 
         //joueur 
         game.load.spritesheet("player","assets/sprites/sprite_animations/playerTest.png",35,67);

@@ -1,5 +1,6 @@
 var player; 
 
+
 function initPlayer(x,y){
     player = game.add.sprite(x,y,"player",0);
 

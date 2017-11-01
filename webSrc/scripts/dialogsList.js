@@ -1,11 +1,13 @@
 // feuilles de dialogues : mettre un perso , mettre les dialogues en suivant la langue etc...
 
 var pnjTestDialogs = [];
+var testMap2 = new CustomMap("testmap2",["terrain1"],["Calque de Tile 1"],[],"");
 
 var callback1 = function(){
     pnjTest.currentIndex = 1;
     dialogManager.stop(true,false);
     dialogManager.startDialog(pnjTest);
+    terrainManager.changeMap(testMap2);
 }
 
 var callback2 = function(){

@@ -64,14 +64,15 @@ class Terrain {
 
     initMap(map){ //dépendra aussi des pnjs, des objets de Tiled et éventuellement des animations, à voir , prendre en compte la musique aussi
         //l'argument layers est un array qui contient tout les noms des couches de la map
-        this.currentMap =  game.add.tilemap(map);
+        this.currentMap =  game.add.tilemap(map.key);
         for(let l in map.tilesets){
-            this.currentMap.addTilesetImage(map.tilesets[l]); // tilesetIm c'est le "nom".pnj et tileseImKey c'est le nom dans le cache de Phaser, faire en sorte qu'ils portent le même nom, comme ça un argument en moins dans la fonction
+            this.currentMap.addTilesetImage(map.tilesets[l],map.tilesets[l]); // tilesetIm c'est le "nom".pnj et tileseImKey c'est le nom dans le cache de Phaser, faire en sorte qu'ils portent le même nom, comme ça un argument en moins dans la fonction
         }
-        
+
         for(let l in map.layers){
+            console.log(map.layers[l]);
             this.currentLayers.push(this.currentMap.createLayer(map.layers[l]));
-            this.currentLayers[l].resizeWorld();
+          //  this.currentLayers[l].resizeWorld();
         }
 
         for(let l in map.pnjs){
@@ -79,17 +80,18 @@ class Terrain {
             this.currentPnjs.push(map.pnjs[l]);
         }
     }
-    
+
     changeMap(newMap){
-        this.fade(true,true,function(){
-            this.clearMap();
-            this.initMap(newMap);
-            this.fade(false,false);
+        var self = this;
+        this.fade(false,true,function(){
+            self.clearMap();
+            self.initMap(newMap);
+            self.fade(true,false);
         });
-        
+
     }
-    
-    
+
+
 
 }
 
