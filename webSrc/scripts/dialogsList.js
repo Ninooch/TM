@@ -8,6 +8,7 @@ var callback1 = function(){
     dialogManager.stop(true,false);
     dialogManager.startDialog(pnjTest);
     terrainManager.changeMap(testMap2);
+    //debugger;
 }
 
 var callback2 = function(){

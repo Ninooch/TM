@@ -43,7 +43,7 @@ var gameState = {
         initPlayer(180,150);
 
 
-        terrainManager.fade(true);
+        terrainManager.fade(true,true,false);
 
     },
     update: function(){
