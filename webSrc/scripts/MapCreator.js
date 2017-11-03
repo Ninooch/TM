@@ -7,5 +7,6 @@ class CustomMap {
         this.layers = layers;
         
     }
+    
 }
 
