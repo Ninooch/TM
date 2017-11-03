@@ -9,8 +9,9 @@ général :
 
 code :
 -améliorer le dialogManager pour faire en sorte qu'une callback soit appelée à la fin, si on en propose une.
-- améliorer le système de terrains
+- améliorer le système de terrains (fait)
 - créer une classe pour les objets de type warps avec une méthode qui appelle une réaction en chaîne du terrainManager--> voir dans Tiled pour les objets
+-faire un gros objet global pour y référencer toutes les maps, les pnjs, les dialogues etc...
 
 assets : 
 - créer les bases des animations de dialogues
