@@ -11,7 +11,7 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
 
     start(){
         //alert("started");
-        player.customProps.canMove = false;
+        globals.player.customProps.canMove = false;
         this.onscreen = true;
         this.dialBox = game.add.image((game.camera.width)/2,(game.camera.height),"dialogBox");
         this.dialBox.anchor.setTo(0.5,1);
@@ -25,7 +25,7 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
 
     stop(isDialog,canBulle){
         // alert("stopped");
-        player.customProps.canMove = true;
+        globals.player.customProps.canMove = true;
         this.onscreen = false;
         this.dialBox.destroy();
         this.bmpText.destroy();
@@ -219,5 +219,4 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
 
 }
 
-var dialogManager;
 

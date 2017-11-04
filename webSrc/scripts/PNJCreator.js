@@ -46,19 +46,19 @@ class Pnj extends Phaser.Sprite{ //catchphrse = "", dialogs = objet contenant un
 
     update(){
         if(this.canBulle){
-            if(checkPnjOverlap(this,player) && !this.bulleIsOnScreen){
-               // alert("Bulle");
+            if(checkPnjOverlap(this,globals.player) && !this.bulleIsOnScreen){
+                // alert("Bulle");
                 this.createBulle();
             }
-            else if (!checkPnjOverlap(this,player) && this.bulleIsOnScreen){
+            else if (!checkPnjOverlap(this,globals.player) && this.bulleIsOnScreen){
                 this.destroyBulle();
             }
 
-            if(this.bulleIsOnScreen && !dialogManager.onscreen){
+            if(this.bulleIsOnScreen && !globals.dialogManager.onscreen){
                 if(input.enter.isDown){
                     //alert("you typed enter");
                     //dialogManager.start();
-                    dialogManager.startDialog(this);
+                    globals.dialogManager.startDialog(this);
                 }
             }
         }

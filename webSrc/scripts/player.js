@@ -1,55 +1,54 @@
-var player; 
 
 
 function initPlayer(x,y){
-    player = game.add.sprite(x,y,"player",0);
+    globals.player = game.add.sprite(x,y,"player",0);
 
-    game.physics.enable(player,Phaser.Physics.ARCADE);
-    player.body.collideWorldBounds = true;
+    game.physics.enable(globals.player,Phaser.Physics.ARCADE);
+    globals.player.body.collideWorldBounds = true;
 
-    game.camera.follow(player);
+    game.camera.follow(globals.player);
 
-    player.customProps = {};
+    globals.player.customProps = {};
 
-    player.customProps.animationSpeed = 6;
-    player.customProps.speed = 150;
-    player.customProps.canMove = true;
+    globals.player.customProps.animationSpeed = 6;
+    globals.player.customProps.speed = 150;
+    globals.player.customProps.canMove = true;
 
-    player.animations.add("walkDown", [0,1,2,3], player.customProps.animationSpeed);
-    player.animations.add("walkLeft", [4,5,6,7], player.customProps.animationSpeed);
-    player.animations.add("walkRight", [8,9,10,11], player.customProps.animationSpeed);
-    player.animations.add("walkUp", [12,13,14,15], player.customProps.animationSpeed); 
+    globals.player.animations.add("walkDown", [0,1,2,3], globals.player.customProps.animationSpeed);
+    globals.player.animations.add("walkLeft", [4,5,6,7], globals.player.customProps.animationSpeed);
+    globals.player.animations.add("walkRight", [8,9,10,11], globals.player.customProps.animationSpeed);
+    globals.player.animations.add("walkUp", [12,13,14,15], globals.player.customProps.animationSpeed); 
 }
 
 function updatePlayer(){
-    player.body.velocity.x=0;
-    player.body.velocity.y=0;
-    if(player.customProps.canMove){
+    globals.player.body.velocity.x=0;
+    globals.player.body.velocity.y=0;
+    if(globals.player.customProps.canMove){
         if(input.left.isDown){
-            player.body.velocity.x = -player.customProps.speed; 
-            player.animations.play("walkLeft",player.customProps.animationSpeed,true);
+            globals.player.body.velocity.x = -globals.player.customProps.speed; 
+            globals.player.animations.play("walkLeft",globals.player.customProps.animationSpeed,true);
             return;
         }
 
         if(input.up.isDown){
-            player.body.velocity.y = -player.customProps.speed; 
-            player.animations.play("walkUp",player.animationSpeed,true);
+            globals.player.body.velocity.y = -globals.player.customProps.speed; 
+            globals.player.animations.play("walkUp",globals.player.animationSpeed,true);
             return;
         }
         if(input.down.isDown){
-            player.body.velocity.y = player.customProps.speed; 
-            player.animations.play("walkDown",player.customProps.animationSpeed,true);
+            globals.player.body.velocity.y = globals.player.customProps.speed; 
+            globals.player.animations.play("walkDown",globals.player.customProps.animationSpeed,true);
             return;
         }
 
         if(input.right.isDown){
-            player.body.velocity.x = player.customProps.speed;
-            player.animations.play("walkRight",player.customProps.animationSpeed,true);
+            globals.player.body.velocity.x = globals.player.customProps.speed;
+            globals.player.animations.play("walkRight",globals.player.customProps.animationSpeed,true);
             return;
         }
 
         else{
-            player.animations.stop(null,true);
+            globals.player.animations.stop(null,true);
         }
     }
 }

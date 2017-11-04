@@ -22,7 +22,7 @@ class Terrain {
         for(let l in this.currentPnjs){
             this.currentPnjs[l].destroy();
         }
-        player.destroy();
+        globals.player.destroy();
     }
 
     drawRect(){
@@ -86,10 +86,6 @@ class Terrain {
         //debugger;
 
         this.currentLayers[0].resizeWorld();
-        let tmp = this.currentLayers[0];
-        let wrld = game.world;
-        debugger;
-
 
         for(let l in map.pnjs){
             game.add.existing(map.pnjs[l]);
@@ -97,12 +93,12 @@ class Terrain {
         }
     }
 
-    changeMap(newMap){
+    changeMap(newMap,x,y){
         var ctx = this;
         this.fade(false,false,true,function(){
             ctx.clearMap();
             ctx.initMap(newMap);
-            initPlayer(300,200);
+            initPlayer(x,y);
             ctx.fade(true,false,false);
         });
     }
@@ -110,5 +106,3 @@ class Terrain {
 
 
 }
-
-var terrainManager = new Terrain();
