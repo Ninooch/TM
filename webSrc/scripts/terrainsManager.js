@@ -3,7 +3,6 @@ class Terrain {
         this.currentLayers = [];
         this.currentMap;
         this.currentPnjs = [];
-        this.rectangle;
 
     }
     clearMap(){
@@ -20,51 +19,7 @@ class Terrain {
         globals.player.destroy();
     }
 
-    drawRect(){
-        var rectangle = game.add.graphics(0,0);
-        rectangle.beginFill(0x000000);
 
-        this.logCam();
-        rectangle.drawRect(game.camera.x,game.camera.y,game.camera.width,game.camera.height);
-        // debugger
-        rectangle.endFill();
-        game.world.bringToTop(rectangle);
-
-        return rectangle;
-    }
-
-
-    fade(In,callback){ //In = bool
-        if(In){
-            this.logCam();
-            var rect = this.drawRect();
-            this.rectTweenIn = game.add.tween(rect);
-            this.rectTweenIn.to({alpha: 0}, 1000, null);
-            this.rectTweenIn.onComplete.addOnce(function(){
-                console.log("Tweened in");
-                if(callback != undefined){
-                    callback();
-                }
-                rect.destroy();
-            },this);
-
-            this.rectTweenIn.start();
-        }else {
-            var rect = this.drawRect();
-            rect.alpha = 0;
-            this.rectTweenOut = game.add.tween(rect);
-            this.rectTweenOut.to({alpha: 1}, 1000, null);
-            this.rectTweenOut.onComplete.addOnce(function(){
-                console.log("Tweened out");
-                if(callback != undefined){
-                    callback();
-                }
-                rect.destroy();
-            },this);
-
-            this.rectTweenOut.start();
-        }
-    }
 
     initMap(map){ //dépendra aussi des pnjs, des objets de Tiled et éventuellement des animations, à voir , prendre en compte la musique aussi
         //l'argument layers est un array qui contient tout les noms des couches de la map
@@ -98,13 +53,6 @@ class Terrain {
           initPlayer(x,y);
           game.camera.flash(0x000000,1000);
         },this);
-      //  this.fade(false,function(){
-        //     ctx.clearMap();
-        //     ctx.initMap(newMap);
-        //     initPlayer(x,y);
-        //     ctx.logCam();
-        //     ctx.fade(true);
-        // });
     }
 
     logCam(){
