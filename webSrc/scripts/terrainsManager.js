@@ -3,22 +3,17 @@ class Terrain {
         this.currentLayers = [];
         this.currentMap;
         this.currentPnjs = [];
-        this.graphicGroup;
         this.rectangle;
 
     }
-    initGroup(){
-        this.graphicGroup = game.add.group(); 
-        game.world.bringToTop(this.graphicGroup);
-    }
-    clearMap(){ 
+    clearMap(){
         // console.log("destroying map")
         this.currentMap.destroy();
         for(let l in this.currentLayers){
             this.currentLayers[l].destroy();
-            //supprimer les layers 
+            //supprimer les layers
         }
-        //détruire les pnjs 
+        //détruire les pnjs
         for(let l in this.currentPnjs){
             this.currentPnjs[l].destroy();
         }
@@ -26,47 +21,45 @@ class Terrain {
     }
 
     drawRect(){
-        this.rectangle =  game.add.graphics(0,0);
-        this.rectangle.beginFill(0x000000);
-        this.rectangle.drawRect(game.camera.x,game.camera.y,game.camera.width,game.camera.height);
-        this.rectangle.endFill();
-        this.graphicGroup.add(this.rectangle);
+        var rectangle = game.add.graphics(game.camera.x,game.camera.y);
+        rectangle.beginFill(0x000000);
+        rectangle.drawRect(0,0,game.camera.width,game.camera.height);
+        debugger
+        rectangle.endFill();
+        game.world.bringToTop(rectangle);
 
-        game.world.bringToTop(this.graphicGroup);
-    }
-    clearRect(){
-        this.graphicGroup.removeAll(true);
-        this.rectangle.destroy();
+        return rectangle;
     }
 
-    fade(In,first,hasCallback,callback){ //In = bool, hasCallback = bool
+
+    fade(In,callback){ //In = bool
         if(In){
-            if(first){
-                this.drawRect();
-            }
-            else{
-                game.world.bringToTop(this.graphicGroup); 
-            }
-            this.rectTweenIn = game.add.tween(this.rectangle);
-            this.rectTweenIn.to({alpha: 0}, 1000, null, true);
+            var rect = this.drawRect();
+            this.rectTweenIn = game.add.tween(rect);
+            this.rectTweenIn.to({alpha: 0}, 1000, null);
             this.rectTweenIn.onComplete.addOnce(function(){
-                if(hasCallback){
+                console.log("Tweened in");
+                if(callback != undefined){
                     callback();
                 }
-                this.clearRect();
+                rect.destroy();
             },this);
-        }
-        else {
-            this.drawRect();
-            this.rectangle.alpha = 0;
-            this.rectTweenOut = game.add.tween(this.rectangle);
-            this.rectTweenOut.to({alpha: 1}, 1000, null, true);
+
+            this.rectTweenIn.start();
+        }else {
+            var rect = this.drawRect();
+            rect.alpha = 0;
+            this.rectTweenOut = game.add.tween(rect);
+            this.rectTweenOut.to({alpha: 1}, 1000, null);
             this.rectTweenOut.onComplete.addOnce(function(){
-                if(hasCallback){
+                console.log("Tweened out");
+                if(callback != undefined){
                     callback();
                 }
-                // this.clearRect();
+                rect.destroy();
             },this);
+
+            this.rectTweenOut.start();
         }
     }
 
@@ -95,14 +88,12 @@ class Terrain {
 
     changeMap(newMap,x,y){
         var ctx = this;
-        this.fade(false,false,true,function(){
+        this.fade(false,function(){
             ctx.clearMap();
             ctx.initMap(newMap);
             initPlayer(x,y);
-            ctx.fade(true,false,false);
+
+            ctx.fade(true);
         });
     }
-
-
-
 }

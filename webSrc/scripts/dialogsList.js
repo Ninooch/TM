@@ -7,7 +7,7 @@ var callback1 = function(){
     pnjTest.currentIndex = 1;
     globals.dialogManager.stop(true,false);
    // dialogManager.startDialog(pnjTest);
-    globals.terrainManager.changeMap(testMap2,300,220);
+    globals.terrainManager.changeMap(testMap2,600,620);
 }
 
 var callback2 = function(){

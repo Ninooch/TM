@@ -11,3 +11,6 @@ globals.terrainManager = new Terrain();
 globals.dialogManager = new Dialog();
 
 
+
+
+
