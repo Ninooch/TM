@@ -17,7 +17,7 @@ function initPlayer(x,y){
     globals.player.animations.add("walkDown", [0,1,2,3], globals.player.customProps.animationSpeed);
     globals.player.animations.add("walkLeft", [4,5,6,7], globals.player.customProps.animationSpeed);
     globals.player.animations.add("walkRight", [8,9,10,11], globals.player.customProps.animationSpeed);
-    globals.player.animations.add("walkUp", [12,13,14,15], globals.player.customProps.animationSpeed); 
+    globals.player.animations.add("walkUp", [12,13,14,15], globals.player.customProps.animationSpeed);
 }
 
 function updatePlayer(){
@@ -25,18 +25,18 @@ function updatePlayer(){
     globals.player.body.velocity.y=0;
     if(globals.player.customProps.canMove){
         if(input.left.isDown){
-            globals.player.body.velocity.x = -globals.player.customProps.speed; 
+            globals.player.body.velocity.x = -globals.player.customProps.speed;
             globals.player.animations.play("walkLeft",globals.player.customProps.animationSpeed,true);
             return;
         }
 
         if(input.up.isDown){
-            globals.player.body.velocity.y = -globals.player.customProps.speed; 
+            globals.player.body.velocity.y = -globals.player.customProps.speed;
             globals.player.animations.play("walkUp",globals.player.animationSpeed,true);
             return;
         }
         if(input.down.isDown){
-            globals.player.body.velocity.y = globals.player.customProps.speed; 
+            globals.player.body.velocity.y = globals.player.customProps.speed;
             globals.player.animations.play("walkDown",globals.player.customProps.animationSpeed,true);
             return;
         }

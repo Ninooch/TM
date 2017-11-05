@@ -6,17 +6,18 @@ class CustomMap {
         this.warps = warps;
         this.tilesets = tilesets;
         this.layers = layers;
-        
-    }  
+
+    }
 }
 
-class Warp {
+class Warp extends Phaser.Image {
     constructor(toMap,newX,newY,x,y,tileWidth,tileHeight){
+        super(game,x,y);
         this.to = toMap;
         this.nx = newX;
         this.ny = newY;
         this.overlap = false;
-        
+
         this.rectangle = new Phaser.Rectangle(x,y,tileWidth*32,tileHeight*32);
     }
     update(){
@@ -24,6 +25,5 @@ class Warp {
             globals.terrainManager.changeMap(this.to,this.nx,this.ny);
             this.overlap = true;
         }
-    }   
+    }
 }
-

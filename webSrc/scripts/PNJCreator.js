@@ -24,24 +24,14 @@ class Pnj extends Phaser.Sprite{ //catchphrse = "", dialogs = objet contenant un
 
     createBulle(){ //ça marche
         this.bulleIsOnScreen = true;
-        this.bulle = game.add.sprite(this.x + 20,this.y,"bulle");
-        this.bulle.anchor.setTo(0.5,1);
+        this.bulle = new Bubble();
+        this.bulle.create(this.x,this.y,"...");
 
-        this.catchphrase = game.add.bitmapText(this.x + 20 ,this.y,"candideFont","...",41);
-        this.catchphrase.anchor.setTo(0.5,1);
-        this.catchphrase.alignIn(this.bulle,Phaser.LEFT_CENTER,-10,5);
-
-        this.waitTriangle = game.add.sprite(this.x,this.y,"dialogTriangle");
-        this.waitTriangle.animations.add("waiting",[0,1],4);
-        this.waitTriangle.alignIn(this.bulle,Phaser.RIGHT_CENTER,-10,0);
-        this.waitTriangle.animations.play("waiting",4,true);
     }
 
-    destroyBulle(){ // ça marche 
-        this.bulle.destroy();
-        this.catchphrase.destroy();
-        this.waitTriangle.destroy();
+    destroyBulle(){ // ça marche
         this.bulleIsOnScreen = false;
+        this.bulle.destroy();
     }
 
     update(){
@@ -77,9 +67,8 @@ function checkSpriteOverlap(spriteA, spriteB) {
 }
 
 function checkPnjOverlap(pnj,spriteB){
-    var boundsA = pnj.rectangle; 
+    var boundsA = pnj.rectangle;
     var boundsB = spriteB.getBounds();
 
     return Phaser.Rectangle.intersects(boundsA,boundsB);
 }
-
