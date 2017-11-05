@@ -48,14 +48,14 @@ class Terrain {
         //var ctx = this;
         game.camera.fade(0x000000,1000,false,1);
         game.camera.onFadeComplete.addOnce(function(){
-          this.clearMap();
-          this.initMap(newMap);
-          initPlayer(x,y);
-          game.camera.flash(0x000000,1000);
+            this.clearMap();
+            this.initMap(newMap);
+            initPlayer(x,y);
+            game.camera.flash(0x000000,1000);
         },this);
     }
 
     logCam(){
-      console.log(game.camera.x, game.camera.y);
+        console.log(game.camera.x, game.camera.y);
     }
 }

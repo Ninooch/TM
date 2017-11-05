@@ -34,7 +34,7 @@ var gameState = {
         initPlayer(180,150);
 
         globals.warps.toMap2 = new Warp(testMap2,200,200,128,0,3,2);
-        game.camera.fade(0x000000,1000,false,1);
+        game.camera.flash(0x000000,1000,false,1);
 
     },
     update: function(){
