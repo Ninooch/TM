@@ -4,13 +4,8 @@ var globals = {
     pnjs : {},
     dialCallback : {},
     dialogs : {},
-    warps : {}, 
+    warps : {},
 };
 
 globals.terrainManager = new Terrain();
 globals.dialogManager = new Dialog();
-
-
-
-
-

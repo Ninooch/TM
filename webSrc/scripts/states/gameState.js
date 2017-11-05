@@ -40,7 +40,6 @@ var gameState = {
     update: function(){
         updatePlayer();
         globals.warps.toMap2.update();
-
     },
     render: function(){
         game.debug.geom( globals.warps.toMap2.rectangle,'#0fffff')

@@ -21,10 +21,12 @@ class Terrain {
     }
 
     drawRect(){
-        var rectangle = game.add.graphics(game.camera.x,game.camera.y);
+        var rectangle = game.add.graphics(0,0);
         rectangle.beginFill(0x000000);
-        rectangle.drawRect(0,0,game.camera.width,game.camera.height);
-        debugger
+
+        this.logCam();
+        rectangle.drawRect(game.camera.x,game.camera.y,game.camera.width,game.camera.height);
+        // debugger
         rectangle.endFill();
         game.world.bringToTop(rectangle);
 
@@ -34,6 +36,7 @@ class Terrain {
 
     fade(In,callback){ //In = bool
         if(In){
+            this.logCam();
             var rect = this.drawRect();
             this.rectTweenIn = game.add.tween(rect);
             this.rectTweenIn.to({alpha: 0}, 1000, null);
@@ -87,13 +90,24 @@ class Terrain {
     }
 
     changeMap(newMap,x,y){
-        var ctx = this;
-        this.fade(false,function(){
-            ctx.clearMap();
-            ctx.initMap(newMap);
-            initPlayer(x,y);
+        //var ctx = this;
+        game.camera.fade(0x000000,1000,false,1);
+        game.camera.onFadeComplete.addOnce(function(){
+          this.clearMap();
+          this.initMap(newMap);
+          initPlayer(x,y);
+          game.camera.flash(0x000000,1000);
+        },this);
+      //  this.fade(false,function(){
+        //     ctx.clearMap();
+        //     ctx.initMap(newMap);
+        //     initPlayer(x,y);
+        //     ctx.logCam();
+        //     ctx.fade(true);
+        // });
+    }
 
-            ctx.fade(true);
-        });
+    logCam(){
+      console.log(game.camera.x, game.camera.y);
     }
 }
