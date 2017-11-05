@@ -25,7 +25,7 @@ class Pnj extends Phaser.Sprite{ //catchphrse = "", dialogs = objet contenant un
     createBulle(){ //ça marche
         this.bulleIsOnScreen = true;
         this.bulle = new Bubble();
-        this.bulle.create(this.x,this.y,"...");
+        this.bulle.create(this.x,this.y,"...",41);
 
     }
 

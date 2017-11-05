@@ -1,9 +1,9 @@
 class Bubble {
-    create(x,y,text){
+    create(x,y,text,fontSize){
         this.bubble = game.add.sprite(x + 20,y,"bulle");
         this.bubble.anchor.setTo(0.5,1);
 
-        this.text = game.add.bitmapText(x,y,"candideFont",text,41);
+        this.text = game.add.bitmapText(x,y,"candideFont",text,fontSize);
         this.text.anchor.setTo(0.5,1);
         this.text.alignIn(this.bubble,Phaser.LEFT_CENTER,-10,5);
 
@@ -17,5 +17,18 @@ class Bubble {
         this.bubble.destroy();
         this.text.destroy();
         this.waitTriangle.destroy();
+    }
+    goToHouse(newMap,x,y){
+        input.enter.onDown.addOnce(function(){
+            globals.terrainManager.changeMap(newMap,x,y);
+        },this);
+    }
+    
+    update(x,y){
+        this.bubble.x = x;
+        this.bubble.y = y;
+        this.waitTriangle.alignIn(this.bubble,Phaser.RIGHT_CENTER,-10,0);
+        this.text.alignIn(this.bubble,Phaser.LEFT_CENTER,-10,5);
+
     }
 }

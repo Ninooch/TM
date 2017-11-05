@@ -2,11 +2,11 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
     // les textes dépendants des choix du joueurs seront directement exprimés par les pnj dans leur configurations, le changement sera surement indiqué par l'index.
     // créer une méthode pour les choix --> fait
     // méthode pour les pnj simples , avec index,  --> fait
-    // méthode pour les pnjs plus complexes , gestion des states etc... 
+    // méthode pour les pnjs plus complexes , gestion des states etc...
     // à utiliser également pour les descriptions et interactions avec l'environnement --> à voir
 
     constructor(){
-        this.onscreen = false; // sert à ce que la boîte ne s'affiche qu'une seule fois quand elle est appellée avec enter, cf initPNJ.js 
+        this.onscreen = false; // sert à ce que la boîte ne s'affiche qu'une seule fois quand elle est appellée avec enter, cf initPNJ.js
     }
 
     start(){
@@ -21,7 +21,7 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
         this.bmpText.alignIn(this.dialBox, Phaser.TOP_LEFT, -15, -5);
         this.bmpText.maxWidth = this.dialBox.width -125;
 
-    } 
+    }
 
     stop(isDialog,canBulle){
         // alert("stopped");
@@ -93,7 +93,7 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
 
         this.wordTimer.start();
 
-    } 
+    }
 
     wait(isDialog,isLast,isQuestion){
         if(isDialog){
@@ -113,7 +113,7 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
                     this.stop(isDialog,true);
                 }
                 else{
-                    this.resume(isDialog); 
+                    this.resume(isDialog);
                 }
             }
             else{
@@ -132,7 +132,7 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
         this.bmpText.text = "";
         this.wordTimer.resume();
     }
-    question(texts,index){ 
+    question(texts,index){
         //alert("question");
         this.waitTriangle.destroy();
         this.answerList = [];
@@ -148,7 +148,7 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
             this.answerList.push(answer);
             this.answerBoxes.push(answerBox);
         }
-        this.selectionBox = game.add.sprite(this.answerBoxes[0].x,this.answerBoxes[0].y,"selection");   
+        this.selectionBox = game.add.sprite(this.answerBoxes[0].x,this.answerBoxes[0].y,"selection");
         this.selection(texts,index);
     }
 
@@ -171,7 +171,7 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
         input.down.onDown.addOnce(function(){
             //alert("down");
             if(this.selectionBox.y < this.answerBoxes[0].y){
-                this.selectionBox.y +=51; 
+                this.selectionBox.y +=51;
             }
             this.selection(texts,index);
         },this);
@@ -192,7 +192,7 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
             }
             this.selectionBox.destroy();
         },this);
-    } 
+    }
 
     startDialog(pnj){
         this.pnj = pnj;
@@ -218,5 +218,3 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
     }
 
 }
-
-

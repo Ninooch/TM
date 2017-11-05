@@ -3,6 +3,7 @@ class Terrain {
         this.currentLayers = [];
         this.currentMap;
         this.currentPnjs = [];
+        this.currentWarps = [];
 
     }
     clearMap(){
@@ -16,6 +17,8 @@ class Terrain {
         for(let l in this.currentPnjs){
             this.currentPnjs[l].destroy();
         }
+        this.currentPnjs = [];
+        this.currentWarps = [];
         globals.player.destroy();
     }
 
@@ -32,15 +35,16 @@ class Terrain {
         for(let l of map.layers){
             let layer = this.currentMap.createLayer(l);
             this.currentLayers.push(layer);
-            //debugger;
         }
-        //debugger;
 
         this.currentLayers[0].resizeWorld();
 
         for(let l in map.pnjs){
             game.add.existing(map.pnjs[l]);
             this.currentPnjs.push(map.pnjs[l]);
+        }
+        for(let l in map.warps){
+            this.currentWarps.push(map.warps[l]);
         }
     }
 
@@ -53,6 +57,34 @@ class Terrain {
             initPlayer(x,y);
             game.camera.flash(0x000000,1000);
         },this);
+    }
+
+    update(){
+        for(let l in this.currentWarps){
+            if(checkPnjOverlap(this.currentWarps[l],globals.player)){
+                if(this.currentWarps[l].isHouse){
+                    if(!globals.player.customProps.bulleOnScreen){
+                        globals.player.customProps.bulle.create(globals.player.x,globals.player.y,this.currentWarps[l].text,36);
+                        globals.player.customProps.bulle.goToHouse(this.currentWarps[l].to,this.currentWarps[l].nx,this.currentWarps[l].ny);
+                        globals.player.customProps.bulleOnScreen = true;
+                    }
+                    else{
+                        globals.player.customProps.bulle.update(globals.player.x,globals.player.y);
+                    }
+                }
+                else{
+                    if(!this.currentWarps[l].overlap){
+                        globals.terrainManager.changeMap(this.currentWarps[l].to,this.currentWarps[l].nx,this.currentWarps[l].ny);
+                    }
+                }
+            }
+            else{
+                if(globals.player.customProps.bulleOnScreen){
+                    globals.player.customProps.bulle.destroy();
+                    globals.player.customProps.bulleOnScreen = false;
+                }
+            }
+        }
     }
 
 }

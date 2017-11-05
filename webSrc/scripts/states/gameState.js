@@ -17,7 +17,7 @@ var gameState = {
         var testMap = new CustomMap("testmap",["terrain1"],["Calque de Tile 1"],[pnjTest,pnjTest2],"");
         // var testMap2 = new CustomMap("testmap2",["terrain1"],["Calque de Tile 1"],[pnjTest2],"");
 
-        globals.terrainManager.initMap(testMap);
+        globals.terrainManager.initMap(globals.maps.testMap);
 
 
 
@@ -33,13 +33,13 @@ var gameState = {
 
         initPlayer(180,150);
 
-        globals.warps.toMap2 = new Warp(testMap2,200,200,128,0,3,2);
+
         game.camera.flash(0x000000,1000,false,1);
 
     },
     update: function(){
         updatePlayer();
-        globals.warps.toMap2.update();
+        globals.terrainManager.update();
     },
     render: function(){
         game.debug.geom( globals.warps.toMap2.rectangle,'#0fffff')

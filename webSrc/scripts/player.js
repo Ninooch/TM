@@ -14,6 +14,10 @@ function initPlayer(x,y){
     globals.player.customProps.speed = 150;
     globals.player.customProps.canMove = true;
 
+    globals.player.customProps.bulle = new Bubble();
+    globals.player.customProps.bulleOnScreen = false;
+
+
     globals.player.animations.add("walkDown", [0,1,2,3], globals.player.customProps.animationSpeed);
     globals.player.animations.add("walkLeft", [4,5,6,7], globals.player.customProps.animationSpeed);
     globals.player.animations.add("walkRight", [8,9,10,11], globals.player.customProps.animationSpeed);
