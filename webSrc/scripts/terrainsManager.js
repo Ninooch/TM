@@ -55,7 +55,4 @@ class Terrain {
         },this);
     }
 
-    logCam(){
-        console.log(game.camera.x, game.camera.y);
-    }
 }
