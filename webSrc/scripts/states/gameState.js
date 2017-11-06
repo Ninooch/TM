@@ -11,7 +11,7 @@ var gameState = {
         initInput();
         game.physics.startSystem(Phaser.Physics.ARCADE);
 
-        pnjTest = new Pnj(90,150,"martin",0,"Choix",pnjTestDialogs,"martinFaceAnimation");
+        globals.pnjs.martin = new Pnj(90,150,"martin",0,"Choix",pnjTestDialogs,"martinFaceAnimation");
         pnjTest2 = new Pnj(300,150,"pnjTest",0,"Dialogue",["Bonjour je suis un test. je parle blah blah blah.Exindeque ad petit agens Galli Domitiani Armeniam Mesopotamiam altiora iam artissime conpertis an ad militares lapsus scripta Mesopotamiam diebus per Antiochiae exindeque susceperint a per susceperint a retractus protectores Apollinaris militares Apollinaris Domitiani Galli exindeque exindeque Cae."],"martinFaceAnimation");
 
         var testMap = new CustomMap("testmap",["terrain1"],["Calque de Tile 1"],[pnjTest,pnjTest2],"");
@@ -41,9 +41,7 @@ var gameState = {
         updatePlayer();
         globals.terrainManager.update();
     },
-    render: function(){
-        game.debug.geom( globals.warps.toMap2.rectangle,'#0fffff')
-    }
+
 
 };
 var pnjTest;

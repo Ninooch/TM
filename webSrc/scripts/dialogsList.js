@@ -1,6 +1,6 @@
 // feuilles de dialogues : mettre un perso , mettre les dialogues en suivant la langue etc...
 
-var pnjTestDialogs = [];
+globals.dialogs.pnjTestDialogs = [];
 
 
 var callback1 = function(){
