@@ -8,8 +8,7 @@ général :
 - écrire les dialogues
 
 code :
--améliorer le dialogManager pour faire en sorte qu'une callback soit appelée à la fin, si on en propose une.
-- créer des fonctions pour créer les maps data à appeler dans create du gameState uniquement. (sinon ça plante);
+- créer des fonctions pour créer les maps data à appeler dans create du gameState uniquement. (sinon ça plante) -en cours;
 
 
 assets :
