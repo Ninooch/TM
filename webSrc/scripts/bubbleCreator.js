@@ -23,12 +23,12 @@ class Bubble {
             globals.terrainManager.changeMap(newMap,x,y);
         },this);
     }
-    
+
     update(x,y){
         this.bubble.x = x;
         this.bubble.y = y;
-        this.waitTriangle.alignIn(this.bubble,Phaser.RIGHT_CENTER,-10,0);
-        this.text.alignIn(this.bubble,Phaser.LEFT_CENTER,-10,5);
+        this.waitTriangle.alignIn(this.bubble,Phaser.RIGHT_CENTER,-6,0);
+        this.text.alignIn(this.bubble,Phaser.LEFT_CENTER,-8,2);
 
     }
 }

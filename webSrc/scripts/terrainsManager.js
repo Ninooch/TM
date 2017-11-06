@@ -64,7 +64,7 @@ class Terrain {
             if(checkPnjOverlap(this.currentWarps[l],globals.player)){
                 if(this.currentWarps[l].isHouse){
                     if(!globals.player.customProps.bulleOnScreen){
-                        globals.player.customProps.bulle.create(globals.player.x,globals.player.y,this.currentWarps[l].text,36);
+                        globals.player.customProps.bulle.create(globals.player.x,globals.player.y,this.currentWarps[l].text,37);
                         globals.player.customProps.bulle.goToHouse(this.currentWarps[l].to,this.currentWarps[l].nx,this.currentWarps[l].ny);
                         globals.player.customProps.bulleOnScreen = true;
                     }

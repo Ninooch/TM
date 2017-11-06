@@ -81,12 +81,17 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
         if(typeof texts[index] == "string"){
             this.wordTimer.onComplete.add(function(){
                 //alert("timer fini");
-                this.wait(isDialog,true,false);
+                this.wait(isDialog,true,null,false);
             },this); //THIS EST IMPORTANT
+        }
+        else if(texts[index].length == 2 ){
+            this.wordTimer.onComplete.add(function(){
+                this.wait(isDialog,true,texts[index][1],false);
+            },this);
         }
         else{
             this.wordTimer.onComplete.add(function(){
-                this.wait(isDialog,false,true);
+                this.wait(isDialog,false,null,true);
             },this);
         }
 
@@ -95,7 +100,7 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
 
     }
 
-    wait(isDialog,isLast,isQuestion){
+    wait(isDialog,isLast,callback,isQuestion){
         if(isDialog){
             this.faceAnimation.animations.play("blink",9,true);
         }
@@ -108,8 +113,12 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
 
         input.enter.onDown.addOnce(function(){ //permet de passer à la feuille de dialogue suivante. lorsqu'on presse sur enter, l'événement ne se produit qu'une fois et se détruit.
             if(!isQuestion){
-                if(isLast){
+                if(isLast && callback != null){
                     // alert("last");
+                    this.stop(isDialog,true);
+                    callback();
+                }
+                else if(isLast){
                     this.stop(isDialog,true);
                 }
                 else{
