@@ -4,15 +4,15 @@
 
 général :
 - texte au plus court avec l'essentiel ( le plus complet ), dans le fascicule , décrire les méthodes et les idées ( mettre sur un site etc..)
-- faire un scénario
-- écrire les dialogues
+- faire un scénario - en cours
+- écrire les dialogues - va avec développement des personnages et scénario.
 
 code :
 - créer des fonctions pour créer les maps data à appeler dans create du gameState uniquement. (sinon ça plante) -en cours;
 
 
 assets :
-- créer les bases des animations de dialogues
+- créer les bases des animations de dialogues - en cours
 - créer les bases des sprites des persos
 - créer les bases des tilesets
 
