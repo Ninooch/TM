@@ -1,6 +1,6 @@
 var preloadState = {
     preload: function(){
-        //fond 
+        //fond
         game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
         loadBg = this.add.sprite(0,0,"loadBg");
         loadBg.scale.setTo(1/0.375);
@@ -27,13 +27,15 @@ var preloadState = {
         game.load.tilemap("testmap2","assets/maps/test2.json",null,Phaser.Tilemap.TILED_JSON);
         game.load.spritesheet("terrain1","assets/sprites/tilesets/terrain1.png",32,32);
 
-        //joueur 
+        //joueur
         game.load.spritesheet("player","assets/sprites/sprite_animations/playerTest.png",35,67);
 
         //pnjs
         game.load.spritesheet("pnjTest","assets/sprites/sprite_animations/pnjTest.png",35,67);
         game.load.spritesheet("martin","assets/sprites/sprite_animations/martinBase.png",35,67)
         game.load.spritesheet("martinFaceAnimation","assets/sprites/faces_animations/martinFaceAnimation.png",110,130);
+        game.load.spritesheet("panglossFaceAnimation","assets/sprites/faces_animations/panglossFaceAnimation.png",110,130);
+
 
 
 
@@ -46,4 +48,3 @@ var preloadState = {
         game.state.start("mainMenu");
     }
 };
-

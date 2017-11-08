@@ -16,7 +16,7 @@
 * phase de découverte du monde ( parler aux gens etc... aller au petit bois) tant que pas allé au bois, pangloss ne change pas de discours.
 * en sortant du bois, rencontre avec cunégonde ~cutscene~ rdv après le souper derrière le paravent
 * souper
-* scène du mouchoir , Candide se fait chasser
+* scène du mouchoir , Candide se fait chasser - à développer plus que dans le livre
 
 ### trucs à dessiner :
 
