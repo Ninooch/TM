@@ -2,7 +2,6 @@ var globals = {
     player : {},
     maps : {},
     pnjs : {},
-    dialCallback : {},
     dialogs : {},
     warps : {},
 };

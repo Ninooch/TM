@@ -221,9 +221,4 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
 
     }
 
-    startDialogSpe(pnjSpe,state,index){
-        pnjSpe.destroyBulle();
-        this.displayText(pnjSpe.state.dialogs,pnjSpe.currentIndex,true);
-    }
-
 }
