@@ -115,7 +115,7 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
             if(!isQuestion){
                 if(isLast && callback != null){
                     // alert("last");
-                    this.stop(isDialog,true);
+                    //tu dois décider d'arrêter le dialogue
                     callback();
                 }
                 else if(isLast){
