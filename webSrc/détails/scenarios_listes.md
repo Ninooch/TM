@@ -89,3 +89,32 @@
 
 ### scénario:
 * tempête horrible. vent, pluie etc.. ( effet avec des particules?)
+* les gens à bords paniquent. bâteau selon description, c'est à dire détruit par le temps)
+* après avoir fait le tour des lieux (et parlé à un marin) scène avec jaques qui tombe.
+* si on se dirige vers l'endroit où il est tombé, dialogue : avec "aller sauver Jacques ? "
+* PANGLOSS qui répond en fonction de notre choix. ( nous en empêchant si oui, sinon, dire que nous avons raison.)
+* peut-être que si débloqué qqch de spé, on peut aller le sauver.
+* le bâteau se brise et il faut nager jusqu'à une plage en récupérant une planche ? (si on touche les obstacles, on perd des hp et il faut arriver à la planche intact. si on choisit de sauver Jacques, on doit sacrifier une partie de ses HP )
+* planche va jusqu'à la terre ( plage).
+
+## partie 5 : Lisbonne
+
+### scénario:
+ * tremblement de terre dès qu'ils arrivent en ville (effets de la caméra avec tweens ? )
+ * ville en ruine , débris, feu, ( mots clés surlignés p. 58)
+ * Candide est blessé par les pierres ( descendre les HP jusqu'à 1 ?)
+ * Pangloss lui fait une théorie alors que le joueur panique (normalement)
+ * Si Jaques est là, il va chercher les provisions. Sinon c'est Pangloss.
+ * trouver 2-3 provisions et objets dans les décombres. pour regagner de la vie ( idéalement il ne faut manger u'un seul pain)
+ * chercher les survivants et partager les provisions. ( on ne peut les sauver qu'en partageant les provisions, donc il ne faut pas les avoir mangées toutes).
+ * Pangloss fait chier comme d'hab.
+ * Inquisiteur qui réplique. ( il boit du vin)
+ * il décide de l'auto da fé pour empêcher les tremblements ( dialogues)
+ * mettre en prison Jaques ( s'il est là), Pangloss et Candide. chambre sombre et froide sans fenêtres
+ * (habits cf p62)--> changement de sprite ?
+ * auto da fé : pnjs randoms brûlent ( ceux du dîner ), Pangloss est pendu ( suggéré ) et Candide (plus Jacques) frappé ( on baisse ses HP)
+ * sortie et rencontre avec la vieille. ( mon fils en espagnol ? mes fils si Jacques)
+
+## partie 6 : Chez la vieille
+
+### scénario
