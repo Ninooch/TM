@@ -125,5 +125,23 @@
  * la vieille nous interrompt mais en plein millieu de son discours,
  * l'inquisiteur revient à son tour , combat
  * si on en bat un ou les deux, cunégonde est effrayée de notre comportement (cf l28 p72)
- * fuire chez la vieille, (si Jacques, soit la vieille monte avec Cunégonde, soit il monte avec Candide)
- * partir : 3 chevaux dans la nuit 
+ * fuire chez la vieille, (si Jacques, soit la vieille monte avec Cunégonde, soit il monte avec Candide). Cunégonde lui offre de l'argent
+ * partir : 3 chevaux dans la nuit
+
+## partie 7 : Cadix
+
+### scénario
+* à Cadix ( coupé un peu l'histoire, ou alors auberge sur le chemin) : ils se font voler l'argent. solution: vendre un cheval (si Jacques, soit il reste à Cadix en mode "je te retrouverai", soit il vend qqch de son artisanat)
+* explorer un peu la ville de Cadix, rencontre avec Cacambo qui se propose comme valet et compagnon de voyage.
+* la vieille va au port et demande de le rejoindre quand il aura fini.
+* au port, rencontre avec un capitaine/marin qui engage Candide en combat ( demonstration, sans fin violent ). S'il réussit le combat, Candide et son équipe peut monter sur leur propre bâteau. (dans le livre Candide est capitaine mais il aura un conducteur privé, enfin, il donnera les ordres)
+* cutscene, cunégonde qui se plaint et la vieille réplique : de tous les gens du bateau je suis certaine que mon histoire est la pire. parler aux autres gens avant de déclancher le dialogue de la vieille ?
+* à trier entre ch11 et 12 les dialogues (faire simple et efficace, pas ennuyeux!), on arrive au port de Buenos-Ayres
+
+## partie 8 : Buenos-Ayres
+### scénario
+ * rencontre avec le gouverneur : voir son nom p 86 ch13
+ * il drague Cunégonde et demande à Candide si c'est sa femme. ( ou un truc du genre, quoi qu'il en soit, le gouverneur désire choper Cunégonde. faire en sorte d'être dans l'impasse)
+ * la vieille conseille Cunégonde de l'épouser plutôt que de rester avec Candide. ( truc convaincant )
+ * conseille Candide de partir loin car on est déjà au courant de ce qu'il a fait ( dépend de s'il a tué l'inquisiteur ou pas, quoi qu'il en soit, cunégonde avait piqué son argent)
+ * 
