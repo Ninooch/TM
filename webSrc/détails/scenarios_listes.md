@@ -115,6 +115,15 @@
  * auto da fé : pnjs randoms brûlent ( ceux du dîner ), Pangloss est pendu ( suggéré ) et Candide (plus Jacques) frappé ( on baisse ses HP)
  * sortie et rencontre avec la vieille. ( mon fils en espagnol ? mes fils si Jacques)
 
-## partie 6 : Chez la vieille
+## partie 6 : aventures avec la vieille
 
 ### scénario
+ * regagnage des HP
+ * provisions
+ * (si Jaques, reste chez la vieille) retrouvailles avec Cunégonde, elle raconte son histoire ( chapitre 8), expliction avec l'inquisiteur et isaachar
+ * isaachar revient , premier combat. il n'a qu'un HP (indiqué de le battre) --> trouver une altérnative!!
+ * la vieille nous interrompt mais en plein millieu de son discours,
+ * l'inquisiteur revient à son tour , combat
+ * si on en bat un ou les deux, cunégonde est effrayée de notre comportement (cf l28 p72)
+ * fuire chez la vieille, (si Jacques, soit la vieille monte avec Cunégonde, soit il monte avec Candide)
+ * partir : 3 chevaux dans la nuit 
