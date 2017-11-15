@@ -21,6 +21,7 @@ var preloadState = {
         game.load.image("answerBox","assets/sprites/game/answerBg.png");
         game.load.image("selection","assets/sprites/game/selection.png");
         game.load.spritesheet("sparkles","assets/sprites/game/sparkles.png",32,32);
+        game.load.image("menuBattlebox","assets/sprites/game/battleBg.png");
 
         //tilemaps
         game.load.tilemap("testmap","assets/maps/test.json",null,Phaser.Tilemap.TILED_JSON);

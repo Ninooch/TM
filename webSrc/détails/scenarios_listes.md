@@ -143,5 +143,5 @@
  * rencontre avec le gouverneur : voir son nom p 86 ch13
  * il drague Cunégonde et demande à Candide si c'est sa femme. ( ou un truc du genre, quoi qu'il en soit, le gouverneur désire choper Cunégonde. faire en sorte d'être dans l'impasse)
  * la vieille conseille Cunégonde de l'épouser plutôt que de rester avec Candide. ( truc convaincant )
- * conseille Candide de partir loin car on est déjà au courant de ce qu'il a fait ( dépend de s'il a tué l'inquisiteur ou pas, quoi qu'il en soit, cunégonde avait piqué son argent)
- * 
+ * conseille Candide de partir loin car on est déjà au courant de ce qu'il a fait ( dépend de s'il a tué l'inquisiteur ou pas, quoi qu'il en soit, cunégonde avait piqué son argent et on le suit pour ça)
+ * Cacambo et Candide partent, Cacambo le "guide" ( donne des renseignements mais il ne faut pas altérer la phase exploration).

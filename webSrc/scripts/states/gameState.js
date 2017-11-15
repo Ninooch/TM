@@ -1,6 +1,6 @@
 function startGame(){
     //alert("pouet")s
-    this.game.state.start("game");
+    this.game.state.start("battle");
     //destroyButtons("mainMenu");
 }
 
@@ -10,7 +10,7 @@ var gameState = {
         initInput();
         game.physics.startSystem(Phaser.Physics.ARCADE);
 
-        
+
         setDialog(gameRef.main.langue);
 
         createMap1();
