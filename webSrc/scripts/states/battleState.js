@@ -13,6 +13,10 @@ var battleState = {
         for(let k=0;k<3;k++){
             game.add.sprite(25+k*250,250,"menuBattlebox");
         }
+        //1ere colonne = combattants
+        //2ème colonne = actions
+        //3ème colonne = ennemis
+        //ou voir l'ordre différent ?
         //faire la dynamique en t par t
 
 
