@@ -145,3 +145,13 @@
  * la vieille conseille Cunégonde de l'épouser plutôt que de rester avec Candide. ( truc convaincant )
  * conseille Candide de partir loin car on est déjà au courant de ce qu'il a fait ( dépend de s'il a tué l'inquisiteur ou pas, quoi qu'il en soit, cunégonde avait piqué son argent et on le suit pour ça)
  * Cacambo et Candide partent, Cacambo le "guide" ( donne des renseignements mais il ne faut pas altérer la phase exploration).
+ * Cacambo et Candide rencontre au bout d'un moment des gardes , Cacambo est traité rudement mais Candide est privilégié, il retrouve le baron ( frère de cunégonde). dialogues. On peut explorer le petit jardin et ramasser des fruits / victuailles.
+ * le baron nous attaque (car refuse qu'on épouse Cunégonde). (insultes en allemand ? )
+ * fuite (après avoir volé ses habits si tué). ( si tué, Cunégonde choquée pour le restant de ses jours ?)
+
+## partie 9 : rencontre avec les orejons (voir note des indiens Xarayes)
+### scénario :
+* jolies prairies, exploration
+* combat avec les singes(loin, qu'on ait le temps de les oublier) fuite dans la forêt.
+* rencontre avec les orejons. Si singes tués et habits du baron: capturés. (interaction de Cacambo et du joueur, ? mettre une utilité à Cacambo). si baron pas tué mais singes oui, plus compliqué.... si aucun tué, Orejons amicaux, revitalisent le joueur avant de le laisser partir. (truc spécial à obtenir)
+* fuite
