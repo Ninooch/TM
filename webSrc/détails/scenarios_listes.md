@@ -155,3 +155,14 @@
 * combat avec les singes(loin, qu'on ait le temps de les oublier) fuite dans la forêt.
 * rencontre avec les orejons. Si singes tués et habits du baron: capturés. (interaction de Cacambo et du joueur, ? mettre une utilité à Cacambo). si baron pas tué mais singes oui, plus compliqué.... si aucun tué, Orejons amicaux, revitalisent le joueur avant de le laisser partir. (truc spécial à obtenir)
 * fuite
+
+## partie 10 : Eldorado
+## scénario:
+* perdu dans la forêt puis "grotte" dans montagne. le joueur doi faire un pattern spécial pour trouver l'eldorado. cocotiers
+* lamas rouges, or partout. les enfants jouent avec leur or. faire en sorte d'aller les ramasser. le gars les relance au sol. (on peut se servir)
+* exploration : habitants gentils, pas de boutiques, les pierres sortent du sol automatiquement. aller dans une auberge --> repas, festin (restaure les pvs)
+* dialogues --> conduite chez le vieux de 172 ans
+* discours du vieux. (à trier p.108-112)
+* carosse pour aller voir le roi ( quand ils sont prêts)
+*  visite du roi : portail , pierres. filles qui font l'acceuil
+* 
