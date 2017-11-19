@@ -1,24 +1,29 @@
 # Candide scénario et listes
+# ! DISCLAIMER: Ce scénario sert uniquement de pense-bête et de courte structure mentale pour la progression du jeu. Le langage est volontairement abrégé et incompréhensible. !
 
 ## idées générales :
 * quête secondaire : chercher des arbres tout du long du jeu : pour le jardin
 * implémenter des quêtes secondaire pour étoffer le jeu.
 * combats philo et à l'épée avec des gens sur les routes etc... (combats ou les gens ne meurent pas.)
 
-#dynamique des combats philosophiques :
+## dynamique des combats philosophiques :
 * liste d'arguments généraux, que le joueur agrandit en gagnant des combats, parlant aux gens , fouillant dans les feuilles etc...
 * dans un combat : un argument perd de sa valeur s'il es utilisé plusieurs fois de suite.
 * chaque argument a une "valeur de dégat" , un coefficient de diminution et porte un nom.
 * chaque argument fait des dégat sur une barre de vie adverse.
+* le texte est balancé
 * on peut recevoir des dégats. ( et perdre un combat)
-* arguments :
+* arguments à développer :
     - même que na ;
     - Pangloss a raison ;
-    - j'ai pourtant raison ;
+    - Ce que vous dites est stupide : j'ai raison ;
     - tout va bien dans le meilleur des mondes ;
     - c'est pas juste ;
+    - je renonce à ton optimisme, Pangloss (l.43 p.118)
+    - il y a pourtant du bon (l.36 p 126)
 * le dernier : cela est bien, mais il faut cultiver notre jardin.
-
+* séléctionner le joueur qui attaque. séléctionner une attaque , séléctionner un ennemi.
+* 2 boîtes : inventaire ; attaques ; (liste verticales)
 
 ## 1 ère partie : Introduction
 
@@ -91,7 +96,7 @@
 
 * les pnjs ne réponde que par l 33-35 , sont hostiles envers Candide.
 * cutscene : homme en manteau noir qui parle tout seul de la charité devant plusieurs hollandais
-* bonne cause ? -manque de pain --> rejet
+* bonne cause ? -manque de pain --> rejet ( combat philosophique avec des attaques spéciales, impossible à battre.)
 *  rejet de la femme de l'orateur
 * réaction de Jaques. qui l'emmène chez lui. PV restaurés, lui donne du pain, de la bière et 2 florins (écus?)
 *  exploration du monde : Jaques lui dit qu'il est occupé et qu'il ferait bien de se familiariser avec les alentours.
@@ -184,5 +189,31 @@
 * dialogues --> conduite chez le vieux de 172 ans
 * discours du vieux. (à trier p.108-112)
 * carosse pour aller voir le roi ( quand ils sont prêts)
-*  visite du roi : portail , pierres. filles qui font l'acceuil
-*
+*  visite du roi : portail , pierres. filles qui font l'acceuil. le roi les acceuille chaleureusement.
+* visite de l'eldorado. tout est parfait.
+* éventuellement il décident de quitter l'eldorado.
+* le roi leur offre des moutons (lamas) avec beaucoup d'argent.
+
+## partie 11: retour à la réalité
+### scénario
+* le joueur accompagné de Cacambo traversent de multiples terrains (marais, désert, montagnes etc) et perdent beaucoup de leur moutons. il ne leur en reste que 2.
+* rencontre avec l'esclave au bord du chemin.
+* dialogues ( en fonction du choix de départ du thé)
+* dans la ville : il y a un cabaret. rdv avec capitaine espagnol. Cacambo décide alors de partir pour retrouver Cunégonde. p.119
+* exploration et embarcations pour Venise ( seule possibilité)
+* Vanderdendur est d'accord de l'embarque mais pour tout son blé . ( enfin quasi )
+* Vanderdendur part ensuite sans Candide
+* Candide cherche à se défendre mais ça lui coûte encore une fois beaucoup d'argent. (genre un pnj qui lui dit : "j'ai vu ce qu'il s'est passé monsieur etc..")
+* Un bâteau français va partir pour Paris (on saute bordeaux, désolé)
+* le capitaine demande : "reviens me voir quand tu seras accompagné" parce que l'âme bien triste ou qqch du genre.
+* grand souper au cabaret et le joueur enchaîne combat philo sur combat philo . Le dernier (sur 3, 4 ? ) sera imbattable (faire tout pour) et ce sera Martin, le nouveau compagnon de voyage de Candide.
+* ils embarquent et Martin raconte sa vie (à inventer en fonction du livre. dans le livre Martin est vieux, dans mon jeu, il ne sera qu'usé par la vie.(27 ans??))
+
+## partie 12 : direction paris!
+### scénario :
+* sur le bateau : multiples combats philosophiques , qui permettent d'apprendre plusieurs nouveaux arguments. (à trier p.126-127)
+* bataille navale en face (pendant une conversation)
+* sauvetage du mouton ( même épisode qu'avec Jacques ?
+)
+* en chemin (?) institut où on laisse le mouton (à choix ? )
+* 
