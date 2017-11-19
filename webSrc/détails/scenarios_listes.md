@@ -1,6 +1,26 @@
 # Candide scénario et listes
 
-## 1 ère partie : Introduction (1ère state)
+## idées générales :
+* quête secondaire : chercher des arbres tout du long du jeu : pour le jardin
+* implémenter des quêtes secondaire pour étoffer le jeu.
+* combats philo et à l'épée avec des gens sur les routes etc... (combats ou les gens ne meurent pas.)
+
+#dynamique des combats philosophiques :
+* liste d'arguments généraux, que le joueur agrandit en gagnant des combats, parlant aux gens , fouillant dans les feuilles etc...
+* dans un combat : un argument perd de sa valeur s'il es utilisé plusieurs fois de suite.
+* chaque argument a une "valeur de dégat" , un coefficient de diminution et porte un nom.
+* chaque argument fait des dégat sur une barre de vie adverse.
+* on peut recevoir des dégats. ( et perdre un combat)
+* arguments :
+    - même que na ;
+    - Pangloss a raison ;
+    - j'ai pourtant raison ;
+    - tout va bien dans le meilleur des mondes ;
+    - c'est pas juste ;
+* le dernier : cela est bien, mais il faut cultiver notre jardin.
+
+
+## 1 ère partie : Introduction
 
 ### décors tirés du livre:
 
@@ -32,7 +52,7 @@
 * tileset château intérieur + extérieur
 * objets ( nourriture : pain etc... , mouchoir de Cunégonde ) //éventuellement
 
-## 2ème partie : la guerre (2ème state)
+## 2ème partie : la guerre
 
 ### décors tirés du livre:
 
@@ -121,7 +141,7 @@
  * regagnage des HP
  * provisions
  * (si Jaques, reste chez la vieille) retrouvailles avec Cunégonde, elle raconte son histoire ( chapitre 8), expliction avec l'inquisiteur et isaachar
- * isaachar revient , premier combat. il n'a qu'un HP (indiqué de le battre) --> trouver une altérnative!!
+ * isaachar revient , premier combat. il n'a qu'un HP (indiqué de le battre) --> choix de l'achever ou pas.
  * la vieille nous interrompt mais en plein millieu de son discours,
  * l'inquisiteur revient à son tour , combat
  * si on en bat un ou les deux, cunégonde est effrayée de notre comportement (cf l28 p72)
@@ -158,11 +178,11 @@
 
 ## partie 10 : Eldorado
 ## scénario:
-* perdu dans la forêt puis "grotte" dans montagne. le joueur doi faire un pattern spécial pour trouver l'eldorado. cocotiers
+* perdu dans la forêt puis "grotte" dans montagne. le joueur doit faire un pattern spécial pour trouver l'eldorado. cocotiers
 * lamas rouges, or partout. les enfants jouent avec leur or. faire en sorte d'aller les ramasser. le gars les relance au sol. (on peut se servir)
-* exploration : habitants gentils, pas de boutiques, les pierres sortent du sol automatiquement. aller dans une auberge --> repas, festin (restaure les pvs)
+* exploration : habitants gentils, pas de boutiques, les pierres sortent du sol automatiquement. aller dans une auberge --> repas, festin (restaure les pvs)                                                
 * dialogues --> conduite chez le vieux de 172 ans
 * discours du vieux. (à trier p.108-112)
 * carosse pour aller voir le roi ( quand ils sont prêts)
 *  visite du roi : portail , pierres. filles qui font l'acceuil
-* 
+*
