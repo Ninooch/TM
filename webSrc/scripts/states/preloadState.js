@@ -29,7 +29,7 @@ var preloadState = {
         game.load.spritesheet("terrain1","assets/sprites/tilesets/terrain1.png",32,32);
 
         //joueur
-        game.load.spritesheet("player","assets/sprites/sprite_animations/playerTest.png",35,67);
+        game.load.spritesheet("player","assets/sprites/sprite_animations/candideSprite.png",35,67);
 
         //pnjs
         game.load.spritesheet("pnjTest","assets/sprites/sprite_animations/pnjTest.png",35,67);

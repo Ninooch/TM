@@ -8,6 +8,7 @@ var globals = {
 
 globals.terrainManager = new Terrain();
 globals.dialogManager = new Dialog();
+globals.battleManager = new Battle();
 
 
 function createMap1 (){
