@@ -4,12 +4,23 @@ var globals = {
     pnjs : {},
     dialogs : {},
     warps : {},
+    battleData :{}
 };
 
 globals.terrainManager = new Terrain();
 globals.dialogManager = new Dialog();
 globals.battleManager = new Battle();
 
+globals.battleData.solo = {
+    solo: true,
+    playerY : 100,
+}
+globals.battleData.duo = {
+    solo : false,
+    helper : "", //nom d'un pnjSPe ?
+    playerY : 70,
+    helperY : 120,
+}
 
 function createMap1 (){
     globals.maps.testMap2 = new CustomMap("testmap2",["terrain1"],["Calque de Tile 1"],[],[],"");

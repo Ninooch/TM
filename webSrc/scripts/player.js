@@ -17,6 +17,8 @@ function initPlayer(x,y){
     globals.player.customProps.bulle = new Bubble();
     globals.player.customProps.bulleOnScreen = false;
 
+    //les attaques phi et normales devront être listées dans une propriété
+
 
     globals.player.animations.add("walkDown", [0,1,2,3], globals.player.customProps.animationSpeed);
     globals.player.animations.add("walkLeft", [4,5,6,7], globals.player.customProps.animationSpeed);

@@ -19,4 +19,27 @@ class Battle{
         this.atkText = game.add.bitmapText(0,0,"candideFont", "Attaques",50);
         this.atkText.alignIn(this.menus[1],Phaser.TOP_CENTER,0,0);
     }
+    //éventuellement 1vs1 , 1vs2 et 2vs2
+    //bataille en 2 étapes d'actions: choisir une option. si attaque : choisir l'ennemi, si objet, choisir le bénéficiaire
+    listItems(){
+        //mets les objets sous forme de liste déroulante dans le menu 0.
+        //lorsqu'on choisit un objet, on peut choisir de lire la description de l'objet ou de l'utiliser.
+        //à implémenter quand l'inventaire sera fait.
+    }
+    initFighters(data){
+        //positioner le(s) joueur en fonction de la bataille
+        this.player = game.add.sprite(600,data.playerY,"player",4);
+        if(!data.solo){
+            this.helper = game.add.sprite(600,120,"player",4);
+        }
+    }
+    startBattlePhi(data){
+
+
+        //lister les arguments
+
+    }
+    startBattle(data){
+        //lister les attaques
+    }
 }
