@@ -8,6 +8,8 @@ function startGame(){
 
 var gameState = {
     create: function(){
+        game.plugins.add(Phaser.Plugin.TilemapPlus);
+
         initInput();
         game.physics.startSystem(Phaser.Physics.ARCADE);
 
