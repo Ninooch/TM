@@ -5,10 +5,8 @@ function startGame(){
     //destroyButtons("mainMenu");
 }
 
-
 var gameState = {
     create: function(){
-        game.plugins.add(Phaser.Plugin.TilemapPlus);
 
         initInput();
         game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -18,12 +16,15 @@ var gameState = {
 
         createMap1();
 
+
         globals.dialogManager = new Dialog();
 
 
 
-
         globals.terrainManager.initMap(globals.maps.testMap);
+        globals.terrainManager.currentMap.plus.animation.enable();
+        debugger;
+
         initPlayer(180,150);
 
         var sparkles = game.add.sprite(250,250,"sparkles");

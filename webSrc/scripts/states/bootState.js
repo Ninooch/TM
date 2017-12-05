@@ -5,6 +5,7 @@ var bootState = {
     },
     create: function(){
         // alert("booting");
+        game.plugins.add(Phaser.Plugin.TilemapPlus);
         this.game.state.start("preload");
     }
 };

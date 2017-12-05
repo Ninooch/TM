@@ -27,6 +27,7 @@ class Terrain {
     initMap(map){ //dépendra aussi des pnjs, des objets de Tiled et éventuellement des animations, à voir , prendre en compte la musique aussi
         //l'argument layers est un array qui contient tout les noms des couches de la map
         this.currentMap =  game.add.tilemap(map.key);
+
         for(let l in map.tilesets){
             this.currentMap.addTilesetImage(map.tilesets[l],map.tilesets[l]); // tilesetIm c'est le "nom".pnj et tileseImKey c'est le nom dans le cache de Phaser, faire en sorte qu'ils portent le même nom, comme ça un argument en moins dans la fonction
         }
@@ -35,9 +36,12 @@ class Terrain {
         for(let l of map.layers){
             let layer = this.currentMap.createLayer(l);
             this.currentLayers.push(layer);
+
         }
 
         this.currentLayers[0].resizeWorld();
+
+
 
         for(let l in map.pnjs){
             game.add.existing(map.pnjs[l]);
