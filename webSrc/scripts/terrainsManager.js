@@ -7,6 +7,7 @@ class Terrain {
 
     }
     clearMap(){
+        this.currentMap.plus.animation.disable();
         // console.log("destroying map")
         this.currentMap.destroy();
         for(let l in this.currentLayers){
@@ -38,7 +39,7 @@ class Terrain {
             this.currentLayers.push(layer);
 
         }
-
+        this.currentMap.plus.animation.enable();
         this.currentLayers[0].resizeWorld();
 
 
@@ -53,7 +54,6 @@ class Terrain {
     }
 
     changeMap(newMap,x,y){
-        //var ctx = this;
         game.camera.fade(0x000000,1000,false,1);
         game.camera.onFadeComplete.addOnce(function(){
             this.clearMap();

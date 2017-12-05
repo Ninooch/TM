@@ -22,8 +22,6 @@ var gameState = {
 
 
         globals.terrainManager.initMap(globals.maps.testMap);
-        globals.terrainManager.currentMap.plus.animation.enable();
-        debugger;
 
         initPlayer(180,150);
 
