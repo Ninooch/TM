@@ -6,6 +6,7 @@ class Attaque{ //eventuellement des types d'attaques. avec des faiblesses etc...
         //les attaques peuvent foirer mais ça n'a rien à avoir avec le coefficient
     }
     rate(){
+        this.pdg = 0; 
         //fait rater au hasard l'attaque pour un tour
     }
     coupCritique(){
