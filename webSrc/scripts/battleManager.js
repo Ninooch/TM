@@ -3,6 +3,8 @@ class Battle{
 
     constructor(){
         this.menus = [];
+        this.str = "";
+        this.txt = [];
     }
     init(){
         //mettre les entités du combat (sprite fixes à animer avec des tweens)
@@ -41,5 +43,13 @@ class Battle{
     }
     startBattle(data){
         //lister les attaques
+    }
+    startTurn(data){
+        if(data.solo){
+            var ctx = this;
+            this.str = globals.battleData.text.choosePlayer + globals.player.name + "?" ;
+            this.txt.push([this.str,function(){ctx.txt = "";console.log("1èreFunction"); globals.dialogManager.stop(false);}]);
+            globals.dialogManager.startBattleDesc(this.txt);
+        }
     }
 }

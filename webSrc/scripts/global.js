@@ -4,6 +4,7 @@ var globals = {
     pnjs : {},
     dialogs : {},
     warps : {},
+    attacks : {},
     battleData :{}
 };
 
@@ -23,12 +24,14 @@ globals.battleData.duo = {
 }
 
 globals.battleData.text = {
-    choosePlayer : "Que doit faire " + " ?",
+    choosePlayer : "Que doit faire ",
     cpsCrtq : "Coups critique !",
     rate : "Mais son attaque a échoué !",
     attaque : "attaque " + ".",
     argumente : "argumente contre " + " ."
 } //idée
+
+globals.attacks.cpsDroit = new Attaque("coup droit",20,1);
 
 function createMap1 (){
     globals.maps.testMap2 = new CustomMap("testmap2",["terrain1"],["Calque de Tile 1"],[],[],"");

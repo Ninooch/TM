@@ -2,6 +2,7 @@
 
 function initPlayer(x,y){
     globals.player = game.add.sprite(x,y,"player",0);
+    globals.player.name = "Candide";
 
     game.physics.enable(globals.player,Phaser.Physics.ARCADE);
     globals.player.body.collideWorldBounds = true;

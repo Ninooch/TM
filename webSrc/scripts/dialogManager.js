@@ -225,6 +225,16 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
 
 
         this.displayText(pnj.dialogs,pnj.currentIndex,true,pnj.faceAnimation);
+    }
+    startBattleDesc(text){
+        this.dialBox = game.add.image(0,0,"battleTxt");
+        this.dialBox.fixedToCamera = true;
+
+        this.bmpText = game.add.bitmapText(115,255,"candideFont", "", 55);
+        this.bmpText.fixedToCamera = true;
+        this.bmpText.cameraOffset = new Phaser.Point(30,5);
+        this.displayText(text,0,false);
+
 
     }
 
