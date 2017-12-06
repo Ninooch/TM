@@ -1,15 +1,30 @@
 class Attaque{ //eventuellement des types d'attaques. avec des faiblesses etc...
-    constructor(name,pdg,cEff){
+    constructor(name,pdg,cEff,minPdg){
         this.name = name //nom de l'attaque, argument
         this.pdg = pdg //Points De Dégats
+        this.minPdg = minPdg;
         this.cEff = cEff //coefficient d'efficacité : chaque tour, l'argument diminue si réutilisé.
         //les attaques peuvent foirer mais ça n'a rien à avoir avec le coefficient
+        this.animation = "" //truc à faire pour faire une impression :D
     }
-    rate(){
-        this.pdg = 0; 
+    nextTurn(){
+        if(Math.ceil(this.pdg/this.cEff)>this.minPdg){
+            this.pdg = Math.ceil(this.pdg/this.cEff);
+        }
+        else{
+            this.pdg = this.minPdg;
+        }
+    }
+    normal(cible){
+        cible.damage(this.pdg);
+    }
+    rate(cible){
+        cible.damage(0);
         //fait rater au hasard l'attaque pour un tour
+        //message
     }
-    coupCritique(){
+    coupCritique(cible){
+        cible.damage(Math.ceil(this.pdg*1.5));
         //fait  au hasard multiplier par 1.5 les points de dégats pour un tour
     }
 }

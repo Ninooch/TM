@@ -37,7 +37,7 @@ var preloadState = {
         game.load.spritesheet("martinFaceAnimation","assets/sprites/faces_animations/martinFaceAnimation.png",110,130);
         game.load.spritesheet("panglossFaceAnimation","assets/sprites/faces_animations/panglossFaceAnimation.png",110,130);
         game.load.spritesheet("pangloss","assets/sprites/sprite_animations/panglossSprite.png",35,67);
-
+        game.load.spritesheet("animationBase","assets/sprites/faces_animations/base.png",110,130);
 
 
 

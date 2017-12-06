@@ -8,7 +8,7 @@ général :
 - écrire les dialogues - va avec développement des personnages et scénario.
 
 code :
-- créer des fonctions pour créer les maps data à appeler dans create du gameState uniquement. (sinon ça plante) -en cours;
+
 
 
 assets :

@@ -6,7 +6,7 @@ class Pnj extends Phaser.Sprite{ //catchphrse = "", dialogs = objet contenant un
         this.bulleIsOnScreen = false;
         this.name = name;
 
-        this.faceAnimKey = faceAnimKey;
+        this.faceAnimKey = faceAnimKey || "animationBase";
 
         this.canBulle = true;
 

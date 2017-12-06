@@ -14,11 +14,13 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
         globals.player.customProps.canMove = false;
         this.onscreen = true;
         this.dialBox = game.add.image((game.camera.width)/2,(game.camera.height),"dialogBox");
+        this.dialBox.fixedToCamera=true;
         this.dialBox.anchor.setTo(0.5,1);
 
         //affiches le texte
-        this.bmpText = game.add.bitmapText(0,0,"candideFont", "", 50);
-        this.bmpText.alignIn(this.dialBox, Phaser.TOP_LEFT, -15, -5);
+        this.bmpText = game.add.bitmapText(115,255,"candideFont", "", 50);
+        //this.bmpText.alignIn(this.dialBox, Phaser.TOP_LEFT, -15, -5);
+        this.bmpText.fixedToCamera = true;
         this.bmpText.maxWidth = this.dialBox.width -125;
 
     }
@@ -44,10 +46,13 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
 
     displayText(texts,index,isDialog,faceAnim){ // le texte est stocké dans un array , isDialog pour gérer les animations,
         if(isDialog){
-            this.bmpText.alignIn(this.dialBox, Phaser.TOP_LEFT, -120, -5);
-            this.faceAnimation = game.add.existing(faceAnim); //ça ne se crée qu'une seule fois!!
+            //this.bmpText.alignIn(this.dialBox, Phaser.TOP_LEFT, -120, -5);
+            this.bmpText.cameraOffset = new Phaser.Point(220,255);
+            this.faceAnimation = game.add.existing(faceAnim);//ça ne se crée qu'une seule fois!!
+            this.faceAnimation.fixedToCamera = true;
             //alert(this.faceAnimation.exists);
-            this.faceAnimation.alignIn(this.dialBox,Phaser.LEFT_CENTER,0,0);
+            //this.faceAnimation.alignIn(this.dialBox,Phaser.LEFT_CENTER,0,0);
+            this.faceAnimation.cameraOffset = new Phaser.Point(100,285);
             this.faceAnimation.animations.play("talk",9,true);
         }
 
@@ -213,8 +218,10 @@ class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stad
 
         this.nameHolder = game.add.sprite(0,0,"nameBox");
         this.nameHolder.alignTo(this.dialBox,Phaser.TOP_LEFT,0,0);
-        this.namePnj = game.add.bitmapText(0,0,"candideFont",pnj.name,45);
-        this.namePnj.alignIn(this.nameHolder,Phaser.LEFT_CENTER,0,0);
+        this.nameHolder.fixedToCamera = true;
+        this.namePnj = game.add.bitmapText(100,225,"candideFont",pnj.name,45);
+        //this.namePnj.alignIn(this.nameHolder,Phaser.LEFT_CENTER,0,0);
+        this.namePnj.fixedToCamera = true;
 
 
         this.displayText(pnj.dialogs,pnj.currentIndex,true,pnj.faceAnimation);
