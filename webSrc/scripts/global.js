@@ -12,29 +12,44 @@ globals.terrainManager = new Terrain();
 globals.dialogManager = new Dialog();
 globals.battleManager = new Battle();
 
+globals.attacks.cpsDroit = new Attaque("coup droit",20,1);
+
 globals.battleData.solo = {
     solo: true,
     playerY : 100,
     playerX : 600
 }
+globals.battleData.player = {
+    attack1:globals.attacks.cpsDroit,
+    attack2:undefined,
+    attack3:undefined,
+    attack4:undefined,
+    attnb:2,
+}
+globals.battleData.helper = {
+    attack1:globals.attacks.cpsDroit,
+    attack2:undefined,
+    attack3:undefined,
+    attack4:undefined,
+    attnb:2,
+}
 globals.battleData.duo = {
     solo : false,
-    helper : "", //nom d'un pnjSPe ?
     playerY : 70,
     playerX : 570,
     helperX : 600,
     helperY : 120,
+    helperName : "Cacambo", //changer en cours de route ( en fonction du jeu)
 }
 
 globals.battleData.text = {
     choosePlayer : "Que doit faire ",
+    chooseItem : "Que faire avec ",
     cpsCrtq : "Coups critique !",
     rate : "Mais son attaque a échoué !",
-    attaque : "attaque " + ".",
-    argumente : "argumente contre " + " ."
+    attaque : "attaque ",
+    argumente : "argumente contre ",
 } //idée
-
-globals.attacks.cpsDroit = new Attaque("coup droit",20,1);
 
 function createMap1 (){
     globals.maps.testMap2 = new CustomMap("testmap2",["terrain1"],["Calque de Tile 1"],[],[],"");

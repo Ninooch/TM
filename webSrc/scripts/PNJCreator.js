@@ -11,6 +11,7 @@ class Pnj extends Phaser.Sprite{ //catchphrse = "", dialogs = objet contenant un
         this.canBulle = true;
 
         this.rectangle = new Phaser.Rectangle(x-32,y-32, this.width +64, this.height + 32);
+        console.log(this.rectangle);
 
         game.physics.enable(this,Phaser.Physics.ARCADE);
     }
@@ -35,6 +36,8 @@ class Pnj extends Phaser.Sprite{ //catchphrse = "", dialogs = objet contenant un
     }
 
     update(){
+        if(checkPnjOverlap(this,globals.player)){
+        }
         if(this.canBulle){
             if(checkPnjOverlap(this,globals.player) && !this.bulleIsOnScreen){
                 // alert("Bulle");
@@ -59,8 +62,8 @@ var pnjGroup;
 
 function checkSpriteOverlap(spriteA, spriteB) {
 
-    var boundsA = spriteA.getBounds();
-    var boundsB = spriteB.getBounds();
+    var boundsA = getBounds(spriteA);
+    var boundsB = getBounds(spriteB);
 
     return Phaser.Rectangle.intersects(boundsA,boundsB);
 
@@ -68,7 +71,12 @@ function checkSpriteOverlap(spriteA, spriteB) {
 
 function checkPnjOverlap(pnj,spriteB){
     var boundsA = pnj.rectangle;
-    var boundsB = spriteB.getBounds();
+    var boundsB = getBounds(spriteB);
 
     return Phaser.Rectangle.intersects(boundsA,boundsB);
+}
+
+function getBounds(sprite){
+    var rect = new Phaser.Rectangle(sprite.x,sprite.y,sprite.width,sprite.height);
+    return rect;
 }

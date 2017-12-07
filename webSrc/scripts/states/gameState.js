@@ -35,7 +35,5 @@ var gameState = {
         updatePlayer();
         globals.terrainManager.update();
     },
-
-
 };
 var pnjTest;

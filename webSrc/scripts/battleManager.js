@@ -5,6 +5,7 @@ class Battle{
         this.menus = [];
         this.str = "";
         this.txt = [];
+        this.first = "";
     }
     init(){
         //mettre les entités du combat (sprite fixes à animer avec des tweens)
@@ -41,8 +42,29 @@ class Battle{
         //lister les arguments
 
     }
-    startBattle(data){
+    listAttack(data){
         //lister les attaques
+        for(let k=1;k<data.attnb;k++){
+            this.attackBg = game.add.image(0,0,"attackBg");
+            this.attackBg.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-k*30 -k*5 - 10);
+        }
+        this.attack1 = game.add.bitmapText(0,0,"candideFont",data.attack1.name, 45);
+        this.attack1.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-45);
+
+        if(data.attack2 =! undefined){
+            this.attack2 = game.add.bitmapText(0,0,"candideFont",data.attack2.name, 45);
+            this.attack2.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-80);
+        }
+        if(data.attack3 =! undefined){
+            this.attack3 = game.add.bitmapText(0,0,"candideFont",data.attack3.name, 45);
+            this.attack3.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-115);
+        }
+        if(data.attack4 =! undefined){
+            this.attack4 = game.add.bitmapText(0,0,"candideFont",data.attack4.name, 45);
+            this.attack4.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-150);
+        }
+
+
     }
     startTurn(data){
         if(data.solo){
@@ -53,9 +75,14 @@ class Battle{
         }
         else{
             var ctx = this;
-            this.selectArrow = game.add.sprite(data.helperX, data.helperY - 29, "selectArrow");
+            this.selectArrow = game.add.sprite(data.playerX, data.playerY - 29, "selectArrow");
             this.selectArrow.animations.add("iddle",[0,1,2,3,4],5);
             this.selectArrow.animations.play("iddle",9,true);
+
+            this.str = globals.battleData.text.choosePlayer + globals.player.name + "?" ;
+            this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.chooseCharacter(data);}]);
+            globals.dialogManager.startBattleDesc(this.txt);
+
             this.chooseCharacter(data);
         }
     }
@@ -69,10 +96,44 @@ class Battle{
             if(this.selectArrow.x == data.helperX){
                 this.transitionTween = 	game.add.tween(this.selectArrow).to(
                     {x: data.playerX,y:data.playerY-29},300,Phaser.Easing.Linear.None, true);
+                    globals.dialogManager.stop();
+                    this.first = "player";
                     this.str = globals.battleData.text.choosePlayer + globals.player.name + "?" ;
-                    this.txt.push([this.str,function(){ctx.txt = "";}]);
+                    this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.chooseCharacter(data);}]);
                     globals.dialogManager.startBattleDesc(this.txt);
                 }
             },this);
+
+            input.down.onDown.addOnce(function(){
+                if(this.selectArrow.x == data.playerX){
+                    this.transitionTween = 	game.add.tween(this.selectArrow).to(
+                        {x: data.helperX,y:data.helperY-29},300,Phaser.Easing.Linear.None, true);
+                        globals.dialogManager.stop();
+                        this.first = "helper";
+                        this.str = globals.battleData.text.choosePlayer + globals.battleData.duo.helperName + "?" ;
+                        this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.chooseCharacter(data);}]);
+                        globals.dialogManager.startBattleDesc(this.txt);
+                    }
+                },this);
+
+                input.enter.onDown.addOnce(function(){
+                    input.up.onDown.removeAll(this);
+                    input.down.onDown.removeAll(this);
+                    globals.dialogManager.stop();
+                    this.str = "";
+                    this.txt = [];
+                    this.selectArrow.destroy();
+                    console.log("enter");
+                    if(this.first == player){
+                        this.listAttack(globals.battleData.player);
+                    }
+                    else{
+                        this.listAttack(globals.battleData.helper);
+                    }
+                    this.chooseAction();
+                },this);
+            }
+            chooseAction(){
+                
+            }
         }
-    }

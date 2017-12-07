@@ -20,7 +20,6 @@ function initPlayer(x,y){
 
     //les attaques phi et normales devront être listées dans une propriété
 
-
     globals.player.animations.add("walkDown", [0,1,2,3], globals.player.customProps.animationSpeed);
     globals.player.animations.add("walkLeft", [4,5,6,7], globals.player.customProps.animationSpeed);
     globals.player.animations.add("walkRight", [8,9,10,11], globals.player.customProps.animationSpeed);
@@ -28,6 +27,8 @@ function initPlayer(x,y){
 }
 
 function updatePlayer(){
+    globals.player.rectangle = getBounds(globals.player);
+
     globals.player.body.velocity.x=0;
     globals.player.body.velocity.y=0;
     if(globals.player.customProps.canMove){

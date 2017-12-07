@@ -29,6 +29,7 @@ var preloadState = {
         game.load.spritesheet("terrain1","assets/sprites/tilesets/terrain1.png",32,32);
         game.load.image("battleTxt","assets/sprites/game/battleTxt.png");
         game.load.spritesheet("selectArrow","assets/sprites/game/arrow.png",32,32);
+        game.load.image("attackBg","assets/sprites/game/attackBg.png");
 
         //joueur
         game.load.spritesheet("player","assets/sprites/sprite_animations/candideSprite.png",35,67);

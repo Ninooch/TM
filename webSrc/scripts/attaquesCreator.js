@@ -7,6 +7,10 @@ class Attaque{ //eventuellement des types d'attaques. avec des faiblesses etc...
         //les attaques peuvent foirer mais ça n'a rien à avoir avec le coefficient
         this.animation = "" //truc à faire pour faire une impression :D
     }
+    info(){
+        var str = "Inflige " + this.pdg + "dégats.";
+        return str;
+    }
     nextTurn(){
         if(Math.ceil(this.pdg/this.cEff)>this.minPdg){
             this.pdg = Math.ceil(this.pdg/this.cEff);

@@ -247,7 +247,7 @@ startBattleDesc(text){
     this.bmpText = game.add.bitmapText(115,255,"candideFont", "", 55);
     this.bmpText.fixedToCamera = true;
     this.bmpText.cameraOffset = new Phaser.Point(30,5);
-    this.displayText(text,0,false,null,{is : true});
+    this.displayText(text,0,false,null,{is :false});
 
 
 }
