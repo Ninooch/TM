@@ -30,9 +30,9 @@ class Battle{
     }
     initFighters(data){
         //positioner le(s) joueur en fonction de la bataille
-        this.player = game.add.sprite(600,data.playerY,"player",4);
+        this.player = game.add.sprite(data.playerX,data.playerY,"player",4);
         if(!data.solo){
-            this.helper = game.add.sprite(600,120,"player",4);
+            this.helper = game.add.sprite(data.helperX,data.helperY,"player",4);
         }
     }
     startBattlePhi(data){
@@ -51,5 +51,28 @@ class Battle{
             this.txt.push([this.str,function(){ctx.txt = "";console.log("1èreFunction"); globals.dialogManager.stop(false);}]);
             globals.dialogManager.startBattleDesc(this.txt);
         }
+        else{
+            var ctx = this;
+            this.selectArrow = game.add.sprite(data.helperX, data.helperY - 29, "selectArrow");
+            this.selectArrow.animations.add("iddle",[0,1,2,3,4],5);
+            this.selectArrow.animations.play("iddle",9,true);
+            this.chooseCharacter(data);
+        }
     }
-}
+    chooseCharacter(data){
+        var ctx = this;
+        input.enter.onDown.removeAll(this);
+        input.up.onDown.removeAll(this);
+        input.down.onDown.removeAll(this);
+
+        input.up.onDown.addOnce(function(){
+            if(this.selectArrow.x == data.helperX){
+                this.transitionTween = 	game.add.tween(this.selectArrow).to(
+                    {x: data.playerX,y:data.playerY-29},300,Phaser.Easing.Linear.None, true);
+                    this.str = globals.battleData.text.choosePlayer + globals.player.name + "?" ;
+                    this.txt.push([this.str,function(){ctx.txt = "";}]);
+                    globals.dialogManager.startBattleDesc(this.txt);
+                }
+            },this);
+        }
+    }

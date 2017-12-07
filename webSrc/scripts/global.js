@@ -15,11 +15,14 @@ globals.battleManager = new Battle();
 globals.battleData.solo = {
     solo: true,
     playerY : 100,
+    playerX : 600
 }
 globals.battleData.duo = {
     solo : false,
     helper : "", //nom d'un pnjSPe ?
     playerY : 70,
+    playerX : 570,
+    helperX : 600,
     helperY : 120,
 }
 
