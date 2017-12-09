@@ -23,9 +23,14 @@ globals.battleData.solo = {
 globals.battleData.player = {
     attack1:globals.attacks.cpsDroit,
     attack2:globals.attacks.cpsCote,
-    attack3:undefined,
+    attack3:globals.attacks.cpsDroit,
     attack4:undefined,
-    attnb:3, //nb d'attaques plus 1
+    attnb:4, //nb d'attaques plus 1
+    argmt1:undefined,
+    argmnt2:undefined,
+    argmnt3:undefined,
+    argmnt4:undefined,
+    argmntNb:1,
 }
 globals.battleData.helper = {
     attack1:globals.attacks.cpsDroit,
@@ -33,6 +38,11 @@ globals.battleData.helper = {
     attack3:undefined,
     attack4:undefined,
     attnb:2,
+    argmt1:undefined,
+    argmnt2:undefined,
+    argmnt3:undefined,
+    argmnt4:undefined,
+    argmntNb:1,
 }
 globals.battleData.duo = {
     solo : false,

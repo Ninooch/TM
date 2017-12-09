@@ -6,7 +6,8 @@ class Battle{
         this.str = "";
         this.txt = [];
         this.first = "";
-        this.index = 2;
+        this.attNb = 0;
+        this.attIndex = 2;
     }
     init(){
         //mettre les entités du combat (sprite fixes à animer avec des tweens)
@@ -37,43 +38,63 @@ class Battle{
             this.helper = game.add.sprite(data.helperX,data.helperY,"player",4);
         }
     }
-    startBattlePhi(data){
 
-
-        //lister les arguments
-
-    }
-    listAttack(data){
+    listAttack(data,isPhi){
         //lister les attaques // mettre un argument dans data pour battle phi
-        for(let k=1;k<data.attnb;k++){
-            this.attackBg = game.add.image(0,0,"attackBg");
-            this.attackBg.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-k*30 -k*5 - 10);
-        }
-        this.attack1 = game.add.bitmapText(0,0,"candideFont",data.attack1.name, 45);
-        this.attack1.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-45);
+        if(isPhi){
+            this.attNb = data.argmntNb;
+            for(let k=1;k<this.attNb;k++){
+                this.attackBg = game.add.image(0,0,"attackBg");
+                this.attackBg.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-k*30 -k*5 - 10);
+            }
+            this.attack1 = game.add.bitmapText(0,0,"candideFont",data.argmt1.name, 45);
+            this.attack1.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-45);
 
-        if(data.attack2 != undefined){
-            console.log("aatck2")
-            this.attack2 = game.add.bitmapText(0,0,"candideFont",data.attack2.name, 45);
-            this.attack2.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-80);
+            if(data.attack2 != undefined){
+                console.log("aatck2")
+                this.attack2 = game.add.bitmapText(0,0,"candideFont",data.argmnt2.name, 45);
+                this.attack2.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-80);
+            }
+            if(data.attack3 != undefined){
+                this.attack3 = game.add.bitmapText(0,0,"candideFont",data.argmnt3.name, 45);
+                this.attack3.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-115);
+            }
+            if(data.attack4 != undefined){
+                this.attack4 = game.add.bitmapText(0,0,"candideFont",data.argmnt4.name, 45);
+                this.attack4.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-150);
+            }
         }
-        if(data.attack3 != undefined){
-            this.attack3 = game.add.bitmapText(0,0,"candideFont",data.attack3.name, 45);
-            this.attack3.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-115);
-        }
-        if(data.attack4 != undefined){
-            this.attack4 = game.add.bitmapText(0,0,"candideFont",data.attack4.name, 45);
-            this.attack4.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-150);
-        }
+        else{
+            this.attNb = data.attnb;
+            for(let k=1;k<this.attNb;k++){
+                this.attackBg = game.add.image(0,0,"attackBg");
+                this.attackBg.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-k*30 -k*5 - 10);
+            }
+            this.attack1 = game.add.bitmapText(0,0,"candideFont",data.attack1.name, 45);
+            this.attack1.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-45);
 
-
+            if(data.attack2 != undefined){
+                console.log("aatck2")
+                this.attack2 = game.add.bitmapText(0,0,"candideFont",data.attack2.name, 45);
+                this.attack2.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-80);
+            }
+            if(data.attack3 != undefined){
+                this.attack3 = game.add.bitmapText(0,0,"candideFont",data.attack3.name, 45);
+                this.attack3.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-115);
+            }
+            if(data.attack4 != undefined){
+                this.attack4 = game.add.bitmapText(0,0,"candideFont",data.attack4.name, 45);
+                this.attack4.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-150);
+            }
+            this.choice = game.add.sprite(400,295,"attackChoice")
+        }
     }
-    startTurn(data){
+    startTurn(data,isPhi){
         if(data.solo){
             var ctx = this;
             this.str = globals.battleData.text.choosePlayer + globals.player.name + "?" ;
-            this.txt.push([this.str,function(){ctx.txt = "";console.log("1èreFunction"); globals.dialogManager.stop(false);}]);
-            globals.dialogManager.startBattleDesc(this.txt);
+            this.txt.push([this.str,function(){ctx.str="";ctx.txt = [];ctx.listAttack(globals.battleData.player,isPhi);ctx.chooseAction(globals.battleData.player);}]);
+            globals.dialogManager.startBattleDesc(this.txt,{is:true,callback:true,time:500});
         }
         else{
             var ctx = this;
@@ -85,8 +106,6 @@ class Battle{
             this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.chooseCharacter(data);}]);
             globals.dialogManager.startBattleDesc(this.txt,{is:false});
             this.first = "player";
-
-            this.chooseCharacter(data);
         }
     }
     chooseCharacter(data){
@@ -127,14 +146,14 @@ class Battle{
                     this.txt = [];
                     this.selectArrow.destroy();
                     if(this.first == "player"){
-                        this.listAttack(globals.battleData.player);
+                        this.listAttack(globals.battleData.player,isPhi);
                         this.chooseAction(globals.battleData.player);
                     }
                     else{
-                        this.listAttack(globals.battleData.helper);
+                        this.listAttack(globals.battleData.helper,isPhi);
                         this.chooseAction(globals.battleData.helper);
                     }
-                    this.choice = game.add.sprite(400,295,"attackChoice");
+                    //this.choice = game.add.sprite(400,295,"attackChoice");
                 },this);
             }
             chooseAction(data){
@@ -143,17 +162,16 @@ class Battle{
                 input.down.onDown.removeAll(this);
 
                 input.down.onDown.addOnce(function(){
-                    if(this.index<data.attnb){
-                        this.index++;
-                        console.log(this.index);
+                    if(this.attIndex<this.attNb){
+                        this.attIndex++;
                         this.choice.y += +35;
                     }
                     this.chooseAction(data);
                 },this);
 
                 input.up.onDown.addOnce(function(){
-                    if(this.index != 2){
-                        this.index--;
+                    if(this.attIndex != 2){
+                        this.attIndex--;
                         this.choice.y -= 35;
                     }
                     this.chooseAction(data);
@@ -168,7 +186,7 @@ class Battle{
                 input.up.onDown.removeAll(this);
                 input.down.onDown.removeAll(this);
                 var ctx = this;
-                switch(this.index){
+                switch(this.attIndex){
                     case 2:
                     this.str = globals.battleData.text.chooseItem + data.attack1.name + "?";
                     this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];}]);
