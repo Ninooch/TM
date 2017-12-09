@@ -13,6 +13,7 @@ globals.dialogManager = new Dialog();
 globals.battleManager = new Battle();
 
 globals.attacks.cpsDroit = new Attaque("coup droit",20,1);
+globals.attacks.cpsCote = new Attaque("coup de côté",25,1);
 
 globals.battleData.solo = {
     solo: true,
@@ -21,10 +22,10 @@ globals.battleData.solo = {
 }
 globals.battleData.player = {
     attack1:globals.attacks.cpsDroit,
-    attack2:undefined,
+    attack2:globals.attacks.cpsCote,
     attack3:undefined,
     attack4:undefined,
-    attnb:2,
+    attnb:3, //nb d'attaques plus 1
 }
 globals.battleData.helper = {
     attack1:globals.attacks.cpsDroit,
@@ -48,6 +49,9 @@ globals.battleData.text = {
     cpsCrtq : "Coups critique !",
     rate : "Mais son attaque a échoué !",
     attaque : "attaque ",
+    use : "utiliser",
+    info : "info",
+    retour: "retour",
     argumente : "argumente contre ",
 } //idée
 

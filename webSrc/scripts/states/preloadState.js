@@ -22,6 +22,7 @@ var preloadState = {
         game.load.image("selection","assets/sprites/game/selection.png");
         game.load.spritesheet("sparkles","assets/sprites/game/sparkles.png",32,32);
         game.load.image("menuBattlebox","assets/sprites/game/battleBg.png");
+        game.load.image("attackChoice","assets/sprites/game/attackChoice.png");
 
         //tilemaps
         game.load.tilemap("testmap","assets/maps/test.json",null,Phaser.Tilemap.TILED_JSON);
@@ -48,7 +49,6 @@ var preloadState = {
 
     },
     create: function(){
-
         game.state.start("mainMenu");
     }
 };

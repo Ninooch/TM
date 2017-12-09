@@ -6,6 +6,7 @@ class Battle{
         this.str = "";
         this.txt = [];
         this.first = "";
+        this.index = 2;
     }
     init(){
         //mettre les entités du combat (sprite fixes à animer avec des tweens)
@@ -43,7 +44,7 @@ class Battle{
 
     }
     listAttack(data){
-        //lister les attaques
+        //lister les attaques // mettre un argument dans data pour battle phi
         for(let k=1;k<data.attnb;k++){
             this.attackBg = game.add.image(0,0,"attackBg");
             this.attackBg.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-k*30 -k*5 - 10);
@@ -51,15 +52,16 @@ class Battle{
         this.attack1 = game.add.bitmapText(0,0,"candideFont",data.attack1.name, 45);
         this.attack1.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-45);
 
-        if(data.attack2 =! undefined){
+        if(data.attack2 != undefined){
+            console.log("aatck2")
             this.attack2 = game.add.bitmapText(0,0,"candideFont",data.attack2.name, 45);
             this.attack2.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-80);
         }
-        if(data.attack3 =! undefined){
+        if(data.attack3 != undefined){
             this.attack3 = game.add.bitmapText(0,0,"candideFont",data.attack3.name, 45);
             this.attack3.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-115);
         }
-        if(data.attack4 =! undefined){
+        if(data.attack4 != undefined){
             this.attack4 = game.add.bitmapText(0,0,"candideFont",data.attack4.name, 45);
             this.attack4.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-150);
         }
@@ -81,7 +83,8 @@ class Battle{
 
             this.str = globals.battleData.text.choosePlayer + globals.player.name + "?" ;
             this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.chooseCharacter(data);}]);
-            globals.dialogManager.startBattleDesc(this.txt);
+            globals.dialogManager.startBattleDesc(this.txt,{is:false});
+            this.first = "player";
 
             this.chooseCharacter(data);
         }
@@ -100,7 +103,7 @@ class Battle{
                     this.first = "player";
                     this.str = globals.battleData.text.choosePlayer + globals.player.name + "?" ;
                     this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.chooseCharacter(data);}]);
-                    globals.dialogManager.startBattleDesc(this.txt);
+                    globals.dialogManager.startBattleDesc(this.txt,{is:false});
                 }
             },this);
 
@@ -112,7 +115,7 @@ class Battle{
                         this.first = "helper";
                         this.str = globals.battleData.text.choosePlayer + globals.battleData.duo.helperName + "?" ;
                         this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.chooseCharacter(data);}]);
-                        globals.dialogManager.startBattleDesc(this.txt);
+                        globals.dialogManager.startBattleDesc(this.txt,{is:false});
                     }
                 },this);
 
@@ -123,17 +126,71 @@ class Battle{
                     this.str = "";
                     this.txt = [];
                     this.selectArrow.destroy();
-                    console.log("enter");
-                    if(this.first == player){
+                    if(this.first == "player"){
                         this.listAttack(globals.battleData.player);
+                        this.chooseAction(globals.battleData.player);
                     }
                     else{
                         this.listAttack(globals.battleData.helper);
+                        this.chooseAction(globals.battleData.helper);
                     }
-                    this.chooseAction();
+                    this.choice = game.add.sprite(400,295,"attackChoice");
                 },this);
             }
-            chooseAction(){
-                
+            chooseAction(data){
+                input.enter.onDown.removeAll(this);
+                input.up.onDown.removeAll(this);
+                input.down.onDown.removeAll(this);
+
+                input.down.onDown.addOnce(function(){
+                    if(this.index<data.attnb){
+                        this.index++;
+                        console.log(this.index);
+                        this.choice.y += +35;
+                    }
+                    this.chooseAction(data);
+                },this);
+
+                input.up.onDown.addOnce(function(){
+                    if(this.index != 2){
+                        this.index--;
+                        this.choice.y -= 35;
+                    }
+                    this.chooseAction(data);
+                },this);
+
+                input.enter.onDown.addOnce(function(){
+                    this.whatToDow(data);
+                },this);
             }
+            whatToDow(data){
+                input.enter.onDown.removeAll(this);
+                input.up.onDown.removeAll(this);
+                input.down.onDown.removeAll(this);
+                var ctx = this;
+                switch(this.index){
+                    case 2:
+                    this.str = globals.battleData.text.chooseItem + data.attack1.name + "?";
+                    this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];}]);
+                    globals.dialogManager.startBattleDesc(this.txt,{is:false});
+                    break;
+                    case 3:
+                    this.str = globals.battleData.text.chooseItem + data.attack2.name + "?";
+                    this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];}]);
+                    globals.dialogManager.startBattleDesc(this.txt,{is:false});
+                    break;
+                    case 4:
+                    this.str = globals.battleData.text.chooseItem + data.attack3.name + "?";
+                    this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];}]);
+                    globals.dialogManager.startBattleDesc(this.txt,{is:false});
+                    break;
+                    case 5:
+                    this.str = globals.battleData.text.chooseItem + data.attack4.name + "?";
+                    this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];}]);
+                    globals.dialogManager.startBattleDesc(this.txt,{is:false});
+                    break;
+                }
+            }
+
+
         }

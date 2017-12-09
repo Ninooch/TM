@@ -11,7 +11,6 @@ class Pnj extends Phaser.Sprite{ //catchphrse = "", dialogs = objet contenant un
         this.canBulle = true;
 
         this.rectangle = new Phaser.Rectangle(x-32,y-32, this.width +64, this.height + 32);
-        console.log(this.rectangle);
 
         game.physics.enable(this,Phaser.Physics.ARCADE);
     }
