@@ -108,7 +108,7 @@ class Battle{
             this.first = "player";
         }
     }
-    chooseCharacter(data){
+    chooseCharacter(data,action){
         var ctx = this;
         input.enter.onDown.removeAll(this);
         input.up.onDown.removeAll(this);
@@ -118,97 +118,105 @@ class Battle{
             if(this.selectArrow.x == data.helperX){
                 this.transitionTween = 	game.add.tween(this.selectArrow).to(
                     {x: data.playerX,y:data.playerY-29},300,Phaser.Easing.Linear.None, true);
-                    globals.dialogManager.stop();
+                globals.dialogManager.stop();
+                if(action == "att"){
                     this.first = "player";
                     this.str = globals.battleData.text.choosePlayer + globals.player.name + "?" ;
                     this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.chooseCharacter(data);}]);
                     globals.dialogManager.startBattleDesc(this.txt,{is:false});
                 }
-            },this);
-
-            input.down.onDown.addOnce(function(){
-                if(this.selectArrow.x == data.playerX){
-                    this.transitionTween = 	game.add.tween(this.selectArrow).to(
-                        {x: data.helperX,y:data.helperY-29},300,Phaser.Easing.Linear.None, true);
-                        globals.dialogManager.stop();
-                        this.first = "helper";
-                        this.str = globals.battleData.text.choosePlayer + globals.battleData.duo.helperName + "?" ;
-                        this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.chooseCharacter(data);}]);
-                        globals.dialogManager.startBattleDesc(this.txt,{is:false});
-                    }
-                },this);
-
-                input.enter.onDown.addOnce(function(){
-                    input.up.onDown.removeAll(this);
-                    input.down.onDown.removeAll(this);
-                    globals.dialogManager.stop();
-                    this.str = "";
-                    this.txt = [];
-                    this.selectArrow.destroy();
-                    if(this.first == "player"){
-                        this.listAttack(globals.battleData.player,isPhi);
-                        this.chooseAction(globals.battleData.player);
-                    }
-                    else{
-                        this.listAttack(globals.battleData.helper,isPhi);
-                        this.chooseAction(globals.battleData.helper);
-                    }
-                    //this.choice = game.add.sprite(400,295,"attackChoice");
-                },this);
-            }
-            chooseAction(data){
-                input.enter.onDown.removeAll(this);
-                input.up.onDown.removeAll(this);
-                input.down.onDown.removeAll(this);
-
-                input.down.onDown.addOnce(function(){
-                    if(this.attIndex<this.attNb){
-                        this.attIndex++;
-                        this.choice.y += +35;
-                    }
-                    this.chooseAction(data);
-                },this);
-
-                input.up.onDown.addOnce(function(){
-                    if(this.attIndex != 2){
-                        this.attIndex--;
-                        this.choice.y -= 35;
-                    }
-                    this.chooseAction(data);
-                },this);
-
-                input.enter.onDown.addOnce(function(){
-                    this.whatToDow(data);
-                },this);
-            }
-            whatToDow(data){
-                input.enter.onDown.removeAll(this);
-                input.up.onDown.removeAll(this);
-                input.down.onDown.removeAll(this);
-                var ctx = this;
-                switch(this.attIndex){
-                    case 2:
-                    this.str = globals.battleData.text.chooseItem + data.attack1.name + "?";
-                    this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];}]);
+                if(action == "obj"){
+                    this.first = "player";
+                    this.str = globals.battleData.text.choosePlayer + globals.player.name + "?" ;
+                    this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.chooseCharacter(data);}]);
                     globals.dialogManager.startBattleDesc(this.txt,{is:false});
-                    break;
-                    case 3:
-                    this.str = globals.battleData.text.chooseItem + data.attack2.name + "?";
-                    this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];}]);
-                    globals.dialogManager.startBattleDesc(this.txt,{is:false});
-                    break;
-                    case 4:
-                    this.str = globals.battleData.text.chooseItem + data.attack3.name + "?";
-                    this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];}]);
-                    globals.dialogManager.startBattleDesc(this.txt,{is:false});
-                    break;
-                    case 5:
-                    this.str = globals.battleData.text.chooseItem + data.attack4.name + "?";
-                    this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];}]);
-                    globals.dialogManager.startBattleDesc(this.txt,{is:false});
-                    break;
                 }
             }
+        },this);
+
+        input.down.onDown.addOnce(function(){
+            if(this.selectArrow.x == data.playerX){
+                this.transitionTween = 	game.add.tween(this.selectArrow).to(
+                    {x: data.helperX,y:data.helperY-29},300,Phaser.Easing.Linear.None, true);
+                globals.dialogManager.stop();
+                this.first = "helper";
+                this.str = globals.battleData.text.choosePlayer + globals.battleData.duo.helperName + "?" ;
+                this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.chooseCharacter(data);}]);
+                globals.dialogManager.startBattleDesc(this.txt,{is:false});
+            }
+        },this);
+
+        input.enter.onDown.addOnce(function(){
+            input.up.onDown.removeAll(this);
+            input.down.onDown.removeAll(this);
+            globals.dialogManager.stop();
+            this.str = "";
+            this.txt = [];
+            this.selectArrow.destroy();
+            if(this.first == "player"){
+                this.listAttack(globals.battleData.player,isPhi);
+                this.chooseAction(globals.battleData.player);
+            }
+            else{
+                this.listAttack(globals.battleData.helper,isPhi);
+                this.chooseAction(globals.battleData.helper);
+            }
+            //this.choice = game.add.sprite(400,295,"attackChoice");
+        },this);
+    }
+    chooseAction(data){
+        input.enter.onDown.removeAll(this);
+        input.up.onDown.removeAll(this);
+        input.down.onDown.removeAll(this);
+
+        input.down.onDown.addOnce(function(){
+            if(this.attIndex<this.attNb){
+                this.attIndex++;
+                this.choice.y += +35;
+            }
+            this.chooseAction(data);
+        },this);
+
+        input.up.onDown.addOnce(function(){
+            if(this.attIndex != 2){
+                this.attIndex--;
+                this.choice.y -= 35;
+            }
+            this.chooseAction(data);
+        },this);
+
+        input.enter.onDown.addOnce(function(){
+            this.whatToDow(data);
+        },this);
+    }
+    whatToDow(data){
+        input.enter.onDown.removeAll(this);
+        input.up.onDown.removeAll(this);
+        input.down.onDown.removeAll(this);
+        var ctx = this;
+        switch(this.attIndex){
+            case 2:
+                this.str = globals.battleData.text.chooseItem + data.attack1.name + "?";
+                this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];}]);
+                globals.dialogManager.startBattleDesc(this.txt,{is:false});
+                break;
+            case 3:
+                this.str = globals.battleData.text.chooseItem + data.attack2.name + "?";
+                this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];}]);
+                globals.dialogManager.startBattleDesc(this.txt,{is:false});
+                break;
+            case 4:
+                this.str = globals.battleData.text.chooseItem + data.attack3.name + "?";
+                this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];}]);
+                globals.dialogManager.startBattleDesc(this.txt,{is:false});
+                break;
+            case 5:
+                this.str = globals.battleData.text.chooseItem + data.attack4.name + "?";
+                this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];}]);
+                globals.dialogManager.startBattleDesc(this.txt,{is:false});
+                break;
+                            }
+    }
 
 
-        }
+}

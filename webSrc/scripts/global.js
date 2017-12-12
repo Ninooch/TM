@@ -20,7 +20,7 @@ globals.battleData.solo = {
     playerY : 100,
     playerX : 600
 }
-globals.battleData.player = {
+globals.battleData.player = { //meilleure idée pour traduction : faire des méthodes avec les arguments étant les joueurs etc..
     attack1:globals.attacks.cpsDroit,
     attack2:globals.attacks.cpsCote,
     attack3:globals.attacks.cpsDroit,
