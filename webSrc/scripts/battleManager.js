@@ -8,6 +8,15 @@ class Battle{
         this.first = "";
         this.attNb = 0;
         this.attIndex = 2;
+
+        //faire un objet turn avec différentes propriétés. turn on complet c'est quand tout les combattants ont participés (att ou obj)
+        // faire en sorte de réutiliser au max les fonctions (améliorer chooseplayer, typiquement )
+        // pour qu'un tour soit complet il faut que :
+        // - tous les joueurs actifs choisissent une action
+        // - tous les ennemis actifs choisissent une action ( aléatoire)
+        // - les actions soient jouées (animations + desc. surtout) (ironie dans la desc?)
+        // - les propriétés du turn sont remises à zéro.
+        //le combat s'arrête quand tous les ennemis ont 0 hp ou que tous les joueurs ont à 0 hp. 
     }
     init(){
         //mettre les entités du combat (sprite fixes à animer avec des tweens)
@@ -33,6 +42,7 @@ class Battle{
     }
     initFighters(data){
         //positioner le(s) joueur en fonction de la bataille
+        //condidtionner les positions dans un seul objet ?
         this.player = game.add.sprite(data.playerX,data.playerY,"player",4);
         if(!data.solo){
             this.helper = game.add.sprite(data.helperX,data.helperY,"player",4);
