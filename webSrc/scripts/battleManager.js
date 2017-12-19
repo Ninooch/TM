@@ -8,6 +8,7 @@ class Battle{
         this.first = "";
         this.attNb = 0;
         this.attIndex = 2;
+        this.turn = {};
 
         //faire un objet turn avec différentes propriétés. turn on complet c'est quand tout les combattants ont participés (att ou obj)
         // faire en sorte de réutiliser au max les fonctions (améliorer chooseplayer, typiquement )
@@ -16,7 +17,7 @@ class Battle{
         // - tous les ennemis actifs choisissent une action ( aléatoire)
         // - les actions soient jouées (animations + desc. surtout) (ironie dans la desc?)
         // - les propriétés du turn sont remises à zéro.
-        //le combat s'arrête quand tous les ennemis ont 0 hp ou que tous les joueurs ont à 0 hp. 
+        //le combat s'arrête quand tous les ennemis ont 0 hp ou que tous les joueurs ont à 0 hp.
     }
     init(){
         //mettre les entités du combat (sprite fixes à animer avec des tweens)
