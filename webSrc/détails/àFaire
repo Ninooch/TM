@@ -4,7 +4,6 @@
 
 général :
 - texte au plus court avec l'essentiel ( le plus complet ), dans le fascicule , décrire les méthodes et les idées ( mettre sur un site etc..)
-- faire un scénario - en cours
 - écrire les dialogues - va avec développement des personnages et scénario.
 
 code :
@@ -23,8 +22,18 @@ détails :
 -
 
 objectifs pour décembre :
-- début du travail avec les maps en fonction du scénario (encore moches) et les personnages
-- code pour les batailles
+- début du travail avec les maps en fonction du scénario (encore moches) et les personnages.
+- collision !!
+- code pour les batailles :
+- implémentation des tours, à plusieurs joueurs
+- implémentation des hp (barres de vie), enfant d'un sprite
+- créer des attaques
+- méthode pour les ennemis de lancer le combat
+- système de récompense
+
 - code pour l'argent
 - code pour les objets et l'inventaire.
+- améliorer le système de combat pour avoir accès à l'inventaire.
 - dessiner
+
+- trouver des bruitages ? 
