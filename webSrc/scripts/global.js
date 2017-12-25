@@ -15,11 +15,6 @@ globals.battleManager = new Battle();
 globals.attacks.cpsDroit = new Attaque("coup droit",20,1);
 globals.attacks.cpsCote = new Attaque("coup de côté",25,1);
 
-globals.battleData.solo = {
-    solo: true,
-    playerY : 100,
-    playerX : 600
-}
 globals.battleData.player = { //meilleure idée pour traduction : faire des méthodes avec les arguments étant les joueurs etc..
     attack1:globals.attacks.cpsDroit,
     attack2:globals.attacks.cpsCote,
@@ -44,13 +39,19 @@ globals.battleData.helper = {
     argmnt4:undefined,
     argmntNb:1,
 }
-globals.battleData.duo = {
+globals.battleData.set = {
+    //let variable = (condition) ? valueIfTrue : valueIfFalse;
     solo : false,
-    playerY : 70,
-    playerX : 570,
+    playerY : (!this.solo) ? 70 : 100,
+    playerX : (!this.solo) ? 570 : 600,
     helperX : 600,
     helperY : 120,
     helperName : "Cacambo", //changer en cours de route ( en fonction du jeu)
+    singleEnnemy : false,
+    ennemy1X :(this.singleEnnemy) ? 200 : 230,
+    ennemy1Y :(this.singleEnnemy) ? 100 : 70,
+    ennemy2X :200,
+    ennemy2Y :120,
 }
 
 globals.battleData.text = {
@@ -59,11 +60,12 @@ globals.battleData.text = {
     cpsCrtq : "Coups critique !",
     rate : "Mais son attaque a échoué !",
     attaque : "attaque ",
-    use : "utiliser",
-    info : "info",
-    retour: "retour",
+    use : "utiliser ",
+    sur : "sur ",
+    info : "info ",
+    retour: "retour ",
     argumente : "argumente contre ",
-} //idée
+} //idée juste pour noter, le vrai se trouve dans dialoglist.js
 
 function createMap1 (){
     globals.maps.testMap2 = new CustomMap("testmap2",["terrain1"],["Calque de Tile 1"],[],[],"");
