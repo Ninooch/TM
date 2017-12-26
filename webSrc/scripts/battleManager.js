@@ -8,6 +8,7 @@ class Battle{
         this.first = "";
         this.attNb = 0;
         this.attIndex = 2;
+        this.tab = [];
         this.turn = {};
 
         //faire un objet turn avec différentes propriétés. turn on complet c'est quand tout les combattants ont participés (att ou obj)
@@ -59,9 +60,9 @@ class Battle{
         }
     }
 
-    listAttack(data,isPhi){
+    listAttack(data){
         //lister les attaques // mettre un argument dans data pour battle phi
-        if(isPhi){
+        if(data.isPhi){
             this.attNb = data.argmntNb;
             for(let k=1;k<this.attNb;k++){
                 this.attackBg = game.add.image(0,0,"attackBg");
@@ -108,11 +109,11 @@ class Battle{
             this.choice = game.add.sprite(400,295,"attackChoice")
         }
     }
-    startTurn(data,isPhi){
+    startTurn(data){
         if(data.solo){
             var ctx = this;
             this.str = globals.battleData.text.choosePlayer + globals.player.name + "?" ;
-            this.txt.push([this.str,function(){ctx.str="";ctx.txt = [];ctx.listAttack(globals.battleData.player,isPhi);ctx.chooseAction(globals.battleData.player);}]);
+            this.txt.push([this.str,function(){ctx.str="";ctx.txt = [];ctx.listAttack(globals.battleData.player,data.isPhi);ctx.chooseAction(globals.battleData.player);}]);
             globals.dialogManager.startBattleDesc(this.txt,{is:true,callback:true,time:500});
         }
         else{
@@ -122,7 +123,7 @@ class Battle{
             this.selectArrow.animations.play("iddle",9,true);
 
             this.str = globals.battleData.text.choosePlayer + globals.player.name + "?" ;
-            this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.chooseCharacter(data,"choseReceiver");}]);
+            this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.chooseCharacter(data,"choseHandler");}]);
             globals.dialogManager.startBattleDesc(this.txt,{is:false});
             this.first = "player";
         }
@@ -181,11 +182,11 @@ class Battle{
                     this.selectArrow.destroy();
                     if(action == "choseHandler"){
                         if(this.first == "player"){
-                            this.listAttack(globals.battleData.player,isPhi);
+                            this.listAttack(globals.battleData.player,data.isPhi);
                             this.chooseAction(globals.battleData.player);
                         }
                         else{
-                            this.listAttack(globals.battleData.helper,isPhi);
+                            this.listAttack(globals.battleData.helper,data.isPhi);
                             this.chooseAction(globals.battleData.helper);
                         }
                     }
@@ -227,11 +228,12 @@ class Battle{
                 input.enter.onDown.removeAll(this);
                 input.up.onDown.removeAll(this);
                 input.down.onDown.removeAll(this);
+                this.choice.destroy();
                 var ctx = this;
                 switch(this.attIndex){
                     case 2:
                     this.str = globals.battleData.text.chooseItem + data.attack1.name + "?";
-                    this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];}]);
+                    this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.infoDesc();}]);
                     globals.dialogManager.startBattleDesc(this.txt,{is:false});
                     break;
                     case 3:
@@ -251,6 +253,17 @@ class Battle{
                     break;
                 }
             }
+            infoDesc(){
+                var tab = [globals.battleData.text.info,globals.battleData.text.use,globals.battleData.text.retour];
+                for(let k=0;k<3;k++){
+                    var box = game.add.image(145+k*170,50,"nameBox");
+                    this.tab.push(box);
 
+                    var txt = game.add.bitmapText(0,0,"candideFont",tab[k],50);
+                    txt.alignIn(box,Phaser.TOP_CENTER,0,5);
 
+                    this.tab.push(txt);
+                }
+
+            }
         }

@@ -42,6 +42,7 @@ globals.battleData.helper = {
 globals.battleData.set = {
     //let variable = (condition) ? valueIfTrue : valueIfFalse;
     solo : false,
+    isPhi : false,
     playerY : (!this.solo) ? 70 : 100,
     playerX : (!this.solo) ? 570 : 600,
     helperX : 600,
