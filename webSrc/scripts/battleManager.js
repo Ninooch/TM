@@ -8,8 +8,8 @@ class Battle{
         this.attIndex = 2;
         this.tab = [];
         this.turn = {
-            player: {name:"candide",ready:false,currentAction:"",alive:true},
-            helper : {name:"cacambo",ready:false,currentAction:"",alive:true}, //à voir dans set s'il existe
+            player: {first:false,ready:false,currentAction:"",alive:true},
+            helper : {first:false,ready:false,currentAction:"",alive:true}, //à voir dans set s'il existe
             ennemy1 : {ready:false,currentAction:"",alive:true},
             ennemy2 : {ready:false,currentAction:"",alive:true}, //pareil
         };
@@ -123,17 +123,34 @@ class Battle{
             this.txt.push([this.str,function(){ctx.str="";ctx.txt = [];ctx.listAttack(globals.battleData.player,data.isPhi);ctx.chooseAction(globals.battleData.player);}]);
             globals.dialogManager.startBattleDesc(this.txt,{is:true,callback:true,time:500});
         }
-        else if(!data.solo && !this.turn.player.ready && !this.turn.helper.ready){
-            var ctx = this;
-            this.selectArrow = game.add.sprite(data.playerX, data.playerY - 29, "selectArrow");
-            this.selectArrow.animations.add("iddle",[0,1,2,3,4],5);
-            this.selectArrow.animations.play("iddle",9,true);
+        else{
+            if(!this.turn.player.ready && !this.turn.helper.ready){
+                var ctx = this;
+                this.selectArrow = game.add.sprite(data.playerX, data.playerY - 29, "selectArrow");
+                this.selectArrow.animations.add("iddle",[0,1,2,3,4],5);
+                this.selectArrow.animations.play("iddle",9,true);
 
-            this.str = globals.battleData.text.choosePlayer + this.currentPlayer.name + "?" ;
-            this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.chooseCharacter(data,"choseHandler");}]);
-            globals.dialogManager.startBattleDesc(this.txt,{is:false});
-            this.currentPlayer = this.turn.player;
+                this.str = globals.battleData.text.choosePlayer + globals.player.name + "?" ;
+                this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.chooseCharacter(data,"choseHandler");}]);
+                globals.dialogManager.startBattleDesc(this.txt,{is:false});
+                this.currentPlayer = this.turn.player;
+            }
+            else if(this.turn.player.ready){
+                this.currentPlayer = this.turn.helper;
+                var ctx = this;
+                this.str = globals.battleData.text.choosePlayer + globals.battleData.helperName + "?" ;
+                this.txt.push([this.str,function(){ctx.str="";ctx.txt = [];ctx.listAttack(globals.battleData.helper,data.isPhi);ctx.chooseAction(globals.battleData.helper);}]);
+                globals.dialogManager.startBattleDesc(this.txt,{is:true,callback:true,time:500});
+            }
+            else if(this.turn.helper.ready){
+                this.currentPlayer = this.turn.player;
+                var ctx = this;
+                this.str = globals.battleData.text.choosePlayer + globals.player.name + "?" ;
+                this.txt.push([this.str,function(){ctx.str="";ctx.txt = [];ctx.listAttack(globals.battleData.player,data.isPhi);ctx.chooseAction(globals.battleData.player);}]);
+                globals.dialogManager.startBattleDesc(this.txt,{is:true,callback:true,time:500});
+            }
         }
+
     }
     chooseCharacter(data,action){
         //action : choseHandler , choseReceiver , choseEnnemy (x vs2)
@@ -173,7 +190,7 @@ class Battle{
                             globals.dialogManager.startBattleDesc(this.txt,{is:false});
                         }
                         if(action == "choseReceiver"){
-                            this.str = globals.battleData.text.use + globals.battleData.text.sur + globals.player.name + "?" ;
+                            this.str = globals.battleData.text.use + globals.battleData.text.sur + globals.battleData.set.helper + "?" ;
                             this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.chooseCharacter(data,"choseReceiver");}]);
                             globals.dialogManager.startBattleDesc(this.txt,{is:false});
                         }
