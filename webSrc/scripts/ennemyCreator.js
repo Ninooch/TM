@@ -3,7 +3,10 @@ class Ennemy extends Pnj {
         super(data.x,data.y,data.key,data.frame,data.name,dialogs);
         this.combatFrame = 8;
         this.faceAnimKey = data.faceAnimation || "animationBase";
-        this.attaques = [];
+        this.attack1 = data.attack1;
+        this.attack2 = data.attack2 || undefined;
+        this.attack3 = data.attack3 || undefined;
+        this.attakc4 = data.attack4 || undefined;
         this.health = data.health;
         this.maxHealth = data.health;
     }
@@ -13,5 +16,22 @@ class Ennemy extends Pnj {
             this.game.state.start("battle");
             game.camera.flash(0x000000,1000);
         },this);
+    }
+    turn(battleData){
+        if(!battleData.solo){
+            var rnd = Math.random();
+        }
+        if(this.attack2 == undefined){
+
+        }
+        else if(this.attack3 == undefined){
+
+        }
+        else if(this.attack4 == undefined){
+
+        }
+        else{
+
+        }
     }
 }

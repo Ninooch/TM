@@ -22,14 +22,26 @@ class Attaque{ //eventuellement des types d'attaques. avec des faiblesses etc...
     normal(cible){
         cible.damage(this.pdg);
     }
-    rate(cible){
-        cible.damage(0);
+    rate(){
         //fait rater au hasard l'attaque pour un tour
         //message
     }
     coupCritique(cible){
         cible.damage(Math.ceil(this.pdg*1.5));
         //fait  au hasard multiplier par 1.5 les points de dégats pour un tour
+    }
+    tour(cible){
+        var rnd = Math.random();
+        if(rnd<0.1){
+            this.rate();
+        }
+        else if(rnd>0.1 && rnd<0.2 ){
+            this.coupCritique(cible);
+        }
+        else{
+            normal(cible);
+        }
+        this.nextTurn();
     }
 }
 

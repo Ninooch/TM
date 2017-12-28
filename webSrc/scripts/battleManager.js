@@ -8,10 +8,10 @@ class Battle{
         this.attIndex = 2;
         this.tab = [];
         this.turn = {
-            player: {first:false,ready:false,currentAction:"",alive:true},
-            helper : {first:false,ready:false,currentAction:"",alive:true}, //à voir dans set s'il existe
-            ennemy1 : {ready:false,currentAction:"",alive:true},
-            ennemy2 : {ready:false,currentAction:"",alive:true}, //pareil
+            player: {first:false,ready:false,currentAction:"",target:"",alive:true},
+            helper : {first:false,ready:false,currentAction:"",target:"",alive:true}, //à voir dans set s'il existe
+            ennemy1 : {ready:false,currentAction:"",target:"",alive:true},
+            ennemy2 : {ready:false,currentAction:"",target:"",alive:true}, //pareil
         };
         this.currentPlayer = this.turn.player; //par défaut
         //faire un objet turn avec différentes propriétés. turn on complet c'est quand tout les combattants ont participés (att ou obj)

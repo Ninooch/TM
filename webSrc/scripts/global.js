@@ -42,6 +42,8 @@ globals.battleData.helper = {
 globals.battleData.set = {
     //let variable = (condition) ? valueIfTrue : valueIfFalse;
     solo : false,
+    player:globals.player,
+    helper:globals.pnjs.martin2 || undefined,
     isPhi : false,
     playerY : (!this.solo) ? 70 : 100,
     playerX : (!this.solo) ? 570 : 600,
