@@ -17,7 +17,7 @@ class Ennemy extends Pnj {
             game.camera.flash(0x000000,1000);
         },this);
     }
-    turn(battleData){ //voir si ça marche
+    turn(battleData){ //voir si ça marche et améliorer pour les batailles phi
         if(!battleData.solo){
             let rnd = Math.random();
             if(rnd<0.5){
