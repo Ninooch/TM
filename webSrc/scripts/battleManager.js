@@ -10,9 +10,7 @@ class Battle{
         this.turn = {
             player: {first:false,ready:false,currentAction:"",target:"",alive:true},
             helper : {first:false,ready:false,currentAction:"",target:"",alive:true}, //à voir dans set s'il existe
-            ennemy1 : {ready:false,currentAction:"",target:"",alive:true},
-            ennemy2 : {ready:false,currentAction:"",target:"",alive:true}, //pareil
-        };
+        }; // courtes références aux actions qu'il se passe par tour. sinon, c'est ceux dans battleData.set qui font les actions!!
         this.currentPlayer = this.turn.player; //par défaut
         //faire un objet turn avec différentes propriétés. turn on complet c'est quand tout les combattants ont participés (att ou obj)
         // faire en sorte de réutiliser au max les fonctions (améliorer chooseplayer, typiquement )
