@@ -64,6 +64,7 @@ globals.battleData.text = {
     rate : "Mais son attaque a échoué !",
     attaque : "attaque ",
     use : "utiliser ",
+    useOn : "Quel ennemi attaquer ?",
     sur : "sur ",
     info : "info ",
     retour: "retour ",

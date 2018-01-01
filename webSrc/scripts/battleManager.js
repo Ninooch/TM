@@ -66,7 +66,7 @@ class Battle{
         if(data.isPhi){
             this.attNb = data.argmntNb;
             for(let k=1;k<this.attNb;k++){
-                console.log("attckBg")
+                //console.log("attckBg")
                 this.attackBg = game.add.image(0,0,"attackBg");
                 this.attackBg.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-k*30 -k*5 - 10);
             }
@@ -91,7 +91,7 @@ class Battle{
         else{
             this.attNb = data.attnb;
             for(let k=1;k<this.attNb;k++){
-                console.log("attckBg")
+                //console.log("attckBg")
                 this.attackBg = game.add.image(0,0,"attackBg");
                 this.attackBg.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-k*30 -k*5 - 10);
             }
@@ -157,6 +157,12 @@ class Battle{
         input.up.onDown.removeAll(this);
         input.down.onDown.removeAll(this);
 
+        if(action =="choseEnnemy"){
+            //retenir l'ennemi
+            alert("oihet");
+            console.log("choseEnnemy success")
+        } //à améliorer
+
         input.up.onDown.addOnce(function(){
             if(this.selectArrow.x == data.helperX){
                 this.transitionTween = 	game.add.tween(this.selectArrow).to(
@@ -215,10 +221,7 @@ class Battle{
                     else if(action == "choseReceiver"){
                         //faire en sorte de retenir le joueur qui sera guéri
                     }
-                    else if(action =="choseEnnemy"){
-                        //retenir l'ennemi
-                    }
-                    //this.choice = game.add.sprite(400,295,"attackChoice");
+
                 },this);
             }
             chooseAction(data){
@@ -295,7 +298,7 @@ class Battle{
                 this.chooseAtckAction();
             }
             chooseAtckAction(){
-                console.log(this.indexChoice)
+                //console.log(this.indexChoice)
                 input.enter.onDown.removeAll(this);
                 input.left.onDown.removeAll(this);
                 input.right.onDown.removeAll(this);
@@ -320,13 +323,32 @@ class Battle{
                     input.left.onDown.removeAll(this);
                     input.right.onDown.removeAll(this);
                     switch(this.indexChoice){
-                        case 0 :
-                        // choisir un ennemi avec un texte : sur qui utiliser "...";
                         case 1 :
-                        //mettre l'info : faire disparaître les choix et réenclencher la fonction une fois le display terminé
-                        case 3:
-                        //retour au choix des attaques: faire disparaitre les choix, --> retour au choix d'attaque.
-                    }
-                },this);
+                        // choisir un ennemi avec un texte : sur qui utiliser "...";
+                        globals.dialogManager.stop();
+                        this.choice.destroy();
+                        this.indexChoice = 0;
+                        for(let k in this.tab){
+                            this.tab[k].destroy();
+                        }
+                        this.tab = [];
+
+                        var ctx = this;
+                        this.str = globals.battleData.text.useOn;
+                        this.txt.push([ctx.str,function(){
+                            ctx.str = "";
+                            ctx.txt = [];
+                            ctx.selectArrow = game.add.sprite(globals.battleData.set.ennemy1X, globals.battleData.set.ennemy1Y - 29, "selectArrow");
+                            ctx.selectArrow.animations.add("iddle",[0,1,2,3,4],5);
+                            ctx.selectArrow.animations.play("iddle",9,true);
+                            ctx.chooseCharacter(globals.battleData.set,"choseEnnemy");}]);
+                            globals.dialogManager.startBattleDesc(this.txt,{is:true,callback:true,time:300});
+
+                            case 0 :
+                            //mettre l'info : faire disparaître les choix et réenclencher la fonction une fois le display terminé
+                            case 3:
+                            //retour au choix des attaques: faire disparaitre les choix, --> retour au choix d'attaque.
+                        }
+                    },this);
+                }
             }
-        }
