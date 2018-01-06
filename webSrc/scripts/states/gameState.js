@@ -14,14 +14,6 @@ var gameState = {
 
         setDialog(gameRef.main.langue);
 
-        createMap1();
-
-
-        globals.dialogManager = new Dialog();
-
-
-
-        globals.terrainManager.initMap(globals.maps.testMap);
 
         initPlayer(180,150);
 
@@ -36,4 +28,3 @@ var gameState = {
         globals.terrainManager.update();
     },
 };
-var pnjTest;

@@ -1,12 +1,17 @@
 class CustomMap {
-    constructor(key,tilesets,layers,pnjs,warps,music){
+    constructor(key,tilesets,layers,music){
         this.key = key;
-        this.music = music;
-        this.pnjs = pnjs;
-        this.warps = warps;
+        this.music = music || undefined;
+        this.pnjs = [];
+        this.warps = [];
         this.tilesets = tilesets;
         this.layers = layers;
-
+    }
+    addWarps(args){
+        this.warps.push(args);
+    }
+    addPnjs(args){
+        this.pnjs.push(args);
     }
 }
 

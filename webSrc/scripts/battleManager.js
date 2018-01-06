@@ -1,4 +1,4 @@
-class Battle{
+class BattleManager{
     //faire la dynamique en t par t avec un battleManager ?
     constructor(){
         this.menus = [];
@@ -343,7 +343,7 @@ class Battle{
                             ctx.selectArrow.animations.play("iddle",9,true);
                             ctx.chooseCharacter(globals.battleData.set,"choseEnnemy");}]);
                             globals.dialogManager.startBattleDesc(this.txt,{is:true,callback:true,time:300});
-
+                            break;
                             case 0 :
                             //mettre l'info : faire disparaître les choix et réenclencher la fonction une fois le display terminé
                             globals.dialogManager.stop();
@@ -362,11 +362,10 @@ class Battle{
                                 ctx.txt = [[ctx.str,function(){ctx.str = ""; ctx.txt = []; ctx.infoDesc();}]];
                             }]);
                             globals.dialogManager.startBattleDesc(this.txt,{is:true,callback:true});
-
-
-
+                            break;
                             case 3:
                             //retour au choix des attaques: faire disparaitre les choix, --> retour au choix d'attaque.
+
                         }
                     },this);
                 }

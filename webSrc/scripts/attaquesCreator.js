@@ -8,7 +8,7 @@ class Attaque{ //eventuellement des types d'attaques. avec des faiblesses etc...
         this.animation = "" //truc à faire pour faire une impression :D
     }
     info(){
-        var str = "Inflige " + this.pdg + "dégats."; //ça marche mais pas de chiffres dans la police! :(
+        var str = "Inflige " + this.pdg + " dégats."; //ça marche mais pas de chiffres dans la police! :(
         return str;
     }
     nextTurn(){

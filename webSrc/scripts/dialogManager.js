@@ -1,4 +1,4 @@
-class Dialog{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stade du jeu,
+class DialogManager{ // dépend : du pnj, du type de pnj, de s'il y a un choix, du stade du jeu,
 // les textes dépendants des choix du joueurs seront directement exprimés par les pnj dans leur configurations, le changement sera surement indiqué par l'index.
 // créer une méthode pour les choix --> fait
 // méthode pour les pnj simples , avec index,  --> fait
