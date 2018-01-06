@@ -346,6 +346,25 @@ class Battle{
 
                             case 0 :
                             //mettre l'info : faire disparaître les choix et réenclencher la fonction une fois le display terminé
+                            globals.dialogManager.stop();
+                            this.choice.destroy();
+                            this.indexChoice = 0;
+                            for(let k in this.tab){
+                                this.tab[k].destroy();
+                            }
+                            this.tab = [];
+
+                            var ctx = this;
+                            this.str = this.currentPlayer.currentAction.info();
+                            this.txt.push([ctx.str,function(){
+                                ctx.str = "";
+                                ctx.txt = [];
+                                ctx.infoDesc();
+                            }]);
+                            globals.dialogManager.startBattleDesc(this.txt,{is:true,callback:true});
+
+
+
                             case 3:
                             //retour au choix des attaques: faire disparaitre les choix, --> retour au choix d'attaque.
                         }

@@ -1,14 +1,14 @@
 class Attaque{ //eventuellement des types d'attaques. avec des faiblesses etc...
     constructor(name,pdg,cEff,minPdg){
         this.name = name //nom de l'attaque, argument
-        this.pdg = pdg //Points De Dégats
+        this.pdg = pdg  //Points De Dégats
         this.minPdg = minPdg || 5 ;
         this.cEff = cEff || 1 //coefficient d'efficacité : chaque tour, l'argument diminue si réutilisé.
         //les attaques peuvent foirer mais ça n'a rien à avoir avec le coefficient
         this.animation = "" //truc à faire pour faire une impression :D
     }
     info(){
-        var str = "Inflige " + this.pdg + "dégats.";
+        var str = "Inflige " + this.pdg + "dégats."; //ça marche mais pas de chiffres dans la police! :(
         return str;
     }
     nextTurn(){
