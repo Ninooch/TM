@@ -7,7 +7,6 @@ var globals = {
     attacks : {},
     battleData :{}
 };
-
 globals.terrainManager = new TerrainManager();
 globals.dialogManager = new DialogManager();
 globals.battleManager = new BattleManager();
@@ -21,11 +20,11 @@ globals.battleData.player = { //meilleure idée pour traduction : faire des mét
     attack3:globals.attacks.cpsDroit,
     attack4:undefined,
     attnb:4, //nb d'attaques plus 1
-    argmt1:undefined,
-    argmnt2:undefined,
-    argmnt3:undefined,
-    argmnt4:undefined,
-    argmntNb:1,
+    arg1:undefined,
+    arg2:undefined,
+    arg3:undefined,
+    arg4:undefined,
+    argNb:1,
 }
 globals.battleData.helper = {
     attack1:globals.attacks.cpsDroit,
@@ -33,11 +32,11 @@ globals.battleData.helper = {
     attack3:undefined,
     attack4:undefined,
     attnb:2,
-    argmt1:undefined,
-    argmnt2:undefined,
-    argmnt3:undefined,
-    argmnt4:undefined,
-    argmntNb:1,
+    arg1:undefined,
+    arg2:undefined,
+    arg3:undefined,
+    arg4:undefined,
+    argNb:1,
 }
 globals.battleData.set = {
     //let variable = (condition) ? valueIfTrue : valueIfFalse;

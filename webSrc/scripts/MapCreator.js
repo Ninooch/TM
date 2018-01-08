@@ -1,11 +1,12 @@
 class CustomMap {
     constructor(key,tilesets,layers,music){
-        this.key = key;
         this.music = music || undefined;
         this.pnjs = [];
         this.warps = [];
         this.tilesets = tilesets;
         this.layers = layers;
+        this.tilemap = new Phaser.Tilemap(key);
+
     }
     addWarps(args){
         this.warps.push(args);
@@ -13,6 +14,15 @@ class CustomMap {
     addPnjs(args){
         this.pnjs.push(args);
     }
+    createMap(){
+        //object["propName1"] = 22; //INCORABLE
+        // associer un tileset;
+        // créer les layers ( new tilemapLayer ou makeLayer)
+        // récuper les références (dans les layers ou la map)
+
+    }
+
+
 }
 
 class Warp {

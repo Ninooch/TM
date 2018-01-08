@@ -18,17 +18,13 @@ class Ennemy extends Pnj {
         },this);
     }
     turn(battleData){ //voir si ça marche et améliorer pour les batailles phi
+        let target;
         if(!battleData.solo){
             let rnd = Math.random();
-            if(rnd<0.5){
-                var target = battleData.player;
-            }
-            else{
-                var target = battleData.helper;
-            }
+            target = (rnd<.5) ? battleData.player : battleData.helper;
         }
         else{
-            var target = battleData.player;
+            target = battleData.player;
         }
 
         if(this.attack2 == undefined){

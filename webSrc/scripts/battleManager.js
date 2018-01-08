@@ -64,7 +64,7 @@ class BattleManager{
     listAttack(data){
         //lister les attaques // mettre un argument dans data pour battle phi
         if(data.isPhi){
-            this.attNb = data.argmntNb;
+            this.attNb = data.argNb;
             for(let k=1;k<this.attNb;k++){
                 //console.log("attckBg")
                 this.attackBg = game.add.image(0,0,"attackBg");
@@ -72,19 +72,19 @@ class BattleManager{
             }
 
 
-            this.attack1 = game.add.bitmapText(0,0,"candideFont",data.argmt1.name, 45);
+            this.attack1 = game.add.bitmapText(0,0,"candideFont",data.arg1.name, 45);
             this.attack1.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-45);
 
             if(data.attack2 != undefined){
-                this.attack2 = game.add.bitmapText(0,0,"candideFont",data.argmnt2.name, 45);
+                this.attack2 = game.add.bitmapText(0,0,"candideFont",data.arg2.name, 45);
                 this.attack2.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-80);
             }
             if(data.attack3 != undefined){
-                this.attack3 = game.add.bitmapText(0,0,"candideFont",data.argmnt3.name, 45);
+                this.attack3 = game.add.bitmapText(0,0,"candideFont",data.arg3.name, 45);
                 this.attack3.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-115);
             }
             if(data.attack4 != undefined){
-                this.attack4 = game.add.bitmapText(0,0,"candideFont",data.argmnt4.name, 45);
+                this.attack4 = game.add.bitmapText(0,0,"candideFont",data.arg4.name, 45);
                 this.attack4.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-150);
             }
         }
@@ -365,7 +365,7 @@ class BattleManager{
                             break;
                             case 3:
                             //retour au choix des attaques: faire disparaitre les choix, --> retour au choix d'attaque.
-
+                            break;
                         }
                     },this);
                 }
