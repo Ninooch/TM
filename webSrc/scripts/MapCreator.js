@@ -1,11 +1,14 @@
 class CustomMap {
-    constructor(key,tilesets,layers,music){
+    constructor(key,tilesets,layerKeys,music){
         this.music = music || undefined;
         this.pnjs = [];
         this.warps = [];
         this.tilesets = tilesets;
-        this.layers = layers;
+        this.layerKeys = layerKeys;
         this.tilemap = new Phaser.Tilemap(key);
+        this.properties = this.tilemap.plus.properties;
+        this.layers = {};
+        this.createMap();
 
     }
     addWarps(args){
@@ -17,9 +20,17 @@ class CustomMap {
     createMap(){
         //object["propName1"] = 22; //INCORABLE
         // associer un tileset;
+        for(let l in this.tilesets){
+            this.tilemap.addTilesetImage(this.tilesets[l],this.tilesets[l]);
+        }
         // créer les layers ( new tilemapLayer ou makeLayer)
+        for(let l of this.layerKeys){
+            this.layers[this.layerKeys[l]] = {
+                    layerObject = new Phaser.TilemapLayer(game,this.tilemap),
+                    properties = this.layers[this.layerKeys[l]].layerObject.plus.properties,
+            };
+        }
         // récuper les références (dans les layers ou la map)
-
     }
 
 
