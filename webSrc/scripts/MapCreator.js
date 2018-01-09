@@ -5,8 +5,9 @@ class CustomMap {
         this.warps = [];
         this.tilesets = tilesets;
         this.layerKeys = layerKeys;
-        this.tilemap = new Phaser.Tilemap(key);
-        this.properties = this.tilemap.plus.properties;
+        this.tilemap = game.make.tilemap(key);
+        console.log(this.tilemap);
+        this.properties = this.tilemap.properties;
         this.layers = {};
         this.createMap();
 
@@ -26,8 +27,8 @@ class CustomMap {
         // créer les layers ( new tilemapLayer ou makeLayer)
         for(let l of this.layerKeys){
             this.layers[this.layerKeys[l]] = {
-                    layerObject = new Phaser.TilemapLayer(game,this.tilemap),
-                    properties = this.layers[this.layerKeys[l]].layerObject.plus.properties,
+                    layerObject : new Phaser.TilemapLayer(game,this.tilemap,0,0),
+                    //properties : this.layers[this.layerKeys[l]].layerObject.properties,
             };
         }
         // récuper les références (dans les layers ou la map)
