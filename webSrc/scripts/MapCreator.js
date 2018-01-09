@@ -25,11 +25,13 @@ class CustomMap {
             this.tilemap.addTilesetImage(this.tilesets[l],this.tilesets[l]);
         }
         // créer les layers ( new tilemapLayer ou makeLayer)
+        let n = 0;
         for(let l of this.layerKeys){
-            this.layers[this.layerKeys[l]] = {
-                    layerObject : new Phaser.TilemapLayer(game,this.tilemap,0,0),
-                    //properties : this.layers[this.layerKeys[l]].layerObject.properties,
-            };
+            var str = "layer" + n;
+            this.layers[str] = {};
+            this.layers[str].layerObject = new Phaser.TilemapLayer(game,this.tilemap,0,0);
+            this.layers[str].name = l;
+            n++;
         }
         // récuper les références (dans les layers ou la map)
     }

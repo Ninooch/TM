@@ -7,7 +7,7 @@ class TerrainManager {
 
     }
     clearMap(){
-        this.currentMap.plus.animation.disable();
+        //this.currentMap.plus.animation.disable();
         // console.log("destroying map")
         this.currentMap.destroy();
         for(let l in this.currentLayers){
@@ -27,20 +27,22 @@ class TerrainManager {
 
     initMap(map){ //dépendra aussi des pnjs, des objets de Tiled et éventuellement des animations, à voir , prendre en compte la musique aussi
         //l'argument layers est un array qui contient tout les noms des couches de la map
-        this.currentMap =  game.add.existing(map.tilemap);
+        this.currentMap = map.tilemap;
         // for(let l in map.tilesets){
         //     this.currentMap.addTilesetImage(map.tilesets[l],map.tilesets[l]); // tilesetIm c'est le "nom".pnj et tileseImKey c'est le nom dans le cache de Phaser, faire en sorte qu'ils portent le même nom, comme ça un argument en moins dans la fonction
         // }
 
-        this.currentLayers = []; //let key in object
+       this.currentLayers = []; //let key in object
         // array for each : applique une fonction à chaque élément de l'array
         for(let k in map.layers){
-            let layer = game.add.existing(map.layers[k]);
+            console.log(k);
+            let layer = this.currentMap.createLayer(map.layers[k].name);
             this.currentLayers.push(layer);
         }
-        this.currentMap.plus.animation.enable();
+
+        //this.currentMap.plus.animation.enable();
         this.currentLayers[0].resizeWorld();
-        
+
         for(let l in map.pnjs){
             game.add.existing(map.pnjs[l]);
             this.currentPnjs.push(map.pnjs[l]);
