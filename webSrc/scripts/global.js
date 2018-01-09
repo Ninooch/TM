@@ -71,7 +71,13 @@ globals.battleData.text = {
 } //idée juste pour noter, le vrai se trouve dans dialoglist.js
 
 function createCh1(){ // crée tous ce qu'il y a d'important ( maps, pnjs , warps), voir les évents.
-    globals.pnjs.domestique1 = new Pnj();
+    globals.maps.chateau = new CustomMap("chateau",["terrain1"],["Calque de Tile 1"]);
+    globals.maps.bois = new CustomMap("bois",["terrain1"],["Calque de Tile 1"]);
+    globals.warps.toBois = new Warp(false,globals.maps.bois,32,32,globals.maps.chateau.properties.warp4X*32,globals.maps.chateau.properties.warp4Y*32,1,3);
+    globals.pnjs.domestique1 = new Pnj(globals.maps.chateau.properties.pnj1X,globals.maps.chateau.properties.pnj1Y,"pnjTest",0,globals.dialogs.pnj1Ch1);
+    globals.maps.chateau.addPnjs(globals.pnjs.domestique1);
+    globals.maps.chateau.addWarps(globals.warps.toBois);
+    globals.pnjs.pangloss = new Pnj(globals.maps.chateau.properties.pnj2X,globals.maps.chateau.properties.pnj2Y,"pangloss",0,globals.dialogs.pangloss);
 }
 function createCh2(){
 

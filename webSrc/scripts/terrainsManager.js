@@ -33,17 +33,14 @@ class TerrainManager {
         // }
 
         this.currentLayers = []; //let key in object
-        // array for each : applique une fonction à chaque élément de l'array 
-        for(let l of map.layerKeys){
-            let layer = game.add.existing(map.layer)
+        // array for each : applique une fonction à chaque élément de l'array
+        for(let k in map.layers){
+            let layer = game.add.existing(map.layers[k]);
             this.currentLayers.push(layer);
-
         }
         this.currentMap.plus.animation.enable();
         this.currentLayers[0].resizeWorld();
-
-
-
+        
         for(let l in map.pnjs){
             game.add.existing(map.pnjs[l]);
             this.currentPnjs.push(map.pnjs[l]);
