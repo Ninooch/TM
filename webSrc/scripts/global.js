@@ -72,15 +72,22 @@ globals.battleData.text = {
 } //idée juste pour noter, le vrai se trouve dans dialoglist.js
 
 function createMap1 (){
-    globals.maps.testMap2 = new CustomMap("testmap2",["terrain1"],["Calque de Tile 1"],"");
-    globals.warps.toMap2 = new Warp(false,globals.maps.testMap2,200,200,128,0,3,2,"Entrer?");
-    globals.pnjs.martin2 = new Ennemy({x:200,y:250,key:"pnjTest",frame:0,health:300,name:"BattleTest"},globals.dialogs.pnjTestDialogs);
-    globals.pnjs.martin = new Pnj(90,150,"martin",0,"Choix",globals.dialogs.pnjTestDialogs,"martinFaceAnimation");
-    globals.pnjs.pangloss = new Pnj(300,150,"pangloss",0,"Pangloss",globals.dialogs.pangloss,"panglossFaceAnimation");
+    // globals.maps.testMap2 = new CustomMap("testmap2",["terrain1"],["Calque de Tile 1"],"");
+    // globals.warps.toMap2 = new Warp(false,globals.maps.testMap2,200,200,128,0,3,2,"Entrer?");
+    // globals.pnjs.martin2 = new Ennemy({x:200,y:250,key:"pnjTest",frame:0,health:300,name:"BattleTest"},globals.dialogs.pnjTestDialogs);
+    // globals.pnjs.martin = new Pnj(90,150,"martin",0,"Choix",globals.dialogs.pnjTestDialogs,"martinFaceAnimation");
+    // globals.pnjs.pangloss = new Pnj(300,150,"pangloss",0,"Pangloss",globals.dialogs.pangloss,"panglossFaceAnimation");
+    //
+    // globals.maps.testMap = new CustomMap("testmap",["terrain1"],["Calque de Tile 1"],"");
+    // globals.maps.testMap.addPnjs(globals.pnjs.pangloss);
+    // globals.maps.testMap.addWarps(globals.warps.toMap2);
 
-    globals.maps.testMap = new CustomMap("testmap",["terrain1"],["Calque de Tile 1"],"");
-    debugger;
-    globals.maps.testMap.addPnjs(globals.pnjs.pangloss);
-    globals.maps.testMap.addWarps(globals.warps.toMap2);
-
+    globals.maps.chateau = new CustomMap("chateau",["terrain1"],["Calque de Tile 1"]);
+    globals.maps.bois = new CustomMap("bois",["terrain1"],["Calque de Tile 1"]);
+    globals.warps.toBois = new Warp(false,globals.maps.bois,32,32,globals.maps.chateau.properties.warp4X*32,globals.maps.chateau.properties.warp4Y*32,1,3);
+    globals.pnjs.domestique1 = new Pnj(globals.maps.chateau.properties.pnj1X,globals.maps.chateau.properties.pnj1Y,"pnjTest",0,"Domestique",globals.dialogs.pnj1Ch1);
+    globals.maps.chateau.addPnjs(globals.pnjs.domestique1);
+    globals.maps.chateau.addWarps(globals.warps.toBois);
+    globals.pnjs.pangloss = new Pnj(globals.maps.chateau.properties.pnj2X,globals.maps.chateau.properties.pnj2Y,"pangloss",0,"Pangloss",globals.dialogs.pangloss,"panglossFaceAnimation");
+    globals.maps.chateau.addPnjs(globals.pnjs.pangloss);
 }

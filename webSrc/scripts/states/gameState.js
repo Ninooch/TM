@@ -21,7 +21,7 @@ var gameState = {
 
 
 
-        globals.terrainManager.initMap(globals.maps.testMap);
+        globals.terrainManager.initMap(globals.maps.chateau);
 
         initPlayer(180,150);
 
