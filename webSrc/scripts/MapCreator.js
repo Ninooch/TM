@@ -10,7 +10,7 @@ class CustomMap {
         this.warps = [];
         this.tilesets = tilesets;
 
-        this.layers = layerKeys;
+        this.layerKeys = layerKeys;
     }
     addWarps(args){
         this.warps.push(args);

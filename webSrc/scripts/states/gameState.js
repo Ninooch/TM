@@ -18,7 +18,6 @@ var gameState = {
         createMap1();
 
 
-        globals.dialogManager = new Dialog();
 
         globals.terrainManager.initMap(globals.maps.chateau);
 

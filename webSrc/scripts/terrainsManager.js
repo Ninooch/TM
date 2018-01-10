@@ -27,20 +27,21 @@ class TerrainManager {
 
     initMap(map){ //dépendra aussi des pnjs, des objets de Tiled et éventuellement des animations, à voir , prendre en compte la musique aussi
         //l'argument layers est un array qui contient tout les noms des couches de la map
-        this.currentMap = map.tilemap;
-        // for(let l in map.tilesets){
-        //     this.currentMap.addTilesetImage(map.tilesets[l],map.tilesets[l]); // tilesetIm c'est le "nom".pnj et tileseImKey c'est le nom dans le cache de Phaser, faire en sorte qu'ils portent le même nom, comme ça un argument en moins dans la fonction
-        // }
+        this.currentMap = game.add.tilemap(map.key);
 
-       this.currentLayers = []; //let key in object
+        for(let l in map.tilesets){
+            this.currentMap.addTilesetImage(map.tilesets[l],map.tilesets[l]); // tilesetIm c'est le "nom".pnj et tileseImKey c'est le nom dans le cache de Phaser, faire en sorte qu'ils portent le même nom, comme ça un argument en moins dans la fonction
+        }
+
+        this.currentLayers = []; //let key in object
         // array for each : applique une fonction à chaque élément de l'array
-        for(let k in map.layers){
-            console.log(k);
-            let layer = this.currentMap.createLayer(map.layers[k].name);
+        for(let k of map.layerKeys){
+
+            let layer = this.currentMap.createLayer(k);
             this.currentLayers.push(layer);
         }
 
-        //this.currentMap.plus.animation.enable();
+        this.currentMap.plus.animation.enable();
         this.currentLayers[0].resizeWorld();
 
         for(let l in map.pnjs){
