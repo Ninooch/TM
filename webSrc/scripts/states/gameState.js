@@ -13,7 +13,13 @@ var gameState = {
 
 
         setDialog(gameRef.main.langue);
-        createCh1();
+
+
+        createMap1();
+
+
+        globals.dialogManager = new Dialog();
+
         globals.terrainManager.initMap(globals.maps.chateau);
 
         initPlayer(180,150);

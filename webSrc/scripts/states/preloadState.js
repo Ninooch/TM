@@ -28,12 +28,14 @@ var preloadState = {
         game.load.spritesheet("selectArrow","assets/sprites/game/arrow.png",32,32);
         game.load.image("attackBg","assets/sprites/game/attackBg.png");
 
+
         //tilemaps
         //game.load.tilemap("testmap","assets/maps/test.json",null,Phaser.Tilemap.TILED_JSON);
         //game.load.tilemap("testmap2","assets/maps/test2.json",null,Phaser.Tilemap.TILED_JSON);
         game.load.spritesheet("terrain1","assets/sprites/tilesets/terrain1.png",32,32);
         game.load.tilemap("chateau","assets/maps/ch1/chateau.json",null,Phaser.Tilemap.TILED_JSON);
         game.load.tilemap("bois","assets/maps/ch1/bois.json",null,Phaser.Tilemap.TILED_JSON);
+
 
         //joueur
         game.load.spritesheet("player","assets/sprites/sprite_animations/candideSprite.png",35,67);
