@@ -375,7 +375,7 @@ class BattleManager{
                             }
                             this.tab = [];
                             this.choice = game.add.sprite(400,295,"attackChoice");
-                            this.attIndex=0;
+                            this.attIndex=2;
                             this.chooseAction(globals.battleData.player);
                             break;
                         }
