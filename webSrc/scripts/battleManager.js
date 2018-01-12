@@ -111,7 +111,7 @@ class BattleManager{
                 this.attack4 = game.add.bitmapText(0,0,"candideFont",data.attack4.name, 45);
                 this.attack4.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-150);
             }
-            this.choice = game.add.sprite(400,295,"attackChoice")
+            this.choice = game.add.sprite(400,295,"attackChoice");
         }
     }
     startTurn(data){
@@ -265,19 +265,19 @@ class BattleManager{
                     case 3:
                     this.currentPlayer.currentAction = data.attack2;
                     this.str = globals.battleData.text.chooseItem + data.attack2.name + "?";
-                    this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];}]);
+                    this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.infoDesc();}]);
                     globals.dialogManager.startBattleDesc(this.txt,{is:false});
                     break;
                     case 4:
                     this.currentPlayer.currentAction = data.attack3;
                     this.str = globals.battleData.text.chooseItem + data.attack3.name + "?";
-                    this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];}]);
+                    this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.infoDesc();}]);
                     globals.dialogManager.startBattleDesc(this.txt,{is:false});
                     break;
                     case 5:
                     this.currentPlayer.currentAction = data.attack4;
                     this.str = globals.battleData.text.chooseItem + data.attack4.name + "?";
-                    this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];}]);
+                    this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.infoDesc();}]);
                     globals.dialogManager.startBattleDesc(this.txt,{is:false});
                     break;
                 }
@@ -363,8 +363,20 @@ class BattleManager{
                             }]);
                             globals.dialogManager.startBattleDesc(this.txt,{is:true,callback:true});
                             break;
-                            case 3:
+                            case 2
+                            :
+                            console.log("retour")
                             //retour au choix des attaques: faire disparaitre les choix, --> retour au choix d'attaque.
+                            globals.dialogManager.stop();
+                            this.choice.destroy();
+                            this.indexChoice = 0;
+                            for(let k in this.tab){
+                                this.tab[k].destroy();
+                            }
+                            this.tab = [];
+                            this.choice = game.add.sprite(400,295,"attackChoice");
+                            this.attIndex=0;
+                            this.chooseAction(globals.battleData.player);
                             break;
                         }
                     },this);

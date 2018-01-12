@@ -74,7 +74,7 @@ globals.battleData.text = {
 function createMap1 (){
     // globals.maps.testMap2 = new CustomMap("testmap2",["terrain1"],["Calque de Tile 1"],"");
     // globals.warps.toMap2 = new Warp(false,globals.maps.testMap2,200,200,128,0,3,2,"Entrer?");
-    // globals.pnjs.martin2 = new Ennemy({x:200,y:250,key:"pnjTest",frame:0,health:300,name:"BattleTest"},globals.dialogs.pnjTestDialogs);
+     globals.pnjs.martin2 = new Ennemy({x:200,y:250,key:"pnjTest",frame:0,health:300,name:"BattleTest"},globals.dialogs.pnjTestDialogs);
     // globals.pnjs.martin = new Pnj(90,150,"martin",0,"Choix",globals.dialogs.pnjTestDialogs,"martinFaceAnimation");
     // globals.pnjs.pangloss = new Pnj(300,150,"pangloss",0,"Pangloss",globals.dialogs.pangloss,"panglossFaceAnimation");
     //
@@ -90,4 +90,5 @@ function createMap1 (){
     globals.maps.chateau.addWarps(globals.warps.toBois);
     globals.pnjs.pangloss = new Pnj(globals.maps.chateau.properties.pnj2X,globals.maps.chateau.properties.pnj2Y,"pangloss",0,"Pangloss",globals.dialogs.pangloss,"panglossFaceAnimation");
     globals.maps.chateau.addPnjs(globals.pnjs.pangloss);
+    globals.maps.chateau.addPnjs(globals.pnjs.martin2);
 }
