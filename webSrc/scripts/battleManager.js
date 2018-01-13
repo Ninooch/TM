@@ -6,6 +6,7 @@ class BattleManager{
         this.txt = [];
         this.attNb = 0;
         this.attIndex = 2;
+        this.attackBg = [];
         this.tab = [];
         this.turn = {
             player: {first:false,ready:false,currentAction:"",target:"",alive:true},
@@ -31,13 +32,46 @@ class BattleManager{
             this.menus.push(game.add.sprite(k*400,250,"menuBattlebox"));
         }
         //TODO mettre le texte en fonction de la langue!!
-        this.invText = game.add.bitmapText(0,0,"candideFont", "Inventaire", 50);
+        this.invText = game.add.bitmapText(0,0,"candideFont",globals.battleData.text.inventaire, 50);
         this.invText.alignIn(this.menus[0], Phaser.TOP_CENTER,0,0);
-        this.atkText = game.add.bitmapText(0,0,"candideFont", "Attaques",50);
+        this.atkText = game.add.bitmapText(0,0,"candideFont",globals.battleData.text.attaques,50);
         this.atkText.alignIn(this.menus[1],Phaser.TOP_CENTER,0,0);
 
         this.initEnnemy(globals.battleData.set);
         this.initFighters(globals.battleData.set);
+    }
+    turnBattle(data){
+        if(data.singleEnnemy){
+            if(data.solo){
+                    this.turn.player.currentAction.tour(this.turn.player.target);
+                    data.ennemy1.turn(data);
+                    this.turn.player.ready = false;
+            }
+            else{
+                    this.turn.player.currentAction.tour(this.turn.player.target);
+                    data.ennemy1.turn(data);
+                    this.turn.helper.currentAction.tour(this.turn.helper.target);
+                    this.turn.player.ready = false;
+                    this.turn.helper.ready = false;
+            }
+        }
+        else{
+            if(data.solo){
+                    this.turn.player.currentAction.tour(this.turn.player.target);
+                    data.ennemy1.turn(data);
+                    data.ennemy2.turn(data);
+                    this.turn.player.ready = false;
+            }
+            else{
+                    this.turn.player.currentAction.tour(this.turn.player.target);
+                    data.ennemy1.turn(data);
+                    data.ennemy2.turn(data);
+                    this.turn.helper.currentAction.tour(this.turn.helper.target);
+                    this.turn.player.ready = false;
+                    this.turn.helper.ready = false;
+            }
+        }
+        this.startTurn(globals.battleData.set);
     }
     initEnnemy(data){
         this.ennemy1 = game.add.sprite(data.ennemy1X,data.ennemy1Y,"player",8);
@@ -66,11 +100,10 @@ class BattleManager{
         if(data.isPhi){
             this.attNb = data.argNb;
             for(let k=1;k<this.attNb;k++){
-                //console.log("attckBg")
-                this.attackBg = game.add.image(0,0,"attackBg");
-                this.attackBg.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-k*30 -k*5 - 10);
+                var attackBg = (game.add.image(0,0,"attackBg"));
+                attackBg.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-k*30 -k*5 - 10);
+                this.attackBg.push(attackBg);
             }
-
 
             this.attack1 = game.add.bitmapText(0,0,"candideFont",data.arg1.name, 45);
             this.attack1.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-45);
@@ -91,9 +124,9 @@ class BattleManager{
         else{
             this.attNb = data.attnb;
             for(let k=1;k<this.attNb;k++){
-                //console.log("attckBg")
-                this.attackBg = game.add.image(0,0,"attackBg");
-                this.attackBg.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-k*30 -k*5 - 10);
+                var attackBg = game.add.image(0,0,"attackBg");
+                attackBg.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-k*30 -k*5 - 10);
+                this.attackBg.push(attackBg);
             }
 
             this.attack1 = game.add.bitmapText(0,0,"candideFont",data.attack1.name, 45);
@@ -114,12 +147,24 @@ class BattleManager{
             this.choice = game.add.sprite(400,295,"attackChoice");
         }
     }
+    destroyAtckList(data){
+        for(let k=1;k<this.attNb;k++){
+            this.attackBg[k-1].destroy();
+            var str = "attack" + k ;
+            this[str].destroy();
+        }
+    }
     startTurn(data){
         if(data.solo){
-            var ctx = this;
-            this.str = globals.battleData.text.choosePlayer + globals.player.name + "?" ;
-            this.txt.push([this.str,function(){ctx.str="";ctx.txt = [];ctx.listAttack(globals.battleData.player,data.isPhi);ctx.chooseAction(globals.battleData.player);}]);
-            globals.dialogManager.startBattleDesc(this.txt,{is:true,callback:true,time:500});
+            if(!this.turn.player.ready){
+                var ctx = this;
+                this.str = globals.battleData.text.choosePlayer + globals.player.name + "?" ;
+                this.txt.push([this.str,function(){ctx.str="";ctx.txt = [];ctx.listAttack(globals.battleData.player,data.isPhi);ctx.chooseAction(globals.battleData.player);}]);
+                globals.dialogManager.startBattleDesc(this.txt,{is:true,callback:true,time:500});
+            }
+            else{
+                this.turnBattle(data);
+            }
         }
         else{
             if(!this.turn.player.ready && !this.turn.helper.ready){
@@ -133,19 +178,24 @@ class BattleManager{
                 globals.dialogManager.startBattleDesc(this.txt,{is:false});
                 this.currentPlayer = this.turn.player;
             }
-            else if(this.turn.player.ready){
+            else if(this.turn.player.ready && !this.turn.helper.ready){
                 this.currentPlayer = this.turn.helper;
                 var ctx = this;
-                this.str = globals.battleData.text.choosePlayer + globals.battleData.helperName + "?" ;
+                this.str = globals.battleData.text.choosePlayer + globals.battleData.set.helperName + "?" ;
                 this.txt.push([this.str,function(){ctx.str="";ctx.txt = [];ctx.listAttack(globals.battleData.helper,data.isPhi);ctx.chooseAction(globals.battleData.helper);}]);
                 globals.dialogManager.startBattleDesc(this.txt,{is:true,callback:true,time:500});
             }
-            else if(this.turn.helper.ready){
+            else if(this.turn.helper.ready && !this.turn.player.ready){
                 this.currentPlayer = this.turn.player;
                 var ctx = this;
                 this.str = globals.battleData.text.choosePlayer + globals.player.name + "?" ;
                 this.txt.push([this.str,function(){ctx.str="";ctx.txt = [];ctx.listAttack(globals.battleData.player,data.isPhi);ctx.chooseAction(globals.battleData.player);}]);
                 globals.dialogManager.startBattleDesc(this.txt,{is:true,callback:true,time:500});
+            }
+            else {
+                console.log("turn");
+                console.log(this);
+                this.turnBattle(data);
             }
         }
 
@@ -157,228 +207,263 @@ class BattleManager{
         input.up.onDown.removeAll(this);
         input.down.onDown.removeAll(this);
 
-        if(action =="choseEnnemy"){
-            //retenir l'ennemi
-            alert("oihet");
-            console.log("choseEnnemy success")
-        } //à améliorer
-
         input.up.onDown.addOnce(function(){
-            if(this.selectArrow.x == data.helperX){
-                this.transitionTween = 	game.add.tween(this.selectArrow).to(
-                    {x: data.playerX,y:data.playerY-29},300,Phaser.Easing.Linear.None, true);
-                    globals.dialogManager.stop();
-                    if(action == "choseHandler"){
-                        this.currentPlayer = this.turn.player;
-                        this.str = globals.battleData.text.choosePlayer + globals.player.name + "?" ;
-                        this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.chooseCharacter(data,"choseHandler");}]);
-                        globals.dialogManager.startBattleDesc(this.txt,{is:false});
-                    }
-                    if(action == "choseReceiver"){
-                        this.str = globals.battleData.text.use + globals.battleData.text.sur + globals.player.name + "?" ;
-                        this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.chooseCharacter(data,"choseReceiver");}]);
-                        globals.dialogManager.startBattleDesc(this.txt,{is:false});
-                    }
-                }
-            },this);
-
-            input.down.onDown.addOnce(function(){
-                if(this.selectArrow.x == data.playerX){
+            if(action =="choseEnnemy"){
+                if(this.selectArrow.x == data.ennemy2X){
                     this.transitionTween = 	game.add.tween(this.selectArrow).to(
-                        {x: data.helperX,y:data.helperY-29},300,Phaser.Easing.Linear.None, true);
-                        globals.dialogManager.stop();
-                        if(action == "choseHandler"){
-                            this.currentPlayer = this.turn.helper;
-                            this.str = globals.battleData.text.choosePlayer + globals.battleData.set.helperName + "?" ;
-                            this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.chooseCharacter(data,"choseHandler");}]);
-                            globals.dialogManager.startBattleDesc(this.txt,{is:false});
-                        }
-                        if(action == "choseReceiver"){
-                            this.str = globals.battleData.text.use + globals.battleData.text.sur + globals.battleData.set.helper + "?" ;
-                            this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.chooseCharacter(data,"choseReceiver");}]);
-                            globals.dialogManager.startBattleDesc(this.txt,{is:false});
+                        {x: data.ennemy1X,y:data.ennemy1Y-29},300,Phaser.Easing.Linear.None, true);
+                    }
+                    this.chooseCharacter(data,"choseEnnemy");
+                }
+                else{
+                    if(this.selectArrow.x == data.helperX){
+                        this.transitionTween = 	game.add.tween(this.selectArrow).to(
+                            {x: data.playerX,y:data.playerY-29},300,Phaser.Easing.Linear.None, true);
+                            globals.dialogManager.stop();
+                            if(action == "choseHandler"){
+                                this.currentPlayer = this.turn.player;
+                                this.str = globals.battleData.text.choosePlayer + globals.player.name + "?" ;
+                                this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.chooseCharacter(data,"choseHandler");}]);
+                                globals.dialogManager.startBattleDesc(this.txt,{is:false});
+                            }
+                            if(action == "choseReceiver"){
+                                this.str = globals.battleData.text.use + globals.battleData.text.sur + globals.player.name + "?" ;
+                                this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.chooseCharacter(data,"choseReceiver");}]);
+                                globals.dialogManager.startBattleDesc(this.txt,{is:false});
+                            }
                         }
                     }
                 },this);
-
-                input.enter.onDown.addOnce(function(){
-                    input.up.onDown.removeAll(this);
-                    input.down.onDown.removeAll(this);
-                    globals.dialogManager.stop();
-                    this.str = "";
-                    this.txt = [];
-                    this.selectArrow.destroy();
-                    if(action == "choseHandler"){
-                        if(this.currentPlayer == this.turn.player){
-                            this.listAttack(globals.battleData.player,data.isPhi);
-                            this.chooseAction(globals.battleData.player);
-                        }
-                        else{
-                            this.listAttack(globals.battleData.helper,data.isPhi);
-                            this.chooseAction(globals.battleData.helper);
-                        }
-                    }
-                    else if(action == "choseReceiver"){
-                        //faire en sorte de retenir le joueur qui sera guéri
-                    }
-
-                },this);
-            }
-            chooseAction(data){
-                input.enter.onDown.removeAll(this);
-                input.up.onDown.removeAll(this);
-                input.down.onDown.removeAll(this);
 
                 input.down.onDown.addOnce(function(){
-                    if(this.attIndex<this.attNb){
-                        this.attIndex++;
-                        this.choice.y += +35;
+                    if(action =="choseEnnemy"){
+                        if(this.selectArrow.x == data.ennemy1X){
+                            this.transitionTween = 	game.add.tween(this.selectArrow).to(
+                                {x: data.ennemy2X,y:data.ennemy2Y-29},300,Phaser.Easing.Linear.None, true);
+                            }
+                            this.chooseCharacter(data,"choseEnnemy");
+                        } //à améliorer
+                        else{
+                            if(this.selectArrow.x == data.playerX){
+                                this.transitionTween = 	game.add.tween(this.selectArrow).to(
+                                    {x: data.helperX,y:data.helperY-29},300,Phaser.Easing.Linear.None, true);
+                                    globals.dialogManager.stop();
+                                    if(action == "choseHandler"){
+                                        this.currentPlayer = this.turn.helper;
+                                        this.str = globals.battleData.text.choosePlayer + globals.battleData.set.helperName + "?" ;
+                                        this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.chooseCharacter(data,"choseHandler");}]);
+                                        globals.dialogManager.startBattleDesc(this.txt,{is:false});
+                                    }
+                                    if(action == "choseReceiver"){
+                                        this.str = globals.battleData.text.use + globals.battleData.text.sur + globals.battleData.set.helper + "?" ;
+                                        this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.chooseCharacter(data,"choseReceiver");}]);
+                                        globals.dialogManager.startBattleDesc(this.txt,{is:false});
+
+                                    }
+                                }
+                            }
+                        },this);
+
+                        input.enter.onDown.addOnce(function(){
+                            input.up.onDown.removeAll(this);
+                            input.down.onDown.removeAll(this);
+                            if(action =="choseEnnemy"){
+                                this.destroyAtckList();
+                                this.selectArrow.destroy();
+                                this.currentPlayer.ready = true;
+                                if(this.selectArrow.x == data.ennemy1X){
+                                    console.log("ennem1")
+                                    this.currentPlayer.target = data.ennemy1;
+                                    this.startTurn(data);
+                                }
+                                else{
+                                    console.log("ennemy2")
+                                    this.currentPlayer.target = data.ennemy2;
+                                    this.startTurn(data);
+                                }
+                            } //à améliorer
+                            else{
+                                globals.dialogManager.stop();
+                                this.str = "";
+                                this.txt = [];
+                                this.selectArrow.destroy();
+                                if(action == "choseHandler"){
+                                    if(this.currentPlayer == this.turn.player){
+                                        this.listAttack(globals.battleData.player,data.isPhi);
+                                        this.chooseAction(globals.battleData.player);
+                                    }
+                                    else{
+                                        this.listAttack(globals.battleData.helper,data.isPhi);
+                                        this.chooseAction(globals.battleData.helper);
+                                    }
+                                }
+                                else if(action == "choseReceiver"){
+                                    //faire en sorte de retenir le joueur qui sera guéri
+                                }
+                            }
+                        },this);
                     }
-                    this.chooseAction(data);
-                },this);
+                    chooseAction(data){
+                        input.enter.onDown.removeAll(this);
+                        input.up.onDown.removeAll(this);
+                        input.down.onDown.removeAll(this);
 
-                input.up.onDown.addOnce(function(){
-                    if(this.attIndex != 2){
-                        this.attIndex--;
-                        this.choice.y -= 35;
+                        input.down.onDown.addOnce(function(){
+                            if(this.attIndex<this.attNb){
+                                this.attIndex++;
+                                this.choice.y += +35;
+                            }
+                            this.chooseAction(data);
+                        },this);
+
+                        input.up.onDown.addOnce(function(){
+                            if(this.attIndex != 2){
+                                this.attIndex--;
+                                this.choice.y -= 35;
+                            }
+                            this.chooseAction(data);
+                        },this);
+
+                        input.enter.onDown.addOnce(function(){
+                            this.whatToDow(data);
+                        },this);
                     }
-                    this.chooseAction(data);
-                },this);
-
-                input.enter.onDown.addOnce(function(){
-                    this.whatToDow(data);
-                },this);
-            }
-            whatToDow(data){
-                input.enter.onDown.removeAll(this);
-                input.up.onDown.removeAll(this);
-                input.down.onDown.removeAll(this);
-                this.choice.destroy();
-                var ctx = this;
-                switch(this.attIndex){
-                    case 2:
-                    this.currentPlayer.currentAction = data.attack1;
-                    this.str = globals.battleData.text.chooseItem + data.attack1.name + "?";
-                    this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.infoDesc();}]);
-                    globals.dialogManager.startBattleDesc(this.txt,{is:false});
-                    break;
-                    case 3:
-                    this.currentPlayer.currentAction = data.attack2;
-                    this.str = globals.battleData.text.chooseItem + data.attack2.name + "?";
-                    this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.infoDesc();}]);
-                    globals.dialogManager.startBattleDesc(this.txt,{is:false});
-                    break;
-                    case 4:
-                    this.currentPlayer.currentAction = data.attack3;
-                    this.str = globals.battleData.text.chooseItem + data.attack3.name + "?";
-                    this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.infoDesc();}]);
-                    globals.dialogManager.startBattleDesc(this.txt,{is:false});
-                    break;
-                    case 5:
-                    this.currentPlayer.currentAction = data.attack4;
-                    this.str = globals.battleData.text.chooseItem + data.attack4.name + "?";
-                    this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.infoDesc();}]);
-                    globals.dialogManager.startBattleDesc(this.txt,{is:false});
-                    break;
-                }
-            }
-            infoDesc(){
-                var tab = [globals.battleData.text.info,globals.battleData.text.use,globals.battleData.text.retour];
-                for(let k=0;k<3;k++){
-                    var box = game.add.image(145+k*170,50,"nameBox");
-                    this.tab.push(box);
-
-                    var txt = game.add.bitmapText(0,0,"candideFont",tab[k],50);
-                    txt.alignIn(box,Phaser.TOP_CENTER,0,5);
-
-                    this.tab.push(txt);
-                }
-                this.choice = game.add.image(145,50,"attckActionChoice");
-                this.indexChoice = 0;
-                this.chooseAtckAction();
-            }
-            chooseAtckAction(){
-                //console.log(this.indexChoice)
-                input.enter.onDown.removeAll(this);
-                input.left.onDown.removeAll(this);
-                input.right.onDown.removeAll(this);
-
-                input.left.onDown.addOnce(function(){
-                    if(this.indexChoice!=0){
-                        this.indexChoice --;
-                        this.choice.x -= 170;
-                    }
-                    this.chooseAtckAction();
-                },this);
-
-                input.right.onDown.addOnce(function(){
-                    if(this.indexChoice < 2){
-                        this.indexChoice++;
-                        this.choice.x += 170;
-                    }
-                    this.chooseAtckAction();
-                },this);
-
-                input.enter.onDown.addOnce(function(){
-                    input.left.onDown.removeAll(this);
-                    input.right.onDown.removeAll(this);
-                    switch(this.indexChoice){
-                        case 1 :
-                        // choisir un ennemi avec un texte : sur qui utiliser "...";
-                        globals.dialogManager.stop();
+                    whatToDow(data){
+                        input.enter.onDown.removeAll(this);
+                        input.up.onDown.removeAll(this);
+                        input.down.onDown.removeAll(this);
                         this.choice.destroy();
-                        this.indexChoice = 0;
-                        for(let k in this.tab){
-                            this.tab[k].destroy();
-                        }
-                        this.tab = [];
-
                         var ctx = this;
-                        this.str = globals.battleData.text.useOn;
-                        this.txt.push([ctx.str,function(){
-                            ctx.str = "";
-                            ctx.txt = [];
-                            ctx.selectArrow = game.add.sprite(globals.battleData.set.ennemy1X, globals.battleData.set.ennemy1Y - 29, "selectArrow");
-                            ctx.selectArrow.animations.add("iddle",[0,1,2,3,4],5);
-                            ctx.selectArrow.animations.play("iddle",9,true);
-                            ctx.chooseCharacter(globals.battleData.set,"choseEnnemy");}]);
-                            globals.dialogManager.startBattleDesc(this.txt,{is:true,callback:true,time:300});
+                        switch(this.attIndex){
+                            case 2:
+                            this.currentPlayer.currentAction = data.attack1;
+                            this.str = globals.battleData.text.chooseItem + data.attack1.name + "?";
+                            this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.infoDesc();}]);
+                            globals.dialogManager.startBattleDesc(this.txt,{is:false});
                             break;
-                            case 0 :
-                            //mettre l'info : faire disparaître les choix et réenclencher la fonction une fois le display terminé
-                            globals.dialogManager.stop();
-                            this.choice.destroy();
-                            this.indexChoice = 0;
-                            for(let k in this.tab){
-                                this.tab[k].destroy();
-                            }
-                            this.tab = [];
-
-                            var ctx = this;
-                            this.str = this.currentPlayer.currentAction.info();
-                            this.txt.push([ctx.str,function(){
-                                globals.dialogManager.startBattleDesc(ctx.txt,{is:false});
-                                ctx.str = globals.battleData.text.chooseItem + ctx.currentPlayer.currentAction.name + "?";
-                                ctx.txt = [[ctx.str,function(){ctx.str = ""; ctx.txt = []; ctx.infoDesc();}]];
-                            }]);
-                            globals.dialogManager.startBattleDesc(this.txt,{is:true,callback:true});
+                            case 3:
+                            this.currentPlayer.currentAction = data.attack2;
+                            this.str = globals.battleData.text.chooseItem + data.attack2.name + "?";
+                            this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.infoDesc();}]);
+                            globals.dialogManager.startBattleDesc(this.txt,{is:false});
                             break;
-                            case 2
-                            :
-                            console.log("retour")
-                            //retour au choix des attaques: faire disparaitre les choix, --> retour au choix d'attaque.
-                            globals.dialogManager.stop();
-                            this.choice.destroy();
-                            this.indexChoice = 0;
-                            for(let k in this.tab){
-                                this.tab[k].destroy();
-                            }
-                            this.tab = [];
-                            this.choice = game.add.sprite(400,295,"attackChoice");
-                            this.attIndex=2;
-                            this.chooseAction(globals.battleData.player);
+                            case 4:
+                            this.currentPlayer.currentAction = data.attack3;
+                            this.str = globals.battleData.text.chooseItem + data.attack3.name + "?";
+                            this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.infoDesc();}]);
+                            globals.dialogManager.startBattleDesc(this.txt,{is:false});
+                            break;
+                            case 5:
+                            this.currentPlayer.currentAction = data.attack4;
+                            this.str = globals.battleData.text.chooseItem + data.attack4.name + "?";
+                            this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.infoDesc();}]);
+                            globals.dialogManager.startBattleDesc(this.txt,{is:false});
                             break;
                         }
-                    },this);
-                }
-            }
+                    }
+                    infoDesc(){
+                        var tab = [globals.battleData.text.info,globals.battleData.text.use,globals.battleData.text.retour];
+                        for(let k=0;k<3;k++){
+                            var box = game.add.image(145+k*170,50,"nameBox");
+                            this.tab.push(box);
+
+                            var txt = game.add.bitmapText(0,0,"candideFont",tab[k],50);
+                            txt.alignIn(box,Phaser.TOP_CENTER,0,5);
+
+                            this.tab.push(txt);
+                        }
+                        this.choice = game.add.image(145,50,"attckActionChoice");
+                        this.indexChoice = 0;
+                        this.chooseAtckAction();
+                    }
+                    chooseAtckAction(){
+                        //console.log(this.indexChoice)
+                        input.enter.onDown.removeAll(this);
+                        input.left.onDown.removeAll(this);
+                        input.right.onDown.removeAll(this);
+
+                        input.left.onDown.addOnce(function(){
+                            if(this.indexChoice!=0){
+                                this.indexChoice --;
+                                this.choice.x -= 170;
+                            }
+                            this.chooseAtckAction();
+                        },this);
+
+                        input.right.onDown.addOnce(function(){
+                            if(this.indexChoice < 2){
+                                this.indexChoice++;
+                                this.choice.x += 170;
+                            }
+                            this.chooseAtckAction();
+                        },this);
+
+                        input.enter.onDown.addOnce(function(){
+                            input.left.onDown.removeAll(this);
+                            input.right.onDown.removeAll(this);
+                            switch(this.indexChoice){
+                                case 1 :
+                                // choisir un ennemi avec un texte : sur qui utiliser "...";
+                                globals.dialogManager.stop();
+                                this.choice.destroy();
+                                this.indexChoice = 0;
+                                this.attIndex = 2;
+                                for(let k in this.tab){
+                                    this.tab[k].destroy();
+                                }
+                                this.tab = [];
+                                if(globals.battleData.set.singleEnnemy){
+                                    this.currentPlayer.ready = true;
+                                    this.currentPlayer.target = globals.battleData.ennemy1;
+                                    this.startTurn(globals.battleData.set);
+                                }
+                                else{
+                                    var ctx = this;
+                                    this.str = globals.battleData.text.useOn;
+                                    this.txt.push([ctx.str,function(){
+                                        ctx.str = "";
+                                        ctx.txt = [];
+                                        ctx.selectArrow = game.add.sprite(globals.battleData.set.ennemy1X, globals.battleData.set.ennemy1Y - 29, "selectArrow");
+                                        ctx.selectArrow.animations.add("iddle",[0,1,2,3,4],5);
+                                        ctx.selectArrow.animations.play("iddle",9,true);
+                                        ctx.chooseCharacter(globals.battleData.set,"choseEnnemy");}]);
+                                        globals.dialogManager.startBattleDesc(this.txt,{is:true,callback:true,time:300});
+                                    }
+                                    break;
+                                    case 0 :
+                                    //mettre l'info : faire disparaître les choix et réenclencher la fonction une fois le display terminé
+                                    globals.dialogManager.stop();
+                                    this.choice.destroy();
+                                    this.indexChoice = 0;
+                                    for(let k in this.tab){
+                                        this.tab[k].destroy();
+                                    }
+                                    this.tab = [];
+
+                                    var ctx = this;
+                                    this.str = this.currentPlayer.currentAction.info();
+                                    this.txt.push([ctx.str,function(){
+                                        globals.dialogManager.startBattleDesc(ctx.txt,{is:false});
+                                        ctx.str = globals.battleData.text.chooseItem + ctx.currentPlayer.currentAction.name + "?";
+                                        ctx.txt = [[ctx.str,function(){ctx.str = ""; ctx.txt = []; ctx.infoDesc();}]];
+                                    }]);
+                                    globals.dialogManager.startBattleDesc(this.txt,{is:true,callback:true});
+                                    break;
+                                    case 2
+                                    :
+                                    //retour au choix des attaques: faire disparaitre les choix, --> retour au choix d'attaque.
+                                    globals.dialogManager.stop();
+                                    this.choice.destroy();
+                                    this.indexChoice = 0;
+                                    for(let k in this.tab){
+                                        this.tab[k].destroy();
+                                    }
+                                    this.tab = [];
+                                    this.choice = game.add.sprite(400,295,"attackChoice");
+                                    this.attIndex=2;
+                                    this.chooseAction(globals.battleData.player);
+                                    break;
+                                }
+                            },this);
+                        }
+                    }

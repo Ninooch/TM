@@ -26,9 +26,9 @@ class Ennemy extends Pnj {
         else{
             target = battleData.player;
         }
-
+        console.log(target);
         if(this.attack2 == undefined){
-            this.attack1.turn(target);
+            this.attack1.tour(target);
         }
         else if(this.attack3 == undefined){
             let rnd = Math.random();

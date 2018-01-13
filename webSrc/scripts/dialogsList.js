@@ -5,8 +5,8 @@ function setDialog(langue){
         case 0 :
 
         globals.dialogs.pnj1Ch1 = ["Je suis le jardinier de monseigneur le baron et de madamme son épouse."];
-        globals.dialogs.pnjTestDialogs = [["bonjour! je suis un test . tu peux choisir entre un et deux.",["combat","option deux"],[function(){globals.pnjs.martin2.startCombat();},function(){globals.dialogManager.stop(true,false);globals.pnjs.martin2.currentIndex = 2;globals.dialogManager.startDialog(globals.pnjs.martin2)}]],"j'affirme que tu as bien choisi l'option une","j'affirme que tu as bien choisi l'option deux"];
-        globals.dialogs.pangloss =[["Oh Candide, bonjour! Viens, tu arrives à point nommé pour ma bénéfique leçon de métaphysico-cosmo-nigologie.",function(){globals.pnjs.pangloss.currentIndex=1; globals.dialogManager.stop(true,false);globals.dialogManager.startDialog(globals.pnjs.pangloss);}],["-explication-... Mais dis-moi, Candide. Tu devras faire des choix dans ta vie et il sera toujours important de répondre comme ton bon Pangloss te l'a appris, c'est à dire positivement! Es-tu d'accord?",["oui","non"],[function(){globals.pnjs.pangloss.currentIndex=2;globals.dialogManager.stop(true,false);globals.dialogManager.startDialog(globals.pnjs.pangloss);} , function(){globals.pnjs.pangloss.currentIndex=3; globals.dialogManager.stop(true,false);globals.dialogManager.startDialog(globals.pnjs.pangloss);}]],"bien... Sur ce, va donc explorer les alentours et retourne me voir quand tu auras appris quelque chose.",["Il me semble que tu n'as pas bien compris, mon cher. Laisse moi te réexpliquer...",function(){globals.pnjs.pangloss.currentIndex=1 ; globals.dialogManager.stop(true,false);globals.dialogManager.startDialog(globals.pnjs.pangloss);}]];
+        globals.dialogs.pnjTestDialogs = [["bonjour! je suis un test . tu peux choisir entre un et deux.",["combat","option deux"],[function(){globals.battleData.set.ennemy1 = globals.pnjs.martin2; globals.battleData.set.helper = globals.pnjs.martin2; globals.battleData.set.player = globals.player;globals.battleData.set.ennemy2 = globals.pnjs.martin2; globals.pnjs.martin2.startCombat();},function(){globals.dialogManager.stop(true,false);globals.pnjs.martin2.currentIndex = 2;globals.dialogManager.startDialog(globals.pnjs.martin2)}]],"j'affirme que tu as bien choisi l'option une","j'affirme que tu as bien choisi l'option deux"];
+        globals.dialogs.pangloss =[["Oh Candide, bonjour! Viens, tu arrives à point nommé pour ma bénéfique leçon de métaphysico-cosmo-nigologie.",function(){globals.pnjs.pangloss.currentIndex=1; globals.dialogManager.stop(true,false);globals.dialogManager.startDialog(globals.pnjs.pangloss);}],["-explications-... Mais dis-moi, Candide. Tu devras faire des choix dans ta vie et il sera toujours important de répondre comme ton bon Pangloss te l'a appris, c'est à dire positivement! Es-tu d'accord?",["oui","non"],[function(){globals.pnjs.pangloss.currentIndex=2;globals.dialogManager.stop(true,false);globals.dialogManager.startDialog(globals.pnjs.pangloss);} , function(){globals.pnjs.pangloss.currentIndex=3; globals.dialogManager.stop(true,false);globals.dialogManager.startDialog(globals.pnjs.pangloss);}]],"bien... Sur ce, va donc explorer les alentours et retourne me voir quand tu auras appris quelque chose.",["Il me semble que tu n'as pas bien compris, mon cher. Laisse moi te réexpliquer...",function(){globals.pnjs.pangloss.currentIndex=1 ; globals.dialogManager.stop(true,false);globals.dialogManager.startDialog(globals.pnjs.pangloss);}]];
 
 
         globals.battleData.text = {
@@ -18,6 +18,8 @@ function setDialog(langue){
             use : "utiliser ",
             useOn: "Quel ennemi attaquer ?",
             sur : "sur ",
+            inventaire : "Inventaire",
+            attaques : "Attaques",
             info : "info ",
             retour: "retour ",
             argumente : "argumente contre ",
@@ -32,6 +34,8 @@ function setDialog(langue){
             rate : "But his attack failed !",
             attaque : " attacks ",
             argumente : " argue with ",
+            inventaire : "Items",
+            attaques : "Attacks",
         };
         break;
     }

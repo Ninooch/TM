@@ -38,11 +38,13 @@ globals.battleData.helper = {
     arg4:undefined,
     argNb:1,
 }
+
+
 globals.battleData.set = {
     //let variable = (condition) ? valueIfTrue : valueIfFalse;
     solo : false,
     player:globals.player,
-    helper:globals.pnjs.martin2 || undefined,
+    helper:"",
     isPhi : false,
     playerY : (!this.solo) ? 70 : 100,
     playerX : (!this.solo) ? 570 : 600,
@@ -50,6 +52,8 @@ globals.battleData.set = {
     helperY : 120,
     helperName : "Cacambo", //changer en cours de route ( en fonction du jeu)
     singleEnnemy : false,
+    ennemy1 : globals.pnjs.martin2,
+    ennemy2 : globals.pnjs.martin2,
     ennemy1X :(this.singleEnnemy) ? 200 : 230,
     ennemy1Y :(this.singleEnnemy) ? 100 : 70,
     ennemy2X :200,
@@ -74,7 +78,7 @@ globals.battleData.text = {
 function createMap1 (){
     // globals.maps.testMap2 = new CustomMap("testmap2",["terrain1"],["Calque de Tile 1"],"");
     // globals.warps.toMap2 = new Warp(false,globals.maps.testMap2,200,200,128,0,3,2,"Entrer?");
-     globals.pnjs.martin2 = new Ennemy({x:200,y:250,key:"pnjTest",frame:0,health:300,name:"BattleTest"},globals.dialogs.pnjTestDialogs);
+     globals.pnjs.martin2 = new Ennemy({x:200,y:250,key:"pnjTest",frame:0,health:300,name:"BattleTest",attack1:globals.attacks.cpsCote},globals.dialogs.pnjTestDialogs);
     // globals.pnjs.martin = new Pnj(90,150,"martin",0,"Choix",globals.dialogs.pnjTestDialogs,"martinFaceAnimation");
     // globals.pnjs.pangloss = new Pnj(300,150,"pangloss",0,"Pangloss",globals.dialogs.pangloss,"panglossFaceAnimation");
     //
