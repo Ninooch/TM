@@ -442,11 +442,12 @@ class BattleManager{
                                     var ctx = this;
                                     this.str = this.currentPlayer.currentAction.info();
                                     this.txt.push([ctx.str,function(){
-                                        globals.dialogManager.startBattleDesc(ctx.txt,{is:false});
+                                        globals.dialogManager.stop();
                                         ctx.str = globals.battleData.text.chooseItem + ctx.currentPlayer.currentAction.name + "?";
                                         ctx.txt = [[ctx.str,function(){ctx.str = ""; ctx.txt = []; ctx.infoDesc();}]];
+                                        globals.dialogManager.startBattleDesc(ctx.txt,{is:false});
                                     }]);
-                                    globals.dialogManager.startBattleDesc(this.txt,{is:true,callback:true});
+                                    globals.dialogManager.startBattleDesc(this.txt,{is:true,callback:true,time:500});
                                     break;
                                     case 2
                                     :
