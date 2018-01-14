@@ -94,7 +94,7 @@ displayText(texts,index,isDialog,faceAnim,battleDesc){ // le texte est stocké d
             }
             else{
                 this.wordTimer.onComplete.add(function(){
-                    game.time.events.add(1000,function(){ // pour éviter que le dialogue se relance en boucle car toutes les autres conditions pour lancer le dialogues sont remplies
+                    game.time.events.add(battleDesc.time||1000,function(){ // pour éviter que le dialogue se relance en boucle car toutes les autres conditions pour lancer le dialogues sont remplies
                         this.stop();
                     },this);
                 },this);

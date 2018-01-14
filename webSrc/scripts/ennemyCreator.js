@@ -6,7 +6,8 @@ class Ennemy extends Pnj {
             this.attack1 = data.attack1;
             this.attack2 = data.attack2 || undefined;
             this.attack3 = data.attack3 || undefined;
-            this.attakc4 = data.attack4 || undefined;
+            this.attack4 = data.attack4 || undefined;
+            this.msg = "";
             this.health = data.health;
             this.maxHealth = data.health;
         }
@@ -18,52 +19,62 @@ class Ennemy extends Pnj {
         },this);
     }
     turn(battleData){ //voir si ça marche et améliorer pour les batailles phi
-        let target;
+         this.target;
         if(!battleData.solo){
             let rnd = Math.random();
-            target = (rnd<.5) ? battleData.player : battleData.helper;
+            this.target = (rnd<.5) ? battleData.player : battleData.helper;
         }
         else{
-            target = battleData.player;
+            this.target = battleData.player;
         }
         if(this.attack2 == undefined){
-            this.attack1.tour(target);
+            this.attack1.tour(this.target);
+            this.msg = this.attack1.desc();
         }
         else if(this.attack3 == undefined){
             let rnd = Math.random();
             if(rnd<0.5){
-                this.attack1.tour(target);
+                this.attack1.tour(this.target);
+                this.msg = this.attack1.desc();
             }
             else{
-                this.attack2.tour(target);
+                this.attack2.tour(this.target);
+                this.msg = this.attack2.desc();
             }
 
         }
         else if(this.attack4 == undefined){
             let rnd = Math.random();
             if(rnd<0.33){
-                this.attack1.tour(target);
+                this.attack1.tour(this.target);
+                this.msg = this.attack1.desc();
             }
             else if(rnd>0.33 && rnd<0.66){
-                this.attack2.tour(target);
+                this.attack2.tour(this.target);
+                this.msg = this.attack2.desc();
             }
             else if(rnd>0.66){
-                this.attack3.tour(target);
+                this.attack3.tour(this.target);
+                this.msg = this.attack3.desc();
             }
         }
         else{
             let rnd = Math.random();
             if(rnd<0.25){
-                this.attack1.tour(target);
+                this.attack1.tour(this.target);
+                this.msg = this.attack1.desc();
             }
             else if( rnd > 0.25 && rnd < 0.5){
-                this.attack2.tour(target);
+                this.attack2.tour(this.target);
+                this.msg = this.attack2.desc();
             }
             else if ( rnd> 0.5 && rnd< 0.75){
-                this.attack3.tour(target);
+                this.attack3.tour(this.target);
+                this.msg = this.attack2.desc();
             }
             else{
-                this.attack4.tour(target);
+                this.attack4.tour(this.target);
+                this.msg = this.attack4.desc();
             }
         }
     }

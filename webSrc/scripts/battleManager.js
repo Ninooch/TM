@@ -7,6 +7,8 @@ class BattleManager{
         this.attNb = 0;
         this.attIndex = 2;
         this.attackBg = [];
+        this.textReady = true;
+        this.turnReady = false;
         this.tab = [];
         this.turn = {
             player: {first:false,ready:false,currentAction:"",target:"",alive:true},
@@ -40,10 +42,34 @@ class BattleManager{
         this.initEnnemy(globals.battleData.set);
         this.initFighters(globals.battleData.set);
     }
+    battleDesc(text,islast){
+        let ctx = this;
+        if(!this.textReady){
+            game.time.events.add(750,function(){
+                this.battleDesc(text,islast);
+            },this);
+        }
+        else{
+            this.textReady = false;
+            let txt = [[text,function(){if(islast){ctx.turnReady=true;} globals.dialogManager.stop();ctx.textReady = true;}]];
+            globals.dialogManager.startBattleDesc(txt,{is:true,callback:true,time:700});
+        }
+    }
+    launchNxtTurn(data){
+        if(!this.turnReady){
+            game.time.events.add(500,function(){
+                this.launchNxtTurn(data);
+            },this);
+        }
+        else{
+            this.startTurn(data);
+        }
+    }
     turnBattle(data){
         if(data.singleEnnemy){
             if(data.solo){
                 this.turn.player.currentAction.tour(this.turn.player.target);
+                let str = globals.player.name + globals.battleData.text.attaque + this.turn.player.target.name + "." + this.turn.player.currentAction.desc();
                 data.ennemy1.turn(data);
                 this.turn.player.ready = false;
             }
@@ -63,15 +89,21 @@ class BattleManager{
                 this.turn.player.ready = false;
             }
             else{
+                this.turnReady = false;
                 this.turn.player.currentAction.tour(this.turn.player.target);
+                var str = globals.player.name + " " + globals.battleData.text.attaque + this.turn.player.target.name + ". " + this.turn.player.currentAction.desc();
+                this.battleDesc(str);
                 data.ennemy1.turn(data);
+                str = `${data.ennemy1.name} ${globals.battleData.text.attaque} ${data.ennemy1.target.name} ${data.ennemy1.msg} `
+                this.battleDesc(str,true);
                 data.ennemy2.turn(data);
                 this.turn.helper.currentAction.tour(this.turn.helper.target);
                 this.turn.player.ready = false;
                 this.turn.helper.ready = false;
             }
         }
-        this.startTurn(globals.battleData.set);
+
+        this.launchNxtTurn(globals.battleData.set);
     }
     initEnnemy(data){
         this.ennemy1 = game.add.sprite(data.ennemy1X,data.ennemy1Y,"player",8);
@@ -148,7 +180,6 @@ class BattleManager{
         }
     }
     destroyAtckList(){
-        console.log(this.attackBg);
         for(let k=1;k<this.attNb;k++){
             this.attackBg[k-1].destroy();
             var str = "attack" + k ;
