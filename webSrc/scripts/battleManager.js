@@ -91,13 +91,17 @@ class BattleManager{
             else{
                 this.turnReady = false;
                 this.turn.player.currentAction.tour(this.turn.player.target);
-                var str = globals.player.name + " " + globals.battleData.text.attaque + this.turn.player.target.name + ". " + this.turn.player.currentAction.desc();
+                var str = `${globals.player.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${this.turn.player.target.name}. ${this.turn.player.currentAction.desc()}`;
                 this.battleDesc(str);
                 data.ennemy1.turn(data);
-                str = `${data.ennemy1.name} ${globals.battleData.text.attaque} ${data.ennemy1.target.name} ${data.ennemy1.msg} `
-                this.battleDesc(str,true);
+                str = `${data.ennemy1.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${data.ennemy1.target.name}. ${data.ennemy1.msg} `
+                this.battleDesc(str);
                 data.ennemy2.turn(data);
+                str = `${data.ennemy2.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${data.ennemy2.target.name}. ${data.ennemy2.msg} `
+                this.battleDesc(str,true);
                 this.turn.helper.currentAction.tour(this.turn.helper.target);
+                str = `${globals.battleData.set.helperName} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${this.turn.player.target.name}. ${this.turn.helper.currentAction.desc()}`;
+                this.battleDesc(str);
                 this.turn.player.ready = false;
                 this.turn.helper.ready = false;
             }
