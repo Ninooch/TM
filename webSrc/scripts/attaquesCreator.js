@@ -20,21 +20,17 @@ class Attaque{ //eventuellement des types d'attaques. avec des faiblesses etc...
         }
     }
     normal(cible){
-        console.log("normal")
         cible.damage(this.pdg);
     }
     rate(){
-        console.log("rate")
         //fait rater au hasard l'attaque pour un tour
         //message
     }
     coupCritique(cible){
-        console.log("coupCrti")
         cible.damage(Math.ceil(this.pdg*1.5));
         //fait  au hasard multiplier par 1.5 les points de dégats pour un tour
     }
     tour(cible){
-        console.log("ça marche")
         var rnd = Math.random();
         if(rnd<0.1){
             this.rate();

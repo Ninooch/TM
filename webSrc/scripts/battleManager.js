@@ -43,32 +43,32 @@ class BattleManager{
     turnBattle(data){
         if(data.singleEnnemy){
             if(data.solo){
-                    this.turn.player.currentAction.tour(this.turn.player.target);
-                    data.ennemy1.turn(data);
-                    this.turn.player.ready = false;
+                this.turn.player.currentAction.tour(this.turn.player.target);
+                data.ennemy1.turn(data);
+                this.turn.player.ready = false;
             }
             else{
-                    this.turn.player.currentAction.tour(this.turn.player.target);
-                    data.ennemy1.turn(data);
-                    this.turn.helper.currentAction.tour(this.turn.helper.target);
-                    this.turn.player.ready = false;
-                    this.turn.helper.ready = false;
+                this.turn.player.currentAction.tour(this.turn.player.target);
+                data.ennemy1.turn(data);
+                this.turn.helper.currentAction.tour(this.turn.helper.target);
+                this.turn.player.ready = false;
+                this.turn.helper.ready = false;
             }
         }
         else{
             if(data.solo){
-                    this.turn.player.currentAction.tour(this.turn.player.target);
-                    data.ennemy1.turn(data);
-                    data.ennemy2.turn(data);
-                    this.turn.player.ready = false;
+                this.turn.player.currentAction.tour(this.turn.player.target);
+                data.ennemy1.turn(data);
+                data.ennemy2.turn(data);
+                this.turn.player.ready = false;
             }
             else{
-                    this.turn.player.currentAction.tour(this.turn.player.target);
-                    data.ennemy1.turn(data);
-                    data.ennemy2.turn(data);
-                    this.turn.helper.currentAction.tour(this.turn.helper.target);
-                    this.turn.player.ready = false;
-                    this.turn.helper.ready = false;
+                this.turn.player.currentAction.tour(this.turn.player.target);
+                data.ennemy1.turn(data);
+                data.ennemy2.turn(data);
+                this.turn.helper.currentAction.tour(this.turn.helper.target);
+                this.turn.player.ready = false;
+                this.turn.helper.ready = false;
             }
         }
         this.startTurn(globals.battleData.set);
@@ -100,9 +100,9 @@ class BattleManager{
         if(data.isPhi){
             this.attNb = data.argNb;
             for(let k=1;k<this.attNb;k++){
-                var attackBg = (game.add.image(0,0,"attackBg"));
-                attackBg.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-k*30 -k*5 - 10);
-                this.attackBg.push(attackBg);
+                var attackBgSPrite = (game.add.image(0,0,"attackBg"));
+                attackBgSprite.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-k*30 -k*5 - 10);
+                this.attackBg.push(attackBgSPrite);
             }
 
             this.attack1 = game.add.bitmapText(0,0,"candideFont",data.arg1.name, 45);
@@ -124,9 +124,9 @@ class BattleManager{
         else{
             this.attNb = data.attnb;
             for(let k=1;k<this.attNb;k++){
-                var attackBg = game.add.image(0,0,"attackBg");
-                attackBg.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-k*30 -k*5 - 10);
-                this.attackBg.push(attackBg);
+                var attackBgSprite = game.add.image(0,0,"attackBg");
+                attackBgSprite.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-k*30 -k*5 - 10);
+                this.attackBg.push(attackBgSprite);
             }
 
             this.attack1 = game.add.bitmapText(0,0,"candideFont",data.attack1.name, 45);
@@ -147,14 +147,19 @@ class BattleManager{
             this.choice = game.add.sprite(400,295,"attackChoice");
         }
     }
-    destroyAtckList(data){
+    destroyAtckList(){
+        console.log(this.attackBg);
         for(let k=1;k<this.attNb;k++){
             this.attackBg[k-1].destroy();
             var str = "attack" + k ;
             this[str].destroy();
         }
+        this.attackBg = [];
     }
     startTurn(data){
+        if(this.attackBg.length != 0){
+            this.destroyAtckList();
+        }
         if(data.solo){
             if(!this.turn.player.ready){
                 var ctx = this;
@@ -193,8 +198,6 @@ class BattleManager{
                 globals.dialogManager.startBattleDesc(this.txt,{is:true,callback:true,time:500});
             }
             else {
-                console.log("turn");
-                console.log(this);
                 this.turnBattle(data);
             }
         }
@@ -268,16 +271,13 @@ class BattleManager{
                             input.up.onDown.removeAll(this);
                             input.down.onDown.removeAll(this);
                             if(action =="choseEnnemy"){
-                                this.destroyAtckList();
                                 this.selectArrow.destroy();
                                 this.currentPlayer.ready = true;
                                 if(this.selectArrow.x == data.ennemy1X){
-                                    console.log("ennem1")
                                     this.currentPlayer.target = data.ennemy1;
                                     this.startTurn(data);
                                 }
                                 else{
-                                    console.log("ennemy2")
                                     this.currentPlayer.target = data.ennemy2;
                                     this.startTurn(data);
                                 }
@@ -377,7 +377,6 @@ class BattleManager{
                         this.chooseAtckAction();
                     }
                     chooseAtckAction(){
-                        //console.log(this.indexChoice)
                         input.enter.onDown.removeAll(this);
                         input.left.onDown.removeAll(this);
                         input.right.onDown.removeAll(this);
