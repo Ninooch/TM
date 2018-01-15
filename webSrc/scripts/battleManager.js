@@ -8,7 +8,6 @@ class BattleManager{
         this.attIndex = 2;
         this.attackBg = [];
         this.textReady = true;
-        this.turnReady = false;
         this.tab = [];
         this.turn = {
             player: {first:false,ready:false,currentAction:"",target:"",alive:true},
@@ -51,20 +50,19 @@ class BattleManager{
         }
         else{
             this.textReady = false;
-            let txt = [[text,function(){globals.dialogManager.stop();ctx.textReady = true;if(islast){ctx.turnReady=true;}}]];
+            let txt = [[text,
+                () => {
+                    globals.dialogManager.stop();
+                    ctx.textReady = true;
+                    if(islast){
+                        var p = ctx.textReady;
+                        debugger;
+                        ctx.startTurn(globals.battleData.set);
+                        console.log("last");
+                    }
+                }]
+            ];
             globals.dialogManager.startBattleDesc(txt,{is:true,callback:true,time:700});
-        }
-    }
-    launchNxtTurn(data){
-        if(!this.turnReady){
-            game.time.events.add(500,function(){
-                this.launchNxtTurn(data);
-            },this);
-        }
-        else{
-            game.time.events.add(200,function(){
-                this.startTurn(data);
-            },this);
         }
     }
     turnBattle(data){
@@ -110,6 +108,7 @@ class BattleManager{
                 this.turn.player.currentAction.tour(this.turn.player.target);
                 var str = `${globals.player.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${this.turn.player.target.name}. ${this.turn.player.currentAction.desc()}`;
                 this.battleDesc(str);
+                const cb1 = () => {}
                 data.ennemy1.turn(data);
                 str = `${data.ennemy1.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${data.ennemy1.target.name}. ${data.ennemy1.msg} `
                 this.battleDesc(str);
@@ -119,13 +118,10 @@ class BattleManager{
                 this.turn.helper.currentAction.tour(this.turn.helper.target);
                 str = `${globals.battleData.set.helperName} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${this.turn.player.target.name}. ${this.turn.helper.currentAction.desc()}`;
                 this.battleDesc(str,true);
-                //console.log(this.turnReady)
                 this.turn.player.ready = false;
                 this.turn.helper.ready = false;
             }
         }
-
-        this.launchNxtTurn(globals.battleData.set);
     }
     initEnnemy(data){
         this.ennemy1 = game.add.sprite(data.ennemy1X,data.ennemy1Y,"player",8);
