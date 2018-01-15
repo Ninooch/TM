@@ -51,7 +51,7 @@ class BattleManager{
         }
         else{
             this.textReady = false;
-            let txt = [[text,function(){if(islast){ctx.turnReady=true;} globals.dialogManager.stop();ctx.textReady = true;}]];
+            let txt = [[text,function(){globals.dialogManager.stop();ctx.textReady = true;if(islast){ctx.turnReady=true;}}]];
             globals.dialogManager.startBattleDesc(txt,{is:true,callback:true,time:700});
         }
     }
@@ -62,7 +62,9 @@ class BattleManager{
             },this);
         }
         else{
-            this.startTurn(data);
+            game.time.events.add(200,function(){
+                this.startTurn(data);
+            },this);
         }
     }
     turnBattle(data){
@@ -117,6 +119,7 @@ class BattleManager{
                 this.turn.helper.currentAction.tour(this.turn.helper.target);
                 str = `${globals.battleData.set.helperName} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${this.turn.player.target.name}. ${this.turn.helper.currentAction.desc()}`;
                 this.battleDesc(str,true);
+                //console.log(this.turnReady)
                 this.turn.player.ready = false;
                 this.turn.helper.ready = false;
             }
