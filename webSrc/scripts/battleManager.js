@@ -7,7 +7,9 @@ class BattleManager{
         this.attNb = 0;
         this.attIndex = 2;
         this.attackBg = [];
-        this.textReady = true;
+        //this.textReady = true;
+        this.signal = new Phaser.Signal();
+        this.signal.add(this.eventHandler,this);
         this.tab = [];
         this.turn = {
             player: {first:false,ready:false,currentAction:"",target:"",alive:true},
@@ -41,29 +43,57 @@ class BattleManager{
         this.initEnnemy(globals.battleData.set);
         this.initFighters(globals.battleData.set);
     }
-    battleDesc(text,islast){
-        let ctx = this;
-        if(!this.textReady){
-            game.time.events.add(750,function(){
-                this.battleDesc(text,islast);
-            },this);
-        }
-        else{
-            this.textReady = false;
-            let txt = [[text,
-                () => {
-                    globals.dialogManager.stop();
-                    ctx.textReady = true;
-                    if(islast){
-                        var p = ctx.textReady;
-                        debugger;
-                        ctx.startTurn(globals.battleData.set);
-                        console.log("last");
-                    }
-                }]
-            ];
+    // battleDesc(text,islast){
+    // let ctx = this;
+    // if(!this.textReady){
+    //     game.time.events.add(750,function(){
+    //         this.battleDesc(text,islast);
+    //     },this);
+    // }
+    // else{
+    //     this.textReady = false;
+    //     let txt = [[text,
+    //         () => {
+    //             globals.dialogManager.stop();
+    //             ctx.textReady = true;
+    //             if(islast){
+    //                 var p = ctx.textReady;
+    //                 debugger;
+    //                 ctx.startTurn(globals.battleData.set);
+    //                 console.log("last");
+    //             }
+    //         }]
+    //     ];
+    //     globals.dialogManager.startBattleDesc(txt,{is:true,callback:true,time:700});
+    // }
+    //    }
+    eventHandler(call,callbackName,data){
+        switch(call){
+            case "player":
+            this.turn.player.currentAction.tour(this.turn.player.target);
+            console.log("player")
+            var ctx = this;
+            var str = `${globals.player.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${this.turn.player.target.name}. ${this.turn.player.currentAction.desc()}`;
+            var txt = [[str,function(){ctx.eventCall(callbackName)}]];
             globals.dialogManager.startBattleDesc(txt,{is:true,callback:true,time:700});
+            break;
+            case "helper":
+            console.log("helper");
+            //data.ennemy1.turn(data);
+            //var str = `${data.ennemy1.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${data.ennemy1.target.name}. ${data.ennemy1.msg} `
+            break
+            case "ennemy1":
+            break;
+            case "ennemy2":
+            break;
+            case "newTurn":
+            //globals.dialogManager.stop();
+            this.startTurn();
+            break;
         }
+    }
+    eventCall(name,callbackName,data){
+        this.signal.dispatch(name,callbackName,data);
     }
     turnBattle(data){
         if(data.singleEnnemy){
@@ -104,20 +134,20 @@ class BattleManager{
                 this.turn.player.ready = false;
             }
             else{
-                this.turnReady = false;
-                this.turn.player.currentAction.tour(this.turn.player.target);
-                var str = `${globals.player.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${this.turn.player.target.name}. ${this.turn.player.currentAction.desc()}`;
-                this.battleDesc(str);
-                const cb1 = () => {}
-                data.ennemy1.turn(data);
-                str = `${data.ennemy1.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${data.ennemy1.target.name}. ${data.ennemy1.msg} `
-                this.battleDesc(str);
-                data.ennemy2.turn(data);
-                str = `${data.ennemy2.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${data.ennemy2.target.name}. ${data.ennemy2.msg} `
-                this.battleDesc(str);
-                this.turn.helper.currentAction.tour(this.turn.helper.target);
-                str = `${globals.battleData.set.helperName} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${this.turn.player.target.name}. ${this.turn.helper.currentAction.desc()}`;
-                this.battleDesc(str,true);
+                this.eventCall("player","helper",data);
+                //this.turnReady = false;
+                // this.turn.player.currentAction.tour(this.turn.player.target);
+                // var str = `${globals.player.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${this.turn.player.target.name}. ${this.turn.player.currentAction.desc()}`;
+                // //this.battleDesc(str);
+                // // data.ennemy1.turn(data);
+                // // str = `${data.ennemy1.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${data.ennemy1.target.name}. ${data.ennemy1.msg} `
+                // // this.battleDesc(str);
+                // data.ennemy2.turn(data);
+                // str = `${data.ennemy2.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${data.ennemy2.target.name}. ${data.ennemy2.msg} `;
+                // //this.battleDesc(str);
+                // this.turn.helper.currentAction.tour(this.turn.helper.target);
+                // str = `${globals.battleData.set.helperName} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${this.turn.player.target.name}. ${this.turn.helper.currentAction.desc()}`;
+                // //this.battleDesc(str,true);
                 this.turn.player.ready = false;
                 this.turn.helper.ready = false;
             }
