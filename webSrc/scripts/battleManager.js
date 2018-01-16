@@ -69,53 +69,53 @@ class BattleManager{
     // }
     //    }
     eventHandler(callbacks,data){ //callbacks est un array qui contient les strings des events dans l'ordre.
-        let ctx;
+        let ctx = this;
         let str;
         let txt;
-    switch(callbacks[this.arrayIndex]){
+        console.log(ctx.arrayIndex);
+        console.log(callbacks)
+    switch(callbacks[ctx.arrayIndex]){
         case "player":
-            this.arrayIndex ++;
-            this.turn.player.currentAction.tour(this.turn.player.target);
-            this.turn.player.ready = false;
-            console.log("player")
-             ctx = this;
-             str = `${globals.player.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${this.turn.player.target.name}. ${this.turn.player.currentAction.desc()}`;
-             txt = [[str,function(){ctx.eventCall(callbackName[this.arrayIndex],data)}]];
+            ctx.arrayIndex ++;
+            ctx.turn.player.currentAction.tour(ctx.turn.player.target);
+            ctx.turn.player.ready = false;
+            console.log("player");
+             str = `${globals.player.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${ctx.turn.player.target.name}. ${ctx.turn.player.currentAction.desc()}`;
+             txt = [[str,function(){ctx.eventCall(callbacks,data)}]];
             globals.dialogManager.startBattleDesc(txt,{is:true,callback:true,time:700});
         break;
         case "helper":
-        this.arrayIndex ++;
-        this.turn.helper.currentAction.tour(this.turn.helper.target);
-        this.turn.helper.ready = false;
+        ctx.arrayIndex ++;
+        ctx.turn.helper.currentAction.tour(ctx.turn.helper.target);
+        ctx.turn.helper.ready = false;
         console.log("helper")
          ctx = this;
-         str = `${globals.helper.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${this.turn.helper.target.name}. ${this.turn.helper.currentAction.desc()}`;
-         txt = [[str,function(){ctx.eventCall(callbackName[this.arrayIndex],data)}]];
+         str = `${globals.battleData.set.helperName} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${ctx.turn.helper.target.name}. ${ctx.turn.helper.currentAction.desc()}`;
+         txt = [[str,function(){ctx.eventCall(callbacks,data)}]];
         globals.dialogManager.startBattleDesc(txt,{is:true,callback:true,time:700});
         break;
         case "ennemy1":
-        this.arrayIndex ++;
+        console.log("ennemy1")
+        ctx.arrayIndex ++;
         data.ennemy1.turn(data);
-         ctx = this;
          str = `${data.ennemy1.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${data.ennemy1.target.name}. ${data.ennemy1.msg} `;
-         txt = [[str,function(){ctx.eventCall(callbacks[this.arrayIndex],data)}]];
+         txt = [[str,function(){ctx.eventCall(callbacks,data)}]];
         globals.dialogManager.startBattleDesc(txt,{is:true,callback:true,time:700});
         break;
         case "ennemy2":
-        this.arrayIndex ++;
+        ctx.arrayIndex ++;
         data.ennemy1.turn(data);
-         ctx = this;
          str = `${data.ennemy2.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${data.ennemy2.target.name}. ${data.ennemy2.msg} `;
-         txt = [[str,function(){ctx.eventCall(callbacks[this.arrayIndex],imageData)}]];
+         txt = [[str,function(){ctx.eventCall(callbacks,data)}]];
         globals.dialogManager.startBattleDesc(txt,{is:true,callback:true,time:700});
         break;
         case "newTurn":
-        this.startTurn();
+        ctx.startTurn(data);
         break;
     }
 }
 eventCall(callbacks,data){
-    this.signal.dispatch(callbacks[this.arrayIndex],data);
+    this.signal.dispatch(callbacks,data);
 }
 turnBattle(data){
     if(data.singleEnnemy){
