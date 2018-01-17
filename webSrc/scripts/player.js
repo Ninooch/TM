@@ -9,6 +9,9 @@ function initPlayer(x,y){
 
     game.camera.follow(globals.player);
 
+    globals.player.health = 10;
+    globals.player.maxHealth = 120;
+
     globals.player.customProps = {};
 
     globals.player.customProps.animationSpeed = 6;

@@ -47,8 +47,8 @@ globals.battleData.set = {
     helper:"",
     isPhi : false,
     playerY : (!this.solo) ? 70 : 100,
-    playerX : (!this.solo) ? 570 : 600,
-    helperX : 600,
+    playerX : (!this.solo) ? 540 : 600,
+    helperX : 570,
     helperY : 120,
     helperName : "Cacambo", //changer en cours de route ( en fonction du jeu)
     singleEnnemy : false,
@@ -74,6 +74,11 @@ globals.battleData.text = {
     argumente : "argumente contre ",
 } //idée juste pour noter, le vrai se trouve dans dialoglist.js
 
+globals.colors = {
+    green: 0x66ff66,
+    orange : 0xffd11a,
+    red : 0xff1a1a,
+}
 
 function createMap1 (){
     // globals.maps.testMap2 = new CustomMap("testmap2",["terrain1"],["Calque de Tile 1"],"");

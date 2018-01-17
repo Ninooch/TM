@@ -33,7 +33,7 @@ class BattleManager{
         //créer les menus et leurs interactions
         //inventaire et attaques
         for(let k=0;k<2;k++){
-            this.menus.push(game.add.sprite(k*400,250,"menuBattlebox"));
+            this.menus.push(game.add.sprite(k*400,290,"menuBattlebox"));
         }
         //TODO mettre le texte en fonction de la langue!!
         this.invText = game.add.bitmapText(0,0,"candideFont",globals.battleData.text.inventaire, 50);
@@ -45,44 +45,48 @@ class BattleManager{
         this.initFighters(globals.battleData.set);
     }
     eventHandler(callbacks,data){ //callbacks est un array qui contient les strings des events dans l'ordre.
-        let ctx = this;
-        let str;
-        let txt;
+    let ctx = this;
+    let str;
+    let txt;
     switch(callbacks[ctx.arrayIndex]){
         case "player":
-            ctx.arrayIndex ++;
-            ctx.turn.player.currentAction.tour(ctx.turn.player.target);
-            ctx.turn.player.ready = false;
-             str = `${globals.player.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${ctx.turn.player.target.name}. ${ctx.turn.player.currentAction.desc()}`;
-             txt = [[str,function(){ctx.eventCall(callbacks,data)}]];
-            globals.dialogManager.startBattleDesc(txt,{is:true,callback:true,time:900});
+        ctx.arrayIndex ++;
+        ctx.turn.player.currentAction.tour(ctx.turn.player.target);
+        ctx.turn.player.ready = false;
+        str = `${globals.player.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${ctx.turn.player.target.name}. ${ctx.turn.player.currentAction.desc()}`;
+        txt = [[str,function(){ctx.eventCall(callbacks,data)}]];
+        globals.dialogManager.startBattleDesc(txt,{is:true,callback:true,time:900});
         break;
         case "helper":
         ctx.arrayIndex ++;
         ctx.turn.helper.currentAction.tour(ctx.turn.helper.target);
         ctx.turn.helper.ready = false;
-         ctx = this;
-         str = `${globals.battleData.set.helperName} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${ctx.turn.helper.target.name}. ${ctx.turn.helper.currentAction.desc()}`;
-         txt = [[str,function(){ctx.eventCall(callbacks,data)}]];
+        ctx = this;
+        str = `${globals.battleData.set.helperName} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${ctx.turn.helper.target.name}. ${ctx.turn.helper.currentAction.desc()}`;
+        txt = [[str,function(){ctx.eventCall(callbacks,data)}]];
         globals.dialogManager.startBattleDesc(txt,{is:true,callback:true,time:900});
         break;
         case "ennemy1":
         ctx.arrayIndex ++;
         data.ennemy1.turn(data);
-         str = `${data.ennemy1.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${data.ennemy1.target.name}. ${data.ennemy1.msg} `;
-         txt = [[str,function(){ctx.eventCall(callbacks,data)}]];
+        data.ennemy1.target.damage(14)
+        str = `${data.ennemy1.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${data.ennemy1.target.name}. ${data.ennemy1.msg} `;
+        txt = [[str,function(){ctx.eventCall(callbacks,data)}]];
+        ctx.playerSprite.healthbar.turn(globals.battleData.set.player);
         globals.dialogManager.startBattleDesc(txt,{is:true,callback:true,time:900});
         break;
         case "ennemy2":
         ctx.arrayIndex ++;
         data.ennemy1.turn(data);
-         str = `${data.ennemy2.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${data.ennemy2.target.name}. ${data.ennemy2.msg} `;
-         txt = [[str,function(){ctx.eventCall(callbacks,data)}]];
+        str = `${data.ennemy2.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${data.ennemy2.target.name}. ${data.ennemy2.msg} `;
+        txt = [[str,function(){ctx.eventCall(callbacks,data)}]];
         globals.dialogManager.startBattleDesc(txt,{is:true,callback:true,time:900});
         break;
         case "newTurn":
         ctx.startTurn(data);
         break;
+        default:
+        console.warn("CallbackName not found in battleManager.eventHandler");
     }
 }
 eventCall(callbacks,data){
@@ -107,9 +111,11 @@ turnBattle(data){
     }
 }
 initEnnemy(data){
-    this.ennemy1 = game.add.sprite(data.ennemy1X,data.ennemy1Y,"player",8);
+    this.ennemy1Sprite = game.add.sprite(data.ennemy1X,data.ennemy1Y,"player",8);
+    this.ennemy1Sprite.healthbar = game.add.image(0,229,"healthbar");
     if(!data.singleEnnemy){
-        this.ennemy2 = game.add.sprite(data.ennemy2X,data.ennemy2Y,"player",8);
+        this.ennemy2Sprite = game.add.sprite(data.ennemy2X,data.ennemy2Y,"player",8);
+        this.ennemy2Sprite.healthbar = game.add.image(0,168,"healthbar");
     }
 }
 //éventuellement 1vs1 , 1vs2 et 2vs2
@@ -122,9 +128,16 @@ listItems(){
 initFighters(data){
     //positioner le(s) joueur en fonction de la bataille
     //condidtionner les positions dans un seul objet ?
-    this.player = game.add.sprite(data.playerX,data.playerY,"player",4);
+    this.playerSprite = game.add.sprite(data.playerX,data.playerY,data.player.key,4);
+    // this.playerSprite.healthbar = game.add.image(616,229,"healthbar");
+    // this.playerSprite.health = game.add.image(this.playerSprite.healthbar.x+54,this.playerSprite.healthbar.y+2,"health")
+    // this.playerSprite.health.tint= globals.colors.green;
+    this.playerSprite.healthbar = new Healthbar(619,229,data.player);
     if(!data.solo){
-        this.helper = game.add.sprite(data.helperX,data.helperY,"player",4);
+        this.helperSprite = game.add.sprite(data.helperX,data.helperY,data.helper.key,4);
+        // this.helperSprite.healthbar = game.add.image(616,168,"healthbar");
+        // this.helperSprite.health = game.add.image(this.helperSprite.healthbar.x,this.helperSprite.healthbar.y,"health");
+        // this.helperSprite.health.tint= globals.colors.green;
     }
 }
 
@@ -177,7 +190,7 @@ listAttack(data){
             this.attack4 = game.add.bitmapText(0,0,"candideFont",data.attack4.name, 45);
             this.attack4.alignIn(this.menus[1],Phaser.TOP_CENTER,0,-150);
         }
-        this.choice = game.add.sprite(400,295,"attackChoice");
+        this.choice = game.add.sprite(400,this.attackBg[0].y,"attackChoice");
     }
 }
 destroyAtckList(){
@@ -492,7 +505,7 @@ chooseCharacter(data,action){
                                     this.tab[k].destroy();
                                 }
                                 this.tab = [];
-                                this.choice = game.add.sprite(400,295,"attackChoice");
+                                this.choice = game.add.sprite(400,this.attackBg[0].y,"attackChoice");
                                 this.attIndex=2;
                                 this.chooseAction(globals.battleData.player);
                                 break;
