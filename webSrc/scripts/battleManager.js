@@ -69,7 +69,9 @@ class BattleManager{
         case "ennemy1":
         ctx.arrayIndex ++;
         data.ennemy1.turn(data);
-        data.ennemy1.target.damage(14)
+
+        console.log(data.ennemy1.target)
+        data.ennemy1.target.damage(20);
         str = `${data.ennemy1.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${data.ennemy1.target.name}. ${data.ennemy1.msg} `;
         txt = [[str,function(){ctx.eventCall(callbacks,data)}]];
         ctx.playerSprite.healthbar.turn(globals.battleData.set.player);

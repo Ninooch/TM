@@ -22,6 +22,7 @@ info(){
     }
     normal(cible){
         cible.damage(this.pdg);
+        debugger;
         this.msg = 0;
     }
     rate(){

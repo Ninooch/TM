@@ -33,20 +33,13 @@ class Healthbar{
         this.health.scale.x = prct;
     }
     scale(data){
-        if(this.currentHealth !=data.health){
-            let prct = ((this.currentHealth-data.health) / this.currentHealth );
+            let prct = ((data.health-(data.maxHealth-data.health)) / data.maxHealth );
             console.log(prct)
             let tween = game.add.tween(this.health.scale).to( {x : prct}, 600, Phaser.Easing.Linear.None,true);
-        }
     }
     turn(data){
-        console.log(data.health);
-        this.currentHealth -= (this.currentHealth-data.health);
-        console.log(data.health)
-        console.log(this.currentHealth-data.health)
         this.color(data);
         this.scale(data);
-        console.log(this.currentHealth)
         if(data.health== 0 ){
             console.log("0!anima")
             this.healthP2.animations.play("ko",null,false,true);
