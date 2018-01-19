@@ -34,16 +34,16 @@ class Healthbar{
     }
     scale(data){
             let prct = ((data.maxHealth-(data.maxHealth-data.health)) / data.maxHealth );
-            console.log(prct)
-                console.log(data.health)
             let tween = game.add.tween(this.health.scale).to( {x : prct}, 600, Phaser.Easing.Linear.None,true);
     }
     turn(data){
         this.color(data);
         this.scale(data);
         console.log(data.alive)
-        if(data.health== 0 ){
-            console.log("0!anima")
+        if(data.health<= 0 ){
+            data.alive = false;
+            //data.events.onKilled.addOnce(function(){console.log("killed")})
+            this.health.destroy();
             this.healthP2.animations.play("ko",null,false,true);
         }
     }

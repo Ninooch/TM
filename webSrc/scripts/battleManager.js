@@ -13,8 +13,8 @@ class BattleManager{
         this.signal.add(this.eventHandler,this);
         this.tab = [];
         this.turn = {
-            player: {first:false,ready:false,currentAction:"",target:"",alive:true},
-            helper : {first:false,ready:false,currentAction:"",target:"",alive:true}, //à voir dans set s'il existe
+            player: {first:false,ready:false,currentAction:"",target:""},
+            helper : {first:false,ready:false,currentAction:"",target:""}, //à voir dans set s'il existe
         }; // courtes références aux actions qu'il se passe par tour. sinon, c'est ceux dans battleData.set qui font les actions!!
         this.currentPlayer = this.turn.player; //par défaut
         //faire un objet turn avec différentes propriétés. turn on complet c'est quand tout les combattants ont participés (att ou obj)
@@ -123,9 +123,13 @@ initEnnemy(data){
     }
 }
 healthBarUpdate(data){
+    console.log("ennemy1")
     this.ennemy1Sprite.healthbar.turn(data.ennemy1);
+    console.log("ennemy2")
     this.ennemy2Sprite.healthbar.turn(data.ennemy2);
+    console.log("candide")
     this.playerSprite.healthbar.turn(data.player);
+    console.log("Helper")
     this.helperSprite.healthbar.turn(data.helper);
 }
 //éventuellement 1vs1 , 1vs2 et 2vs2
@@ -211,7 +215,7 @@ startTurn(data){
     if(this.attackBg.length != 0){
         this.destroyAtckList();
     }
-    if(data.solo){
+    if(data.solo || !data.helper.alive){
         if(!this.turn.player.ready){
             var ctx = this;
             this.str = globals.battleData.text.choosePlayer + globals.player.name + "?" ;
