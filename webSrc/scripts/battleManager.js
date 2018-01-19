@@ -52,6 +52,7 @@ class BattleManager{
         case "player":
         ctx.arrayIndex ++;
         ctx.turn.player.currentAction.tour(ctx.turn.player.target);
+        ctx.healthBarUpdate(data);
         ctx.turn.player.ready = false;
         str = `${globals.player.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${ctx.turn.player.target.name}. ${ctx.turn.player.currentAction.desc()}`;
         txt = [[str,function(){ctx.eventCall(callbacks,data)}]];
@@ -60,6 +61,7 @@ class BattleManager{
         case "helper":
         ctx.arrayIndex ++;
         ctx.turn.helper.currentAction.tour(ctx.turn.helper.target);
+        ctx.healthBarUpdate(data);
         ctx.turn.helper.ready = false;
         ctx = this;
         str = `${globals.battleData.set.helperName} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${ctx.turn.helper.target.name}. ${ctx.turn.helper.currentAction.desc()}`;
@@ -69,9 +71,7 @@ class BattleManager{
         case "ennemy1":
         ctx.arrayIndex ++;
         data.ennemy1.turn(data);
-
-        console.log(data.ennemy1.target)
-        data.ennemy1.target.damage(20);
+        ctx.healthBarUpdate(data);
         str = `${data.ennemy1.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${data.ennemy1.target.name}. ${data.ennemy1.msg} `;
         txt = [[str,function(){ctx.eventCall(callbacks,data)}]];
         ctx.playerSprite.healthbar.turn(globals.battleData.set.player);
@@ -80,8 +80,10 @@ class BattleManager{
         case "ennemy2":
         ctx.arrayIndex ++;
         data.ennemy1.turn(data);
+        ctx.healthBarUpdate(data);
         str = `${data.ennemy2.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${data.ennemy2.target.name}. ${data.ennemy2.msg} `;
         txt = [[str,function(){ctx.eventCall(callbacks,data)}]];
+        ctx.playerSprite.healthbar.turn(globals.battleData.set.player);
         globals.dialogManager.startBattleDesc(txt,{is:true,callback:true,time:900});
         break;
         case "newTurn":
@@ -114,11 +116,17 @@ turnBattle(data){
 }
 initEnnemy(data){
     this.ennemy1Sprite = game.add.sprite(data.ennemy1X,data.ennemy1Y,"player",8);
-    this.ennemy1Sprite.healthbar = game.add.image(0,229,"healthbar");
+    this.ennemy1Sprite.healthbar = new Healthbar(0,229,data.ennemy1);
     if(!data.singleEnnemy){
         this.ennemy2Sprite = game.add.sprite(data.ennemy2X,data.ennemy2Y,"player",8);
-        this.ennemy2Sprite.healthbar = game.add.image(0,168,"healthbar");
+        this.ennemy2Sprite.healthbar = new Healthbar(0,168,data.ennemy2);
     }
+}
+healthBarUpdate(data){
+    this.ennemy1Sprite.healthbar.turn(data.ennemy1);
+    this.ennemy2Sprite.healthbar.turn(data.ennemy2);
+    this.playerSprite.healthbar.turn(data.player);
+    this.helperSprite.healthbar.turn(data.helper);
 }
 //éventuellement 1vs1 , 1vs2 et 2vs2
 //bataille en 2 étapes d'actions: choisir une option. si attaque : choisir l'ennemi, si objet, choisir le bénéficiaire
@@ -131,15 +139,10 @@ initFighters(data){
     //positioner le(s) joueur en fonction de la bataille
     //condidtionner les positions dans un seul objet ?
     this.playerSprite = game.add.sprite(data.playerX,data.playerY,data.player.key,4);
-    // this.playerSprite.healthbar = game.add.image(616,229,"healthbar");
-    // this.playerSprite.health = game.add.image(this.playerSprite.healthbar.x+54,this.playerSprite.healthbar.y+2,"health")
-    // this.playerSprite.health.tint= globals.colors.green;
     this.playerSprite.healthbar = new Healthbar(619,229,data.player);
     if(!data.solo){
         this.helperSprite = game.add.sprite(data.helperX,data.helperY,data.helper.key,4);
-        // this.helperSprite.healthbar = game.add.image(616,168,"healthbar");
-        // this.helperSprite.health = game.add.image(this.helperSprite.healthbar.x,this.helperSprite.healthbar.y,"health");
-        // this.helperSprite.health.tint= globals.colors.green;
+        this.helperSprite.healthbar = new Healthbar(619,168,data.helper);
     }
 }
 

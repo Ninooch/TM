@@ -11,12 +11,12 @@ class Healthbar{
     //100 % c'est quand le pnj a l'entièreté de ses points de vie.
     // sinon : ( ptsMax-currentHP / ptsMax )*longeur de la barre, dimensions du rectangle à crop
     color(data){
-        if(this.currentHealth < data.maxHealth/2){
-            if(this.currentHealth < data.maxHealth /4 && this.health.tint != globals.colors.red){
+        if(data.health < data.maxHealth/2){
+            if(data.health < data.maxHealth /4 && this.health.tint != globals.colors.red){
                 this.health.tint = globals.colors.red;
                 this.healthP2.tint = globals.colors.red;
             }
-            if(this.currentHealth > data.maxHealth/4 && this.currentHealth.tint != globals.colors.orange){
+            if(data.health> data.maxHealth/4 && this.health.tint != globals.colors.orange){
                 this.health.tint = globals.colors.orange;
                 this.healthP2.tint = globals.colors.orange;
             }
@@ -33,13 +33,15 @@ class Healthbar{
         this.health.scale.x = prct;
     }
     scale(data){
-            let prct = ((data.health-(data.maxHealth-data.health)) / data.maxHealth );
+            let prct = ((data.maxHealth-(data.maxHealth-data.health)) / data.maxHealth );
             console.log(prct)
+                console.log(data.health)
             let tween = game.add.tween(this.health.scale).to( {x : prct}, 600, Phaser.Easing.Linear.None,true);
     }
     turn(data){
         this.color(data);
         this.scale(data);
+        console.log(data.alive)
         if(data.health== 0 ){
             console.log("0!anima")
             this.healthP2.animations.play("ko",null,false,true);

@@ -21,8 +21,9 @@ info(){
         }
     }
     normal(cible){
+        cible.alive = true;
         cible.damage(this.pdg);
-        debugger;
+        //debugger;
         this.msg = 0;
     }
     rate(){
