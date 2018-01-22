@@ -2,6 +2,7 @@ class Ennemy extends Pnj {
         constructor(data,dialogs){
             super(data.x,data.y,data.key,data.frame,data.name,dialogs);
             this.combatFrame = 8;
+            this.alive = true;
             this.faceAnimKey = data.faceAnimation || "animationBase";
             this.attack1 = data.attack1;
             this.attack2 = data.attack2 || undefined;
