@@ -42,7 +42,7 @@ globals.battleData.helper = {
 
 globals.battleData.set = {
     //let variable = (condition) ? valueIfTrue : valueIfFalse;
-    solo : false,
+    solo : true,
     player:globals.player,
     helper:"",
     isPhi : false,
@@ -52,8 +52,8 @@ globals.battleData.set = {
     helperY : 120,
     helperName : "Cacambo", //changer en cours de route ( en fonction du jeu)
     singleEnnemy : false,
-    ennemy1 : globals.pnjs.martin2,
-    ennemy2 : globals.pnjs.martin2,
+    ennemy1 : "",
+    ennemy2 : "",
     ennemy1X :(this.singleEnnemy) ? 200 : 230,
     ennemy1Y :(this.singleEnnemy) ? 100 : 70,
     ennemy2X :200,

@@ -102,7 +102,21 @@ turnBattle(data){
             this.eventCall(["player","ennemy1","newTurn"],globals.battleData.set);
         }
         else{
-            this.eventCall(["player","ennemy1","helper","newTurn"],globals.battleData.set);
+            if(data.player.alive){
+                if(data.helper.alive){
+                    this.eventCall(["player","ennemy1","helper","newTurn"],globals.battleData.set);
+                }
+                else{
+                    this.eventCall(["player","ennemy1","nextTurn"],globals.battleData.set);
+                }
+            }
+            else{
+                if(data.helper.alive){
+                    this.eventCall(["helper","ennemy1","nextTurn"],globals.battleData.set);
+                }
+            }
+
+
         }
     }
     else{
@@ -123,14 +137,18 @@ initEnnemy(data){
     }
 }
 healthBarUpdate(data){
-    console.log("ennemy1")
-    this.ennemy1Sprite.healthbar.turn(data.ennemy1);
-    console.log("ennemy2")
-    this.ennemy2Sprite.healthbar.turn(data.ennemy2);
-    console.log("candide")
-    this.playerSprite.healthbar.turn(data.player);
-    console.log("Helper")
-    this.helperSprite.healthbar.turn(data.helper);
+    if(data.ennemy1.alive){
+        this.ennemy1Sprite.healthbar.turn(data.ennemy1);
+    }
+    if(!data.singleEnnemy && data.ennemy2.alive){
+        this.ennemy2Sprite.healthbar.turn(data.ennemy2);
+    }
+    if(data.player.alive){
+        this.playerSprite.healthbar.turn(data.player);
+    }
+    if(!data.solo && data.helper.alive){
+        this.helperSprite.healthbar.turn(data.helper);
+    }
 }
 //éventuellement 1vs1 , 1vs2 et 2vs2
 //bataille en 2 étapes d'actions: choisir une option. si attaque : choisir l'ennemi, si objet, choisir le bénéficiaire

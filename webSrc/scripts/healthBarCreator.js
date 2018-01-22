@@ -39,10 +39,9 @@ class Healthbar{
     turn(data){
         this.color(data);
         this.scale(data);
-        console.log(data.alive)
         if(data.health<= 0 ){
             data.alive = false;
-            //data.events.onKilled.addOnce(function(){console.log("killed")})
+            // data.events.onKilled.addOnce(function(){data.tint=globals.colors.red;},this);
             this.health.destroy();
             this.healthP2.animations.play("ko",null,false,true);
         }
