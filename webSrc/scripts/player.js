@@ -11,7 +11,7 @@ function initPlayer(x,y){
 
     globals.player.maxHealth = 120;
     globals.player.setHealth(120);
-    globals.player.alive = true;
+    globals.player.isAlive = true;
     globals.player.customProps = {};
 
     globals.player.customProps.animationSpeed = 6;

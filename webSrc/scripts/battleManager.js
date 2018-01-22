@@ -97,15 +97,15 @@ eventCall(callbacks,data){
     this.signal.dispatch(callbacks,data);
 }
 turnBattle(data){
-    console.log(data.ennemy1.alive);
+    console.log(data.ennemy1.isAlive);
     console.log(data.ennemy1)
     if(data.singleEnnemy){
         if(data.solo){
             this.eventCall(["player","ennemy1","newTurn"],globals.battleData.set);
         }
         else{
-            if(data.player.alive){
-                if(data.helper.alive){
+            if(data.player.isAlive){
+                if(data.helper.isAlive){
                     this.eventCall(["player","ennemy1","helper","newTurn"],globals.battleData.set);
                 }
                 else{
@@ -113,24 +113,24 @@ turnBattle(data){
                 }
             }
             else{
-                if(data.helper.alive){
+                if(data.helper.isAlive){
                     this.eventCall(["helper","ennemy1","nextTurn"],globals.battleData.set);
                 }
             }
         }
     }
     else{
-        if(data.ennemy1.alive){
-            if(data.ennemy2.alive){
+        if(data.ennemy1.isAlive){
+            if(data.ennemy2.isAlive){
                 if(data.solo){
-                    if(data.player.alive){
+                    if(data.player.isAlive){
                         console.log("test")
                         this.eventCall(["player","ennemy1","ennemy2","newTurn"],globals.battleData.set);
                     }
                 }
                 else{
-                    if(data.player.alive){
-                        if(data.helper.alive){
+                    if(data.player.isAlive){
+                        if(data.helper.isAlive){
                             this.eventCall(["player","ennemy1","ennemy2","helper","newTurn"],globals.battleData.set);
                         }
                         else{
@@ -138,7 +138,7 @@ turnBattle(data){
                         }
                     }
                     else{
-                        if(data.helper.alive){
+                        if(data.helper.isAlive){
                             this.eventCall(["helper","ennemy1","ennemy2","nextTurn"],globals.battleData.set);
                         }
                     }
@@ -146,13 +146,13 @@ turnBattle(data){
             }
             else{
                 if(data.solo){
-                    if(data.player.alive){
+                    if(data.player.isAlive){
                         this.eventCall(["player","ennemy1","newTurn"],globals.battleData.set);
                     }
                 }
                 else{
-                    if(data.player.alive){
-                        if(data.helper.alive){
+                    if(data.player.isAlive){
+                        if(data.helper.isAlive){
                             this.eventCall(["player","ennemy1","helper","newTurn"],globals.battleData.set);
                         }
                         else{
@@ -160,7 +160,7 @@ turnBattle(data){
                         }
                     }
                     else{
-                        if(data.helper.alive){
+                        if(data.helper.isAlive){
                             this.eventCall(["helper","ennemy1","nextTurn"],globals.battleData.set);
                         }
                     }
@@ -168,9 +168,9 @@ turnBattle(data){
             }
         }
         else{
-            if(data.ennemy2.alive){
-                if(data.player.alive){
-                    if(data.helper.alive){
+            if(data.ennemy2.isAlive){
+                if(data.player.isAlive){
+                    if(data.helper.isAlive){
                         this.eventCall(["player","ennemy2","helper","newTurn"],globals.battleData.set);
                     }
                     else{
@@ -178,7 +178,7 @@ turnBattle(data){
                     }
                 }
                 else{
-                    if(data.helper.alive){
+                    if(data.helper.isAlive){
                         this.eventCall(["helper","ennemy2","nextTurn"],globals.battleData.set);
                     }
                 }
@@ -195,16 +195,16 @@ initEnnemy(data){
     }
 }
 healthBarUpdate(data){
-    if(data.ennemy1.alive){
+    if(data.ennemy1.isAlive){
         this.ennemy1Sprite.healthbar.turn(data.ennemy1);
     }
-    if(!data.singleEnnemy && data.ennemy2.alive){
+    if(!data.singleEnnemy && data.ennemy2.isAlive){
         this.ennemy2Sprite.healthbar.turn(data.ennemy2);
     }
-    if(data.player.alive){
+    if(data.player.isAlive){
         this.playerSprite.healthbar.turn(data.player);
     }
-    if(!data.solo && data.helper.alive){
+    if(!data.solo && data.helper.isAlive){
         this.helperSprite.healthbar.turn(data.helper);
     }
 }
@@ -291,7 +291,7 @@ startTurn(data){
     if(this.attackBg.length != 0){
         this.destroyAtckList();
     }
-    if(data.solo || !data.helper.alive){
+    if(data.solo || !data.helper.isAlive){
         if(!this.turn.player.ready){
             var ctx = this;
             this.str = globals.battleData.text.choosePlayer + globals.player.name + "?" ;
