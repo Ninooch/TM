@@ -302,7 +302,16 @@ startTurn(data){
             this.turnBattle(data);
         }
     }
-    else{
+    else{ //pas solo
+        // if player. alive
+        // // if helper.alive
+        // ce qu'il y a en dessous
+        // else helper is not alive
+        // // cas du haut
+        // else player is not alive
+        // // if helper is alive and ready
+        //  //lancer l'action du helper sans le choix du joueur;
+
         if(!this.turn.player.ready && !this.turn.helper.ready){
             var ctx = this;
             this.selectArrow = game.add.sprite(data.playerX, data.playerY - 29, "selectArrow");
@@ -343,6 +352,7 @@ chooseCharacter(data,action){
 
     input.up.onDown.addOnce(function(){
         if(action =="choseEnnemy"){
+            //if avec les ennemys alive et tout
             if(this.selectArrow.x == data.ennemy2X){
                 this.transitionTween = 	game.add.tween(this.selectArrow).to(
                     {x: data.ennemy1X,y:data.ennemy1Y-29},300,Phaser.Easing.Linear.None, true);
@@ -534,6 +544,7 @@ chooseCharacter(data,action){
                         switch(this.indexChoice){
                             case 1 :
                             // choisir un ennemi avec un texte : sur qui utiliser "...";
+                            //gros if avec les proprs alive des ennemys
                             globals.dialogManager.stop();
                             this.choice.destroy();
                             this.indexChoice = 0;
