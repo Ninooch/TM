@@ -5,7 +5,8 @@ var globals = {
     dialogs : {},
     warps : {},
     attacks : {},
-    battleData :{}
+    battleData :{},
+    music : {},
 };
 globals.terrainManager = new TerrainManager();
 globals.dialogManager = new DialogManager();
@@ -99,4 +100,6 @@ function createMap1 (){
     globals.pnjs.pangloss = new Pnj(globals.maps.chateau.properties.pnj2X,globals.maps.chateau.properties.pnj2Y,"pangloss",0,"Pangloss",globals.dialogs.pangloss,"panglossFaceAnimation");
     globals.maps.chateau.addPnjs(globals.pnjs.pangloss);
     globals.maps.chateau.addPnjs(globals.pnjs.martin2);
+
+    globals.music.campanella = game.add.audio("campanella");
 }

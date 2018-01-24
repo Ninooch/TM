@@ -30,6 +30,7 @@ var preloadState = {
         game.load.image("healthbar","assets/sprites/game/healthBar.png");
         game.load.image("health","assets/sprites/game/health.png");
         game.load.spritesheet("healthP2","assets/sprites/game/healthP2.png",11,16);
+        game.load.audio("campanella","assets/musiques/paganiniCampanella.mp3");
         //tilemaps
         //game.load.tilemap("testmap","assets/maps/test.json",null,Phaser.Tilemap.TILED_JSON);
         //game.load.tilemap("testmap2","assets/maps/test2.json",null,Phaser.Tilemap.TILED_JSON);

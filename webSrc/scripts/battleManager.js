@@ -11,6 +11,8 @@ class BattleManager{
         this.arrayIndex = 0;
         this.signal = new Phaser.Signal();
         this.signal.add(this.eventHandler,this);
+        this.endBattle = new Phaser.Signal();
+        this.endBattle.add(this.eventEnd,this);
         this.tab = [];
         this.turn = {
             player: {first:false,ready:false,currentAction:"",target:""},
@@ -53,6 +55,7 @@ class BattleManager{
         ctx.arrayIndex ++;
         ctx.turn.player.currentAction.tour(ctx.turn.player.target);
         ctx.healthBarUpdate(data);
+        ctx.callEnd();
         ctx.turn.player.ready = false;
         str = `${globals.player.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${ctx.turn.player.target.name}. ${ctx.turn.player.currentAction.desc()}`;
         txt = [[str,function(){ctx.eventCall(callbacks,data)}]];
@@ -62,6 +65,7 @@ class BattleManager{
         ctx.arrayIndex ++;
         ctx.turn.helper.currentAction.tour(ctx.turn.helper.target);
         ctx.healthBarUpdate(data);
+        ctx.callEnd();
         ctx.turn.helper.ready = false;
         ctx = this;
         str = `${globals.battleData.set.helperName} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${ctx.turn.helper.target.name}. ${ctx.turn.helper.currentAction.desc()}`;
@@ -72,6 +76,7 @@ class BattleManager{
         ctx.arrayIndex ++;
         data.ennemy1.turn(data);
         ctx.healthBarUpdate(data);
+        ctx.callEnd();
         str = `${data.ennemy1.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${data.ennemy1.target.name}. ${data.ennemy1.msg} `;
         txt = [[str,function(){ctx.eventCall(callbacks,data)}]];
         ctx.playerSprite.healthbar.turn(globals.battleData.set.player);
@@ -81,6 +86,7 @@ class BattleManager{
         ctx.arrayIndex ++;
         data.ennemy1.turn(data);
         ctx.healthBarUpdate(data);
+        ctx.callEnd();
         str = `${data.ennemy2.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${data.ennemy2.target.name}. ${data.ennemy2.msg} `;
         txt = [[str,function(){ctx.eventCall(callbacks,data)}]];
         ctx.playerSprite.healthbar.turn(globals.battleData.set.player);
@@ -92,6 +98,41 @@ class BattleManager{
         default:
         console.warn("CallbackName not found in battleManager.eventHandler");
     }
+}
+eventEnd(data){
+    if(data.singleEnnemy){
+        if(!data.ennemy1.isAlive){
+            // victoire
+        }
+        if(data.solo){
+            if(!data.player.isAlive){
+                //défaite
+            }
+        }else{
+            if(!data.player.isAlive && !data.helper.isAlive){
+                // défaite
+            }
+        }
+    }
+    else{
+        if(!data.ennemy1.isAlive && !data.ennemy2.isAlive){
+            // victoire
+            console.log("victoire");
+        }
+        if(data.solo){
+            if(!data.player.isAlive){
+                //défaite
+                console.log("défaite");
+            }
+        }else{
+            if(!data.player.isAlive && !data.helper.isAlive){
+                // défaite
+            }
+        }
+    }
+}
+callEnd(){
+    this.endBattle.dispatch(globals.battleData.set);
 }
 eventCall(callbacks,data){
     this.signal.dispatch(callbacks,data);
