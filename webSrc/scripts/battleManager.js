@@ -52,45 +52,61 @@ class BattleManager{
     let txt;
     switch(callbacks[ctx.arrayIndex]){
         case "player":
-        ctx.arrayIndex ++;
-        ctx.turn.player.currentAction.tour(ctx.turn.player.target);
-        ctx.healthBarUpdate(data);
-        ctx.callEnd();
-        ctx.turn.player.ready = false;
-        str = `${globals.player.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${ctx.turn.player.target.name}. ${ctx.turn.player.currentAction.desc()}`;
-        txt = [[str,function(){ctx.eventCall(callbacks,data)}]];
-        globals.dialogManager.startBattleDesc(txt,{is:true,callback:true,time:900});
+        ctx.arrayIndex++;
+        if(data.player.isAlive){
+            ctx.turn.player.currentAction.tour(ctx.turn.player.target);
+            ctx.healthBarUpdate(data);
+            ctx.callEnd();
+            ctx.turn.player.ready = false;
+            str = `${globals.player.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${ctx.turn.player.target.name}. ${ctx.turn.player.currentAction.desc()}`;
+            txt = [[str,function(){ctx.eventCall(callbacks,data)}]];
+            globals.dialogManager.startBattleDesc(txt,{is:true,callback:true,time:900});
+        }else{
+            ctx.eventCall(callbacks,data);
+        }
         break;
         case "helper":
-        ctx.arrayIndex ++;
-        ctx.turn.helper.currentAction.tour(ctx.turn.helper.target);
-        ctx.healthBarUpdate(data);
-        ctx.callEnd();
-        ctx.turn.helper.ready = false;
-        ctx = this;
-        str = `${globals.battleData.set.helperName} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${ctx.turn.helper.target.name}. ${ctx.turn.helper.currentAction.desc()}`;
-        txt = [[str,function(){ctx.eventCall(callbacks,data)}]];
-        globals.dialogManager.startBattleDesc(txt,{is:true,callback:true,time:900});
+        ctx.arrayIndex++;
+        if(data.helper.isAlive){
+            ctx.turn.helper.currentAction.tour(ctx.turn.helper.target);
+            ctx.healthBarUpdate(data);
+            ctx.callEnd();
+            ctx.turn.helper.ready = false;
+            ctx = this;
+            str = `${globals.battleData.set.helperName} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${ctx.turn.helper.target.name}. ${ctx.turn.helper.currentAction.desc()}`;
+            txt = [[str,function(){ctx.eventCall(callbacks,data)}]];
+            globals.dialogManager.startBattleDesc(txt,{is:true,callback:true,time:900});
+        }else{
+            ctx.eventCall(callbacks,data);
+        }
         break;
         case "ennemy1":
-        ctx.arrayIndex ++;
-        data.ennemy1.turn(data);
-        ctx.healthBarUpdate(data);
-        ctx.callEnd();
-        str = `${data.ennemy1.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${data.ennemy1.target.name}. ${data.ennemy1.msg} `;
-        txt = [[str,function(){ctx.eventCall(callbacks,data)}]];
-        ctx.playerSprite.healthbar.turn(globals.battleData.set.player);
-        globals.dialogManager.startBattleDesc(txt,{is:true,callback:true,time:900});
+        ctx.arrayIndex++;
+        if(data.ennemy1.isAlive){
+            data.ennemy1.turn(data);
+            ctx.healthBarUpdate(data);
+            ctx.callEnd();
+            str = `${data.ennemy1.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${data.ennemy1.target.name}. ${data.ennemy1.msg} `;
+            txt = [[str,function(){ctx.eventCall(callbacks,data)}]];
+            ctx.playerSprite.healthbar.turn(globals.battleData.set.player);
+            globals.dialogManager.startBattleDesc(txt,{is:true,callback:true,time:900});
+        }else{
+            ctx.eventCall(callbacks,data);
+        }
         break;
         case "ennemy2":
-        ctx.arrayIndex ++;
-        data.ennemy1.turn(data);
-        ctx.healthBarUpdate(data);
-        ctx.callEnd();
-        str = `${data.ennemy2.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${data.ennemy2.target.name}. ${data.ennemy2.msg} `;
-        txt = [[str,function(){ctx.eventCall(callbacks,data)}]];
-        ctx.playerSprite.healthbar.turn(globals.battleData.set.player);
-        globals.dialogManager.startBattleDesc(txt,{is:true,callback:true,time:900});
+        ctx.arrayIndex++;
+        if(data.ennemy2.isAlive){
+            data.ennemy2.turn(data);
+            ctx.healthBarUpdate(data);
+            ctx.callEnd();
+            str = `${data.ennemy2.name} ${(data.isPhi)?globals.battleData.text.argumente:globals.battleData.text.attaque}${data.ennemy2.target.name}. ${data.ennemy2.msg} `;
+            txt = [[str,function(){ctx.eventCall(callbacks,data)}]];
+            ctx.playerSprite.healthbar.turn(globals.battleData.set.player);
+            globals.dialogManager.startBattleDesc(txt,{is:true,callback:true,time:900});
+        }else{
+            ctx.eventCall(callbacks,data);
+        }
         break;
         case "newTurn":
         ctx.startTurn(data);
@@ -138,95 +154,24 @@ eventCall(callbacks,data){
     this.signal.dispatch(callbacks,data);
 }
 turnBattle(data){
-    console.log(data.ennemy1.isAlive);
-    console.log(data.ennemy1)
     if(data.singleEnnemy){
         if(data.solo){
             this.eventCall(["player","ennemy1","newTurn"],globals.battleData.set);
         }
         else{
-            if(data.player.isAlive){
-                if(data.helper.isAlive){
-                    this.eventCall(["player","ennemy1","helper","newTurn"],globals.battleData.set);
-                }
-                else{
-                    this.eventCall(["player","ennemy1","nextTurn"],globals.battleData.set);
-                }
-            }
-            else{
-                if(data.helper.isAlive){
-                    this.eventCall(["helper","ennemy1","nextTurn"],globals.battleData.set);
-                }
-            }
+            this.eventCall(["player","ennemy1","helper","newTurn"],globals.battleData.set);
         }
     }
     else{
-        if(data.ennemy1.isAlive){
-            if(data.ennemy2.isAlive){
-                if(data.solo){
-                    if(data.player.isAlive){
-                        console.log("test")
-                        this.eventCall(["player","ennemy1","ennemy2","newTurn"],globals.battleData.set);
-                    }
-                }
-                else{
-                    if(data.player.isAlive){
-                        if(data.helper.isAlive){
-                            this.eventCall(["player","ennemy1","ennemy2","helper","newTurn"],globals.battleData.set);
-                        }
-                        else{
-                            this.eventCall(["player","ennemy1","ennemy2","nextTurn"],globals.battleData.set);
-                        }
-                    }
-                    else{
-                        if(data.helper.isAlive){
-                            this.eventCall(["helper","ennemy1","ennemy2","nextTurn"],globals.battleData.set);
-                        }
-                    }
-                }
-            }
-            else{
-                if(data.solo){
-                    if(data.player.isAlive){
-                        this.eventCall(["player","ennemy1","newTurn"],globals.battleData.set);
-                    }
-                }
-                else{
-                    if(data.player.isAlive){
-                        if(data.helper.isAlive){
-                            this.eventCall(["player","ennemy1","helper","newTurn"],globals.battleData.set);
-                        }
-                        else{
-                            this.eventCall(["player","ennemy1","nextTurn"],globals.battleData.set);
-                        }
-                    }
-                    else{
-                        if(data.helper.isAlive){
-                            this.eventCall(["helper","ennemy1","nextTurn"],globals.battleData.set);
-                        }
-                    }
-                }
-            }
+        if(data.solo){
+            this.eventCall(["player","ennemy1","ennemy2","newTurn"],globals.battleData.set);
         }
         else{
-            if(data.ennemy2.isAlive){
-                if(data.player.isAlive){
-                    if(data.helper.isAlive){
-                        this.eventCall(["player","ennemy2","helper","newTurn"],globals.battleData.set);
-                    }
-                    else{
-                        this.eventCall(["player","ennemy2","nextTurn"],globals.battleData.set);
-                    }
-                }
-                else{
-                    if(data.helper.isAlive){
-                        this.eventCall(["helper","ennemy2","nextTurn"],globals.battleData.set);
-                    }
-                }
-            }
+            this.eventCall(["player","ennemy1","ennemy2","helper","newTurn"],globals.battleData.set);
         }
     }
 }
+
 initEnnemy(data){
     this.ennemy1Sprite = game.add.sprite(data.ennemy1X,data.ennemy1Y,"player",8);
     this.ennemy1Sprite.healthbar = new Healthbar(0,229,data.ennemy1);
@@ -327,7 +272,7 @@ destroyAtckList(){
     }
     this.attackBg = [];
 }
-startTurn(data){
+startTurn(data){ // vérifier des trucs genre l'ordre de passage etc
     this.arrayIndex = 0;
     if(this.attackBg.length != 0){
         this.destroyAtckList();
@@ -408,7 +353,7 @@ startTurn(data){
         // else player is not alive
         // // if helper is alive and ready
         //  //lancer l'action du helper sans le choix du joueur;
-        // 
+        //
         // if(!this.turn.player.ready && !this.turn.helper.ready){
         //     var ctx = this;
         //     this.selectArrow = game.add.sprite(data.playerX, data.playerY - 29, "selectArrow");

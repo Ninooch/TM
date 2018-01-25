@@ -23,10 +23,11 @@ turn(battleData){ //voir si ça marche et améliorer pour les batailles phi
     this.target;
     if(!battleData.solo){
         let rnd = Math.random();
-        this.target = (rnd<.5) ? battleData.player : battleData.helper;
+        this.target = (rnd<0.5) ? battleData.player : battleData.helper;
     }
     else{
         this.target = battleData.player;
+        console.log(this.target.name)
     }
     if(this.attack2 == undefined){
         this.attack1.tour(this.target);
