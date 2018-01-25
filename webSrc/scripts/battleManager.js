@@ -344,6 +344,62 @@ startTurn(data){
         }
     }
     else{ //pas solo
+        if(data.player.isAlive){
+            if(data.player.isAlive){
+                if(!this.turn.player.ready && !this.turn.helper.ready){
+                    var ctx = this;
+                    this.selectArrow = game.add.sprite(data.playerX, data.playerY - 29, "selectArrow");
+                    this.selectArrow.animations.add("iddle",[0,1,2,3,4],5);
+                    this.selectArrow.animations.play("iddle",9,true);
+
+                    this.str = globals.battleData.text.choosePlayer + globals.player.name + "?" ;
+                    this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.chooseCharacter(data,"choseHandler");}]);
+                    globals.dialogManager.startBattleDesc(this.txt,{is:false});
+                    this.currentPlayer = this.turn.player;
+                }
+                else if(this.turn.player.ready && !this.turn.helper.ready){
+                    this.currentPlayer = this.turn.helper;
+                    var ctx = this;
+                    this.str = globals.battleData.text.choosePlayer + globals.battleData.set.helperName + "?" ;
+                    this.txt.push([this.str,function(){ctx.str="";ctx.txt = [];ctx.listAttack(globals.battleData.helper,data.isPhi);ctx.chooseAction(globals.battleData.helper);}]);
+                    globals.dialogManager.startBattleDesc(this.txt,{is:true,callback:true,time:500});
+                }
+                else if(this.turn.helper.ready && !this.turn.player.ready){
+                    this.currentPlayer = this.turn.player;
+                    var ctx = this;
+                    this.str = globals.battleData.text.choosePlayer + globals.player.name + "?" ;
+                    this.txt.push([this.str,function(){ctx.str="";ctx.txt = [];ctx.listAttack(globals.battleData.player,data.isPhi);ctx.chooseAction(globals.battleData.player);}]);
+                    globals.dialogManager.startBattleDesc(this.txt,{is:true,callback:true,time:500});
+                }
+                else {
+                    this.turnBattle(data);
+                }
+            }
+            else{// helper not alive
+                if(!this.turn.player.ready){
+                    var ctx = this;
+                    this.str = globals.battleData.text.choosePlayer + globals.player.name + "?" ;
+                    this.txt.push([this.str,function(){ctx.str="";ctx.txt = [];ctx.listAttack(globals.battleData.player,data.isPhi);ctx.chooseAction(globals.battleData.player);}]);
+                    globals.dialogManager.startBattleDesc(this.txt,{is:true,callback:true,time:500});
+                }
+                else{
+                    this.turnBattle(data);
+                }
+            }
+        }else{ //player not alive
+            if(data.helper.isAlive){
+                if(!this.turn.helper.ready){
+                    var ctx = this;
+                    this.str = globals.battleData.text.choosePlayer + globals.helper.name + "?" ;
+                    this.txt.push([this.str,function(){ctx.str="";ctx.txt = [];ctx.listAttack(globals.battleData.helper,data.isPhi);ctx.chooseAction(globals.battleData.helper);}]);
+                    globals.dialogManager.startBattleDesc(this.txt,{is:true,callback:true,time:500});
+                }
+                else{
+                    this.turnBattle(data);
+                }
+            }
+
+        }
         // if player. alive
         // // if helper.alive
         // ce qu'il y a en dessous
@@ -352,35 +408,35 @@ startTurn(data){
         // else player is not alive
         // // if helper is alive and ready
         //  //lancer l'action du helper sans le choix du joueur;
-
-        if(!this.turn.player.ready && !this.turn.helper.ready){
-            var ctx = this;
-            this.selectArrow = game.add.sprite(data.playerX, data.playerY - 29, "selectArrow");
-            this.selectArrow.animations.add("iddle",[0,1,2,3,4],5);
-            this.selectArrow.animations.play("iddle",9,true);
-
-            this.str = globals.battleData.text.choosePlayer + globals.player.name + "?" ;
-            this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.chooseCharacter(data,"choseHandler");}]);
-            globals.dialogManager.startBattleDesc(this.txt,{is:false});
-            this.currentPlayer = this.turn.player;
-        }
-        else if(this.turn.player.ready && !this.turn.helper.ready){
-            this.currentPlayer = this.turn.helper;
-            var ctx = this;
-            this.str = globals.battleData.text.choosePlayer + globals.battleData.set.helperName + "?" ;
-            this.txt.push([this.str,function(){ctx.str="";ctx.txt = [];ctx.listAttack(globals.battleData.helper,data.isPhi);ctx.chooseAction(globals.battleData.helper);}]);
-            globals.dialogManager.startBattleDesc(this.txt,{is:true,callback:true,time:500});
-        }
-        else if(this.turn.helper.ready && !this.turn.player.ready){
-            this.currentPlayer = this.turn.player;
-            var ctx = this;
-            this.str = globals.battleData.text.choosePlayer + globals.player.name + "?" ;
-            this.txt.push([this.str,function(){ctx.str="";ctx.txt = [];ctx.listAttack(globals.battleData.player,data.isPhi);ctx.chooseAction(globals.battleData.player);}]);
-            globals.dialogManager.startBattleDesc(this.txt,{is:true,callback:true,time:500});
-        }
-        else {
-            this.turnBattle(data);
-        }
+        // 
+        // if(!this.turn.player.ready && !this.turn.helper.ready){
+        //     var ctx = this;
+        //     this.selectArrow = game.add.sprite(data.playerX, data.playerY - 29, "selectArrow");
+        //     this.selectArrow.animations.add("iddle",[0,1,2,3,4],5);
+        //     this.selectArrow.animations.play("iddle",9,true);
+        //
+        //     this.str = globals.battleData.text.choosePlayer + globals.player.name + "?" ;
+        //     this.txt.push([this.str,function(){ctx.str= ""; ctx.txt = [];ctx.chooseCharacter(data,"choseHandler");}]);
+        //     globals.dialogManager.startBattleDesc(this.txt,{is:false});
+        //     this.currentPlayer = this.turn.player;
+        // }
+        // else if(this.turn.player.ready && !this.turn.helper.ready){
+        //     this.currentPlayer = this.turn.helper;
+        //     var ctx = this;
+        //     this.str = globals.battleData.text.choosePlayer + globals.battleData.set.helperName + "?" ;
+        //     this.txt.push([this.str,function(){ctx.str="";ctx.txt = [];ctx.listAttack(globals.battleData.helper,data.isPhi);ctx.chooseAction(globals.battleData.helper);}]);
+        //     globals.dialogManager.startBattleDesc(this.txt,{is:true,callback:true,time:500});
+        // }
+        // else if(this.turn.helper.ready && !this.turn.player.ready){
+        //     this.currentPlayer = this.turn.player;
+        //     var ctx = this;
+        //     this.str = globals.battleData.text.choosePlayer + globals.player.name + "?" ;
+        //     this.txt.push([this.str,function(){ctx.str="";ctx.txt = [];ctx.listAttack(globals.battleData.player,data.isPhi);ctx.chooseAction(globals.battleData.player);}]);
+        //     globals.dialogManager.startBattleDesc(this.txt,{is:true,callback:true,time:500});
+        // }
+        // else {
+        //     this.turnBattle(data);
+        // }
     }
 
 }

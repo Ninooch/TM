@@ -16,7 +16,7 @@ var gameState = {
 
 
         createMap1();
-
+globals.music.campanella.play();
 
 
         globals.terrainManager.initMap(globals.maps.chateau);
