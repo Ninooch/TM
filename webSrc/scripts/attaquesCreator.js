@@ -32,6 +32,7 @@ info(){
         //message
     }
     coupCritique(cible){
+        cible.alive = true;
         cible.damage(Math.ceil(this.pdg*1.5));
         this.msg = 2;
         //fait  au hasard multiplier par 1.5 les points de dégats pour un tour

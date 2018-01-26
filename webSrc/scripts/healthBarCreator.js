@@ -41,7 +41,6 @@ class Healthbar{
         this.scale(data);
         if(data.health<= 0 ){
             data.isAlive = false;
-            // data.events.onKilled.addOnce(function(){data.tint=globals.colors.red;},this);
             this.health.destroy();
             this.healthP2.animations.play("ko",null,false,true);
         }
