@@ -11,19 +11,25 @@
 \date{}
 \maketitle
 
-\section{Introduction}
-idée de base sur le jeu, brève description
-sources : 
+\section{Introduction}\
+\textit {Il y avait en Westphalie...} Et si cet incipit mythique se retrouverait un jour pixelisé, cela donnerait quoi ? C'est ce à quoi j'ai essayé de répondre lors de ce travail de maturité, qui consistait à adapter \underline{Candide} de Voltaire en un jeu vidéo.\
+
+
+sources : \
 Phaser.js par Richard Davey \
 Phaser-tilemap-plus par Colin Vella \
 Bosca Ceoil par Terry Cavanagh \
-Pyxel Edit par Danik ( pseudonyme ) 
+Pyxel Edit par Danik ( pseudonyme )\
 
 
 \section{Fonctionement du code}
-phaser etc.., orienté objet, ECMAScript6  fonctionalité comme les classes etc..
+Ce projet a été réalisé en javascript, avec les additions de ECMAScript6 et de deux librairies conçues pour la réalisation de jeu-vidéo : Phaser.js ainsi que Phaser-tilemap-plus.js . La majorité du code comprend des objets et des classes créés afin de pouvoir les utiliser comme outils de création.
 \subsection{Système général}
- choix de la langue 0,1 ; retenir les choix du joueur, les globals etc...
+	Avant toute-chose, il a fallu concevoir un système qui permette d'atteindre diverses variables au travers de tous les outils du jeu. C'est pourquoi l'objet "globals" (présent dans globals.js), une variable globale a été créée. Cet objet stocke toutes les variables afin d'y avoir accès facilement sans devoir se soucier des scopes des différentes classes et de leur méthodes.\\\\
+	Pour retenir les diverses actions effectuées par le joueur ainsi que des données importantes telles que son positionement ou le décor actuellement chargé à l'écran, un autre objet global (présent dans gameRef.js) est utilisé. Il sert de référence pour itialiser le personnage incarné par le joueur dans l'état où ce dernier l'avait laissé.\\\\
+ 
+ Afin d'étendre les possibilités futures de diffusion du projet, une option de traduction a été pensée dans le code de départ. Il s'agit d'un chiffre ( 0 pour le français, 1 pour l'anglais, ... ) stocké dans l'objet mentionné au paragraphe ci-dessus. Grâce à cette variable, la fonction de dialogList.js retourne les textes figurants dans le jeu dans leur bonne version. \\
+ "exemple ? "
 \subsection{Gestion des states du jeu}
 qu'est-ce qu'une state, comment ça marche etc...
 \subsubsection{Boot et Preload}
@@ -55,6 +61,7 @@ parler d'éléctron, npm, des packages.json, du favicon, de la fenêtre et des s
 système de sauvegarde , gitpages
 \section{Scénario alternatif}
 expliquer les dialogues, conserver le contenu tout en l'adaptant etc...
+expliquer la complication, le rabotage etc..
 \section{Conception des assets}
 \subsection{Visuel}
 logiciels utilisé , techniques(travailler avec des tiles, \\ couches de transparence...)\\ inspiration pour les personnages, dessins\\ originaux etc.. restrictions au niveau du pixel\\ art, base pour cohérence etc...

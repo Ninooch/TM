@@ -261,17 +261,17 @@ startBattleDesc(text,battleDesc){
 }
 
 endBattleScreen(what){
-    this.dialBox = game.add.image(400,200,"dialogBox");
+    this.dialBox = game.add.image(400,180,"dialogBox");
     this.dialBox.anchor.setTo(0.5);
     this.dialBox.alpha = 1;
     let db = this.dialBox;
     let tween = game.add.tween(globals.dialogManager.dialBox).from({alpha:0},500, Phaser.Easing.Linear.None,true,1160);
     tween.onComplete.addOnce(function(){
         if(what=="victoire"){
-            let headertxt= game.add.bitmapText(0,0,"candideFont",globals.battleData.text.victoire, 70);
+            var headertxt= game.add.bitmapText(0,0,"candideFont",globals.battleData.text.victoire, 70);
         }
         if(what=="defaite"){
-            let headertxt = game.add.bitmapText(0,0,"candideFont",globals.battleData.text.defaite,70);
+            var headertxt = game.add.bitmapText(0,0,"candideFont",globals.battleData.text.defaite,70);
         }
         headertxt.alignIn(db, Phaser.TOP_CENTER,0,0);
     },this)
