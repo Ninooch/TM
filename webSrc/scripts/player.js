@@ -9,8 +9,8 @@ function initPlayer(x,y){
 
     game.camera.follow(globals.player);
 
-    globals.player.maxHealth = 120;
-    globals.player.setHealth(120);
+    globals.player.maxHealth = 1;
+    globals.player.setHealth(1);
     globals.player.isAlive = true;
     globals.player.customProps = {};
 

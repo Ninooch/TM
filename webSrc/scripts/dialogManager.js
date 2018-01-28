@@ -258,8 +258,24 @@ startBattleDesc(text,battleDesc){
     this.bmpText.fixedToCamera = true;
     this.bmpText.cameraOffset = new Phaser.Point(30,5);
     this.displayText(text,0,false,null,battleDesc);
+}
 
-
+endBattleScreen(what){
+    this.dialBox = game.add.image(400,200,"dialogBox");
+    this.dialBox.anchor.setTo(0.5);
+    this.dialBox.alpha = 1;
+    let db = this.dialBox;
+    let tween = game.add.tween(globals.dialogManager.dialBox).from({alpha:0},500, Phaser.Easing.Linear.None,true,1160);
+    tween.onComplete.addOnce(function(){
+        if(what=="victoire"){
+            let headertxt= game.add.bitmapText(0,0,"candideFont",globals.battleData.text.victoire, 70);
+        }
+        if(what=="defaite"){
+            let headertxt = game.add.bitmapText(0,0,"candideFont",globals.battleData.text.defaite,70);
+        }
+        headertxt.alignIn(db, Phaser.TOP_CENTER,0,0);
+    },this)
+    //mettre du texte X)
 }
 
 }
