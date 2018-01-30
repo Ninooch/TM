@@ -264,16 +264,26 @@ endBattleScreen(what){
     this.dialBox = game.add.image(400,180,"dialogBox");
     this.dialBox.anchor.setTo(0.5);
     this.dialBox.alpha = 1;
+
     let db = this.dialBox;
     let tween = game.add.tween(globals.dialogManager.dialBox).from({alpha:0},500, Phaser.Easing.Linear.None,true,1160);
     tween.onComplete.addOnce(function(){
+        this.bmpText = game.add.bitmapText(200,130,"candideFont", "", 50);
+        this.bmpText.fixedToCamera = true;
+        this.bmpText.maxWidth = this.dialBox.width -125;
         if(what=="victoire"){
+            this.dialBox = db;
             var headertxt= game.add.bitmapText(0,0,"candideFont",globals.battleData.text.victoire, 70);
+            var txt = ["You won! Congrats"];
         }
         if(what=="defaite"){
+            this.dialBox = db;
             var headertxt = game.add.bitmapText(0,0,"candideFont",globals.battleData.text.defaite,70);
+            var txt = ["you lost! TEst TExt"];
         }
         headertxt.alignIn(db, Phaser.TOP_CENTER,0,0);
+        debugger
+        this.displayText(txt,0,false);
     },this)
     //mettre du texte X)
 }
