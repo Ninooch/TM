@@ -274,18 +274,29 @@ endBattleScreen(what){
         if(what=="victoire"){
             this.dialBox = db;
             var headertxt= game.add.bitmapText(0,0,"candideFont",globals.battleData.text.victoire, 70);
-            var txt = ["You won! Congrats"];
-        }
-        if(what=="defaite"){
-            this.dialBox = db;
-            var headertxt = game.add.bitmapText(0,0,"candideFont",globals.battleData.text.defaite,70);
-            var txt = ["you lost! TEst TExt"];
-        }
-        headertxt.alignIn(db, Phaser.TOP_CENTER,0,0);
-        debugger
-        this.displayText(txt,0,false);
-    },this)
-    //mettre du texte X)
-}
+            var txt = [["You won! Congrats",function(){
+                game.camera.fade(0x000000,1000,false,1);
+                game.camera.onFadeComplete.addOnce(function(){
+                    game.state.start("game");
+                    game.camera.flash(0x000000,1000);
+                },this);}]];
+            }
+            if(what=="defaite"){
+                this.dialBox = db;
+                var headertxt = game.add.bitmapText(0,0,"candideFont",globals.battleData.text.defaite,70);
+                var txt = [["you lost! TEst TExt",function(){
+                    game.camera.fade(0x000000,1000,false,1);
+                    game.camera.onFadeComplete.addOnce(function(){
+                        game.state.start("game");
+                        game.camera.flash(0x000000,1000);
+                    },this);
+                }]];
+            }
+            headertxt.alignIn(db, Phaser.TOP_CENTER,0,0);
+            debugger
+            this.displayText(txt,0,false);
+        },this)
+        //mettre du texte X)
+    }
 
 }
