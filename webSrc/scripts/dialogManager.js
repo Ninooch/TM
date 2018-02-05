@@ -296,7 +296,13 @@ endBattleScreen(what){
             debugger
             this.displayText(txt,0,false);
         },this)
-        //mettre du texte X)
+        //mettre du texte X) //argument peut-être
     }
+desc(text){
+    this.bmpText = game.add.bitmapText(115,255,"candideFont", "", 55);
+    this.bmpText.fixedToCamera = true;
+    this.bmpText.cameraOffset = new Phaser.Point(30,5);
+    this.displayText(text,0,false,null);
+}
 
 }

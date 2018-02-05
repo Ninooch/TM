@@ -73,12 +73,19 @@ globals.battleData.text = {
     info : "info ",
     retour: "retour ",
     argumente : "argumente contre ",
-} //idée juste pour noter, le vrai se trouve dans dialoglist.js
+}; //idée juste pour noter, le vrai se trouve dans dialoglist.js
 
 globals.colors = {
     green: 0x66ff66,
     orange : 0xffd11a,
     red : 0xff1a1a,
+};
+
+globals.functions.intro = function(){
+    game.camera.fade(0x000000,1000,false,1);
+    game.camera.onFadeComplete.addOnce(function(){
+        globals.dialogManager.desc(["test ahsbkjdbf en westphalie"]);
+    },this);
 }
 
 function createMap1 (){

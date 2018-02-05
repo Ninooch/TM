@@ -118,45 +118,44 @@ class BattleManager{
         }
     }
 }
-screen(){
+screen(what){
     //game.paused = true;
     this.nxtTurnReady = false;
-    globals.dialogManager.endBattleScreen("victoire");
+    globals.dialogManager.endBattleScreen(what);
 
 }
 eventEnd(data){
     if(data.singleEnnemy){
         if(!data.ennemy1.isAlive){
             // victoire
-            this.screen();
+            this.screen("victoire");
         }
         if(data.solo){
             if(!data.player.isAlive){
                 //défaite
-                this.screen();
+                this.screen("defaite");
             }
         }else{
             if(!data.player.isAlive && !data.helper.isAlive){
                 // défaite
-                this.screen();
+                this.screen("defaite");
             }
         }
     }
     else{
         if(!data.ennemy1.isAlive && !data.ennemy2.isAlive){
             // victoire
-            console.log("victoire")
-            this.screen();
+            this.screen("victoire");
         }
         if(data.solo){
             if(!data.player.isAlive){
                 //défaite
-                console.log("déf")
-                this.screen();
+                this.screen("defaite");
             }
         }else{
             if(!data.player.isAlive && !data.helper.isAlive){
                 // défaite
+                this.screen("défaite")
             }
         }
     }

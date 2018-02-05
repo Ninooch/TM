@@ -14,7 +14,7 @@ var gameState = {
 
         setDialog(gameRef.main.langue);
 
-
+        globals.functions.intro();
         createMap1();
 //globals.music.campanella.play();
 
