@@ -7,6 +7,7 @@ var globals = {
     attacks : {},
     battleData :{},
     music : {},
+    functions:{},
 };
 globals.terrainManager = new TerrainManager();
 globals.dialogManager = new DialogManager();
@@ -82,7 +83,7 @@ globals.colors = {
 };
 
 globals.functions.intro = function(){
-    game.camera.fade(0x000000,1000,false,1);
+    game.camera.fade(0x000000,1000,false,0.5);
     game.camera.onFadeComplete.addOnce(function(){
         globals.dialogManager.desc(["test ahsbkjdbf en westphalie"]);
     },this);

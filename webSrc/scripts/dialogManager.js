@@ -299,6 +299,10 @@ endBattleScreen(what){
         //mettre du texte X) //argument peut-être
     }
 desc(text){
+    console.log("activé")
+    this.dialBox = game.add.image(400,180,"dialogBox");
+    this.dialBox.anchor.setTo(0.5);
+
     this.bmpText = game.add.bitmapText(115,255,"candideFont", "", 55);
     this.bmpText.fixedToCamera = true;
     this.bmpText.cameraOffset = new Phaser.Point(30,5);
