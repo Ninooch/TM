@@ -2,18 +2,31 @@
 
 <html>
 <head>
-    <title>Candide</title>
+    <title>Candide 2.0</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/sprites/game/fav.png">
     <style>
-        @font-face {
-            font-family: Candide-Regular;
-            src : url(assets/fonts/Candide-Regular.ttf);
-        }
-        body{
-            font-family: Candide-Regular;
-            font-size: 72px;
-        }
+    #title{
+        width:800px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+    }
+    #canvas{
+        width:800px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+    }
+    @font-face {
+        font-family: Candide-Regular;
+        src : url(assets/fonts/Candide-Regular.ttf);
+    }
+    body{
+        font-family: Candide-Regular;
+        font-size: 72px;
+    }
     </style>
 
 </head>
@@ -55,8 +68,12 @@
 
 <body>
 
-    <div style="font-size:90px;">
-        Petit pouet :3
+    <div id="title" style="font-size:90px;">
+        Candide 2.0 ou l'optimisme en jeu vidéo
+    </div>
+    <div></div>
+    <div id="canvas">
+        <!--canvas phaser-->
     </div>
 </body>
 </html>

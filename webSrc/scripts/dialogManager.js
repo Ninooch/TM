@@ -293,7 +293,6 @@ endBattleScreen(what){
                 }]];
             }
             headertxt.alignIn(db, Phaser.TOP_CENTER,0,0);
-            debugger
             this.displayText(txt,0,false);
         },this)
         //mettre du texte X) //argument peut-être

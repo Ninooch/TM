@@ -14,9 +14,9 @@ var gameState = {
 
         setDialog(gameRef.main.langue);
 
-        globals.functions.intro();
+        //globals.functions.intro();
         createMap1();
-//globals.music.campanella.play();
+globals.music.campanella.play();
 
 
         globals.terrainManager.initMap(globals.maps.chateau);

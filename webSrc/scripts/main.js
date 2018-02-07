@@ -3,7 +3,8 @@ var config = {
     width: 800,
     height: 450,
     antialias: false,
-    renderer: Phaser.CANVAS
+    renderer: Phaser.CANVAS,
+    parent: "canvas"
 };
 
 var game = new Phaser.Game(config); //src : https://phaser.io/examples/v2/misc/game-config
