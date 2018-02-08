@@ -1,8 +1,8 @@
 var textState = {
     init : function(callback){
-        var exe = callback;
+        callback();
     },
     create: function(){
-        exe();
+        
     },
 };

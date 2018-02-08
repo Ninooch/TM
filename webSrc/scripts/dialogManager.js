@@ -299,12 +299,12 @@ endBattleScreen(what){
     }
 desc(text){
     console.log("activé")
-    this.dialBox = game.add.image(400,180,"dialogBox");
+    this.dialBox = game.add.image(400,240,"dialogBox");
     this.dialBox.anchor.setTo(0.5);
 
-    this.bmpText = game.add.bitmapText(115,255,"candideFont", "", 55);
+    this.bmpText = game.add.bitmapText(115,200,"candideFont", "", 55);
     this.bmpText.fixedToCamera = true;
-    this.bmpText.cameraOffset = new Phaser.Point(30,5);
+    //this.bmpText.cameraOffset = new Phaser.Point(30,5);
     this.displayText(text,0,false,null);
 }
 
