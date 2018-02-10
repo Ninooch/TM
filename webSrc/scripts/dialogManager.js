@@ -304,7 +304,7 @@ desc(text){
     this.bmpText = game.add.bitmapText(50,150,"candideFont", "", 55);
     this.bmpText.fixedToCamera = true;
     this.bmpText.maxWidth = 700;
-    this.displayText(text,0,false,null);
+    this.displayText(text,text.currentIndex||0,false,null);
 }
 
 }

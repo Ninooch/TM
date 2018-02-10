@@ -83,12 +83,10 @@ globals.colors = {
 };
 
 globals.functions.intro = function(){
-    game.camera.fade(0x000000,500,false,0.5);
-    game.camera.onFadeComplete.addOnce(function(){
-        game.state.start("txt",true,false,function(){
-            globals.dialogManager.desc(globals.dialogs.intro);
-        });
-    },this);
+    game.state.start("txt",true,false,
+    function(){
+        globals.dialogManager.desc(globals.dialogs.intro);
+    });
 }
 
 function createMap1 (){

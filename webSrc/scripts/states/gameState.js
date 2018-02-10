@@ -8,15 +8,16 @@ function startGame(){
 var gameState = {
     create: function(){
 
+        if(!gameRef.introDone){
+        globals.functions.intro();
+    }
+
         initInput();
         game.physics.startSystem(Phaser.Physics.ARCADE);
 
-
         setDialog(gameRef.main.langue);
-
-        globals.functions.intro();
         createMap1();
-globals.music.campanella.play();
+//globals.music.campanella.play();
 
 
         globals.terrainManager.initMap(globals.maps.chateau);
