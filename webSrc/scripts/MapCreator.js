@@ -15,6 +15,14 @@ class CustomMap {
     addWarps(args){
         this.warps.push(args);
     }
+    addCollision(){
+        this.collision = this.tilemap.createLayer("Collision");
+        console.log(this.collision);
+        this.collision.resizeWorld();
+        this.tilemap.setCollisionByExclusion([], true, this.collision);
+
+        this.collision.visible = false;
+    }
     addPnjs(args){
         this.pnjs.push(args);
     }

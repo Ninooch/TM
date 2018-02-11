@@ -41,6 +41,11 @@ class TerrainManager {
             this.currentLayers.push(layer);
         }
 
+        this.collision = this.currentMap.createLayer("Collision");
+        this.currentMap.setCollisionByExclusion([], true, this.collision);
+        this.collision.resizeWorld();
+        this.collision.visible = false;
+
         this.currentMap.plus.animation.enable();
         this.currentLayers[0].resizeWorld();
 
@@ -64,6 +69,7 @@ class TerrainManager {
     }
 
     update(){
+        game.physics.arcade.collide(globals.player,this.collision);
         for(let l in this.currentWarps){
             if(checkPnjOverlap(this.currentWarps[l],globals.player)){
                 if(this.currentWarps[l].isHouse){
