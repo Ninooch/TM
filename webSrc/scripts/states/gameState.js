@@ -20,7 +20,7 @@ var gameState = {
 //globals.music.campanella.play();
 
 
-        globals.terrainManager.initMap(globals.maps.chateau);
+        globals.terrainManager.initMap(globals.maps.chateau,true);
 
         initPlayer(180,150);
 

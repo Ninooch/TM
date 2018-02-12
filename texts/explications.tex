@@ -5,6 +5,8 @@
 
 
 %https://mysnippets443.wordpress.com/2015/11/28/latex-insert-javascript-code-with-lstlisting-package/
+
+
 %Define the listing package
 \usepackage{listings} %code highlighter
 \usepackage{color} %use color
@@ -86,8 +88,7 @@ captionpos=b
 \maketitle
 
 \section{Introduction}\
-\textit {Il y avait en Westphalie...} Et si cet incipit mythique se retrouverait un jour pixelisé, cela donnerait quoi ? C'est ce à quoi j'ai essayé de répondre lors de ce travail de maturité, qui consistait à adapter \underline{Candide} de Voltaire en un jeu vidéo. L'objectif de base était de créer un jeu vidéo de type RPG (roleplay game) où le joueur incarnerait Candide.Il serait alors confrontés à diverses situations et prendrait des choix décisifs qui alterneraient l'histoire. Réaliser les graphismes du jeu faisait aussi partie de l'objectif.\
-
+\textit {Il y avait en Westphalie...} Et si cet incipit mythique se retrouverait un jour pixelisé, cela donnerait quoi ? C'est ce à quoi j'ai essayé de répondre lors de ce travail de maturité, qui consistait à adapter le premier chapitre de \textit{Candide} de Voltaire en un jeu vidéo de type RPG (jeu de rôle).
 
 sources : \
 Phaser.js par Richard Davey \
@@ -100,22 +101,22 @@ Pyxel Edit par Danik ( pseudonyme )\
 Ce projet a été réalisé en javascript, avec les additions de ECMAScript6 et de deux librairies conçues pour la réalisation de jeu-vidéo : Phaser.js ainsi que Phaser-tilemap-plus.js . La majorité du code comprend des objets et des classes créés afin de pouvoir les utiliser comme outils de création.
 \subsection{Système général}
 	Avant toute chose, il a fallu concevoir un système qui permette d'atteindre diverses variables au travers de tous les outils du jeu. C'est pourquoi l'objet "globals" (présent dans globals.js), une variable globale a été créée. Cet objet stocke toutes les variables afin d'y avoir accès facilement sans devoir se soucier des scopes des différentes classes et de leur méthodes.\\\\
-	Pour retenir les diverses actions effectuées par le joueur ainsi que des données importantes telles que son positionement ou le décor actuellement chargé à l'écran, un autre objet global (présent dans gameRef.js) est utilisé. Il sert de référence pour itialiser le personnage incarné par le joueur dans l'état où ce dernier l'avait laissé.\\\\
+	Pour retenir les diverses actions effectuées par le joueur ainsi que des données importantes telles que son positionement ou le décor actuellement chargé à l'écran, un autre objet global (présent dans gameRef.js) est utilisé. Il sert de référence pour itialiser le personnage incarné par le joueur dans l'état où ce dernier l'avait laissé.\\\\ (pas encore sûre, voir le local storage)
  
  Afin d'étendre les possibilités futures de diffusion du projet, une option de traduction a été pensée dans le code de départ. Il s'agit d'un chiffre ( 0 pour le français, 1 pour l'anglais, ... ) stocké dans l'objet mentionné au paragraphe ci-dessus. Grâce à cette variable, la fonction de dialogList.js retourne les textes figurants dans le jeu dans leur bonne version. \\
- "exemple ? "
  \begin{lstlisting}[language=JavaScript]
  function setDialog(langue){
     switch(langue){
         case 0 : 
         globals.dialogs.myChar=["Bonjour"];
-        break;
+    break;
         case 1:
         globals.dialogs.myChar=["Hello"];
- 		break;
+		break;
  	}
- }I
+ }
 \end{lstlisting}
+\textit{Exemple de la fonction traductrice pour le dialogue d'un personnage quelquonque}
 \subsection{Gestion des states du jeu}
 qu'est-ce qu'une state, comment ça marche etc...
 \subsubsection{Boot et Preload}
@@ -136,18 +137,18 @@ les interaction avec le joueur etc..
 expliquer la police de caractères, la dynamique des choix, l'objet manager , la syntaxe (les arrays avec les callbacks etc...)
 \subsection{Gestion du terrain}
 expliquer les maps,collisions, tilesets,calques, warps , l'objet terrainmanager etc... expliquer le fail avec le tween manager pour le fade in et fade out.
+expliquer le problème avec les données dans la map et la solution.
 \subsection{Interaction avec les objets}
 à compléter idée: un objet possède ou non un callback 
-\subsection{Gestion du menu et de l'inventaire}
-à compléter
-\subsection{Du code à l'application}
-parler d'éléctron, npm, des packages.json, du favicon, de la fenêtre et des sauvegardes de la partie. (fenêtres)
 
-\subsection{Publication}
-système de sauvegarde , gitpages
+%\subsection{Du code à l'application}
+%parler d'éléctron, npm, des packages.json, du favicon, de la fenêtre et des sauvegardes de la partie. (fenêtres)
+
+%\subsection{Publication}
+%système de sauvegarde , gitpages
 \section{Scénario alternatif}
 expliquer les dialogues, conserver le contenu tout en l'adaptant etc...donner des exemples de situations alternatives . et le résultat actuel
-expliquer la complication, le rabotage etc..
+expliquer la complication lié au temps, le rabotage etc..
 \section{Conception des assets}
 \subsection{Visuel}
 logiciels utilisé , techniques(travailler avec des tiles, \\ couches de transparence...)\\ inspiration pour les personnages, dessins\\ originaux etc.. restrictions au niveau du pixel\\ art, base pour cohérence etc...
@@ -158,7 +159,7 @@ techniques, exemples
 \subsubsection{Tilesets}
 techniques, exemples
 \subsection{Musical}
-logiciel utilisé , techniques (trouver une suite d'accord, les instruments etc..) , éventuellement les bruitages 
+logiciel utilisé , techniques (trouver une suite d'accord, les instruments etc..) , éventuellement les bruitages , la campanella midi file
 \section{Conclusion}
 
 \end{document}

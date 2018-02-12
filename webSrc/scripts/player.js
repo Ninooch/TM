@@ -6,6 +6,7 @@ function initPlayer(x,y){
 
     game.physics.enable(globals.player,Phaser.Physics.ARCADE);
     globals.player.body.collideWorldBounds = true;
+    globals.player.body.setSize(32, 32, 0, 32);
 
     game.camera.follow(globals.player);
 

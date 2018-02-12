@@ -6,14 +6,19 @@ class TerrainManager {
         this.currentWarps = [];
 
     }
-    clearMap(){
-        //this.currentMap.plus.animation.disable();
+    clearMap(collision){
+        this.currentMap.plus.animation.disable();
+        if(collision){
+            this.currentMap.setCollisionByExclusion([], false, this.collision);
+            this.collision.destroy();
+        }
         // console.log("destroying map")
         this.currentMap.destroy();
         for(let l in this.currentLayers){
             this.currentLayers[l].destroy();
             //supprimer les layers
         }
+
         //détruire les pnjs
         for(let l in this.currentPnjs){
             this.currentPnjs[l].destroy();
@@ -25,7 +30,7 @@ class TerrainManager {
 
 
 
-    initMap(map){ //dépendra aussi des pnjs, des objets de Tiled et éventuellement des animations, à voir , prendre en compte la musique aussi
+    initMap(map,collision){ //dépendra aussi des pnjs, des objets de Tiled et éventuellement des animations, à voir , prendre en compte la musique aussi
         //l'argument layers est un array qui contient tout les noms des couches de la map
         this.currentMap = game.add.tilemap(map.key);
 
@@ -41,11 +46,12 @@ class TerrainManager {
             this.currentLayers.push(layer);
         }
 
-        this.collision = this.currentMap.createLayer("Collision");
-        this.currentMap.setCollisionByExclusion([], true, this.collision);
-        this.collision.resizeWorld();
-        this.collision.visible = false;
-
+        if(collision){
+            this.collision = this.currentMap.createLayer("Collision");
+            this.currentMap.setCollisionByExclusion([], true, this.collision);
+            this.collision.resizeWorld();
+            this.collision.visible = false;
+        }
         this.currentMap.plus.animation.enable();
         this.currentLayers[0].resizeWorld();
 
@@ -61,8 +67,8 @@ class TerrainManager {
     changeMap(newMap,x,y){
         game.camera.fade(0x000000,1000,false,1);
         game.camera.onFadeComplete.addOnce(function(){
-            this.clearMap();
-            this.initMap(newMap);
+            this.clearMap(true);
+            this.initMap(newMap,true);
             initPlayer(x,y);
             game.camera.flash(0x000000,1000);
         },this);

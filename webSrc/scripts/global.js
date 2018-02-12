@@ -109,7 +109,6 @@ function createMap1 (){
     globals.pnjs.pangloss = new Pnj(globals.maps.chateau.properties.pnj2X,globals.maps.chateau.properties.pnj2Y,"pangloss",0,"Pangloss",globals.dialogs.pangloss,"panglossFaceAnimation");
     globals.maps.chateau.addPnjs(globals.pnjs.pangloss);
     globals.maps.chateau.addPnjs(globals.pnjs.martin2);
-    globals.maps.chateau.addCollision();
 
     globals.music.campanella = game.add.audio("campanella");
 }

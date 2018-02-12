@@ -8,7 +8,39 @@ function setDialog(langue){
         globals.dialogs.pnj1Ch1 = ["Je suis le jardinier de monseigneur le baron et de madame son épouse."];
         //["Ce jeu se joue à l'aide des touches directionnelles et de la touche enter. Appuyez sur entrer pour continuer.",function(){this.currentIndex=1;}]
         globals.dialogs.pnjTestDialogs = [["bonjour! je suis un test . tu peux choisir entre un et deux.",["combat","option deux"],[function(){globals.battleData.set.ennemy1 = globals.pnjs.martin2; globals.battleData.set.helper = globals.pnjs.martin2; globals.battleData.set.player = globals.player;globals.battleData.set.ennemy2 = globals.pnjs.martin3; globals.pnjs.martin2.startCombat();},function(){globals.dialogManager.stop(true,false);globals.pnjs.martin2.currentIndex = 2;globals.dialogManager.startDialog(globals.pnjs.martin2)}]],"j'affirme que tu as bien choisi l'option une","j'affirme que tu as bien choisi l'option deux"];
-        globals.dialogs.pangloss =[["Oh Candide, bonjour! Viens, tu arrives à point nommé pour ma bénéfique leçon de métaphysico-cosmo-nigologie.",function(){globals.pnjs.pangloss.currentIndex=1; globals.dialogManager.stop(true,false);globals.dialogManager.startDialog(globals.pnjs.pangloss);}],["-explications-... Mais dis-moi, Candide. Tu devras faire des choix dans ta vie et il sera toujours important de répondre comme ton bon Pangloss te l'a appris, c'est à dire positivement! Es-tu d'accord?",["oui","non"],[function(){globals.pnjs.pangloss.currentIndex=2;globals.dialogManager.stop(true,false);globals.dialogManager.startDialog(globals.pnjs.pangloss);} , function(){globals.pnjs.pangloss.currentIndex=3; globals.dialogManager.stop(true,false);globals.dialogManager.startDialog(globals.pnjs.pangloss);}]],"bien... Sur ce, va donc explorer les alentours et retourne me voir quand tu auras appris quelque chose.",["Il me semble que tu n'as pas bien compris, mon cher. Laisse moi te réexpliquer...",function(){globals.pnjs.pangloss.currentIndex=1 ; globals.dialogManager.stop(true,false);globals.dialogManager.startDialog(globals.pnjs.pangloss);}]];
+        globals.dialogs.pangloss =[
+            ["Oh Candide, bonjour! Viens, tu arrives à point nommé pour ma bénéfique leçon de métaphysico-théologo-cosmonigologie.",function(){
+                globals.pnjs.pangloss.currentIndex=1;
+                globals.dialogManager.stop(true,false);
+                globals.dialogManager.startDialog(globals.pnjs.pangloss);}
+            ],["Vois-tu, Candide, je vais te démontrer qu'il n'y a point d'effet sans cause, car c'est la base primordiale de tout ce que je peux admirablement prouver...Comme je te l'ai déjà dit, nous vivons dans le meilleur des mondes possibles et en son sein, le château de monseigneur le Baron est de ce fait le plus beau des châteaux. D'ailleurs, madame la Baronne, son épouse ne peut être autre que la meilleure des baronnes possibles.",function(){
+                globals.pnjs.pangloss.currentIndex=2;
+                globals.dialogManager.stop(true,false);
+                globals.dialogManager.startDialog(globals.pnjs.pangloss);
+            }],
+            ["Tu ne me crois toujours pas? ... Tu as tord : les choses ne peuvent être autrement. C'est pourtant simple, chaque chose étant faite pour une fin, cette dernière est nécessairement la meilleure! Regarde mon nez par exemple. Il a visiblement été fait pour porter des lunettes. Comme le tien d'ailleurs, et ceux de notre bon seigneur le baron et sa cour. C'est pourquoi l'on porte des lunettes! Cela ne te suffit toujours pas? Regarde tes jambes alors, elles ont clairement été instituées pour être chaussées. Et nous avons des chausses! N'est-ce pas magnifique ? Les pierres ont été formées pour être taillées et pour en faire des châteaux, aussi, monseigneur le Baron a un très beau château : le plus grand baron de la province doit être le mieux logé, c'est une évidence. Par conséquent, ceux qui osent avancer que tout est bien n'affirment rien de plus que des sottises. Il faut dire que tout est au mieux. Quod erat demonstrandum .",function(){
+                globals.pnjs.pangloss.currentIndex=3;
+                globals.dialogManager.stop(true,false);
+                globals.dialogManager.startDialog(globals.pnjs.pangloss);
+            }],
+            [" Mais dis-moi, Candide. Tu es un grand garçon maintenant. Il te faudra faire des choix dans ta vie et il sera toujours important de répondre comme ton bon Pangloss te l'a appris, c'est à dire positivement! Es-tu d'accord?",
+            ["oui","non"],
+            [function(){
+                globals.pnjs.pangloss.currentIndex=4;
+                globals.dialogManager.stop(true,false);
+                globals.dialogManager.startDialog(globals.pnjs.pangloss);
+            },function(){
+                globals.pnjs.pangloss.currentIndex=5;
+                globals.dialogManager.stop(true,false);
+                globals.dialogManager.startDialog(globals.pnjs.pangloss);}]
+            ],
+            "Bien... Sur ce, va donc explorer les alentours et retourne me voir quand tu auras appris quelque chose."
+            ,["Il me semble que tu n'as pas bien compris, mon cher. Laisse moi te réexpliquer...",
+            function(){globals.pnjs.pangloss.currentIndex=1 ;
+                globals.dialogManager.stop(true,false);
+                globals.dialogManager.startDialog(globals.pnjs.pangloss);}
+            ]
+        ];
 
 
         globals.battleData.text = {
