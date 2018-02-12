@@ -1,7 +1,7 @@
 
 
 function initPlayer(x,y){
-    globals.player = game.add.sprite(x,y,"player",0);
+    globals.player = game.add.sprite(x,y,"player",2);
     globals.player.name = "Candide";
 
     game.physics.enable(globals.player,Phaser.Physics.ARCADE);

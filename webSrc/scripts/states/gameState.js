@@ -22,7 +22,7 @@ var gameState = {
 
         globals.terrainManager.initMap(globals.maps.chateau,true);
 
-        initPlayer(180,150);
+        initPlayer(1182,1152);
 
         var sparkles = game.add.sprite(250,250,"sparkles");
         sparkles.animations.add("shine",[0,1,2,3,4,5],10);

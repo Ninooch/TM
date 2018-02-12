@@ -65,12 +65,13 @@ class TerrainManager {
     }
 
     changeMap(newMap,x,y){
-        game.camera.fade(0x000000,1000,false,1);
+        game.camera.fade(0x000000,500,false,1);
         game.camera.onFadeComplete.addOnce(function(){
             this.clearMap(true);
             this.initMap(newMap,true);
             initPlayer(x,y);
-            game.camera.flash(0x000000,1000);
+            console.log("fait")
+            game.camera.flash(0x000000,500);
         },this);
     }
 
