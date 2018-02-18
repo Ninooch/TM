@@ -24,13 +24,13 @@ function setDialog(langue){
                 globals.dialogManager.startDialog(globals.pnjs.pangloss);
             }],
             [" Mais dis-moi, Candide. Tu es un grand garçon maintenant. Il te faudra faire des choix dans ta vie et il sera toujours important de répondre comme ton bon Pangloss te l'a appris, c'est à dire positivement! Es-tu d'accord?",
-            ["oui","non"],
+            ["non","oui"],
             [function(){
-                globals.pnjs.pangloss.currentIndex=4;
+                globals.pnjs.pangloss.currentIndex=5;
                 globals.dialogManager.stop(true,false);
                 globals.dialogManager.startDialog(globals.pnjs.pangloss);
             },function(){
-                globals.pnjs.pangloss.currentIndex=5;
+                globals.pnjs.pangloss.currentIndex=4;
                 globals.dialogManager.stop(true,false);
                 globals.dialogManager.startDialog(globals.pnjs.pangloss);}]
             ],

@@ -101,7 +101,7 @@ Pyxel Edit par Danik ( pseudonyme )\
 Ce projet a été réalisé en javascript, avec les additions de ECMAScript6 et de deux librairies conçues pour la réalisation de jeu-vidéo : Phaser.js ainsi que Phaser-tilemap-plus.js . La majorité du code comprend des objets et des classes créés afin de pouvoir les utiliser comme outils de création.
 \subsection{Système général}
 	Avant toute chose, il a fallu concevoir un système qui permette d'atteindre diverses variables au travers de tous les outils du jeu. C'est pourquoi l'objet "globals" (présent dans globals.js), une variable globale a été créée. Cet objet stocke toutes les variables afin d'y avoir accès facilement sans devoir se soucier des scopes des différentes classes et de leur méthodes.\\\\
-	Pour retenir les diverses actions effectuées par le joueur ainsi que des données importantes telles que son positionement ou le décor actuellement chargé à l'écran, un autre objet global (présent dans gameRef.js) est utilisé. Il sert de référence pour itialiser le personnage incarné par le joueur dans l'état où ce dernier l'avait laissé.\\\\ (pas encore sûre, voir le local storage)
+	(Pour retenir les diverses actions effectuées par le joueur ainsi que des données importantes telles que son positionement ou le décor actuellement chargé à l'écran, un autre objet global (présent dans gameRef.js) est utilisé. Il sert de référence pour itialiser le personnage incarné par le joueur dans l'état où ce dernier l'avait laissé.)\\\\ (pas encore sûre, voir le local storage)
  
  Afin d'étendre les possibilités futures de diffusion du projet, une option de traduction a été pensée dans le code de départ. Il s'agit d'un chiffre ( 0 pour le français, 1 pour l'anglais, ... ) stocké dans l'objet mentionné au paragraphe ci-dessus. Grâce à cette variable, la fonction de dialogList.js retourne les textes figurants dans le jeu dans leur bonne version. \\
  \begin{lstlisting}[language=JavaScript]
@@ -116,9 +116,10 @@ Ce projet a été réalisé en javascript, avec les additions de ECMAScript6 et 
  	}
  }
 \end{lstlisting}
-\textit{Exemple de la fonction traductrice pour le dialogue d'un personnage quelquonque}
+\textit{Exemple de la fonction traductrice pour le dialogue d'un personnage quelconque}
 \subsection{Gestion des states du jeu}
 qu'est-ce qu'une state, comment ça marche etc...
+
 \subsubsection{Boot et Preload}
 boot fait démarrer le jeu, preload pour les assets etc...
 \subsubsection{Menu Principal}
@@ -128,6 +129,8 @@ expliquer la fonction avec les boutons, dans un premier temps elle est avec une 
 toutes les fonctions agissent ici, dans la partie create de phaser.
 \subsubsection{Battle}
 expliquer la dynamique de combat, les points de vie etc..
+\subsubsection{Transition avec texte}
+
 \subsection{Joueur}
 expliquer les déplacements, les directions , les interactions etc...
 \subsection{Les pnjs}
