@@ -85,8 +85,13 @@ captionpos=b
 \title{Candide 2.0 ou l'optimisme en jeu vidéo }
 \author{Nina Ionescu 3mg01}
 \date{}
+\pagenumbering{gobble}
 \maketitle
 
+\newpage
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
 \section{Introduction}\
 \textit {Il y avait en Westphalie...} Et si cet incipit mythique se retrouverait un jour pixelisé, cela donnerait quoi ? C'est ce à quoi j'ai essayé de répondre lors de ce travail de maturité, qui consistait à adapter le premier chapitre de \textit{Candide} de Voltaire en un jeu vidéo de type RPG (jeu de rôle).
 
@@ -101,7 +106,7 @@ Pyxel Edit par Danik ( pseudonyme )\
 Ce projet a été réalisé en javascript, avec les additions de ECMAScript6 et de deux librairies conçues pour la réalisation de jeu-vidéo : Phaser.js ainsi que Phaser-tilemap-plus.js . La majorité du code comprend des objets et des classes créés afin de pouvoir les utiliser comme outils de création.
 \subsection{Système général}
 	Avant toute chose, il a fallu concevoir un système qui permette d'atteindre diverses variables au travers de tous les outils du jeu. C'est pourquoi l'objet "globals" (présent dans globals.js), une variable globale a été créée. Cet objet stocke toutes les variables afin d'y avoir accès facilement sans devoir se soucier des scopes des différentes classes et de leur méthodes.\\\\
-	(Pour retenir les diverses actions effectuées par le joueur ainsi que des données importantes telles que son positionement ou le décor actuellement chargé à l'écran, un autre objet global (présent dans gameRef.js) est utilisé. Il sert de référence pour itialiser le personnage incarné par le joueur dans l'état où ce dernier l'avait laissé.)\\\\ (pas encore sûre, voir le local storage)
+	(Pour retenir les diverses actions effectuées par le joueur ainsi que des données importantes telles que son positionnement ou le décor actuellement chargé à l'écran, un autre objet global (présent dans gameRef.js) est utilisé. Il sert de référence pour initialiser le personnage incarné par le joueur dans l'état où ce dernier l'avait laissé.)\\\\ (pas encore sûre, voir le local storage)
  
  Afin d'étendre les possibilités futures de diffusion du projet, une option de traduction a été pensée dans le code de départ. Il s'agit d'un chiffre ( 0 pour le français, 1 pour l'anglais, ... ) stocké dans l'objet mentionné au paragraphe ci-dessus. Grâce à cette variable, la fonction de dialogList.js retourne les textes figurants dans le jeu dans leur bonne version. \\
  \begin{lstlisting}[language=JavaScript]
@@ -118,19 +123,25 @@ Ce projet a été réalisé en javascript, avec les additions de ECMAScript6 et 
 \end{lstlisting}
 \textit{Exemple de la fonction traductrice pour le dialogue d'un personnage quelconque}
 \subsection{Gestion des states du jeu}
-qu'est-ce qu'une state, comment ça marche etc...
+qu'est-ce qu'une state, comment ça marche etc...\\\\
+Les states, propres à Phaser.js, représentent une section du jeu. Chaque objet state a son lot de fonctions Phaser, à savoir preload, create, update et render. L'utilisation de ces fonctions va être décrite dans les paragraphes ci-dessous.
 
 \subsubsection{Boot et Preload}
-boot fait démarrer le jeu, preload pour les assets etc...
+boot fait démarrer le jeu, preload pour les assets etc...\\\\
+La state "Boot" fait démarrer le jeu. Elle déclenche la state "Preload". Preload est une state qui utilise uniquement la fonction preload, qui sert à associer tous les assets du jeu à un nom et les stocker dans le cache pour pouvoir les utiliser dans le code. Une fois tous les éléments stockés, la state "Menu principal" est enclenchée. Le choix d'utiliser une unique state pour ce travail permet une meilleure organisation au sein du code.
 \subsubsection{Menu Principal}
 expliquer la fonction avec les boutons, dans un premier temps elle est avec une sprite sheet pour chaque langue, éventuelle amélioration.
 
+\\\\La state "menu principal" permet au joueur de lancer le jeu ou d'en modifier la langue. Les boutons qui permettent de faire une action sont un objet Phaser. L'ensemble des boutons est initié dans une seule fonction. Cette dernière dépend de la langue que le joueur a choisi. Chaque bouton a sa propre spritesheet, ce qui pourrait poser problème au niveau de la taille et du temps si d'autres langues sont ajoutées. Une option serait de générer dans le code, les textes dans les boutons à la place de les dessiner à la main.
 \subsubsection{Game}
 toutes les fonctions agissent ici, dans la partie create de phaser.
+\\\\La state "Game" utilise les fonctions create et update. Dans la fonction create, toutes les actions de jeu sont initiées : le terrain et le personnage sont initiés et les textes du jeu sont traduits.
+\\La fonction update est une fonction qui est appelée à chaque milliseconde. Sont présentes dans cette fonction, toutes les fonctions qui servent à interagir avec le joueur, c'est à dire la détection de la collision, les changements de maps au contact d'une zone de warp et l'apparition des bulles de dialogues des personnages non-jouables quand le joueur les approche. La fonction qui sert à faire marcher le joueur est aussi présente dans la fonction update.
 \subsubsection{Battle}
-expliquer la dynamique de combat, les points de vie etc..
+La state "battle" est utilisée lors des combats pour initier l'interface de combat. Une nouvelle state est utilisée car il est plus facile de créer à partir d'une state vide que de modifier une state déjà existante. En effet, la state de combat ne requiert pas une détection de collision ni la création de personnages non-jouables.
+\\ Une map de fond est initiée dans la fonction create, ainsi que les personnages à l'écran et leur barres de vie. Le combat est ensuite géré par une classe, battleManager, dont le fonctionnement va être décrit plus loin.
 \subsubsection{Transition avec texte}
-
+Cette state sert uniquement à afficher du texte. Une fonction est passée en argument lorsqu'on fait appel à cette state qui l'exécutera. Cette state est une alternative aux cinématiques, trop difficiles à programmer.  
 \subsection{Joueur}
 expliquer les déplacements, les directions , les interactions etc...
 \subsection{Les pnjs}
@@ -141,6 +152,8 @@ expliquer la police de caractères, la dynamique des choix, l'objet manager , la
 \subsection{Gestion du terrain}
 expliquer les maps,collisions, tilesets,calques, warps , l'objet terrainmanager etc... expliquer le fail avec le tween manager pour le fade in et fade out.
 expliquer le problème avec les données dans la map et la solution.
+\subsection{Gestion des combats}
+expliquer la dynamique de combat, les points de vie etc..
 \subsection{Interaction avec les objets}
 à compléter idée: un objet possède ou non un callback 
 
