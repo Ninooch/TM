@@ -12,7 +12,7 @@ function initButtons(langue, where){ //mainMenu , options, choixLangue
                     optionButton = game.add.button(game.world.centerX-120,260,"boutons",function(){
                         initButtons(langue,"options");
                     },this,3,4,5);
-                    break; 
+                    break;
                          }
             break;
 
@@ -28,7 +28,7 @@ function initButtons(langue, where){ //mainMenu , options, choixLangue
                         initButtons(gameRef.main.langue,"mainMenu");
                     },this,21,22,23);
                     break;
-                case 1: 
+                case 1:
                     // alert("options-1");
                     langueButton = game.add.button(game.world.centerX-120,200,"boutons",function(){
                         initButtons(gameRef.main.langue,"choixLangue");
@@ -41,13 +41,13 @@ function initButtons(langue, where){ //mainMenu , options, choixLangue
             break;
 
         case "choixLangue": //add main title buttons //done
-            destroyButtons("options"); 
+            destroyButtons("options");
             frButton = game.add.button(game.world.centerX-120,200,"boutons",function(){
                 choixLangue(0);
             },this,12,13,14);
             enButton = game.add.button(game.world.centerX-120,260,"boutons",function(){
                 choixLangue(1);
-            },this,9,10,11); 
+            },this,9,10,11);
 
             switch(langue){
                 case 0:
@@ -95,12 +95,11 @@ function destroyButtons(where){ //where : mainMenu, options, choixLangue
             langueButton.destroy();
             backButton.destroy();
             break;
-        case "choixLangue" : 
+        case "choixLangue" :
             frButton.destroy();
             enButton.destroy();
             //alert("destroying choixLangueButtons");
             backButton.destroy();
-            break; 
+            break;
                 }
-} 
-
+}

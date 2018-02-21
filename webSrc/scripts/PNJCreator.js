@@ -5,6 +5,8 @@ constructor(x,y,key,frame,name,dialogs,faceAnimKey){ // faire en sorte que ça s
     this.currentIndex = 0; // sert pour les dialogues // voir feuille de dialogues, exemple : si telle action a été faite, mettre l'index à ... ; ou encore suivant les phases du jeu etc...
     this.bulleIsOnScreen = false;
     this.name = name;
+    game.physics.enable(this,Phaser.Physics.ARCADE);
+    this.body.immovable = true;
 
     this.faceAnimKey = faceAnimKey || "animationBase";
 
@@ -35,6 +37,8 @@ destroyBulle(){ // ça marche
 }
 
 update(){
+    game.physics.arcade.collide(globals.player,this);
+
     if(this.canBulle){
         if(checkPnjOverlap(this,globals.player) && !this.bulleIsOnScreen){
             // alert("Bulle");

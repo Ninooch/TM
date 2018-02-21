@@ -2,6 +2,7 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage{listings}
+\usepackage[francais]{babel}
 
 
 %https://mysnippets443.wordpress.com/2015/11/28/latex-insert-javascript-code-with-lstlisting-package/
@@ -83,8 +84,9 @@ captionpos=b
 \begin{document}
 
 \title{Candide 2.0 ou l'optimisme en jeu vidéo }
-\author{Nina Ionescu 3mg01}
+\author{Nina Ionescu 3mg01 \\ Mentor : Jean-Marc Ledermann}
 \date{}
+
 \pagenumbering{gobble}
 \maketitle
 
@@ -94,7 +96,26 @@ captionpos=b
 \pagenumbering{arabic}
 \section{Introduction}\
 \textit {Il y avait en Westphalie...} Et si cet incipit mythique se retrouverait un jour pixelisé, cela donnerait quoi ? C'est ce à quoi j'ai essayé de répondre lors de ce travail de maturité, qui consistait à adapter le premier chapitre de \textit{Candide} de Voltaire en un jeu vidéo de type RPG (jeu de rôle).
+% mettre des screenshots et ue brève explication du jeu plus références à Candide
+\subsection{Lexique}
+Afin d'avoir une meilleure compréhension de ce document, voici un lexique. \\
+\begin{list}{}{}
+\item sprite:
+\item tilemap:
+\item tileset:
+\item hp:
+\item state:
+\item phaser
+\item spritesheet:
+\item assets : désigne l'ensemble des fichiers visuels et auditifs du jeu.
+\item tile : 
+\item overworld: 
+\item pnj:
+\end{list}
 
+\section{Déroulement du jeu}
+% personnages , dessiner
+%lexique
 sources : \
 Phaser.js par Richard Davey \
 Phaser-tilemap-plus par Colin Vella \
@@ -127,12 +148,11 @@ qu'est-ce qu'une state, comment ça marche etc...\\\\
 Les states, propres à Phaser.js, représentent une section du jeu. Chaque objet state a son lot de fonctions Phaser, à savoir preload, create, update et render. L'utilisation de ces fonctions va être décrite dans les paragraphes ci-dessous.
 
 \subsubsection{Boot et Preload}
-boot fait démarrer le jeu, preload pour les assets etc...\\\\
+%boot fait démarrer le jeu, preload pour les assets etc...
 La state "Boot" fait démarrer le jeu. Elle déclenche la state "Preload". Preload est une state qui utilise uniquement la fonction preload, qui sert à associer tous les assets du jeu à un nom et les stocker dans le cache pour pouvoir les utiliser dans le code. Une fois tous les éléments stockés, la state "Menu principal" est enclenchée. Le choix d'utiliser une unique state pour ce travail permet une meilleure organisation au sein du code.
 \subsubsection{Menu Principal}
-expliquer la fonction avec les boutons, dans un premier temps elle est avec une sprite sheet pour chaque langue, éventuelle amélioration.
-
-\\\\La state "menu principal" permet au joueur de lancer le jeu ou d'en modifier la langue. Les boutons qui permettent de faire une action sont un objet Phaser. L'ensemble des boutons est initié dans une seule fonction. Cette dernière dépend de la langue que le joueur a choisi. Chaque bouton a sa propre spritesheet, ce qui pourrait poser problème au niveau de la taille et du temps si d'autres langues sont ajoutées. Une option serait de générer dans le code, les textes dans les boutons à la place de les dessiner à la main.
+%expliquer la fonction avec les boutons, dans un premier temps elle est avec une sprite sheet pour chaque langue, éventuelle amélioration.\\
+La state "menu principal" permet au joueur de lancer le jeu ou d'en modifier la langue. Les boutons qui permettent de faire une action sont un objet Phaser. L'ensemble des boutons est initié dans une seule fonction. Cette dernière dépend de la langue que le joueur a choisi. Chaque bouton a sa propre spritesheet, ce qui pourrait poser problème au niveau de la taille et du temps si d'autres langues sont ajoutées. Une option serait de générer dans le code, les textes dans les boutons à la place de les dessiner à la main.
 \subsubsection{Game}
 toutes les fonctions agissent ici, dans la partie create de phaser.
 \\\\La state "Game" utilise les fonctions create et update. Dans la fonction create, toutes les actions de jeu sont initiées : le terrain et le personnage sont initiés et les textes du jeu sont traduits.
@@ -141,7 +161,7 @@ toutes les fonctions agissent ici, dans la partie create de phaser.
 La state "battle" est utilisée lors des combats pour initier l'interface de combat. Une nouvelle state est utilisée car il est plus facile de créer à partir d'une state vide que de modifier une state déjà existante. En effet, la state de combat ne requiert pas une détection de collision ni la création de personnages non-jouables.
 \\ Une map de fond est initiée dans la fonction create, ainsi que les personnages à l'écran et leur barres de vie. Le combat est ensuite géré par une classe, battleManager, dont le fonctionnement va être décrit plus loin.
 \subsubsection{Transition avec texte}
-Cette state sert uniquement à afficher du texte. Une fonction est passée en argument lorsqu'on fait appel à cette state qui l'exécutera. Cette state est une alternative aux cinématiques, trop difficiles à programmer.  
+Cette state sert uniquement à afficher du texte. Une fonction est passée en argument lorsqu'on fait appel à cette state qui l'exécutera. Cette state est une alternative narrative aux cinématiques, trop difficiles à programmer.  
 \subsection{Joueur}
 expliquer les déplacements, les directions , les interactions etc...
 \subsection{Les pnjs}
@@ -168,12 +188,14 @@ expliquer la complication lié au temps, le rabotage etc..
 \section{Conception des assets}
 \subsection{Visuel}
 logiciels utilisé , techniques(travailler avec des tiles, \\ couches de transparence...)\\ inspiration pour les personnages, dessins\\ originaux etc.. restrictions au niveau du pixel\\ art, base pour cohérence etc...
+\subsubsection{Police personnalisée}
 \subsubsection{Sprites de dialogues}
 techniques(couches, dessins - restrictions), exemple 
 \subsubsection{Sprites d'overworld}
 techniques, exemples
 \subsubsection{Tilesets}
 techniques, exemples
+\subsubsection{Tilemap}
 \subsection{Musical}
 logiciel utilisé , techniques (trouver une suite d'accord, les instruments etc..) , éventuellement les bruitages , la campanella midi file
 \section{Conclusion}
