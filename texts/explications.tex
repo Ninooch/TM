@@ -1,9 +1,11 @@
 \documentclass[11pt]{article}
 
 \usepackage[utf8]{inputenc}
-\usepackage{listings}
-\usepackage[francais]{babel}
 
+\usepackage{graphicx}
+\graphicspath{{assets/}}
+\usepackage[francais]{babel}
+\usepackage{listings}
 
 %https://mysnippets443.wordpress.com/2015/11/28/latex-insert-javascript-code-with-lstlisting-package/
 
@@ -84,12 +86,11 @@ captionpos=b
 \begin{document}
 
 \title{Candide 2.0 ou l'optimisme en jeu vidéo }
-\author{Nina Ionescu 3mg01 \\ Mentor : Jean-Marc Ledermann}
+\author{Nina Ionescu 3mg01 \\ Mentor : Jean-Marc Ledermann \\ Lycée Denis de Rougemont}
 \date{}
-
 \pagenumbering{gobble}
 \maketitle
-
+\includegraphics{title}
 \newpage
 \tableofcontents
 \newpage
@@ -116,6 +117,7 @@ Afin d'avoir une meilleure compréhension de ce document, voici un lexique. \\
 
 \section{Déroulement du jeu}
 % personnages , dessiner
+Le joueur incarne Candide et peut se promener dans les décors inspirés de \textit{Candide}. Il peut avec les pnjs présents dans les décors et faire des combats avec certains d'entre eux.   
 %lexique
 sources : \
 Phaser.js par Richard Davey \
@@ -188,7 +190,7 @@ expliquer les dialogues, conserver le contenu tout en l'adaptant etc...donner de
 expliquer la complication lié au temps, le rabotage etc..
 \section{Conception des assets}
 \subsection{Visuel}
-logiciels utilisé , techniques(travailler avec des tiles, \\ couches de transparence...)\\ inspiration pour les personnages, dessins\\ originaux etc.. restrictions au niveau du pixel\\ art, base pour cohérence etc...
+%logiciels utilisé , techniques(travailler avec des tiles, couches de transparence...)inspiration pour les personnages, dessins originaux etc.. restrictions au niveau du pixel art, base pour cohérence etc...
 \subsubsection{Police personnalisée}
 \subsubsection{Sprites de dialogues}
 techniques(couches, dessins - restrictions), exemple 
