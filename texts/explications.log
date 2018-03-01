@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.15)  21 FEB 2018 11:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.15)  1 MAR 2018 17:10
 entering extended mode
 **./explications.tex
 (explications.tex
@@ -579,58 +579,57 @@ Underfull \hbox (badness 10000) in paragraph at lines 102--103
  []
 
 [1]
-Underfull \hbox (badness 10000) in paragraph at lines 131--133
+Underfull \hbox (badness 10000) in paragraph at lines 133--135
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 131--133
+Underfull \hbox (badness 10000) in paragraph at lines 133--135
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 134--135
+Underfull \hbox (badness 10000) in paragraph at lines 136--137
 
  []
 
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 136.
-
-Underfull \hbox (badness 10000) in paragraph at lines 149--151
-
- []
-
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 159--162
-
- []
-
-[3]
-Overfull \hbox (7.4004pt too wide) in paragraph at lines 188--190
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 138.
+[2] [3]
+<assets/candideSprite.png, id=28, 140.525pt x 269.005pt>
+File: assets/candideSprite.png Graphic file (type png)
+<use assets/candideSprite.png>
+Package pdftex.def Info: assets/candideSprite.png  used on input line 173. on i
+nput line 173.
+Package pdftex.def Info: Requested size: 70.26231pt x 134.50217pt on input line
+ 173.
+ [4 <./assets/candideSprite.png>]
+Overfull \hbox (7.4004pt too wide) in paragraph at lines 197--199
 []\OT1/cmr/m/n/10.95 expliquer les dia-logues, conser-ver le contenu tout en l'
 adap-tant etc...donner
  []
 
-[4] [5] (explications.aux) ) 
+[5] [6] (explications.aux) ) 
 Here is how much of TeX's memory you used:
- 4688 strings out of 494953
- 63289 string characters out of 3177379
+ 4695 strings out of 494953
+ 63446 string characters out of 3177379
  158982 words of memory out of 3000000
- 7963 multiletter control sequences out of 15000+200000
- 9791 words of font info for 35 fonts, out of 3000000 for 9000
+ 7968 multiletter control sequences out of 15000+200000
+ 10092 words of font info for 36 fonts, out of 3000000 for 9000
  198 hyphenation exceptions out of 8191
- 41i,7n,40p,562b,1194s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,8n,40p,562b,1194s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
 fonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.p
-fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on explications.pdf (7 pages, 132729 bytes).
+/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10
+.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/
+Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmtt9.pfb>
+Output written on explications.pdf (8 pages, 149400 bytes).
 PDF statistics:
- 61 PDF objects out of 1000 (max. 8388607)
+ 70 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

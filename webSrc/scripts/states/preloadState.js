@@ -45,8 +45,8 @@ var preloadState = {
         game.load.spritesheet("player","assets/sprites/sprite_animations/candideSprite.png",35,67);
 
         //pnjs
-        game.load.spritesheet("cunegonde","assets/sprites_animations/cunegondeBase.pnj",35,67);
-        game.load.spritesheet("cunegondeFaceAnimation","assets/sprite/faces_animations/cunegondeFaceAnimation.png",110,130);
+        game.load.spritesheet("cunegonde","assets/sprites/sprite_animations/cunegondeBase.png",35,67);
+        game.load.spritesheet("cunegondeFaceAnimation","assets/sprites/faces_animations/cunegondeFaceAnimation.png",110,150);
         game.load.spritesheet("pnjTest","assets/sprites/sprite_animations/pnjTest.png",35,67);
         game.load.spritesheet("martin","assets/sprites/sprite_animations/martinBase.png",35,67)
         game.load.spritesheet("martinFaceAnimation","assets/sprites/faces_animations/martinFaceAnimation.png",110,130);

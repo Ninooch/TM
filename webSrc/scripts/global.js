@@ -99,9 +99,10 @@ function createMap1 (){
     // globals.maps.testMap.addPnjs(globals.pnjs.pangloss);
     // globals.maps.testMap.addWarps(globals.warps.toMap2);
     globals.pnjs.martin3 = new Ennemy({x:200,y:250,key:"martin",frame:0,health:100,name:"Ennemy2",attack1:globals.attacks.cpsCote},globals.dialogs.pnjTestDialogs);
-
+    globals.pnjs.cunegonde = new Pnj(40*32,30*32,"cunegonde",0,"Cunégonde",globals.dialogs.cunegonde,"cunegondeFaceAnimation");
     globals.maps.chateau = new CustomMap("chateau",["terrain1","chateau"],["Calque de Tile 1"]);
     globals.maps.bois = new CustomMap("bois",["terrain1"],["Calque de Tile 1"]);
+    globals.maps.bois.addPnjs(globals.pnjs.cunegonde);
     globals.warps.toBois = new Warp(false,globals.maps.bois,58*32,37*32,globals.maps.chateau.properties.warp4X*32,globals.maps.chateau.properties.warp4Y*32,1,3);
     globals.warps.toChfrBois = new Warp(false,globals.maps.chateau,64,45*32,globals.maps.bois.properties.warp1X*32,globals.maps.bois.properties.warp1Y*32,1,3);
     globals.maps.bois.addWarps(globals.warps.toChfrBois);

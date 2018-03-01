@@ -10,14 +10,16 @@ function initPlayer(x,y){
 
     game.camera.follow(globals.player);
 
-    globals.player.maxHealth = 1;
-    globals.player.setHealth(1);
+    globals.player.maxHealth = 100;
+    globals.player.setHealth(100);
     globals.player.isAlive = true;
     globals.player.customProps = {};
 
     globals.player.customProps.animationSpeed = 6;
     globals.player.customProps.speed = 150;
     globals.player.customProps.canMove = true;
+    
+    globals.player.rectangle = getBounds(globals.player);
 
     globals.player.customProps.bulle = new Bubble();
     globals.player.customProps.bulleOnScreen = false;
@@ -31,7 +33,7 @@ function initPlayer(x,y){
 }
 
 function updatePlayer(){
-    globals.player.rectangle = getBounds(globals.player);
+
 
     globals.player.body.velocity.x=0;
     globals.player.body.velocity.y=0;

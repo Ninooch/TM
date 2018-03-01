@@ -113,11 +113,12 @@ Afin d'avoir une meilleure compréhension de ce document, voici un lexique. \\
 \item tile : ou carreau; petite image carrée à texture répétée.
 \item tilemap: ou carte à carreaux. Carte du jeu formée par des tiles.
 \item tileset: ensemble de tiles sous forme de spritesheet.
+\item warp: zone qui une fois pénétrée déclenche un changement de map.
 \end{list}
 
-\section{Déroulement du jeu}
+\section{Déroulement du jeu PAS FINI}
 % personnages , dessiner
-Le joueur incarne Candide et peut se promener dans les décors inspirés de \textit{Candide}. Il peut avec les pnjs présents dans les décors et faire des combats avec certains d'entre eux.   
+Le joueur incarne Candide et peut se promener dans des situations inspirées du livre. Il peut dialoguer avec les pnjs présents dans les décors et faire des combats avec certains d'entre eux. Le joueur arrive dans la cour du château du Baron de Thunder-then-Tronck. 
 %lexique
 sources : \
 Phaser.js par Richard Davey \
@@ -147,7 +148,7 @@ Ce projet a été réalisé en javascript, avec les additions de ECMAScript6 et 
 \end{lstlisting}
 \textit{Exemple de la fonction traductrice pour le dialogue d'un personnage quelconque}
 \subsection{Gestion des states du jeu}
-qu'est-ce qu'une state, comment ça marche etc...\\\\
+%qu'est-ce qu'une state, comment ça marche etc...\\\\
 Les states, propres à Phaser.js, représentent une section du jeu. Chaque objet state a son lot de fonctions Phaser, à savoir preload, create, update et render. L'utilisation de ces fonctions va être décrite dans les paragraphes ci-dessous.
 
 \subsubsection{Boot et Preload}
@@ -157,26 +158,33 @@ La state "Boot" fait démarrer le jeu. Elle déclenche la state "Preload". Prelo
 %expliquer la fonction avec les boutons, dans un premier temps elle est avec une sprite sheet pour chaque langue, éventuelle amélioration.\\
 La state "menu principal" permet au joueur de lancer le jeu ou d'en modifier la langue. Les boutons qui permettent de faire une action sont un objet Phaser. L'ensemble des boutons est initié dans une seule fonction. Cette dernière dépend de la langue que le joueur a choisi. Chaque bouton a sa propre spritesheet, ce qui pourrait poser problème au niveau de la taille et du temps si d'autres langues sont ajoutées. Une option serait de générer dans le code, les textes dans les boutons à la place de les dessiner à la main.
 \subsubsection{Game}
-toutes les fonctions agissent ici, dans la partie create de phaser.
-\\\\La state "Game" utilise les fonctions create et update. Dans la fonction create, toutes les actions de jeu sont initiées : le terrain et le personnage sont initiés et les textes du jeu sont traduits.
-\\La fonction update est une fonction qui est appelée à chaque milliseconde. Sont présentes dans cette fonction, toutes les fonctions qui servent à interagir avec le joueur, c'est à dire la détection de la collision, les changements de maps au contact d'une zone de warp et l'apparition des bulles de dialogues des personnages non-jouables quand le joueur les approche. La fonction qui sert à faire marcher le joueur est aussi présente dans la fonction update.
+%toutes les fonctions agissent ici, dans la partie create de phaser.
+La state "Game" utilise les fonctions create et update. Dans la fonction create, toutes les actions de jeu sont initiées : le terrain et le personnage sont initiés et les textes du jeu sont traduits.
+\\La fonction update est une fonction qui est appelée chaque milliseconde. Sont présentes dans cette fonction, toutes les fonctions qui servent à interagir avec le joueur, c'est à dire la détection de la collision, les changements de maps au contact d'une zone de warp et l'apparition des bulles de dialogues des personnages non-jouables quand le joueur les approche. La fonction qui sert à faire marcher le joueur est aussi présente dans la fonction update.
 \subsubsection{Battle}
 La state "battle" est utilisée lors des combats pour initier l'interface de combat. Une nouvelle state est utilisée car il est plus facile de créer à partir d'une state vide que de modifier une state déjà existante. En effet, la state de combat ne requiert pas une détection de collision ni la création de personnages non-jouables.
 \\ Une map de fond est initiée dans la fonction create, ainsi que les personnages à l'écran et leur barres de vie. Le combat est ensuite géré par une classe, battleManager, dont le fonctionnement va être décrit plus loin.
 \subsubsection{Transition avec texte}
 Cette state sert uniquement à afficher du texte. Une fonction est passée en argument lorsqu'on fait appel à cette state qui l'exécutera. Cette state est une alternative narrative aux cinématiques, trop difficiles à programmer.  
 \subsection{Joueur}
-expliquer les déplacements, les directions , les interactions etc...
+%expliquer les déplacements, les directions , les interactions etc...
+Le joueur est un sprite qui peut se déplacer lorsqu'une touche directionnelle est enfoncée. Ces déplacements sont activés uniquement quand la propriété "canMove" = true. Cette propriété sert à ce que le personnage ne puisse pas se déplacer pendant les dialogues. Le sprite possède 4 animations de marche qui sont jouées quand l'image se déplace.\\
+\begin{figure}[h]
+\includegraphics[scale=0.5]{candideSprite}
+\centering
+\caption{le sprite du joueur avec les différentes frames des animations de marche}
+\end{figure}
+\\Le sprite possède également de la vie et des attaques, qui vont être utilisées durant les combats. 
 \subsection{Les pnjs}
-expliquer la classe, la bulle (classe) 
-les interaction avec le joueur etc..
+%expliquer la classe, la bulle (classe) 
+%les interaction avec le joueur etc..
 \subsection{Gestion des dialogues}
-expliquer la police de caractères, la dynamique des choix, l'objet manager , la syntaxe (les arrays avec les callbacks etc...)
+%expliquer la police de caractères, la dynamique des choix, l'objet %manager , la syntaxe (les arrays avec les callbacks etc...)
 \subsection{Gestion du terrain}
-expliquer les maps,collisions, tilesets,calques, warps , l'objet terrainmanager etc... expliquer le fail avec le tween manager pour le fade in et fade out.
-expliquer le problème avec les données dans la map et la solution.
+%expliquer les maps,collisions, tilesets,calques, warps , l'objet terrainmanager etc... expliquer le fail avec le tween manager pour le fade in et fade out.
+%expliquer le problème avec les données dans la map et la solution.
 \subsection{Gestion des combats}
-expliquer la dynamique de combat, les points de vie etc..
+%expliquer la dynamique de combat, les points de vie etc..
 \subsection{Interaction avec les objets}
 à compléter idée: un objet possède ou non un callback 
 
