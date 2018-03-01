@@ -24,6 +24,18 @@
         }],
  "nextobjectid":1,
  "orientation":"orthogonal",
+ "properties":
+    {
+     "warp1Length":3,
+     "warp1X":60,
+     "warp1Y":36
+    },
+ "propertytypes":
+    {
+     "warp1Length":"int",
+     "warp1X":"int",
+     "warp1Y":"int"
+    },
  "renderorder":"right-down",
  "tiledversion":"1.0.3",
  "tileheight":32,

@@ -1,0 +1,4 @@
+-ajouter un signal pour les warps 
+- finir le doc écrit ( quelques jours) 
+- implémenter les combats ( philo tout ça ) pour les premiers pas du jeu
+- 

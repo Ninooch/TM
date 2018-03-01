@@ -102,7 +102,9 @@ function createMap1 (){
 
     globals.maps.chateau = new CustomMap("chateau",["terrain1","chateau"],["Calque de Tile 1"]);
     globals.maps.bois = new CustomMap("bois",["terrain1"],["Calque de Tile 1"]);
-    globals.warps.toBois = new Warp(false,globals.maps.bois,32,32,globals.maps.chateau.properties.warp4X*32,globals.maps.chateau.properties.warp4Y*32,1,3);
+    globals.warps.toBois = new Warp(false,globals.maps.bois,58*32,37*32,globals.maps.chateau.properties.warp4X*32,globals.maps.chateau.properties.warp4Y*32,1,3);
+    globals.warps.toChfrBois = new Warp(false,globals.maps.chateau,64,45*32,globals.maps.bois.properties.warp1X*32,globals.maps.bois.properties.warp1Y*32,1,3);
+    globals.maps.bois.addWarps(globals.warps.toChfrBois);
     globals.pnjs.domestique1 = new Pnj(globals.maps.chateau.properties.pnj1X,globals.maps.chateau.properties.pnj1Y,"pnjTest",0,"Domestique",globals.dialogs.pnj1Ch1);
     globals.maps.chateau.addPnjs(globals.pnjs.domestique1);
     globals.maps.chateau.addWarps(globals.warps.toBois);

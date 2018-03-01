@@ -38,12 +38,15 @@ var preloadState = {
         game.load.spritesheet("chateau","assets/sprites/tilesets/chateau.png",32,32);
         game.load.tilemap("chateau","assets/maps/ch1/chateau.json",null,Phaser.Tilemap.TILED_JSON);
         game.load.tilemap("bois","assets/maps/ch1/bois.json",null,Phaser.Tilemap.TILED_JSON);
+        game.load.tilemap("interieur","assets/maps/ch1/interieur.json",null,Phaser.Tilemap.TILED_JSON);
 
 
         //joueur
         game.load.spritesheet("player","assets/sprites/sprite_animations/candideSprite.png",35,67);
 
         //pnjs
+        game.load.spritesheet("cunegonde","assets/sprites_animations/cunegondeBase.pnj",35,67);
+        game.load.spritesheet("cunegondeFaceAnimation","assets/sprite/faces_animations/cunegondeFaceAnimation.png",110,130);
         game.load.spritesheet("pnjTest","assets/sprites/sprite_animations/pnjTest.png",35,67);
         game.load.spritesheet("martin","assets/sprites/sprite_animations/martinBase.png",35,67)
         game.load.spritesheet("martinFaceAnimation","assets/sprites/faces_animations/martinFaceAnimation.png",110,130);

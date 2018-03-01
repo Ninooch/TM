@@ -61,6 +61,7 @@ class TerrainManager {
         }
         for(let l in map.warps){
             this.currentWarps.push(map.warps[l]);
+            this.currentWarps[l].overlap=false; //solution tampon, à améliorer avec les signals
         }
     }
 
@@ -91,6 +92,7 @@ class TerrainManager {
                 }
                 else{
                     if(!this.currentWarps[l].overlap){
+                        this.currentWarps[l].overlap = true;
                         globals.terrainManager.changeMap(this.currentWarps[l].to,this.currentWarps[l].nx,this.currentWarps[l].ny);
                     }
                 }
