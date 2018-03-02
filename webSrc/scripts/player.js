@@ -18,7 +18,7 @@ function initPlayer(x,y){
     globals.player.customProps.animationSpeed = 6;
     globals.player.customProps.speed = 150;
     globals.player.customProps.canMove = true;
-    
+
     globals.player.rectangle = getBounds(globals.player);
 
     globals.player.customProps.bulle = new Bubble();

@@ -90,18 +90,16 @@ globals.functions.intro = function(){
 }
 
 function createMap1 (){
-    // globals.maps.testMap2 = new CustomMap("testmap2",["terrain1"],["Calque de Tile 1"],"");
-    // globals.warps.toMap2 = new Warp(false,globals.maps.testMap2,200,200,128,0,3,2,"Entrer?");
+
     globals.pnjs.martin2 = new Ennemy({x:200,y:250,key:"pnjTest",frame:0,health:50,name:"Ennemy1",attack1:globals.attacks.cpsCote},globals.dialogs.pnjTestDialogs);
-    // globals.pnjs.martin = new Pnj(90,150,"martin",0,"Choix",globals.dialogs.pnjTestDialogs,"martinFaceAnimation");
-    // globals.pnjs.pangloss = new Pnj(300,150,"pangloss",0,"Pangloss",globals.dialogs.pangloss,"panglossFaceAnimation");
-    // globals.maps.testMap = new CustomMap("testmap",["terrain1"],["Calque de Tile 1"],"");
-    // globals.maps.testMap.addPnjs(globals.pnjs.pangloss);
-    // globals.maps.testMap.addWarps(globals.warps.toMap2);
-    globals.pnjs.martin3 = new Ennemy({x:200,y:250,key:"martin",frame:0,health:100,name:"Ennemy2",attack1:globals.attacks.cpsCote},globals.dialogs.pnjTestDialogs);
+
+    //globals.pnjs.martin3 = new Ennemy({x:200,y:250,key:"martin",frame:0,health:100,name:"Ennemy2",attack1:globals.attacks.cpsCote},globals.dialogs.pnjTestDialogs);
     globals.pnjs.cunegonde = new Pnj(40*32,30*32,"cunegonde",0,"Cunégonde",globals.dialogs.cunegonde,"cunegondeFaceAnimation");
     globals.maps.chateau = new CustomMap("chateau",["terrain1","chateau"],["Calque de Tile 1"]);
     globals.maps.bois = new CustomMap("bois",["terrain1"],["Calque de Tile 1"]);
+    globals.maps.interieur = new CustomMap("interieur",["chateau"],["Calque de Tile 1"]);
+    globals.warps.toInt = new Warp(true,globals.maps.interieur,15*32,27*32,42*32,30*32,2,2,"Entrer ? ");
+    globals.maps.chateau.addWarps(globals.warps.toInt);
     globals.maps.bois.addPnjs(globals.pnjs.cunegonde);
     globals.warps.toBois = new Warp(false,globals.maps.bois,58*32,37*32,globals.maps.chateau.properties.warp4X*32,globals.maps.chateau.properties.warp4Y*32,1,3);
     globals.warps.toChfrBois = new Warp(false,globals.maps.chateau,64,45*32,globals.maps.bois.properties.warp1X*32,globals.maps.bois.properties.warp1Y*32,1,3);

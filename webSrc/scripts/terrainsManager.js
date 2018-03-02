@@ -78,13 +78,17 @@ class TerrainManager {
 
     update(){
         game.physics.arcade.collide(globals.player,this.collision);
+
         for(let l in this.currentWarps){
             if(checkPnjOverlap(this.currentWarps[l],globals.player)){
                 if(this.currentWarps[l].isHouse){
+                    console.log(globals.player.customProps.bulleOnScreen)
                     if(!globals.player.customProps.bulleOnScreen){
+                        globals.player.customProps.currentWarp = this.currentWarps[l];
+                        globals.player.customProps.bulleOnScreen = true;
                         globals.player.customProps.bulle.create(globals.player.x,globals.player.y,this.currentWarps[l].text,37);
                         globals.player.customProps.bulle.goToHouse(this.currentWarps[l].to,this.currentWarps[l].nx,this.currentWarps[l].ny);
-                        globals.player.customProps.bulleOnScreen = true;
+
                     }
                     else{
                         globals.player.customProps.bulle.update(globals.player.x,globals.player.y);
@@ -98,9 +102,10 @@ class TerrainManager {
                 }
             }
             else{
-                if(globals.player.customProps.bulleOnScreen){
+                if(this.currentWarps[l] == globals.player.customProps.currentWarp){
                     globals.player.customProps.bulle.destroy();
                     globals.player.customProps.bulleOnScreen = false;
+                    globals.player.customProps.currentWarp = "";
                 }
             }
         }

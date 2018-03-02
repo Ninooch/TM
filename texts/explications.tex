@@ -180,14 +180,16 @@ Le joueur est un sprite avec qui peut se déplacer lorsqu'une touche directionne
 \subsection{Les pnjs}
 %expliquer la classe, la bulle (classe) 
 %les interaction avec le joueur etc.
+\subsubsection{Personnages normaux}
 Les pnjs sont une nouvelle classe étendue du sprite. Pour créer un nouveau pnj, il faut utiliser :
  \begin{lstlisting}[language=JavaScript]
 var myChar = new Pnj(x,y,key,frame,name,dialogs,faceAnimKey);
 \end{lstlisting}
 Les arguments x et y définissent la position du sprite, la "key" est la référence de la spritesheet, frame est un numéro qui définit quelle frame sera affichée (habituellement 0 pour avoir le personnage de face),name est le nom sous forme de string du personnage, dialogs est une variable qui contient les répliques du personnages et faceAnimKey est la référence à la spritesheet correspondante aux animations pendant un dialogue. 
-\\ Chaque pnj a une méthode update qui permet de détecter le joueur et créer une interaction avec lui. Le code regarde si le rectangle formé par le sprite du joueur intersecte un autre rectangle plus grand, qui englobe le pnj. Si c'est le cas et que le phylactère du pnj n'est pas encore à l'écran, le personnage crée une bulle. Lorsque la bulle est affichée, le joueur peut cliquer "enter" et faire démarrer le dialogue. Cette méthode de détection de bulle a été codée avec des "if" et beaucoup de variables booléennes. Une amélioration serait possible avec des signaux, une spécificité de Phaser, qui permettent le déclenchement d'une fonction lorsque qu'une condition est remplie.
-
+\\ Chaque pnj a une méthode update qui permet de détecter le joueur et créer une interaction avec lui. Le code regarde si le rectangle formé par le sprite du joueur intersecte un autre rectangle plus grand, qui englobe le pnj. Si c'est le cas et que le phylactère du pnj n'est pas encore à l'écran, le personnage crée une bulle. Lorsque la bulle est affichée, le joueur peut cliquer "enter" et faire démarrer le dialogue. Cette méthode de détection de bulle a été codée avec des "if" et beaucoup de variables booléennes. Une amélioration serait possible avec des signaux, une spécificité de Phaser, qui permettent le déclenchement d'une fonction lorsque qu'une condition est remplie.\subsubsection{Ennemis}
+Les ennemis sont une classe étendue des pnjs. Ce sont des pnjs dotés de points de vie et d'attaques pour pouvoir les utiliser lors de combats. Chaque ennemi possède une méthode turn, utilisée lors d'un tour au combat et une méthode startCombat qui fait basculer le jeu sur la state de combat.
 \subsection{Les bulles}
+Les bulles sont une classe. Chaque bulle est composée de trois parties, le fond, le texte et un triangle animé. Les bulles jouent plusieurs rôles. Elles peuvent indiquer un dialogue mais aussi permettre au joueur de rentrer dans une nouvelle map (grâce à la méthode goToHouse) lorsqu'il y a un élément tel qu'une porte que le joueur doit ouvrir.
 \subsection{Gestion des dialogues}
 %expliquer la police de caractères, la dynamique des choix, l'objet %manager , la syntaxe (les arrays avec les callbacks etc...)
 \subsection{Gestion du terrain}
@@ -220,5 +222,5 @@ techniques, exemples
 \subsection{Musical}
 logiciel utilisé , techniques (trouver une suite d'accord, les instruments etc..) , éventuellement les bruitages , la campanella midi file
 \section{Conclusion}
-
+%long !!! 
 \end{document}

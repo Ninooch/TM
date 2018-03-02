@@ -1,5 +1,6 @@
 class Bubble {
     create(x,y,text,fontSize){
+        console.log("j'ai fait une bulle")
         this.bubble = game.add.sprite(x + 20,y,"bulle");
         this.bubble.anchor.setTo(0.5,1);
 
