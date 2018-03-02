@@ -12,17 +12,18 @@
 \contentsline {subsubsection}{\numberline {3.2.5}Transition avec texte}{4}
 \contentsline {subsection}{\numberline {3.3}Joueur}{4}
 \contentsline {subsection}{\numberline {3.4}Les pnjs}{5}
-\contentsline {subsection}{\numberline {3.5}Gestion des dialogues}{5}
-\contentsline {subsection}{\numberline {3.6}Gestion du terrain}{5}
-\contentsline {subsection}{\numberline {3.7}Gestion des combats}{5}
-\contentsline {subsection}{\numberline {3.8}Interaction avec les objets}{5}
+\contentsline {subsection}{\numberline {3.5}Les bulles}{5}
+\contentsline {subsection}{\numberline {3.6}Gestion des dialogues}{5}
+\contentsline {subsection}{\numberline {3.7}Gestion du terrain}{5}
+\contentsline {subsection}{\numberline {3.8}Gestion des combats}{5}
+\contentsline {subsection}{\numberline {3.9}Interaction avec les objets}{5}
 \contentsline {section}{\numberline {4}Sc\IeC {\'e}nario alternatif}{5}
-\contentsline {section}{\numberline {5}Conception des assets}{5}
-\contentsline {subsection}{\numberline {5.1}Visuel}{5}
-\contentsline {subsubsection}{\numberline {5.1.1}Police personnalis\IeC {\'e}e}{5}
-\contentsline {subsubsection}{\numberline {5.1.2}Sprites de dialogues}{5}
-\contentsline {subsubsection}{\numberline {5.1.3}Sprites d'overworld}{5}
-\contentsline {subsubsection}{\numberline {5.1.4}Tilesets}{5}
-\contentsline {subsubsection}{\numberline {5.1.5}Tilemap}{5}
-\contentsline {subsection}{\numberline {5.2}Musical}{5}
+\contentsline {section}{\numberline {5}Conception des assets}{6}
+\contentsline {subsection}{\numberline {5.1}Visuel}{6}
+\contentsline {subsubsection}{\numberline {5.1.1}Police personnalis\IeC {\'e}e}{6}
+\contentsline {subsubsection}{\numberline {5.1.2}Sprites de dialogues}{6}
+\contentsline {subsubsection}{\numberline {5.1.3}Sprites d'overworld}{6}
+\contentsline {subsubsection}{\numberline {5.1.4}Tilesets}{6}
+\contentsline {subsubsection}{\numberline {5.1.5}Tilemap}{6}
+\contentsline {subsection}{\numberline {5.2}Musical}{6}
 \contentsline {section}{\numberline {6}Conclusion}{6}

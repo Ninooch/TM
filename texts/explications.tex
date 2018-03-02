@@ -168,16 +168,26 @@ La state "battle" est utilisée lors des combats pour initier l'interface de com
 Cette state sert uniquement à afficher du texte. Une fonction est passée en argument lorsqu'on fait appel à cette state qui l'exécutera. Cette state est une alternative narrative aux cinématiques, trop difficiles à programmer.  
 \subsection{Joueur}
 %expliquer les déplacements, les directions , les interactions etc...
-Le joueur est un sprite qui peut se déplacer lorsqu'une touche directionnelle est enfoncée. Ces déplacements sont activés uniquement quand la propriété "canMove" = true. Cette propriété sert à ce que le personnage ne puisse pas se déplacer pendant les dialogues. Le sprite possède 4 animations de marche qui sont jouées quand l'image se déplace.\\
+Le joueur est un sprite avec qui peut se déplacer lorsqu'une touche directionnelle est enfoncée. Ces déplacements sont activés uniquement quand la propriété "canMove" = true. Cette propriété sert à ce que le personnage ne puisse pas se déplacer pendant les dialogues. Le sprite possède 4 animations de marche qui sont jouées quand l'image se déplace.\\
 \begin{figure}[h]
 \includegraphics[scale=0.5]{candideSprite}
 \centering
 \caption{le sprite du joueur avec les différentes frames des animations de marche}
 \end{figure}
+\\Les déplacements sont détectés dans la fonction updatePlayer appellée dans la state "game".
+\\Ce sprite possède un corps physique (spécificité de Phaser) qui permet les collisions avec son environnement.
 \\Le sprite possède également de la vie et des attaques, qui vont être utilisées durant les combats. 
 \subsection{Les pnjs}
 %expliquer la classe, la bulle (classe) 
-%les interaction avec le joueur etc..
+%les interaction avec le joueur etc.
+Les pnjs sont une nouvelle classe étendue du sprite. Pour créer un nouveau pnj, il faut utiliser :
+ \begin{lstlisting}[language=JavaScript]
+var myChar = new Pnj(x,y,key,frame,name,dialogs,faceAnimKey);
+\end{lstlisting}
+Les arguments x et y définissent la position du sprite, la "key" est la référence de la spritesheet, frame est un numéro qui définit quelle frame sera affichée (habituellement 0 pour avoir le personnage de face),name est le nom sous forme de string du personnage, dialogs est une variable qui contient les répliques du personnages et faceAnimKey est la référence à la spritesheet correspondante aux animations pendant un dialogue. 
+\\ Chaque pnj a une méthode update qui permet de détecter le joueur et créer une interaction avec lui. Le code regarde si le rectangle formé par le sprite du joueur intersecte un autre rectangle plus grand, qui englobe le pnj. Si c'est le cas et que le phylactère du pnj n'est pas encore à l'écran, le personnage crée une bulle. Lorsque la bulle est affichée, le joueur peut cliquer "enter" et faire démarrer le dialogue. Cette méthode de détection de bulle a été codée avec des "if" et beaucoup de variables booléennes. Une amélioration serait possible avec des signaux, une spécificité de Phaser, qui permettent le déclenchement d'une fonction lorsque qu'une condition est remplie.
+
+\subsection{Les bulles}
 \subsection{Gestion des dialogues}
 %expliquer la police de caractères, la dynamique des choix, l'objet %manager , la syntaxe (les arrays avec les callbacks etc...)
 \subsection{Gestion du terrain}

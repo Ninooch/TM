@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.15)  1 MAR 2018 17:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.15)  2 MAR 2018 13:33
 entering extended mode
 **./explications.tex
 (explications.tex
@@ -604,20 +604,20 @@ nput line 173.
 Package pdftex.def Info: Requested size: 70.26231pt x 134.50217pt on input line
  173.
  [4 <./assets/candideSprite.png>]
-Overfull \hbox (7.4004pt too wide) in paragraph at lines 197--199
+Overfull \hbox (7.4004pt too wide) in paragraph at lines 207--209
 []\OT1/cmr/m/n/10.95 expliquer les dia-logues, conser-ver le contenu tout en l'
 adap-tant etc...donner
  []
 
 [5] [6] (explications.aux) ) 
 Here is how much of TeX's memory you used:
- 4695 strings out of 494953
- 63446 string characters out of 3177379
+ 4702 strings out of 494953
+ 63509 string characters out of 3177379
  158982 words of memory out of 3000000
- 7968 multiletter control sequences out of 15000+200000
+ 7975 multiletter control sequences out of 15000+200000
  10092 words of font info for 36 fonts, out of 3000000 for 9000
  198 hyphenation exceptions out of 8191
- 41i,8n,40p,562b,1194s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,8n,40p,733b,1194s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
 fonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 /cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10
@@ -627,7 +627,7 @@ iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKT
 eX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fon
 ts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
 /public/amsfonts/cm/cmtt9.pfb>
-Output written on explications.pdf (8 pages, 149400 bytes).
+Output written on explications.pdf (8 pages, 152713 bytes).
 PDF statistics:
  70 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

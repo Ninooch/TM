@@ -59,8 +59,6 @@ update(){
 }
 }
 
-var pnjGroup;
-
 function checkSpriteOverlap(spriteA, spriteB) {
 
     var boundsA = getBounds(spriteA);
