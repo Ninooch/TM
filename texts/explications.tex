@@ -138,7 +138,10 @@ Pyxel Edit par Danik ( pseudonyme )\
 
 
 \section{Fonctionement du code}
-Ce projet a été réalisé en javascript, avec les additions de ECMAScript6 et de deux librairies conçues pour la réalisation de jeu-vidéo : Phaser.js ainsi que Phaser-tilemap-plus.js . La majorité du code comprend des objets et des classes créés afin de pouvoir les utiliser comme outils de création.
+Ce projet a été réalisé en javascript, avec les additions de ECMAScript6 et de deux librairies conçues pour la réalisation de jeu-vidéo : Phaser.js ainsi que Phaser-tilemap-plus.js . La majorité du code comprend des objets et des classes créés afin de pouvoir les utiliser comme outils de création.\\
+
+\textit{Note:} Les extraits de code présentés sont des extraits du code source comprenant les passages les plus importants, ils ne sont pas complets.
+
 \subsection{Système général}
 	Avant toute chose, il a fallu concevoir un système qui permette d'atteindre diverses variables au travers de tous les outils du jeu. C'est pourquoi l'objet \textit{globals} (présent dans globals.js), une variable globale a été créée. Cet objet stocke toutes les variables afin d'y avoir accès facilement sans devoir se soucier des scopes des différentes classes et de leur méthodes.\\
 	
@@ -159,9 +162,10 @@ Ce projet a été réalisé en javascript, avec les additions de ECMAScript6 et 
  }
 \end{lstlisting}
 \textit{Exemple de la fonction traductrice pour le dialogue d'un personnage quelconque}
+\subsection{Commencement}
 \subsection{Gestion des states du jeu}
 %qu'est-ce qu'une state, comment ça marche etc...\\\\
-Les states, propres à Phaser.js, représentent une section du jeu. Chaque objet state a son lot de fonctions Phaser, à savoir \textit{preload()}, \textit{create()}, \textit{update()} et \textit{render()}. L'utilisation de ces fonctions va être décrite dans les paragraphes ci-dessous.
+Les states, propres à Phaser, représentent une section du jeu. Chaque objet state a son lot de fonctions Phaser, à savoir \textit{preload()}, \textit{create()}, \textit{update()} et \textit{render()}. L'utilisation de ces fonctions va être décrite dans les paragraphes ci-dessous.
 
 \subsubsection{Boot et Preload}
 %boot fait démarrer le jeu, preload pour les assets etc...
@@ -192,11 +196,11 @@ var gameState = {
 };
 \end{lstlisting} 
 \textit{Extrait du code de la state "Game".}\\\\
-La méthode \textit{update()} est une fonction qui utilise \textit{requestAnimationFrame}. Sont présentes dans cette fonction, toutes les fonctions qui servent à interagir avec le joueur, c'est à dire la détection de la collision, les changements de maps au contact d'une zone de warp et l'apparition des bulles de dialogues des personnages non-jouables quand le joueur les approche. La fonction qui sert à faire marcher le joueur est aussi présente dans la fonction \textit{update()}.
+La méthode \textit{update()} est une fonction qui utilise \textit{requestAnimationFrame}. Sont présentes dans cette méthode, toutes les fonctions qui servent à interagir avec le joueur, c'est à dire la détection de la collision, les changements de maps au contact d'une zone de warp et l'apparition des bulles de dialogues des personnages non-jouables quand le joueur les approche. La fonction qui sert à faire marcher le joueur est aussi présente dans la fonction \textit{update()}.
 \subsubsection{Battle}
 La state "Battle" est utilisée lors des combats pour initier l'interface de combat. Une nouvelle state est utilisée car il est plus facile de créer un contenu visuel à partir d'une state vide que de modifier une state déjà existante. En effet, la state de combat ne requiert pas une détection de collision ni la création de personnages non-jouables.\\
 
-Une map de fond est initiée dans la fonction \textit{create()}, ainsi que les personnages à l'écran et leur barres de vie. Le combat est ensuite géré par une classe, battleManager, dont le fonctionnement va être décrit plus loin.
+Une map de fond est initiée dans la fonction \textit{create()}, ainsi que les personnages à l'écran et leur barres de vie. Le combat est ensuite géré par une classe, textit{battleManager}, dont le fonctionnement va être décrit plus loin.
 \subsubsection{Transition avec texte}
 Cette state sert uniquement à afficher du texte. Une fonction est passée en argument lorsqu'on fait appel à cette state qui l'exécutera. Cette state est une alternative narrative aux cinématiques, trop difficiles à programmer.
 \begin{figure}[H]
@@ -223,7 +227,7 @@ Le sprite possède également de la vie et des attaques, qui vont être utilisé
 \subsection{Les pnjs}
 %expliquer la classe, la bulle (classe) 
 %les interaction avec le joueur etc.
-\subsubsection{Personnages normaux : la classe \textit{Pnj}}
+\subsubsection{Personnages normaux : La classe \textit{Pnj}}
 Les pnjs sont une nouvelle classe étendue de la classe sprite de Phaser. Pour créer un nouveau pnj, il faut utiliser :\\
  \begin{lstlisting}[language=JavaScript]
 var myChar = new Pnj(x,y,key,frame,name,dialogs,faceAnimKey);
@@ -238,11 +242,12 @@ Voici l'explication de ces arguments:
 \item \textbf{faceAnimKey} : Référence à la spritesheet des animations pendant un dialogue sous forme de string.
 \end{itemize}
 \paragraph{}
+
 Chaque pnj a une méthode \textit{update()} qui permet de détecter le joueur et créer une interaction avec lui. Le code regarde si le rectangle formé par le sprite du joueur intersecte un autre rectangle plus grand, qui englobe le pnj. Si c'est le cas et que le phylactère du pnj n'est pas encore à l'écran, le personnage crée une bulle. Lorsque la bulle est affichée, le joueur peut appuyer sur "enter" et faire démarrer le dialogue.\\
 
-Cette méthode de détection de bulle a été codée avec des "if" et beaucoup de variables booléennes. Une amélioration serait possible avec des signaux, une spécificité de Phaser, qui permettent l'appel d'une fonction lorsque qu'un événement est déclenché.\subsubsection{Ennemis : la classe \textit{Ennemy}}
+Cette méthode de détection de bulle a été codée avec des "if" et beaucoup de variables booléennes. Une amélioration serait possible avec des signaux, une spécificité de Phaser, qui permettent l'appel d'une fonction lorsque qu'un événement est déclenché.\subsubsection{Ennemis : La classe \textit{Ennemy}}
 Les ennemis sont une classe étendue de la classe Pnj. Ce sont des pnjs dotés de points de vie et d'attaques pour pouvoir les utiliser lors de combats. Chaque ennemi possède une méthode \textit{turn()} (décrite dans la section gestion du combat), utilisée lors d'un tour au combat et une méthode \textit{startCombat()} qui fait basculer le jeu sur la state de combat.
-\subsection{Les bulles : la classe \textit{Bubble}}
+\subsection{Les bulles : La classe \textit{Bubble}}
  Chaque bulle affichée à l'écran est composée de trois parties, le fond, le texte et un triangle animé. Les bulles jouent plusieurs rôles. Elles peuvent indiquer un dialogue mais aussi permettre au joueur de rentrer dans une nouvelle map (grâce à la méthode \textit{goToHouse()}) lorsqu'il y a un élément tel qu'une porte que le joueur doit ouvrir. La détection des zones de warps à bulle est programmée à l'aide de boucles et de "if". Le code pourrait être simplifié à l'aide de signaux Phaser.
 \begin{figure}[H]
 \includegraphics[scale=0.5]{bulleDialog}
@@ -250,14 +255,14 @@ Les ennemis sont une classe étendue de la classe Pnj. Ce sont des pnjs dotés d
 \centering
 \caption{Exemples de phylactères}
 \end{figure}
-\subsection{Gestion des dialogues : la classe \textit{dialogManager}}
+\subsection{Gestion des dialogues : La classe \textit{dialogManager}}
 %expliquer la police de caractères, la dynamique des choix, l'objet %manager , la syntaxe (les arrays avec les callbacks etc...)
 Tout affichage de texte est géré par la classe \textit{dialogManager} et ses méthodes. 
 Chaque morceau de texte doit avoir une syntaxe précise pour pouvoir être affiché grâce à cette classe. Le texte doit être un array qui contient des strings ou des autres arrays.
 \begin{lstlisting}[language=JavaScript]
 	var txtSimple = ["texte simple"];
 	var txtCallback = [
-		["texte simple avec callbakc",function(){}]
+		["texte simple avec callback",function(){}]
 	];
 \end{lstlisting}
 \textit{Exemple de la syntaxe d'un texte simple et d'un texte suivi d'une callback}\\
@@ -309,9 +314,8 @@ displayText(texts,index,isDialog,faceAnim,battleDesc)
   
         if(typeof texts[index] == "string"){
             this.wordTimer.onComplete.add(function(){
-                //alert("timer fini");
                 this.wait(isDialog,true,null,false);
-            },this); //THIS EST IMPORTANT
+            },this); 
         }
         else if(texts[index].length == 2 ){
             this.wordTimer.onComplete.add(function(){
@@ -328,10 +332,55 @@ displayText(texts,index,isDialog,faceAnim,battleDesc)
 
 }
 \end{lstlisting} 
-\textit{Extrait de la méthode displayText()}
-\subsubsection{méthode \textit{wait()}}
+\textit{Extrait de la méthode displayText()}\\
+Cette méthode sert à afficher les mots un par un. Voici ce que représente les arguments:\\
+\begin{itemize}
+\item \textbf{texts}: La variable qui contient le texte à afficher.
+\item \textbf{index} : L'index à partir du quel se trouve le texte à afficher.
+\item \textbf{isDialog} : Booléen servant à afficher une animation spéciale si c'est un dialogue.
+\item \textbf{faceAnim} : La référence de la spritesheet à animer lors d'un dialogue.
+\item \textbf{battleDesc} : Objet de donnée qui est utilisé lors des combats. Comprend les clés booléennes \textit{is,callback} (qui définissent si le texte doit s'en aller automatiquement et s'il contient une callback) et la clé \textit{time} (qui définit le nombre de milisecondes avant que le texte ne s'efface).
+\end{itemize}
+\textit{Note:}L'usage de \textit{isDialog} et \textit{battleDesc} n'est pas présent dans l'extrait ci-dessus.\\
 
+Si le texte est un dialogue, l'image de la tête du personnage est ajoutée à la boîte de dialogue et l'animation du personnage qui parle est lancée.
+Cette méthode sépare ensuite le texte d'entrée en array (\textit{textArray}) et initialise un compteur à 0. Elle crée un timer Phaser, qui ressemble dans son fonctionnement à un \textit{setInterval()}. Toutes les 100 milisecondes, un mot est ajouté à l'élément graphique \textit{this.bmpText} et le compteur est incrémenté jusqu'à ce que le timer ait fait l'opération autant de fois que la longueur de \textit{textArray}. Si le nombre de caractères présents dans l'affichage graphique dépasse 184, le programme met en pause le timer et lance la méthode \textit{wait()}, pour éviter de déborder de la boîte de dialogue.\\
+
+ Quand le timer a terminé d'afficher tous les mots, il lance la méthode \textit{wait()} en fonction du type de texte affiché. Si le texte a un argument battleDesc, la méthode \textit{stop()} est appelée directement lorsque le timer est terminé.\\
+ 
+Finalement, cette méthode enclenche le timer ( il n'a que été créé auparavant).
+ 
+\subsubsection{méthode \textit{wait()}}
+\begin{lstlisting}[language=JavaScript]
+wait(isDialog,isLast,callback,isQuestion){ 
+    input.enter.onDown.addOnce(function(){ 
+    	if(!isQuestion){
+     	   if(isLast && callback != null){
+       	     	callback();
+       	 	}
+        	else if(isLast){
+            	this.stop(isDialog,true);
+        	}
+        	else{
+            	this.resume(isDialog);
+        	}
+    	}
+    	else{
+        	this.question(this.texts,this.index);
+    	}
+	},this);
+}
+\end{lstlisting} 
+\textit{Extrait de la méthode wait()}\\ Cette méthode est un relai qui demande l'appui de la touche "enter" pour continuer quoi que se soit. Voici à quoi servent les nouveaux arguments: 
+\begin{itemize}
+\item \textbf{isLast} : Booléen servant à fermer le dialogue s'il est complétement affiché.
+\item \textbf{callback} : Une fonction callback qui est appelée à la place de la méthode \textit{stop()}
+\item \textbf{isQuestion}: Booléen servant à appeler la méthode \textit{question()} si le texte contient des choix.
+\end{itemize}
+\paragraph{}
+Cette méthode dessine et anime un petit triangle d'animation pour signaler au joueur que le script attend une action de sa part. Si le texte affiché est un dialogue, l'animation du personnage est changée : Il cligne simplement des yeux. Cette méthode utilise un signal Phaser. Quand la touche enter est pressée, une méthode est appelée en fonction des besoins du texte qui doit être affiché.
 \subsubsection{méthode \textit{resume()}}
+
 
 \subsubsection{méthode \textit{question()}}
 
@@ -343,10 +392,13 @@ displayText(texts,index,isDialog,faceAnim,battleDesc)
 
 \subsubsection{méthode \textit{endBattleScreen()}}
 
-\subsection{Gestion du terrain}
+\subsection{Gestion du terrain : La classe \textit{TerrainManager}}
+\subsubsection{méthode \textit{endBattleScreen()}}
+\subsubsection{méthode \textit{endBattleScreen()}}
+\subsubsection{méthode \textit{endBattleScreen()}}
 %expliquer les maps,collisions, tilesets,calques, warps , l'objet terrainmanager etc... expliquer le fail avec le tween manager pour le fade in et fade out.
 %expliquer le problème avec les données dans la map et la solution.
-\subsection{Gestion des combats}
+\subsection{Gestion des combats : La classe \textit{BattleManager}}
 %expliquer la dynamique de combat, les points de vie etc..
 \subsection{Interaction avec les objets}
 à compléter idée: un objet possède ou non un callback 
@@ -356,6 +408,10 @@ displayText(texts,index,isDialog,faceAnim,battleDesc)
 
 %\subsection{Publication}
 %système de sauvegarde , gitpages
+\subsection{En résumé}
+Beaucoup de code pour au final, un petit rendu. En effet, programmer un jeu de type RPG est beaucoup plus compliqué que prévu. Chaque fonction pour la progression du jeu est unique et il est très difficile d'avoir ne serait-ce qu'un minimum de scénario. Le niveau de complexité est déjà assez élevé rien qu'en programmant un long dialogue qui ne sera affiché qu'une fois au cours du jeu, comme par exemple les quelques lignes de Pangloss. Ce à quoi mon projet s'approche le plus est peut-être une situation de base inspirée du premier chapitre de Candide, mais il est loin d'être proche d'un jeu. Pourtant tout ce qui a été programmé est indispensable pour chaque jeu vidéo de type RPG car ce sont les éléments de base pour le construire. \\
+
+Certains éléments qui ont été programmés mériteraient d'être réécrits avec les connaissances acquises lors de ce projets. En effet, les premiers programmes ont été créés en découvrant Phaser, ils n'exploitent donc pas forcément toutes les fonctionnalités Phaser qui permettent d'avoir un code propre et efficace.\\
 \section{Scénario alternatif}
 expliquer les dialogues, conserver le contenu tout en l'adaptant etc...donner des exemples de situations alternatives . et le résultat actuel
 expliquer la complication lié au temps, le rabotage etc..
@@ -373,9 +429,18 @@ techniques, exemples
 \subsubsection{Tilemap}
 \subsection{Musical}
 logiciel utilisé , techniques (trouver une suite d'accord, les instruments etc..) , éventuellement les bruitages , la campanella midi file
+\subsection{En résumé}
+Encore une fois, beaucoup de travail pour un petit résultat. Le pixel art demande beaucoup de patience et créer un univers cohérent et agréable visuellement est difficile sans assets complets. Malheureusement, une partie des assets n'est pas encore utilisée dans le projet rendu. En effet, ayant pensé avoir le temps de développer plus d'histoire, d'autres personnages ont été dessinés au début du projet. Ils figureront tout de même en annexe.
 \section{Conclusion}
+\subsection{Nina Ionescu ou l'optimisme}
+\subsection{Expérience gagnée}
+\subsection{Continuation du projet}
+
 %long !!! --> désillusion XD 
 %code à simplifier : signaux
 % ce que ça a apporté
 % ouverture : continuation du projet
+\section{Sources}
+\section{Annexes}%mettre tous les assets finis
+
 \end{document}
