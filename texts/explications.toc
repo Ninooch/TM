@@ -10,22 +10,32 @@
 \contentsline {subsubsection}{\numberline {3.2.3}Game}{4}
 \contentsline {subsubsection}{\numberline {3.2.4}Battle}{5}
 \contentsline {subsubsection}{\numberline {3.2.5}Transition avec texte}{5}
-\contentsline {subsection}{\numberline {3.3}Joueur}{5}
+\contentsline {subsection}{\numberline {3.3}Joueur}{6}
 \contentsline {subsection}{\numberline {3.4}Les pnjs}{6}
-\contentsline {subsubsection}{\numberline {3.4.1}Personnages normaux}{6}
-\contentsline {subsubsection}{\numberline {3.4.2}Ennemis}{7}
-\contentsline {subsection}{\numberline {3.5}Les bulles}{7}
-\contentsline {subsection}{\numberline {3.6}Gestion des dialogues}{8}
-\contentsline {subsection}{\numberline {3.7}Gestion du terrain}{9}
-\contentsline {subsection}{\numberline {3.8}Gestion des combats}{9}
-\contentsline {subsection}{\numberline {3.9}Interaction avec les objets}{9}
-\contentsline {section}{\numberline {4}Sc\IeC {\'e}nario alternatif}{9}
-\contentsline {section}{\numberline {5}Conception des assets}{9}
-\contentsline {subsection}{\numberline {5.1}Visuel}{9}
-\contentsline {subsubsection}{\numberline {5.1.1}Police personnalis\IeC {\'e}e}{9}
-\contentsline {subsubsection}{\numberline {5.1.2}Sprites de dialogues}{9}
-\contentsline {subsubsection}{\numberline {5.1.3}Sprites d'overworld}{9}
-\contentsline {subsubsection}{\numberline {5.1.4}Tilesets}{10}
-\contentsline {subsubsection}{\numberline {5.1.5}Tilemap}{10}
-\contentsline {subsection}{\numberline {5.2}Musical}{10}
-\contentsline {section}{\numberline {6}Conclusion}{10}
+\contentsline {subsubsection}{\numberline {3.4.1}Personnages normaux : la classe \textit {Pnj}}{6}
+\contentsline {paragraph}{}{7}
+\contentsline {subsubsection}{\numberline {3.4.2}Ennemis : la classe \textit {Ennemy}}{7}
+\contentsline {subsection}{\numberline {3.5}Les bulles : la classe \textit {Bubble}}{7}
+\contentsline {subsection}{\numberline {3.6}Gestion des dialogues : la classe \textit {dialogManager}}{8}
+\contentsline {subsubsection}{\numberline {3.6.1}m\IeC {\'e}thode \textit {start()}}{9}
+\contentsline {subsubsection}{\numberline {3.6.2}m\IeC {\'e}thode \textit {displayText()}}{9}
+\contentsline {subsubsection}{\numberline {3.6.3}m\IeC {\'e}thode \textit {wait()}}{11}
+\contentsline {subsubsection}{\numberline {3.6.4}m\IeC {\'e}thode \textit {resume()}}{11}
+\contentsline {subsubsection}{\numberline {3.6.5}m\IeC {\'e}thode \textit {question()}}{11}
+\contentsline {subsubsection}{\numberline {3.6.6}m\IeC {\'e}thode \textit {selection()}}{11}
+\contentsline {subsubsection}{\numberline {3.6.7}m\IeC {\'e}thode \textit {stop()}}{11}
+\contentsline {subsubsection}{\numberline {3.6.8}m\IeC {\'e}thode \textit {startDialog()}}{11}
+\contentsline {subsubsection}{\numberline {3.6.9}m\IeC {\'e}thode \textit {endBattleScreen()}}{11}
+\contentsline {subsection}{\numberline {3.7}Gestion du terrain}{11}
+\contentsline {subsection}{\numberline {3.8}Gestion des combats}{11}
+\contentsline {subsection}{\numberline {3.9}Interaction avec les objets}{11}
+\contentsline {section}{\numberline {4}Sc\IeC {\'e}nario alternatif}{11}
+\contentsline {section}{\numberline {5}Conception des assets}{11}
+\contentsline {subsection}{\numberline {5.1}Visuel}{11}
+\contentsline {subsubsection}{\numberline {5.1.1}Police personnalis\IeC {\'e}e}{11}
+\contentsline {subsubsection}{\numberline {5.1.2}Sprites de dialogues}{11}
+\contentsline {subsubsection}{\numberline {5.1.3}Sprites d'overworld}{11}
+\contentsline {subsubsection}{\numberline {5.1.4}Tilesets}{11}
+\contentsline {subsubsection}{\numberline {5.1.5}Tilemap}{12}
+\contentsline {subsection}{\numberline {5.2}Musical}{12}
+\contentsline {section}{\numberline {6}Conclusion}{12}

@@ -101,27 +101,30 @@ captionpos=b
 % mettre des screenshots et ue brève explication du jeu plus références à Candide
 \begin{figure}[h]
 \includegraphics[scale=0.33]{ecranTitre}
+\centering
 \end{figure}
 \subsection{Lexique}
 Afin d'avoir une meilleure compréhension de ce document, voici un lexique. \\
 \begin{itemize}{}{}
-\item assets : Désigne l'ensemble des fichiers visuels et auditifs du jeu.
-\item frame: Image constituant une partie de l'animation d'un sprite.
-\item hp: Abréviation de health points, points de vie.
-\item map: Carte.
-\item overworld: Monde extérieur en français. Désigne l'ensemble de maps constituant le jeu.
-\item pixel art : Style graphique inspiré des jeux rétros où les assets sont dessinés à la main en respectant certains formats.
-\item pnj: Abréviation de personnage non-jouable.
-\item sprite: Image du jeu en partie transparente capable de déplacement.
-\item spritesheet: Image regroupant les frames d'animation d'un sprite.
-\item tile : Carreau en français; petite image carrée à texture répétée.
-\item tilemap: Carte à carreaux en français. Carte du jeu formée par des tiles.
-\item tileset: Ensemble de tiles sous forme de spritesheet.
-\item warp: Zone qui une fois pénétrée déclenche un changement de map.
+\item \textbf{assets} : Désigne l'ensemble des fichiers visuels et auditifs du jeu.
+\item \textbf{frame}: Image constituant une partie de l'animation d'un sprite.
+\item \textbf{hp}: Abréviation de health points, points de vie.
+\item \textbf{map}: Carte.
+\item \textbf{overworld}: Monde extérieur en français. Désigne l'ensemble de maps constituant le jeu.
+\item \textbf{pixel art} : Style graphique inspiré des jeux rétros où les assets sont dessinés à la main en respectant certains formats.
+\item \textbf{pnj}: Abréviation de personnage non-jouable.
+\item \textbf{sprite}: Image du jeu en partie transparente capable de déplacement.
+\item \textbf{spritesheet}: Image regroupant les frames d'animation d'un sprite.
+\item \textbf{tile} : Carreau en français; petite image carrée à texture répétée.
+\item \textbf{tilemap}: Carte à carreaux en français. Carte du jeu formée par des tiles.
+\item \textbf{tileset}: Ensemble de tiles sous forme de spritesheet.
+\item \textbf{warp}: Zone qui une fois pénétrée déclenche un changement de map.
 \end{itemize}
 
 \section{Déroulement du jeu PAS FINI}
 % personnages , dessiner
+%organisation du code
+%explique que les extraits sont des extraits
 Le joueur incarne Candide et peut se promener dans des situations inspirées du livre. Il peut dialoguer avec les pnjs présents dans les décors et faire des combats avec certains d'entre eux. Le joueur arrive dans la cour du château du Baron de Thunder-then-Tronck. 
 \begin{figure}[h]
 \includegraphics[scale=0.33]{cunegondeScn}
@@ -137,8 +140,10 @@ Pyxel Edit par Danik ( pseudonyme )\
 \section{Fonctionement du code}
 Ce projet a été réalisé en javascript, avec les additions de ECMAScript6 et de deux librairies conçues pour la réalisation de jeu-vidéo : Phaser.js ainsi que Phaser-tilemap-plus.js . La majorité du code comprend des objets et des classes créés afin de pouvoir les utiliser comme outils de création.
 \subsection{Système général}
-	Avant toute chose, il a fallu concevoir un système qui permette d'atteindre diverses variables au travers de tous les outils du jeu. C'est pourquoi l'objet "globals" (présent dans globals.js), une variable globale a été créée. Cet objet stocke toutes les variables afin d'y avoir accès facilement sans devoir se soucier des scopes des différentes classes et de leur méthodes.\\\\
-	(Pour retenir les diverses actions effectuées par le joueur ainsi que des données importantes telles que son positionnement ou le décor actuellement chargé à l'écran, un autre objet global (présent dans gameRef.js) est utilisé. Il sert de référence pour initialiser le personnage incarné par le joueur dans l'état où ce dernier l'avait laissé.)\\\\ (pas encore sûre, voir le local storage)
+	Avant toute chose, il a fallu concevoir un système qui permette d'atteindre diverses variables au travers de tous les outils du jeu. C'est pourquoi l'objet \textit{globals} (présent dans globals.js), une variable globale a été créée. Cet objet stocke toutes les variables afin d'y avoir accès facilement sans devoir se soucier des scopes des différentes classes et de leur méthodes.\\
+	
+	
+	(Pour retenir les diverses actions effectuées par le joueur ainsi que des données importantes telles que son positionnement ou le décor actuellement chargé à l'écran, un autre objet global (présent dans gameRef.js) est utilisé. Il sert de référence pour initialiser le personnage incarné par le joueur dans l'état où ce dernier l'avait laissé.) (pas encore sûre, voir le local storage)\\
  
  Afin d'étendre les possibilités futures de diffusion du projet, une option de traduction a été pensée dans le code de départ. Il s'agit d'un chiffre ( 0 pour le français, 1 pour l'anglais, ... ) stocké dans l'objet mentionné au paragraphe ci-dessus. Grâce à cette variable, la fonction de dialogList.js retourne les textes figurants dans le jeu dans leur bonne version. \\
  \begin{lstlisting}[language=JavaScript]
@@ -156,14 +161,14 @@ Ce projet a été réalisé en javascript, avec les additions de ECMAScript6 et 
 \textit{Exemple de la fonction traductrice pour le dialogue d'un personnage quelconque}
 \subsection{Gestion des states du jeu}
 %qu'est-ce qu'une state, comment ça marche etc...\\\\
-Les states, propres à Phaser.js, représentent une section du jeu. Chaque objet state a son lot de fonctions Phaser, à savoir preload, create, update et render. L'utilisation de ces fonctions va être décrite dans les paragraphes ci-dessous.
+Les states, propres à Phaser.js, représentent une section du jeu. Chaque objet state a son lot de fonctions Phaser, à savoir \textit{preload()}, \textit{create()}, \textit{update()} et \textit{render()}. L'utilisation de ces fonctions va être décrite dans les paragraphes ci-dessous.
 
 \subsubsection{Boot et Preload}
 %boot fait démarrer le jeu, preload pour les assets etc...
-La state "Boot" fait démarrer le jeu. Elle déclenche la state "Preload". Preload est une state qui utilise uniquement la fonction preload, qui sert à associer tous les assets du jeu à un nom et les stocker dans le cache pour pouvoir les utiliser dans le code. Une fois tous les éléments stockés, la state "Menu principal" est enclenchée. Le choix d'utiliser une unique state pour ce travail permet une meilleure organisation au sein du code.
+La state "Boot" fait démarrer le jeu. Elle déclenche la state "Preload". Preload est une state qui utilise uniquement la fonction \textit{preload()}, qui sert à associer tous les assets du jeu à un nom et les stocker dans le cache pour pouvoir les utiliser dans le code. Une fois tous les éléments stockés, la state "Menu principal" est enclenchée. Le choix d'utiliser une unique state pour ce travail permet une meilleure organisation au sein du code.
 \subsubsection{Menu Principal}
 %expliquer la fonction avec les boutons, dans un premier temps elle est avec une sprite sheet pour chaque langue, éventuelle amélioration.\\
-La state "menu principal" permet au joueur de lancer le jeu ou d'en modifier la langue. Les boutons qui permettent de faire une action sont des objets Phaser. L'ensemble des boutons est initié dans une seule fonction. Cette fonction dépend de la langue que le joueur a choisi. Chaque bouton a sa propre spritesheet, ce qui pourrait poser problème au niveau de la taille et du temps pour les dessiner si d'autres langues sont ajoutées. Une option serait de générer dans le code, les textes dans les boutons à la place de les dessiner à la main.
+La state "Menu principal" permet au joueur de lancer le jeu ou d'en modifier la langue. Les boutons qui permettent de faire une action sont des objets Phaser. L'ensemble des boutons est initié dans une seule fonction. Cette fonction dépend de la langue que le joueur a choisi. Chaque bouton a sa propre spritesheet, ce qui pourrait poser problème au niveau de la taille et du temps pour les dessiner si d'autres langues sont ajoutées. Une option serait de générer dans le code, les textes dans les boutons à la place de les dessiner à la main.
 \begin{figure}[h]
 \includegraphics[scale=0.3]{boutons}
 \centering
@@ -171,7 +176,7 @@ La state "menu principal" permet au joueur de lancer le jeu ou d'en modifier la 
 \end{figure}
 \subsubsection{Game}
 %toutes les fonctions agissent ici, dans la partie create de phaser.
-La state "Game" utilise les fonctions create et update. Dans la fonction create, toutes les actions de jeu sont initiées : le terrain et le personnage sont initiés et les textes du jeu sont traduits.
+La state "Game" utilise les fonctions \textit{create()} et \textit{update()}. Dans la fonction \textit{create()}, toutes les actions de jeu sont initiées : le terrain et le personnage sont initiés et les textes du jeu sont traduits.
 \begin{lstlisting}[language=JavaScript]
 var gameState = {
     create: function(){
@@ -187,13 +192,14 @@ var gameState = {
 };
 \end{lstlisting} 
 \textit{Extrait du code de la state "Game".}\\\\
-La méthode update est une fonction qui utilise requestAnimationFrame. Sont présentes dans cette fonction, toutes les fonctions qui servent à interagir avec le joueur, c'est à dire la détection de la collision, les changements de maps au contact d'une zone de warp et l'apparition des bulles de dialogues des personnages non-jouables quand le joueur les approche. La fonction qui sert à faire marcher le joueur est aussi présente dans la fonction update.
+La méthode \textit{update()} est une fonction qui utilise \textit{requestAnimationFrame}. Sont présentes dans cette fonction, toutes les fonctions qui servent à interagir avec le joueur, c'est à dire la détection de la collision, les changements de maps au contact d'une zone de warp et l'apparition des bulles de dialogues des personnages non-jouables quand le joueur les approche. La fonction qui sert à faire marcher le joueur est aussi présente dans la fonction \textit{update()}.
 \subsubsection{Battle}
-La state "Battle" est utilisée lors des combats pour initier l'interface de combat. Une nouvelle state est utilisée car il est plus facile de créer un contenu visuel à partir d'une state vide que de modifier une state déjà existante. En effet, la state de combat ne requiert pas une détection de collision ni la création de personnages non-jouables.
-\\ Une map de fond est initiée dans la fonction create, ainsi que les personnages à l'écran et leur barres de vie. Le combat est ensuite géré par une classe, battleManager, dont le fonctionnement va être décrit plus loin.
+La state "Battle" est utilisée lors des combats pour initier l'interface de combat. Une nouvelle state est utilisée car il est plus facile de créer un contenu visuel à partir d'une state vide que de modifier une state déjà existante. En effet, la state de combat ne requiert pas une détection de collision ni la création de personnages non-jouables.\\
+
+Une map de fond est initiée dans la fonction \textit{create()}, ainsi que les personnages à l'écran et leur barres de vie. Le combat est ensuite géré par une classe, battleManager, dont le fonctionnement va être décrit plus loin.
 \subsubsection{Transition avec texte}
 Cette state sert uniquement à afficher du texte. Une fonction est passée en argument lorsqu'on fait appel à cette state qui l'exécutera. Cette state est une alternative narrative aux cinématiques, trop difficiles à programmer.
-\begin{figure}[h]
+\begin{figure}[H]
 \includegraphics[scale=0.33]{introScreen}
 \centering
 \end{figure}  
@@ -205,50 +211,58 @@ Le joueur est un sprite qui peut se déplacer lorsqu'une touche directionnelle e
 \centering
 \caption{le sprite du joueur avec les différentes frames des animations de marche}
 \end{figure}
-\\Les déplacements sont détectés dans la fonction updatePlayer appellée dans la state "Game".
-\\Ce sprite possède un corps physique (spécificité de Phaser) qui permet les collisions avec son environnement.
-\\Le sprite possède également de la vie et des attaques, qui vont être utilisées durant les combats. 
+
+
+Les déplacements sont détectés dans la fonction \textit{updatePlayer()} appellée dans la state "Game".\\
+
+
+Ce sprite possède un corps physique (spécificité de Phaser) qui permet les collisions avec son environnement.
+
+
+Le sprite possède également de la vie et des attaques, qui vont être utilisées durant les combats. 
 \subsection{Les pnjs}
 %expliquer la classe, la bulle (classe) 
 %les interaction avec le joueur etc.
-\subsubsection{Personnages normaux}
-Les pnjs sont une nouvelle classe étendue de la classe sprite de Phaser. Pour créer un nouveau pnj, il faut utiliser :
+\subsubsection{Personnages normaux : la classe \textit{Pnj}}
+Les pnjs sont une nouvelle classe étendue de la classe sprite de Phaser. Pour créer un nouveau pnj, il faut utiliser :\\
  \begin{lstlisting}[language=JavaScript]
 var myChar = new Pnj(x,y,key,frame,name,dialogs,faceAnimKey);
 \end{lstlisting}
 Voici l'explication de ces arguments:
 \begin{itemize}
-\item x,y : Définissent la position du sprite.
-\item key : Référence de la spritesheet sous forme de string.
-\item frame : Numéro qui définit la frame affichée. ( habituellement 0 pour avoir le personnage de face) 
-\item name : Nom du personnage sous forme de string.
-\item dialogs : Variable contenant les répliques du personnage.
-\item faceAnimKey : Référence à la spritesheet des animations pendant un dialogue sous forme de string.
+\item \textbf{x,y}: Définissent la position du sprite.
+\item \textbf{key} : Référence de la spritesheet sous forme de string.
+\item \textbf{frame} : Numéro qui définit la frame affichée. ( habituellement 0 pour avoir le personnage de face) 
+\item \textbf{name} : Nom du personnage sous forme de string.
+\item \textbf{dialogs} : Variable contenant les répliques du personnage.
+\item \textbf{faceAnimKey} : Référence à la spritesheet des animations pendant un dialogue sous forme de string.
 \end{itemize}
-Chaque pnj a une méthode update qui permet de détecter le joueur et créer une interaction avec lui. Le code regarde si le rectangle formé par le sprite du joueur intersecte un autre rectangle plus grand, qui englobe le pnj. Si c'est le cas et que le phylactère du pnj n'est pas encore à l'écran, le personnage crée une bulle. Lorsque la bulle est affichée, le joueur peut appuyer sur "enter" et faire démarrer le dialogue. Cette méthode de détection de bulle a été codée avec des "if" et beaucoup de variables booléennes. Une amélioration serait possible avec des signaux, une spécificité de Phaser, qui permettent l'appel d'une fonction lorsque qu'un événement est déclenché.\subsubsection{Ennemis}
-Les ennemis sont une classe étendue de la classe Pnj. Ce sont des pnjs dotés de points de vie et d'attaques pour pouvoir les utiliser lors de combats. Chaque ennemi possède une méthode turn, utilisée lors d'un tour au combat et une méthode startCombat qui fait basculer le jeu sur la state de combat.
-\subsection{Les bulles}
-Les bulles sont une classe. Chaque bulle est composée de trois parties, le fond, le texte et un triangle animé. Les bulles jouent plusieurs rôles. Elles peuvent indiquer un dialogue mais aussi permettre au joueur de rentrer dans une nouvelle map (grâce à la méthode goToHouse) lorsqu'il y a un élément tel qu'une porte que le joueur doit ouvrir. La détection des zones de warps à bulle est programmée à l'aide de boucles et de "if". Le code pourrait être simplifié à l'aide de signaux Phaser.
+\paragraph{}
+Chaque pnj a une méthode \textit{update()} qui permet de détecter le joueur et créer une interaction avec lui. Le code regarde si le rectangle formé par le sprite du joueur intersecte un autre rectangle plus grand, qui englobe le pnj. Si c'est le cas et que le phylactère du pnj n'est pas encore à l'écran, le personnage crée une bulle. Lorsque la bulle est affichée, le joueur peut appuyer sur "enter" et faire démarrer le dialogue.\\
+
+Cette méthode de détection de bulle a été codée avec des "if" et beaucoup de variables booléennes. Une amélioration serait possible avec des signaux, une spécificité de Phaser, qui permettent l'appel d'une fonction lorsque qu'un événement est déclenché.\subsubsection{Ennemis : la classe \textit{Ennemy}}
+Les ennemis sont une classe étendue de la classe Pnj. Ce sont des pnjs dotés de points de vie et d'attaques pour pouvoir les utiliser lors de combats. Chaque ennemi possède une méthode \textit{turn()} (décrite dans la section gestion du combat), utilisée lors d'un tour au combat et une méthode \textit{startCombat()} qui fait basculer le jeu sur la state de combat.
+\subsection{Les bulles : la classe \textit{Bubble}}
+ Chaque bulle affichée à l'écran est composée de trois parties, le fond, le texte et un triangle animé. Les bulles jouent plusieurs rôles. Elles peuvent indiquer un dialogue mais aussi permettre au joueur de rentrer dans une nouvelle map (grâce à la méthode \textit{goToHouse()}) lorsqu'il y a un élément tel qu'une porte que le joueur doit ouvrir. La détection des zones de warps à bulle est programmée à l'aide de boucles et de "if". Le code pourrait être simplifié à l'aide de signaux Phaser.
 \begin{figure}[H]
 \includegraphics[scale=0.5]{bulleDialog}
 \includegraphics[scale=0.5]{bulleMaison}
 \centering
 \caption{Exemples de phylactères}
 \end{figure}
-\subsection{Gestion des dialogues}
+\subsection{Gestion des dialogues : la classe \textit{dialogManager}}
 %expliquer la police de caractères, la dynamique des choix, l'objet %manager , la syntaxe (les arrays avec les callbacks etc...)
-Tout affichage de texte est géré par la classe DialogManager et ses méthodes. 
-La méthode start est appelée en premier. Elle affiche une boîte de dialogue et crée un bitmapText vide, un élément graphique de Phaser qui affiche du texte avec une police choisie au préalable. La méthode empêche aussi le joueur de se déplacer. \\
-Chaque morceau de texte doit avoir une syntaxe précise pour pouvoir être affiché grâce à la méthode displayText, qui va être décrite plus loin dans le texte. Voici des exemples de syntaxes.
+Tout affichage de texte est géré par la classe \textit{dialogManager} et ses méthodes. 
+Chaque morceau de texte doit avoir une syntaxe précise pour pouvoir être affiché grâce à cette classe. Le texte doit être un array qui contient des strings ou des autres arrays.
 \begin{lstlisting}[language=JavaScript]
-	var globals.dialogs.txtSimple = ["texte simple"];
-	var globals.dialogs.txtCallback = [
+	var txtSimple = ["texte simple"];
+	var txtCallback = [
 		["texte simple avec callbakc",function(){}]
 	];
 \end{lstlisting}
-\textit{Exemple de la syntaxte d'un texte simple et d'un texte suivi d'une callback}\\
+\textit{Exemple de la syntaxe d'un texte simple et d'un texte suivi d'une callback}\\
 \begin{lstlisting}[language=JavaScript]
-	var globals.dialogs.txtChoix = [
+	var txtChoix = [
 		[
 			"action avec choix",
 			["choix 1","choix 2"],
@@ -256,13 +270,79 @@ Chaque morceau de texte doit avoir une syntaxe précise pour pouvoir être affic
 		]
 	];
 \end{lstlisting} 
-\textit{Exemple de syntaxe pour un texte qui comporte des choix}\\
-\begin{figure}[h]
+\textit{Exemple de syntaxe pour un texte qui comporte des choix}
+\begin{figure}[H]
 \includegraphics[scale=0.33]{choix}
 \centering
 \caption{Exemple d'un choix onéreux}
 
 \end{figure}
+\subsubsection{méthode \textit{start()}}
+Cette méthode affiche une boîte de dialogue standard à l'écran et crée un objet bitmapText vide. Cet objet est un élément graphique de Phaser qui permet d'afficher du texte avec une police choisie au préalable, en l'occurrence la police créée pour ce projet.
+\subsubsection{méthode \textit{displayText()}}
+\begin{lstlisting}[language=JavaScript]
+displayText(texts,index,isDialog,faceAnim,battleDesc)
+    if(typeof texts[index] == "string"){
+        var textArray = texts[index].split(" "); 
+    }
+    else {
+        var textArray = texts[index][0].split(" ");
+        this.texts = texts;
+        this.index = index;
+    }
+
+    var compteurMots = 0;
+
+    this.bmpText.text = "";
+
+    this.wordTimer = game.time.create();
+
+    this.wordTimer.repeat(100,textArray.length,function(){
+        this.bmpText.text += textArray[compteurMots] + " ";
+
+        if(this.bmpText.text.length >= 184){
+            this.wait(isDialog,false,false);
+            this.wordTimer.pause();
+        }
+        compteurMots ++;
+    },this);
+  
+        if(typeof texts[index] == "string"){
+            this.wordTimer.onComplete.add(function(){
+                //alert("timer fini");
+                this.wait(isDialog,true,null,false);
+            },this); //THIS EST IMPORTANT
+        }
+        else if(texts[index].length == 2 ){
+            this.wordTimer.onComplete.add(function(){
+                this.wait(isDialog,true,texts[index][1],false);
+            },this);
+        }
+        else{
+            this.wordTimer.onComplete.add(function(){
+                this.wait(isDialog,false,null,true);
+            },this);
+        }
+    
+    this.wordTimer.start();
+
+}
+\end{lstlisting} 
+\textit{Extrait de la méthode displayText()}
+\subsubsection{méthode \textit{wait()}}
+
+\subsubsection{méthode \textit{resume()}}
+
+\subsubsection{méthode \textit{question()}}
+
+\subsubsection{méthode \textit{selection()}}
+
+\subsubsection{méthode \textit{stop()}}
+
+\subsubsection{méthode \textit{startDialog()}}
+
+\subsubsection{méthode \textit{endBattleScreen()}}
+
 \subsection{Gestion du terrain}
 %expliquer les maps,collisions, tilesets,calques, warps , l'objet terrainmanager etc... expliquer le fail avec le tween manager pour le fade in et fade out.
 %expliquer le problème avec les données dans la map et la solution.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.15)  4 MAR 2018 15:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.15)  4 MAR 2018 18:21
 entering extended mode
 **./explications.tex
 (explications.tex
@@ -571,12 +571,12 @@ e 94.
 le.png>] (explications.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 3.
-)
+ [2])
 \tf@toc=\write3
 \openout3 = `explications.toc'.
 
- [2]
-<assets/ecranTitre.png, id=16, 803.0pt x 451.6875pt>
+ [3]
+<assets/ecranTitre.png, id=20, 803.0pt x 451.6875pt>
 File: assets/ecranTitre.png Graphic file (type png)
 <use assets/ecranTitre.png>
 Package pdftex.def Info: assets/ecranTitre.png  used on input line 103. on inpu
@@ -584,129 +584,147 @@ t line 103.
 Package pdftex.def Info: Requested size: 264.99081pt x 149.05733pt on input lin
 e 103.
 
-Overfull \hbox (6.33582pt too wide) in paragraph at lines 106--107
+Overfull \hbox (6.33582pt too wide) in paragraph at lines 107--108
 []\OT1/cmr/m/n/10.95 Afin d'avoir une meilleure comprehension de ce do-cu-ment
 , voici un lexique. 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--107
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
 
  []
 
-<assets/cunegondeScn.png, id=17, 803.0pt x 451.6875pt>
+<assets/cunegondeScn.png, id=21, 803.0pt x 451.6875pt>
 File: assets/cunegondeScn.png Graphic file (type png)
 <use assets/cunegondeScn.png>
-Package pdftex.def Info: assets/cunegondeScn.png  used on input line 127. on in
-put line 127.
+Package pdftex.def Info: assets/cunegondeScn.png  used on input line 130. on in
+put line 130.
 Package pdftex.def Info: Requested size: 264.99081pt x 149.05733pt on input lin
-e 127.
+e 130.
 [1 <./assets/ecranTitre.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 140--142
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 140--142
-
- []
-
-[2 <./assets/cunegondeScn.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 143--144
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 146--147
+
+ []
+
+[2 <./assets/cunegondeScn.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 148--149
+
+ []
+
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 145.
-<assets/boutons.png, id=27, 722.7pt x 501.875pt>
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 150.
+<assets/boutons.png, id=30, 722.7pt x 501.875pt>
 File: assets/boutons.png Graphic file (type png)
 <use assets/boutons.png>
-Package pdftex.def Info: assets/boutons.png  used on input line 168. on input l
-ine 168.
+Package pdftex.def Info: assets/boutons.png  used on input line 173. on input l
+ine 173.
 Package pdftex.def Info: Requested size: 216.81166pt x 150.56366pt on input lin
-e 168.
+e 173.
 [3] [4 <./assets/boutons.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 189--191
+Underfull \hbox (badness 10000) in paragraph at lines 194--196
 
  []
 
-<assets/introScreen.png, id=38, 803.0pt x 451.6875pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 197--198
+
+ []
+
+<assets/introScreen.png, id=42, 803.0pt x 451.6875pt>
 File: assets/introScreen.png Graphic file (type png)
 <use assets/introScreen.png>
-Package pdftex.def Info: assets/introScreen.png  used on input line 197. on inp
-ut line 197.
+Package pdftex.def Info: assets/introScreen.png  used on input line 203. on inp
+ut line 203.
 Package pdftex.def Info: Requested size: 264.99081pt x 149.05733pt on input lin
-e 197.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<assets/candideSprite.png, id=39, 140.525pt x 269.005pt>
+e 203.
+<assets/candideSprite.png, id=43, 140.525pt x 269.005pt>
 File: assets/candideSprite.png Graphic file (type png)
 <use assets/candideSprite.png>
-Package pdftex.def Info: assets/candideSprite.png  used on input line 204. on i
-nput line 204.
+Package pdftex.def Info: assets/candideSprite.png  used on input line 210. on i
+nput line 210.
 Package pdftex.def Info: Requested size: 70.26231pt x 134.50217pt on input line
- 204.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[5] [6 <./assets/introScreen.png> <./assets/candideSprite.png>]
-<assets/bulleDialog.png, id=49, 154.32657pt x 203.25937pt>
-File: assets/bulleDialog.png Graphic file (type png)
-<use assets/bulleDialog.png>
-Package pdftex.def Info: assets/bulleDialog.png  used on input line 233. on inp
-ut line 233.
-Package pdftex.def Info: Requested size: 77.16309pt x 101.62943pt on input line
- 233.
-<assets/bulleMaison.png, id=50, 154.32657pt x 159.59625pt>
-File: assets/bulleMaison.png Graphic file (type png)
-<use assets/bulleMaison.png>
-Package pdftex.def Info: assets/bulleMaison.png  used on input line 234. on inp
-ut line 234.
-Package pdftex.def Info: Requested size: 77.16309pt x 79.79791pt on input line 
-234.
- [7]
-Underfull \hbox (badness 10000) in paragraph at lines 249--250
+ 210.
+[5 <./assets/introScreen.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
 
  []
 
-<assets/choix.png, id=54, 803.0pt x 451.6875pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
+
+ []
+
+[6 <./assets/candideSprite.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 241--242
+
+ []
+
+<assets/bulleDialog.png, id=53, 154.32657pt x 203.25937pt>
+File: assets/bulleDialog.png Graphic file (type png)
+<use assets/bulleDialog.png>
+Package pdftex.def Info: assets/bulleDialog.png  used on input line 248. on inp
+ut line 248.
+Package pdftex.def Info: Requested size: 77.16309pt x 101.62943pt on input line
+ 248.
+<assets/bulleMaison.png, id=54, 154.32657pt x 159.59625pt>
+File: assets/bulleMaison.png Graphic file (type png)
+<use assets/bulleMaison.png>
+Package pdftex.def Info: assets/bulleMaison.png  used on input line 249. on inp
+ut line 249.
+Package pdftex.def Info: Requested size: 77.16309pt x 79.79791pt on input line 
+249.
+[7]
+Overfull \hbox (10.76236pt too wide) in paragraph at lines 255--257
+[]\OT1/cmr/m/n/10.95 Tout af-fi-chage de texte est gere par la classe \OT1/cm
+r/m/it/10.95 dia-log-Ma-na-ger \OT1/cmr/m/n/10.95 et ses methodes.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--264
+
+ []
+
+<assets/choix.png, id=58, 803.0pt x 451.6875pt>
 File: assets/choix.png Graphic file (type png)
 <use assets/choix.png>
-Package pdftex.def Info: assets/choix.png  used on input line 261. on input lin
-e 261.
+Package pdftex.def Info: assets/choix.png  used on input line 275. on input lin
+e 275.
 Package pdftex.def Info: Requested size: 264.99081pt x 149.05733pt on input lin
-e 261.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[8 <./assets/bulleDialog.png> <./assets/bulleMaison.png>]
-Overfull \hbox (7.4004pt too wide) in paragraph at lines 280--282
+e 275.
+[8 <./assets/bulleDialog.png> <./assets/bulleMaison.png>] [9 <./assets/choix.pn
+g>] [10]
+Overfull \hbox (7.4004pt too wide) in paragraph at lines 360--362
 []\OT1/cmr/m/n/10.95 expliquer les dia-logues, conser-ver le contenu tout en l'
 adap-tant etc...donner
  []
 
-[9 <./assets/choix.png>] [10] (explications.aux) ) 
+[11] [12] (explications.aux) ) 
 Here is how much of TeX's memory you used:
- 4811 strings out of 494953
- 65264 string characters out of 3177379
- 170349 words of memory out of 3000000
- 8073 multiletter control sequences out of 15000+200000
- 10092 words of font info for 36 fonts, out of 3000000 for 9000
+ 4835 strings out of 494953
+ 65552 string characters out of 3177379
+ 255349 words of memory out of 3000000
+ 8096 multiletter control sequences out of 15000+200000
+ 10810 words of font info for 38 fonts, out of 3000000 for 9000
  198 hyphenation exceptions out of 8191
- 41i,8n,40p,762b,1194s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on explications.pdf (12 pages, 275653 bytes).
+ 41i,8n,40p,581b,1688s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxt
+i10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmtt9.pfb>
+Output written on explications.pdf (15 pages, 302172 bytes).
 PDF statistics:
- 96 PDF objects out of 1000 (max. 8388607)
+ 110 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
