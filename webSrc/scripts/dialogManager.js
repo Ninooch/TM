@@ -46,12 +46,9 @@ stop(isDialog,canBulle){
 
 displayText(texts,index,isDialog,faceAnim,battleDesc){ // le texte est stocké dans un array , isDialog pour gérer les animations,
     if(isDialog){
-        //this.bmpText.alignIn(this.dialBox, Phaser.TOP_LEFT, -120, -5);
         this.bmpText.cameraOffset = new Phaser.Point(220,255);
         this.faceAnimation = game.add.existing(faceAnim);//ça ne se crée qu'une seule fois!!
         this.faceAnimation.fixedToCamera = true;
-        //alert(this.faceAnimation.exists);
-        //this.faceAnimation.alignIn(this.dialBox,Phaser.LEFT_CENTER,0,0);
         this.faceAnimation.cameraOffset = new Phaser.Point(100,285);
         this.faceAnimation.animations.play("talk",9,true);
     }
@@ -297,14 +294,14 @@ endBattleScreen(what){
         },this)
         //mettre du texte X) //argument peut-être
     }
-desc(text){
-    this.dialBox = game.add.image(480,240,"dialogBox");
-    this.dialBox.anchor.setTo(0.5);
+    desc(text){
+        this.dialBox = game.add.image(480,240,"dialogBox");
+        this.dialBox.anchor.setTo(0.5);
 
-    this.bmpText = game.add.bitmapText(50,150,"candideFont", "", 55);
-    this.bmpText.fixedToCamera = true;
-    this.bmpText.maxWidth = 700;
-    this.displayText(text,text.currentIndex||0,false,null);
-}
+        this.bmpText = game.add.bitmapText(50,150,"candideFont", "", 55);
+        this.bmpText.fixedToCamera = true;
+        this.bmpText.maxWidth = 700;
+        this.displayText(text,text.currentIndex||0,false,null);
+    }
 
 }

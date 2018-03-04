@@ -53,7 +53,7 @@ globals.battleData.set = {
     helperX : 570,
     helperY : 120,
     helperName : "Cacambo", //changer en cours de route ( en fonction du jeu)
-    singleEnnemy : false,
+    singleEnnemy : true,
     ennemy1 : "",
     ennemy2 : "",
     ennemy1X :(this.singleEnnemy) ? 200 : 230,
@@ -98,7 +98,7 @@ function createMap1 (){
     globals.maps.chateau = new CustomMap("chateau",["terrain1","chateau"],["Calque de Tile 1"]);
     globals.maps.bois = new CustomMap("bois",["terrain1"],["Calque de Tile 1"]);
     globals.maps.interieur = new CustomMap("interieur",["chateau"],["Calque de Tile 1"]);
-    globals.warps.toInt = new Warp(true,globals.maps.interieur,15*32,27*32,42*32,30*32,2,2,"Entrer ? ");
+    globals.warps.toInt = new Warp(true,globals.maps.interieur,15*32,27*32,42*32,29*32,2,1,"Entrer ? ");
     globals.maps.chateau.addWarps(globals.warps.toInt);
     globals.maps.bois.addPnjs(globals.pnjs.cunegonde);
     globals.warps.toBois = new Warp(false,globals.maps.bois,58*32,37*32,globals.maps.chateau.properties.warp4X*32,globals.maps.chateau.properties.warp4Y*32,1,3);

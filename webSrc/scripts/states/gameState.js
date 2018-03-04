@@ -1,8 +1,5 @@
 function startGame(){
-    //alert("pouet")
-    //this.game.state.start("battle");
     this.game.state.start("game");
-    //destroyButtons("mainMenu");
 }
 
 var gameState = {
