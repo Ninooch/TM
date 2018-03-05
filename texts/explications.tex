@@ -245,8 +245,8 @@ Voici l'explication de ces arguments:
 
 Chaque pnj a une méthode \textit{update()} qui permet de détecter le joueur et créer une interaction avec lui. Le code regarde si le rectangle formé par le sprite du joueur intersecte un autre rectangle plus grand, qui englobe le pnj. Si c'est le cas et que le phylactère du pnj n'est pas encore à l'écran, le personnage crée une bulle. Lorsque la bulle est affichée, le joueur peut appuyer sur "enter" et faire démarrer le dialogue.\\
 
-Cette méthode de détection de bulle a été codée avec des "if" et beaucoup de variables booléennes. Une amélioration serait possible avec des signaux, une spécificité de Phaser, qui permettent l'appel d'une fonction lorsque qu'un événement est déclenché.\subsubsection{Ennemis : La classe \textit{Ennemy}}
-Les ennemis sont une classe étendue de la classe Pnj. Ce sont des pnjs dotés de points de vie et d'attaques pour pouvoir les utiliser lors de combats. Chaque ennemi possède une méthode \textit{turn()} (décrite dans la section gestion du combat), utilisée lors d'un tour au combat et une méthode \textit{startCombat()} qui fait basculer le jeu sur la state de combat.
+Cette méthode de détection de bulle a été codée avec des "if" et beaucoup de variables booléennes. Une amélioration est peut-être possible avec des signaux, une spécificité de Phaser, qui permettent l'appel d'une fonction lorsque qu'un événement est déclenché.\subsubsection{Ennemis : La classe \textit{Ennemy}}
+Les ennemis sont une classe étendue de la classe Pnj. Ce sont des pnjs dotés de points de vie et d'attaques pour pouvoir les utiliser lors de combats. Ils ont une propriété importante : \textit{isAlive}, un booléen qui détermine si un combat peut être lancé et permet de mettre fin à un combat lorsque l'ennemi est défait. Chaque ennemi possède une méthode \textit{turn()} (décrite dans la section gestion du combat), utilisée lors d'un tour au combat et une méthode \textit{startCombat()} qui fait basculer le jeu sur la state de combat.
 \subsection{Les bulles : La classe \textit{Bubble}}
  Chaque bulle affichée à l'écran est composée de trois parties, le fond, le texte et un triangle animé. Les bulles jouent plusieurs rôles. Elles peuvent indiquer un dialogue mais aussi permettre au joueur de rentrer dans une nouvelle map (grâce à la méthode \textit{goToHouse()}) lorsqu'il y a un élément tel qu'une porte que le joueur doit ouvrir. La détection des zones de warps à bulle est programmée à l'aide de boucles et de "if". Le code pourrait être simplifié à l'aide de signaux Phaser.
 \begin{figure}[H]
@@ -255,6 +255,9 @@ Les ennemis sont une classe étendue de la classe Pnj. Ce sont des pnjs dotés d
 \centering
 \caption{Exemples de phylactères}
 \end{figure}
+\subsection{Les attaques : La classe \textit{Attack}}
+\subsection{Les barres de vie: La classe \textit{Healthbar}}
+\subsection{Les objets de terrain : Les classes \textit{CustomMap} et \textit{Warp}}
 \subsection{Gestion des dialogues : La classe \textit{dialogManager}}
 %expliquer la police de caractères, la dynamique des choix, l'objet %manager , la syntaxe (les arrays avec les callbacks etc...)
 Tout affichage de texte est géré par la classe \textit{dialogManager} et ses méthodes. 
@@ -373,28 +376,96 @@ wait(isDialog,isLast,callback,isQuestion){
 \end{lstlisting} 
 \textit{Extrait de la méthode wait()}\\ Cette méthode est un relai qui demande l'appui de la touche "enter" pour continuer quoi que se soit. Voici à quoi servent les nouveaux arguments: 
 \begin{itemize}
-\item \textbf{isLast} : Booléen servant à fermer le dialogue s'il est complétement affiché.
+\item \textbf{isLast} : Booléen servant à fermer le dialogue s'il est complètement affiché.
 \item \textbf{callback} : Une fonction callback qui est appelée à la place de la méthode \textit{stop()}
 \item \textbf{isQuestion}: Booléen servant à appeler la méthode \textit{question()} si le texte contient des choix.
 \end{itemize}
 \paragraph{}
 Cette méthode dessine et anime un petit triangle d'animation pour signaler au joueur que le script attend une action de sa part. Si le texte affiché est un dialogue, l'animation du personnage est changée : Il cligne simplement des yeux. Cette méthode utilise un signal Phaser. Quand la touche enter est pressée, une méthode est appelée en fonction des besoins du texte qui doit être affiché.
 \subsubsection{méthode \textit{resume()}}
-
+Cette méthode prend l'argument \textit{isDialog} et relance si c'est le cas l'animation du personnage qui parle. Elle supprime le triangle animé, remet à zéro le contenu de bitmapText et relance le timer de la méthode \textit{displayText()}:
 
 \subsubsection{méthode \textit{question()}}
+\begin{lstlisting}[language=JavaScript]   
+question(texts,index){I
+    for(var k=0;k<texts[index][1].length;k++){
+        var answerBox = game.add.image(0,0,"answerBox");
+        answerBox.alignTo(this.dialBox,Phaser.TOP_RIGHT,0,(k*50)+k*1);
+        
+        var answer = game.add.bitmapText(0,0,"candideFont",texts[index][1][k],50);
+        answer.alignIn(answerBox,Phaser.LEFT_CENTER,-15,-10);
+        
+        this.answerList.push(answer);
+        this.answerBoxes.push(answerBox);
+    }
+    this.selectionBox = game.add.sprite(this.answerBoxes[0].x,this.answerBoxes[0].y,"selection");
+    this.selection(texts,index);
+}
+\end{lstlisting} 
+Cette méthode fonctionne à l'aide des arguments \textit{texts} et \textit{index} précédemment mentionnés. Elle supprime le triangle animé, mets à zéro deux arrays contenant les boîtes de réponses ainsi que ces dernières. Ensuite, grâce à une boucle, elle crée les éléments graphiques des réponses (la boîte et le texte). Une fois cela terminé, elle ajoute un sprite en forme de cadre sur la première réponse. Il permet au joueur de voir la réponse qu'il souhaite sélectionner. La méthode \textit{selection()} est ensuite appelée.
 
 \subsubsection{méthode \textit{selection()}}
+\begin{lstlisting}[language=JavaScript]
+selection(texts,index){
+    // alert("selection");
+    input.enter.onDown.removeAll(this);
+    input.up.onDown.removeAll(this);
+    input.down.onDown.removeAll(this);
+    
+    var max = this.answerBoxes.length;
+    
+    input.up.onDown.addOnce(function(){
+        if(this.selectionBox.y > this.answerBoxes[max -1].y){
+            this.selectionBox.y -=51;
+        }
+        this.selection(texts,index);
+    },this);
+    
+    input.down.onDown.addOnce(function(){
+        if(this.selectionBox.y < this.answerBoxes[0].y){
+            this.selectionBox.y +=51;
+        }
+        this.selection(texts,index);
+    },this);
+    
+    input.enter.onDown.addOnce(function(){
+        input.up.onDown.removeAll(this);
+        input.down.onDown.removeAll(this);
+        for(let k=0;k<this.answerBoxes.length;k++){
+            if(checkSpriteOverlap(this.selectionBox,this.answerBoxes[k])){
+                texts[index][2][k]();
+            }
+        }
+        for(let d=0;d<this.answerBoxes.length;d++){
+            this.answerBoxes[d].destroy();
+            this.answerList[d].destroy();
+        }
+        this.selectionBox.destroy();
+    },this);
+}
+\end{lstlisting} 
 
 \subsubsection{méthode \textit{stop()}}
 
 \subsubsection{méthode \textit{startDialog()}}
+\begin{lstlisting}[language=JavaScript]
+
+\end{lstlisting} 
 
 \subsubsection{méthode \textit{endBattleScreen()}}
+\begin{lstlisting}[language=JavaScript]
+
+\end{lstlisting} 
 
 \subsection{Gestion du terrain : La classe \textit{TerrainManager}}
 \subsubsection{méthode \textit{endBattleScreen()}}
+\begin{lstlisting}[language=JavaScript]
+
+\end{lstlisting} 
 \subsubsection{méthode \textit{endBattleScreen()}}
+\begin{lstlisting}[language=JavaScript]
+
+\end{lstlisting} 
 \subsubsection{méthode \textit{endBattleScreen()}}
 %expliquer les maps,collisions, tilesets,calques, warps , l'objet terrainmanager etc... expliquer le fail avec le tween manager pour le fade in et fade out.
 %expliquer le problème avec les données dans la map et la solution.
@@ -411,7 +482,7 @@ Cette méthode dessine et anime un petit triangle d'animation pour signaler au j
 \subsection{En résumé}
 Beaucoup de code pour au final, un petit rendu. En effet, programmer un jeu de type RPG est beaucoup plus compliqué que prévu. Chaque fonction pour la progression du jeu est unique et il est très difficile d'avoir ne serait-ce qu'un minimum de scénario. Le niveau de complexité est déjà assez élevé rien qu'en programmant un long dialogue qui ne sera affiché qu'une fois au cours du jeu, comme par exemple les quelques lignes de Pangloss. Ce à quoi mon projet s'approche le plus est peut-être une situation de base inspirée du premier chapitre de Candide, mais il est loin d'être proche d'un jeu. Pourtant tout ce qui a été programmé est indispensable pour chaque jeu vidéo de type RPG car ce sont les éléments de base pour le construire. \\
 
-Certains éléments qui ont été programmés mériteraient d'être réécrits avec les connaissances acquises lors de ce projets. En effet, les premiers programmes ont été créés en découvrant Phaser, ils n'exploitent donc pas forcément toutes les fonctionnalités Phaser qui permettent d'avoir un code propre et efficace.\\
+Certains éléments qui ont été programmés mériteraient d'être réécrits avec les connaissances acquises lors de ce projets. En effet, les premiers programmes ont été créés en découvrant encore Phaser, ils n'exploitent donc pas forcément toutes les fonctionnalités Phaser qui permettent parfois d'avoir un code simple, propre et efficace.\\
 \section{Scénario alternatif}
 expliquer les dialogues, conserver le contenu tout en l'adaptant etc...donner des exemples de situations alternatives . et le résultat actuel
 expliquer la complication lié au temps, le rabotage etc..
@@ -442,5 +513,8 @@ Encore une fois, beaucoup de travail pour un petit résultat. Le pixel art deman
 % ouverture : continuation du projet
 \section{Sources}
 \section{Annexes}%mettre tous les assets finis
+\begin{lstlisting}[language=JavaScript]
+
+\end{lstlisting} 
 
 \end{document}

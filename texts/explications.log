@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.15)  4 MAR 2018 22:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.15)  5 MAR 2018 18:16
 entering extended mode
 **./explications.tex
 (explications.tex
@@ -687,82 +687,116 @@ ut line 254.
 Package pdftex.def Info: Requested size: 77.16309pt x 79.79791pt on input line 
 254.
 
-Overfull \hbox (10.76236pt too wide) in paragraph at lines 260--262
+Overfull \hbox (10.76236pt too wide) in paragraph at lines 263--265
 []\OT1/cmr/m/n/10.95 Tout af-fi-chage de texte est gere par la classe \OT1/cm
 r/m/it/10.95 dia-log-Ma-na-ger \OT1/cmr/m/n/10.95 et ses methodes.
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 268--269
+[8 <./assets/bulleDialog.png> <./assets/bulleMaison.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 271--272
 
  []
 
-[8 <./assets/bulleDialog.png> <./assets/bulleMaison.png>]
 <assets/choix.png, id=63, 803.0pt x 451.6875pt>
 File: assets/choix.png Graphic file (type png)
 <use assets/choix.png>
-Package pdftex.def Info: assets/choix.png  used on input line 280. on input lin
-e 280.
+Package pdftex.def Info: assets/choix.png  used on input line 283. on input lin
+e 283.
 Package pdftex.def Info: Requested size: 264.99081pt x 149.05733pt on input lin
-e 280.
- [9 <./assets/choix.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 335--337
+e 283.
+[9 <./assets/choix.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 338--340
 
  []
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 344--345
+Underfull \hbox (badness 10000) in paragraph at lines 347--348
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 346--348
+Underfull \hbox (badness 10000) in paragraph at lines 349--351
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--350
+Underfull \hbox (badness 10000) in paragraph at lines 352--353
 
  []
 
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 412--413
+[11] [12]
+Overfull \hbox (4.61375pt too wide) in paragraph at lines 405--406
+\OT1/cmr/m/n/10.95 Cette methode fonc-tionne a l'aide des ar-gu-ments \OT1/cm
+r/m/it/10.95 texts \OT1/cmr/m/n/10.95 et \OT1/cmr/m/it/10.95 in-dex \OT1/cmr/m/
+n/10.95 precedemment
+ []
+
+[13] [14]
+Underfull \hbox (badness 10000) in paragraph at lines 483--484
 
  []
 
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 414--415
+
+Underfull \hbox (badness 10000) in paragraph at lines 485--486
 
  []
 
 
-Overfull \hbox (7.4004pt too wide) in paragraph at lines 416--418
+Overfull \hbox (7.4004pt too wide) in paragraph at lines 487--489
 []\OT1/cmr/m/n/10.95 expliquer les dia-logues, conser-ver le contenu tout en l'
 adap-tant etc...donner
  []
 
-[13] [14] (explications.aux) ) 
+[15] [16]
+
+! Package inputenc Error: Unicode char �\lst@FillFixed@ (U+5A9)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.517 é
+        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.517 é
+        
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+[17] (explications.aux) ) 
 Here is how much of TeX's memory you used:
- 4844 strings out of 494953
- 65654 string characters out of 3177379
- 287349 words of memory out of 3000000
- 8105 multiletter control sequences out of 15000+200000
+ 4873 strings out of 494953
+ 65996 string characters out of 3177379
+ 325349 words of memory out of 3000000
+ 8134 multiletter control sequences out of 15000+200000
  10810 words of font info for 38 fonts, out of 3000000 for 9000
  198 hyphenation exceptions out of 8191
- 41i,8n,40p,791b,1692s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxt
-i10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmtt9.pfb>
-Output written on explications.pdf (17 pages, 312377 bytes).
+ 41i,8n,40p,791b,1690s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+bx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/
+Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmtt9.pfb>
+Output written on explications.pdf (20 pages, 324429 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
+ 126 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

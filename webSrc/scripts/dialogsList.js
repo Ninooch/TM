@@ -41,6 +41,7 @@ function setDialog(langue){
                 globals.dialogManager.startDialog(globals.pnjs.pangloss);}
             ]
         ];
+        
         globals.dialogs.cunegonde = [["Candide! Candide! Il faut absolument que je te raconte quelque chose! Tu... Tu ne sais pas ce que j'ai vu l'autre jour, près d'ici... J'ai vu Pangloss avec Paquette, cachés parmi les buissons. Je crois qu'il lui enseignait quelque chose comme de la physique expérimentale... A en voir Paquette, ça avait l'air intéressant alors j'ai observé sans faire de bruit les expériences répétées de Pangloss. J'ai cru comprendre qu'il lui montrait sa raison suffisante, ses causes, ses effets et visiblement, il enseignait très bien.",function(){
             globals.pnjs.cunegonde.currentIndex=1;
             globals.dialogManager.stop(true,false);
