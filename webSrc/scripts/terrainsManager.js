@@ -104,6 +104,7 @@ class TerrainManager {
             else{
                 if(this.currentWarps[l] == globals.player.customProps.currentWarp){
                     globals.player.customProps.bulle.destroy();
+                    input.enter.onDown.removeAll();
                     globals.player.customProps.bulleOnScreen = false;
                     globals.player.customProps.currentWarp = "";
                 }

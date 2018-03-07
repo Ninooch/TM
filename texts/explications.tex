@@ -444,10 +444,13 @@ selection(texts,index){
     },this);
 }
 \end{lstlisting} 
-
+Cette méthode permet au joueur de choisir une option lorsqu'il est confronté à un choix. Il peut à l'aide des touches directionnelles verticales 
 \subsubsection{méthode \textit{stop()}}
+Cette méthode prend les arguments \textit{isDialog} et \textit{canBulle}. L'argument \textit{canBulle} est un booléen qui détermine si le pnj à qui le joueur parle peut ré-afficher un phylactère à l'écran.\\
 
-\subsubsection{méthode \textit{startDialog()}}
+Cette méthode supprime tous les éléments graphiques à l'écran y compris les animations des personnages si \textit{isDialog = true}.  Lorsque que les deux arguments de la fonction sont égaux à true, un timer phaser est activé (similaire au \textit{setTimeOut()}) et la bulle du personnage qui vient de parler réapparaît à l'écran après 300 milisecondes. 
+
+\subsubsection{Texte automatique : Les méthodes \textit{startDialog(pnj)}, \textit{startBattleDesc(text,battleDesc)} et \textit{desc(text)}}
 \begin{lstlisting}[language=JavaScript]
 
 \end{lstlisting} 
