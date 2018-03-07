@@ -444,7 +444,9 @@ selection(texts,index){
     },this);
 }
 \end{lstlisting} 
-Cette méthode permet au joueur de choisir une option lorsqu'il est confronté à un choix. Il peut à l'aide des touches directionnelles verticales 
+Cette méthode permet au joueur de choisir une option lorsqu'il est confronté à un choix. Il peut, à l'aide des touches directionnelles verticales,  déplacer le sprite cadre. Lorsqu'il appuie sur enter, la callback associée à la réponse se déclenche. \\
+
+Cette méthode fonctionne  de la manière suivante : premièrement, elle supprime toutes les callbacks associées au signal de chaque input pressé. Ensuite, pour chaque input de verticalité, la méthode ajoute une callback qui ne pourra être utilisée qu'une seule fois lorsqu'une touche est appuyée. Cette callback modifie les coordonnées y du sprite cadre et rappelle la méthode \textit{selection()}. Pour la touche enter, une callback à utilisation unique est aussi associée. Elle supprime les callbacks des touches directionnelles, vérifie quelle réponse est entourée par le cadre grâce à une fonction qui renvoie \textit{true} si les rectangles formés à partir du pourtour de deux sprites s'intersectent. Une fois la réponse déterminée, la méthode lance la callback qui lui est associée et détruit les éléments graphiques qui constituaient l'ensemble des réponses.
 \subsubsection{méthode \textit{stop()}}
 Cette méthode prend les arguments \textit{isDialog} et \textit{canBulle}. L'argument \textit{canBulle} est un booléen qui détermine si le pnj à qui le joueur parle peut ré-afficher un phylactère à l'écran.\\
 
