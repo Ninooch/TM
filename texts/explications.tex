@@ -453,15 +453,20 @@ Cette méthode prend les arguments \textit{isDialog} et \textit{canBulle}. L'arg
 Cette méthode supprime tous les éléments graphiques à l'écran y compris les animations des personnages si \textit{isDialog = true}.  Lorsque que les deux arguments de la fonction sont égaux à true, un timer phaser est activé (similaire au \textit{setTimeOut()}) et la bulle du personnage qui vient de parler réapparaît à l'écran après 300 milisecondes. 
 
 \subsubsection{Texte automatique : Les méthodes \textit{startDialog(pnj)}, \textit{startBattleDesc(text,battleDesc)} et \textit{desc(text)}}
-\begin{lstlisting}[language=JavaScript]
+Ce sont 3 méthodes utilisées dans le jeu qui appellent les différentes méthodes citées précédemment avec les arguments nécessaires. \\
 
-\end{lstlisting} 
+La méthode \textit{startDialog()} dépend uniquement d'un pnj. Elle affiche le nom du pnj dans un contenant graphique et lance le dialogue en fonction l'index du pnj. \\
+
+la méthode \textit{startBattleDesc()} est utilisée dans les phases de combats et gère les descriptions automatiquement, c'est à dire que le joueur n'a pas à intervenir pour que le texte change. \\
+
+La méthode \textit{desc()} sert à afficher du texte pur.  Elle est utilisée dans la state qui s'occupe des transitions avec texte. Cette méthode sera aussi utilisée lorsque l'interaction avec l'environnement sera implémentée.\\
+
 
 \subsubsection{méthode \textit{endBattleScreen()}}
-\begin{lstlisting}[language=JavaScript]
-
-\end{lstlisting} 
-
+Cette méthode sert à afficher progressivement une boîte de dialogue ainsi que le texte approprié lorsque le joueur gagne ou perd un combat. Quand le texte est affiché et que le joueur appuie sur enter, le jeu bascule de la state "Battle" à la state "Game". Dans l'état actuel de ce projet, il retourne au même point de départ que lorsque le jeu est lancé mais dans des versions futures, le joueur retrouvera la position qu'il a quittée quand le combat s'est lancé.\\
+\begin{figure}
+\includegraphics[scale=•]{•}
+\end{figure}
 \subsection{Gestion du terrain : La classe \textit{TerrainManager}}
 \subsubsection{méthode \textit{endBattleScreen()}}
 \begin{lstlisting}[language=JavaScript]

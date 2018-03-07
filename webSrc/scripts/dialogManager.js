@@ -271,7 +271,7 @@ endBattleScreen(what){
         if(what=="victoire"){
             this.dialBox = db;
             var headertxt= game.add.bitmapText(0,0,"candideFont",globals.battleData.text.victoire, 70);
-            var txt = [["You won! Congrats",function(){
+            var txt = [["Félicitations, le combat est remporté!",function(){
                 game.camera.fade(0x000000,1000,false,1);
                 game.camera.onFadeComplete.addOnce(function(){
                     game.state.start("game");
