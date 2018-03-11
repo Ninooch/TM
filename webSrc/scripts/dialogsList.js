@@ -71,6 +71,8 @@ function setDialog(langue){
             argumente : "argumente contre ",
             victoire : "Victoire!",
             defaite: "Défaite...",
+            vtxt:"Félicitations, le combat est remporté!",
+            dtxt:"L'adversaire a remporté le combat!"
         };
         break; // chaque réplique à question est stockée dans un array. à l'index 0 se trouve la question. à l'index 1, les réponses contenues dans un array. à l'index 2  les callbacks des réponses aussi dans un array.
         case 1:

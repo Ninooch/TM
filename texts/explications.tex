@@ -121,15 +121,46 @@ Afin d'avoir une meilleure compréhension de ce document, voici un lexique. \\
 \item \textbf{warp}: Zone qui une fois pénétrée déclenche un changement de map.
 \end{itemize}
 
-\section{Déroulement du jeu PAS FINI}
+\section{Jeu}
+\subsection{Déroulement}
+expliquer les dialogues, conserver le contenu tout en l'adaptant etc...donner des exemples de situations alternatives . et le résultat actuel
+expliquer la complication lié au temps, le rabotage etc..
+\subsection{Projet original}
+Le but du projet original était d'adapter l'entièreté de Candide sous forme de jeu vidéo avec un scénario alternatif et créer tous les assets visuels et auditifs. Le tout en 6 mois, un projet qui aurait été qualifié de totalement réaliste par la pointe d'ironie de Voltaire et celle de mon mentor avisé...\\
+
+Dans ce projet, le joueur pourrait incarner Candide et vivre une aventure propre aux choix qu'il serait amené à faire durant le jeu. Il dialoguerait avec les personnages qui proposeraient des quêtes à remplir et influenceraient le jeu, il collecterait des objets trouvés le long de son voyage pour les revendre ou les utiliser lors de combats à l'épée ou philosophiques. Il récolterait une collection de graines pour les planter au final dans son jardin... Le tout agrémenté de belles cinématiques.\\ Le jeu n'aurait pas forcément été agréable avec le joueur, le but étant que ce dernier ressente ce qu'a ressenti Candide lors de son périple. Un exemple de choix qui avait été imaginé était  que le joueur ait le choix très tôt dans le jeu de choisir combien de sucre il souhaite dans son thé. Un choix apparemment innocent qui aurait révélé ses conséquences beaucoup plus tard dans le jeu, lorsque Candide rencontre l'esclave qui travaille pour la production de sucre. En fonction de la réponse du début, l'esclave sera plus ou moins maltraité. 
+
+
+\subsection{Résultat final}
+Après avoir réalisé que créer un jeu vidéo n'était pas simple, le projet a été réduit pour adapter uniquement le premier chapitre du livre. 
 % personnages , dessiner
 %organisation du code
 %explique que les extraits sont des extraits
-Le joueur incarne Candide et peut se promener dans des situations inspirées du livre. Il peut dialoguer avec les pnjs présents dans les décors et faire des combats avec certains d'entre eux. Le joueur arrive dans la cour du château du Baron de Thunder-then-Tronck. 
+Le joueur incarne donc Candide et peut se promener des décors inspirés de l'incipit. Il peut dialoguer avec les pnjs présents dans les décors et faire des combats avec certains d'entre eux.
 \begin{figure}[h]
 \includegraphics[scale=0.33]{cunegondeScn}
 \centering
 \end{figure}
+\subsection{Adaptation}
+L'adaptation est quelque chose de primordial. Comment donner une apparence physique à un personnage ? Le faire parler ? Créer un environnement pour le joueur ? Le meubler ?\\ 
+Tous les assets sont une interprétation de l'œuvre originale. Par exemple, le design de Pangloss doit faire comprendre immédiatement au joueur que c'est un intellectuel trop sûr de lui. Il porte des lunettes pour accentuer le stéréotype du savant et pour illustrer son discours. Le sprite est déjà marqué de quelques traits de vieillesse, ce qui accentue la "sagesse" de Pangloss. Il plisse des paupières en souriant de coin, ce qui révèle sa confiance. Tout ceci doit transparaître en seulement quelques pixels.
+\begin{figure}[H]
+\includegraphics[scale=0.8]{panglossHead}
+\centering
+\end{figure}
+Le personnage de Candide doit faire transparaître de la naïveté, de l'innocence et un peu de maladresse. Ces éléments sont représentés avec ses mèches en bataille et sa chemise à moitié rentrée dans ses chausses, ainsi qu'avec son sourire gentil.\\
+\begin{figure}[H]
+\includegraphics[scale=1.3]{candide}
+\centering
+\end{figure}
+De même que le décor : Il y a la cour et le château. Le château \textit{avait une porte et des fenêtres} et il est fait de pierres taillées. Pour illustrer une part d'ironie de Voltaire, quelques pierres sont irrégulières, voire manquantes.
+\begin{figure}[H]
+\includegraphics{chateau}
+\centering
+\end{figure}
+
+Malheureusement, le décor n'est pas complet et il est difficile de créer un jeu sans décor.
+
 sources : \
 Phaser.js par Richard Davey \
 Phaser-tilemap-plus par Colin Vella \
@@ -457,15 +488,16 @@ Ce sont 3 méthodes utilisées dans le jeu qui appellent les différentes métho
 
 La méthode \textit{startDialog()} dépend uniquement d'un pnj. Elle affiche le nom du pnj dans un contenant graphique et lance le dialogue en fonction l'index du pnj. \\
 
-la méthode \textit{startBattleDesc()} est utilisée dans les phases de combats et gère les descriptions automatiquement, c'est à dire que le joueur n'a pas à intervenir pour que le texte change. \\
+la méthode \textit{startBattleDesc()} est utilisée dans les phases de combats et gère les descriptions automatiquement afin que le joueur n'ait pas à intervenir pour que le texte change. \\
 
 La méthode \textit{desc()} sert à afficher du texte pur.  Elle est utilisée dans la state qui s'occupe des transitions avec texte. Cette méthode sera aussi utilisée lorsque l'interaction avec l'environnement sera implémentée.\\
 
 
 \subsubsection{méthode \textit{endBattleScreen()}}
 Cette méthode sert à afficher progressivement une boîte de dialogue ainsi que le texte approprié lorsque le joueur gagne ou perd un combat. Quand le texte est affiché et que le joueur appuie sur enter, le jeu bascule de la state "Battle" à la state "Game". Dans l'état actuel de ce projet, il retourne au même point de départ que lorsque le jeu est lancé mais dans des versions futures, le joueur retrouvera la position qu'il a quittée quand le combat s'est lancé.\\
-\begin{figure}
-\includegraphics[scale=•]{•}
+\begin{figure}[H]
+\includegraphics[scale=0.35]{victoire}
+\centering
 \end{figure}
 \subsection{Gestion du terrain : La classe \textit{TerrainManager}}
 \subsubsection{méthode \textit{endBattleScreen()}}
