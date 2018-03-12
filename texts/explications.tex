@@ -137,7 +137,7 @@ Après avoir réalisé que créer un jeu vidéo n'était pas simple, le projet a
 %organisation du code
 %explique que les extraits sont des extraits
 Le joueur incarne donc Candide et peut se promener des décors inspirés de l'incipit. Il peut dialoguer avec les pnjs présents dans les décors et faire des combats avec certains d'entre eux.
-\begin{figure}[h]
+\begin{figure}[H]
 \includegraphics[scale=0.33]{cunegondeScn}
 \centering
 \end{figure}
@@ -159,7 +159,7 @@ De même que le décor : Il y a la cour et le château. Le château \textit{avai
 \centering
 \end{figure}
 
-Malheureusement, le décor n'est pas complet et il est difficile de créer un jeu sans décor.
+Malheureusement, le décor n'est pas complet à cause du temps que la création prend. Il est également difficile de créer un jeu sans décor dessiné au préalable.
 
 sources : \
 Phaser.js par Richard Davey \
@@ -204,7 +204,7 @@ La state "Boot" fait démarrer le jeu. Elle déclenche la state "Preload". Prelo
 \subsubsection{Menu Principal}
 %expliquer la fonction avec les boutons, dans un premier temps elle est avec une sprite sheet pour chaque langue, éventuelle amélioration.\\
 La state "Menu principal" permet au joueur de lancer le jeu ou d'en modifier la langue. Les boutons qui permettent de faire une action sont des objets Phaser. L'ensemble des boutons est initié dans une seule fonction. Cette fonction dépend de la langue que le joueur a choisi. Chaque bouton a sa propre spritesheet, ce qui pourrait poser problème au niveau de la taille et du temps pour les dessiner si d'autres langues sont ajoutées. Une option serait de générer dans le code, les textes dans les boutons à la place de les dessiner à la main.
-\begin{figure}[h]
+\begin{figure}[H]
 \includegraphics[scale=0.3]{boutons}
 \centering
 \caption{Spritesheet des boutons utilisés dans le menu}
@@ -277,7 +277,7 @@ Voici l'explication de ces arguments:
 Chaque pnj a une méthode \textit{update()} qui permet de détecter le joueur et créer une interaction avec lui. Le code regarde si le rectangle formé par le sprite du joueur intersecte un autre rectangle plus grand, qui englobe le pnj. Si c'est le cas et que le phylactère du pnj n'est pas encore à l'écran, le personnage crée une bulle. Lorsque la bulle est affichée, le joueur peut appuyer sur "enter" et faire démarrer le dialogue.\\
 
 Cette méthode de détection de bulle a été codée avec des "if" et beaucoup de variables booléennes. Une amélioration est peut-être possible avec des signaux, une spécificité de Phaser, qui permettent l'appel d'une fonction lorsque qu'un événement est déclenché.\subsubsection{Ennemis : La classe \textit{Ennemy}}
-Les ennemis sont une classe étendue de la classe Pnj. Ce sont des pnjs dotés de points de vie et d'attaques pour pouvoir les utiliser lors de combats. Ils ont une propriété importante : \textit{isAlive}, un booléen qui détermine si un combat peut être lancé et permet de mettre fin à un combat lorsque l'ennemi est défait. Chaque ennemi possède une méthode \textit{turn()} (décrite dans la section gestion du combat), utilisée lors d'un tour au combat et une méthode \textit{startCombat()} qui fait basculer le jeu sur la state de combat.
+Les ennemis sont une classe étendue de la classe Pnj. Ce sont des pnjs dotés de points de vie et d'attaques pour pouvoir les utiliser lors de combats. Ils ont une propriété importante : \textit{isAlive}, un booléen qui détermine si un combat peut être lancé et permet de mettre fin à un combat lorsque l'ennemi est défait. Chaque ennemi possède une méthode \textit{turn()} utilisée lors d'un tour au combat et une méthode \textit{startCombat()} qui fait basculer le jeu sur la state de combat. Cette méthode sert à définir une cible aléatoire parmi les cibles présentes, choisir une attaque aléatoire et lancer l'attaque sur la cible choisie. Cette méthode renvoie aussi un message qui sera afficher pendant le combat, en fonction de l'attaque choisie.
 \subsection{Les bulles : La classe \textit{Bubble}}
  Chaque bulle affichée à l'écran est composée de trois parties, le fond, le texte et un triangle animé. Les bulles jouent plusieurs rôles. Elles peuvent indiquer un dialogue mais aussi permettre au joueur de rentrer dans une nouvelle map (grâce à la méthode \textit{goToHouse()}) lorsqu'il y a un élément tel qu'une porte que le joueur doit ouvrir. La détection des zones de warps à bulle est programmée à l'aide de boucles et de "if". Le code pourrait être simplifié à l'aide de signaux Phaser.
 \begin{figure}[H]
@@ -286,9 +286,39 @@ Les ennemis sont une classe étendue de la classe Pnj. Ce sont des pnjs dotés d
 \centering
 \caption{Exemples de phylactères}
 \end{figure}
-\subsection{Les attaques : La classe \textit{Attack}}
+\subsection{Les attaques : La classe \textit{Attaque}}
+Les attaques des objets de la classe \textit{Attaque}. Elles sont utilisées par le joueur et les ennemis lors des phases de combats. Pour créer une attaque il faut utiliser : 
+\begin{lstlisting}[language=JavaScript]
+var myAttck = new Attaque(name,pdg,cEff,minPdg);
+\end{lstlisting} 
+Les arguments on la fonction suivante : 
+\begin{itemize}
+\item \textbf{name}: Nom de l'attaque.
+\item \textbf{pdg} : Abréviation de points de dégâts. Le nombre que l'attaque inflige lors de sa première utilisation.
+\item \textbf{cEff} : Abréviation de coefficient d'efficacité, définit de combien les points de dégâts diminuent après chaque utilisation.
+\item \textbf{minPdg} : Nombre de dégâts minimal que l'attaque inflige.
+\end{itemize}
+\paragraph{}
+
+Chaque attaque possède la méthode \textit{nextTurn()}, qui recalcule les points de dégâts en divisant les points de dégâts actuels par le coefficient s'ils ne sont en dessus du minimum fixé.\\
+
+Elles possèdent aussi les méthodes \textit{normal(cible)}, \textit{rate(cible)} et \textit{coupCritique(cible)} qui infligent différent dégâts ( Les dommages sont multipliés par 1.5 quand l'attaque est critique. L'attaque ne fait rien lorsqu'elle rate.)\\
+Ces méthodes sont utilisées dans la méthode \textit{turn(cible)}, qui choisit aléatoirement une de ces méthodes et l'applique sur la cible choisie. \\
+
+Les attaques possèdent encore deux méthodes qui distribuent de l'information textuelle qui sera utilisée lors des combats. La méthode \textit{info()} indique le nombre de dommages que l'attaque cause. La méthode \textit{desc()} retourne un string en fonction de ce qu'il s'est passé lors du tour.
 \subsection{Les barres de vie: La classe \textit{Healthbar}}
+Les barres de vies sont des objets graphiques qui s'adaptent en fonction du nombre de points de vie attribués à un personnages. Elle sont en réalité composées de 3 éléments, un contenant vide, le remplissage rectiligne et le remplissage curviligne près du contenant. Il était plus facile de le dessiner ainsi car l'homothétie posait problème lorsqu'il ne restait que quelques hp. \\
+
+A chaque tour, en fonction du nombre de points de vie du personnage, la partie colorée se réduit grâce à une homothétie sur la composante x de facteur nouvelle vie / vie maximum.  Les sprites sont en teintes de gris, pour permettre une coloration en fonction du nombre de points de vie : vert quand les hp sont au dessus de la moitié du maximum, orange quand ils sont au dessus d'un quart du maximum et rouge quand ils sont en dessous. Quand tous les points de vies sont éliminés, le personnage est défait et l'animation de la partie curviligne de l'animation se déclenche.
+
+\begin{figure}[H]
+\includegraphics{health}
+\includegraphics{healthP2}
+\includegraphics{healthBar}
+\caption{Les trois parties de la barre de vie}
+\end{figure}
 \subsection{Les objets de terrain : Les classes \textit{CustomMap} et \textit{Warp}}
+ 
 \subsection{Gestion des dialogues : La classe \textit{dialogManager}}
 %expliquer la police de caractères, la dynamique des choix, l'objet %manager , la syntaxe (les arrays avec les callbacks etc...)
 Tout affichage de texte est géré par la classe \textit{dialogManager} et ses méthodes. 
@@ -500,18 +530,74 @@ Cette méthode sert à afficher progressivement une boîte de dialogue ainsi que
 \centering
 \end{figure}
 \subsection{Gestion du terrain : La classe \textit{TerrainManager}}
-\subsubsection{méthode \textit{endBattleScreen()}}
+\subsubsection{méthode \textit{initMap()}}
+\begin{lstlisting}[language=JavaScript]
+
+    initMap(map,collision){ 
+        this.currentMap = game.add.tilemap(map.key);
+
+        for(let l in map.tilesets){
+            this.currentMap.addTilesetImage(map.tilesets[l],map.tilesets[l]); 
+        }
+
+        this.currentLayers = [];
+        for(let k of map.layerKeys){
+
+            let layer = this.currentMap.createLayer(k);
+            this.currentLayers.push(layer);
+        }
+
+        if(collision){
+            this.collision = this.currentMap.createLayer("Collision");
+            this.currentMap.setCollisionByExclusion([], true, this.collision);
+            this.collision.resizeWorld();
+            this.collision.visible = false;
+        }
+        this.currentMap.plus.animation.enable();
+        this.currentLayers[0].resizeWorld();
+
+        for(let l in map.pnjs){
+            game.add.existing(map.pnjs[l]);
+            this.currentPnjs.push(map.pnjs[l]);
+        }
+        for(let l in map.warps){
+            this.currentWarps.push(map.warps[l]);
+            this.currentWarps[l].overlap=false;
+        }
+    }
+\end{lstlisting} 
+\subsubsection{méthode \textit{clearMap()}}
 \begin{lstlisting}[language=JavaScript]
 
 \end{lstlisting} 
-\subsubsection{méthode \textit{endBattleScreen()}}
-\begin{lstlisting}[language=JavaScript]
-
-\end{lstlisting} 
-\subsubsection{méthode \textit{endBattleScreen()}}
+\subsubsection{méthode \textit{changeMap()}}
 %expliquer les maps,collisions, tilesets,calques, warps , l'objet terrainmanager etc... expliquer le fail avec le tween manager pour le fade in et fade out.
 %expliquer le problème avec les données dans la map et la solution.
 \subsection{Gestion des combats : La classe \textit{BattleManager}}
+\subsubsection{méthode \textit{clearMap()}}
+\begin{lstlisting}[language=JavaScript]
+
+\end{lstlisting} 
+\subsubsection{méthode \textit{clearMap()}}
+\begin{lstlisting}[language=JavaScript]
+
+\end{lstlisting} 
+\subsubsection{méthode \textit{clearMap()}}
+\begin{lstlisting}[language=JavaScript]
+
+\end{lstlisting} 
+\subsubsection{méthode \textit{clearMap()}}
+\begin{lstlisting}[language=JavaScript]
+
+\end{lstlisting} 
+\subsubsection{méthode \textit{clearMap()}}
+\begin{lstlisting}[language=JavaScript]
+
+\end{lstlisting} 
+\subsubsection{méthode \textit{clearMap()}}
+\begin{lstlisting}[language=JavaScript]
+
+\end{lstlisting} 
 %expliquer la dynamique de combat, les points de vie etc..
 \subsection{Interaction avec les objets}
 à compléter idée: un objet possède ou non un callback 

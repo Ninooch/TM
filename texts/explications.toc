@@ -5,14 +5,14 @@
 \contentsline {subsection}{\numberline {2.1}D\IeC {\'e}roulement}{2}
 \contentsline {subsection}{\numberline {2.2}Projet original}{2}
 \contentsline {subsection}{\numberline {2.3}R\IeC {\'e}sultat final}{2}
-\contentsline {subsection}{\numberline {2.4}adaptation}{3}
+\contentsline {subsection}{\numberline {2.4}Adaptation}{3}
 \contentsline {section}{\numberline {3}Fonctionement du code}{4}
 \contentsline {subsection}{\numberline {3.1}Syst\IeC {\`e}me g\IeC {\'e}n\IeC {\'e}ral}{5}
 \contentsline {subsection}{\numberline {3.2}Commencement}{6}
 \contentsline {subsection}{\numberline {3.3}Gestion des states du jeu}{6}
 \contentsline {subsubsection}{\numberline {3.3.1}Boot et Preload}{6}
 \contentsline {subsubsection}{\numberline {3.3.2}Menu Principal}{6}
-\contentsline {subsubsection}{\numberline {3.3.3}Game}{6}
+\contentsline {subsubsection}{\numberline {3.3.3}Game}{7}
 \contentsline {subsubsection}{\numberline {3.3.4}Battle}{7}
 \contentsline {subsubsection}{\numberline {3.3.5}Transition avec texte}{8}
 \contentsline {subsection}{\numberline {3.4}Joueur}{8}
@@ -21,40 +21,47 @@
 \contentsline {paragraph}{}{9}
 \contentsline {subsubsection}{\numberline {3.5.2}Ennemis : La classe \textit {Ennemy}}{10}
 \contentsline {subsection}{\numberline {3.6}Les bulles : La classe \textit {Bubble}}{10}
-\contentsline {subsection}{\numberline {3.7}Les attaques : La classe \textit {Attack}}{10}
-\contentsline {subsection}{\numberline {3.8}Les barres de vie: La classe \textit {Healthbar}}{10}
-\contentsline {subsection}{\numberline {3.9}Les objets de terrain : Les classes \textit {CustomMap} et \textit {Warp}}{10}
-\contentsline {subsection}{\numberline {3.10}Gestion des dialogues : La classe \textit {dialogManager}}{10}
-\contentsline {subsubsection}{\numberline {3.10.1}m\IeC {\'e}thode \textit {start()}}{11}
-\contentsline {subsubsection}{\numberline {3.10.2}m\IeC {\'e}thode \textit {displayText()}}{12}
-\contentsline {subsubsection}{\numberline {3.10.3}m\IeC {\'e}thode \textit {wait()}}{13}
-\contentsline {paragraph}{}{14}
-\contentsline {subsubsection}{\numberline {3.10.4}m\IeC {\'e}thode \textit {resume()}}{14}
-\contentsline {subsubsection}{\numberline {3.10.5}m\IeC {\'e}thode \textit {question()}}{14}
-\contentsline {subsubsection}{\numberline {3.10.6}m\IeC {\'e}thode \textit {selection()}}{15}
-\contentsline {subsubsection}{\numberline {3.10.7}m\IeC {\'e}thode \textit {stop()}}{17}
-\contentsline {subsubsection}{\numberline {3.10.8}Texte automatique : Les m\IeC {\'e}thodes \textit {startDialog(pnj)}, \textit {startBattleDesc(text,battleDesc)} et \textit {desc(text)}}{17}
-\contentsline {subsubsection}{\numberline {3.10.9}m\IeC {\'e}thode \textit {endBattleScreen()}}{17}
-\contentsline {subsection}{\numberline {3.11}Gestion du terrain : La classe \textit {TerrainManager}}{18}
-\contentsline {subsubsection}{\numberline {3.11.1}m\IeC {\'e}thode \textit {endBattleScreen()}}{18}
-\contentsline {subsubsection}{\numberline {3.11.2}m\IeC {\'e}thode \textit {endBattleScreen()}}{18}
-\contentsline {subsubsection}{\numberline {3.11.3}m\IeC {\'e}thode \textit {endBattleScreen()}}{18}
-\contentsline {subsection}{\numberline {3.12}Gestion des combats : La classe \textit {BattleManager}}{18}
-\contentsline {subsection}{\numberline {3.13}Interaction avec les objets}{18}
-\contentsline {subsection}{\numberline {3.14}En r\IeC {\'e}sum\IeC {\'e}}{18}
-\contentsline {section}{\numberline {4}Sc\IeC {\'e}nario alternatif}{19}
-\contentsline {section}{\numberline {5}Conception des assets}{19}
-\contentsline {subsection}{\numberline {5.1}Visuel}{19}
-\contentsline {subsubsection}{\numberline {5.1.1}Police personnalis\IeC {\'e}e}{19}
-\contentsline {subsubsection}{\numberline {5.1.2}Sprites de dialogues}{19}
-\contentsline {subsubsection}{\numberline {5.1.3}Sprites d'overworld}{19}
-\contentsline {subsubsection}{\numberline {5.1.4}Tilesets}{19}
-\contentsline {subsubsection}{\numberline {5.1.5}Tilemap}{19}
-\contentsline {subsection}{\numberline {5.2}Musical}{19}
-\contentsline {subsection}{\numberline {5.3}En r\IeC {\'e}sum\IeC {\'e}}{20}
-\contentsline {section}{\numberline {6}Conclusion}{20}
-\contentsline {subsection}{\numberline {6.1}Nina Ionescu ou l'optimisme}{20}
-\contentsline {subsection}{\numberline {6.2}Exp\IeC {\'e}rience gagn\IeC {\'e}e}{20}
-\contentsline {subsection}{\numberline {6.3}Continuation du projet}{20}
-\contentsline {section}{\numberline {7}Sources}{20}
-\contentsline {section}{\numberline {8}Annexes}{20}
+\contentsline {subsection}{\numberline {3.7}Les attaques : La classe \textit {Attaque}}{10}
+\contentsline {paragraph}{}{11}
+\contentsline {subsection}{\numberline {3.8}Les barres de vie: La classe \textit {Healthbar}}{11}
+\contentsline {subsection}{\numberline {3.9}Les objets de terrain : Les classes \textit {CustomMap} et \textit {Warp}}{12}
+\contentsline {subsection}{\numberline {3.10}Gestion des dialogues : La classe \textit {dialogManager}}{12}
+\contentsline {subsubsection}{\numberline {3.10.1}m\IeC {\'e}thode \textit {start()}}{13}
+\contentsline {subsubsection}{\numberline {3.10.2}m\IeC {\'e}thode \textit {displayText()}}{13}
+\contentsline {subsubsection}{\numberline {3.10.3}m\IeC {\'e}thode \textit {wait()}}{15}
+\contentsline {paragraph}{}{16}
+\contentsline {subsubsection}{\numberline {3.10.4}m\IeC {\'e}thode \textit {resume()}}{16}
+\contentsline {subsubsection}{\numberline {3.10.5}m\IeC {\'e}thode \textit {question()}}{16}
+\contentsline {subsubsection}{\numberline {3.10.6}m\IeC {\'e}thode \textit {selection()}}{17}
+\contentsline {subsubsection}{\numberline {3.10.7}m\IeC {\'e}thode \textit {stop()}}{18}
+\contentsline {subsubsection}{\numberline {3.10.8}Texte automatique : Les m\IeC {\'e}thodes \textit {startDialog(pnj)}, \textit {startBattleDesc(text,battleDesc)} et \textit {desc(text)}}{18}
+\contentsline {subsubsection}{\numberline {3.10.9}m\IeC {\'e}thode \textit {endBattleScreen()}}{19}
+\contentsline {subsection}{\numberline {3.11}Gestion du terrain : La classe \textit {TerrainManager}}{19}
+\contentsline {subsubsection}{\numberline {3.11.1}m\IeC {\'e}thode \textit {initMap()}}{19}
+\contentsline {subsubsection}{\numberline {3.11.2}m\IeC {\'e}thode \textit {clearMap()}}{20}
+\contentsline {subsubsection}{\numberline {3.11.3}m\IeC {\'e}thode \textit {changeMap()}}{20}
+\contentsline {subsection}{\numberline {3.12}Gestion des combats : La classe \textit {BattleManager}}{20}
+\contentsline {subsubsection}{\numberline {3.12.1}m\IeC {\'e}thode \textit {clearMap()}}{20}
+\contentsline {subsubsection}{\numberline {3.12.2}m\IeC {\'e}thode \textit {clearMap()}}{21}
+\contentsline {subsubsection}{\numberline {3.12.3}m\IeC {\'e}thode \textit {clearMap()}}{21}
+\contentsline {subsubsection}{\numberline {3.12.4}m\IeC {\'e}thode \textit {clearMap()}}{21}
+\contentsline {subsubsection}{\numberline {3.12.5}m\IeC {\'e}thode \textit {clearMap()}}{21}
+\contentsline {subsubsection}{\numberline {3.12.6}m\IeC {\'e}thode \textit {clearMap()}}{21}
+\contentsline {subsection}{\numberline {3.13}Interaction avec les objets}{21}
+\contentsline {subsection}{\numberline {3.14}En r\IeC {\'e}sum\IeC {\'e}}{21}
+\contentsline {section}{\numberline {4}Sc\IeC {\'e}nario alternatif}{22}
+\contentsline {section}{\numberline {5}Conception des assets}{22}
+\contentsline {subsection}{\numberline {5.1}Visuel}{22}
+\contentsline {subsubsection}{\numberline {5.1.1}Police personnalis\IeC {\'e}e}{22}
+\contentsline {subsubsection}{\numberline {5.1.2}Sprites de dialogues}{22}
+\contentsline {subsubsection}{\numberline {5.1.3}Sprites d'overworld}{22}
+\contentsline {subsubsection}{\numberline {5.1.4}Tilesets}{22}
+\contentsline {subsubsection}{\numberline {5.1.5}Tilemap}{22}
+\contentsline {subsection}{\numberline {5.2}Musical}{22}
+\contentsline {subsection}{\numberline {5.3}En r\IeC {\'e}sum\IeC {\'e}}{23}
+\contentsline {section}{\numberline {6}Conclusion}{23}
+\contentsline {subsection}{\numberline {6.1}Nina Ionescu ou l'optimisme}{23}
+\contentsline {subsection}{\numberline {6.2}Exp\IeC {\'e}rience gagn\IeC {\'e}e}{23}
+\contentsline {subsection}{\numberline {6.3}Continuation du projet}{23}
+\contentsline {section}{\numberline {7}Sources}{23}
+\contentsline {section}{\numberline {8}Annexes}{23}
