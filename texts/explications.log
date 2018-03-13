@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.15)  12 MAR 2018 18:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.15)  13 MAR 2018 16:20
 entering extended mode
 **./explications.tex
 (explications.tex
@@ -773,131 +773,157 @@ Overfull \hbox (1.19699pt too wide) in paragraph at lines 315--318
  []
 
 [11]
-Overfull \hbox (10.76236pt too wide) in paragraph at lines 324--326
+Underfull \hbox (badness 10000) in paragraph at lines 321--322
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 335--336
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 337--338
+
+ []
+
+
+Overfull \hbox (7.97832pt too wide) in paragraph at lines 339--340
+[]\OT1/cmr/m/n/10.95 Dans le code concu ini-tia-le-ment, chaque ob-jet Cus-tom
+-Map etait dependant
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 339--340
+
+ []
+
+[12 <./assets/health.png> <./assets/healthP2.png> <./assets/healthBar.png>]
+Overfull \hbox (10.76236pt too wide) in paragraph at lines 358--360
 []\OT1/cmr/m/n/10.95 Tout af-fi-chage de texte est gere par la classe \OT1/cm
 r/m/it/10.95 dia-log-Ma-na-ger \OT1/cmr/m/n/10.95 et ses methodes.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 332--333
+Underfull \hbox (badness 10000) in paragraph at lines 366--367
 
  []
 
-<assets/choix.png, id=82, 803.0pt x 451.6875pt>
+[13]
+<assets/choix.png, id=91, 803.0pt x 451.6875pt>
 File: assets/choix.png Graphic file (type png)
 <use assets/choix.png>
-Package pdftex.def Info: assets/choix.png  used on input line 344. on input lin
-e 344.
+Package pdftex.def Info: assets/choix.png  used on input line 378. on input lin
+e 378.
 Package pdftex.def Info: Requested size: 264.99081pt x 149.05733pt on input lin
-e 344.
-[12 <./assets/health.png> <./assets/healthP2.png> <./assets/healthBar.png>]
-[13 <./assets/choix.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 399--401
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 408--409
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 410--412
-
- []
-
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 413--414
+e 378.
+ [14 <./assets/choix.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 433--435
 
  []
 
 [15]
-Overfull \hbox (4.61375pt too wide) in paragraph at lines 466--467
+Underfull \hbox (badness 10000) in paragraph at lines 442--443
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 444--446
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 447--448
+
+ []
+
+[16] [17]
+Overfull \hbox (4.61375pt too wide) in paragraph at lines 500--501
 \OT1/cmr/m/n/10.95 Cette methode fonc-tionne a l'aide des ar-gu-ments \OT1/cm
 r/m/it/10.95 texts \OT1/cmr/m/n/10.95 et \OT1/cmr/m/it/10.95 in-dex \OT1/cmr/m/
 n/10.95 precedemment
  []
 
-[16]
-Underfull \hbox (badness 10000) in paragraph at lines 508--509
-
- []
-
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 512--513
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 517--518
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 519--520
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 521--522
-
- []
-
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 523--524
+Underfull \hbox (badness 10000) in paragraph at lines 542--543
 
  []
 
-<assets/victoire.png, id=109, 803.0pt x 451.6875pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 546--547
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 551--552
+
+ []
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 553--554
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 555--556
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 557--558
+
+ []
+
+<assets/victoire.png, id=112, 803.0pt x 451.6875pt>
 File: assets/victoire.png Graphic file (type png)
 <use assets/victoire.png>
-Package pdftex.def Info: assets/victoire.png  used on input line 529. on input 
-line 529.
+Package pdftex.def Info: assets/victoire.png  used on input line 563. on input 
+line 563.
 Package pdftex.def Info: Requested size: 281.05421pt x 158.09299pt on input lin
-e 529.
+e 563.
 
-Underfull \hbox (badness 10000) in paragraph at lines 527--531
-
- []
-
-[19 <./assets/victoire.png>] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 611--612
+Underfull \hbox (badness 10000) in paragraph at lines 561--565
 
  []
 
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 613--614
+[20] [21 <./assets/victoire.png>] [22]
+Underfull \hbox (badness 10000) in paragraph at lines 645--646
 
  []
 
 
-Overfull \hbox (7.4004pt too wide) in paragraph at lines 615--617
+Underfull \hbox (badness 10000) in paragraph at lines 647--648
+
+ []
+
+
+Overfull \hbox (7.4004pt too wide) in paragraph at lines 649--651
 []\OT1/cmr/m/n/10.95 expliquer les dia-logues, conser-ver le contenu tout en l'
 adap-tant etc...donner
  []
 
-[22] [23] (explications.aux) ) 
+[23] [24] [25] (explications.aux) ) 
 Here is how much of TeX's memory you used:
- 4935 strings out of 494953
- 67096 string characters out of 3177379
- 305349 words of memory out of 3000000
- 8189 multiletter control sequences out of 15000+200000
+ 4948 strings out of 494953
+ 67248 string characters out of 3177379
+ 288349 words of memory out of 3000000
+ 8202 multiletter control sequences out of 15000+200000
  10810 words of font info for 38 fonts, out of 3000000 for 9000
  198 hyphenation exceptions out of 8191
- 41i,8n,40p,1107b,1688s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxt
-i10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmtt9.pfb>
-Output written on explications.pdf (26 pages, 410654 bytes).
+ 41i,8n,40p,1107b,1692s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmbxti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc1
+0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmtt9.pfb>
+Output written on explications.pdf (28 pages, 417051 bytes).
 PDF statistics:
- 159 PDF objects out of 1000 (max. 8388607)
+ 165 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  81 words of extra memory for PDF output out of 10000 (max. 10000000)
 

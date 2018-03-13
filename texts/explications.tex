@@ -318,7 +318,41 @@ A chaque tour, en fonction du nombre de points de vie du personnage, la partie c
 \caption{Les trois parties de la barre de vie}
 \end{figure}
 \subsection{Les objets de terrain : Les classes \textit{CustomMap} et \textit{Warp}}
- 
+Cette section regroupe deux petits objets traitant du terrains, d'où leur regroupement.\\
+
+Les customMaps sont des objets qui stockent de l'information de terrain. Ils sont utilisés dans le \textit{terrainManager}. Pour déclarer un objet customMap, il faut utiliser : 
+\begin{lstlisting}[language=JavaScript]
+var myCustomMap = new CustomMap(key,tilesets,layerKeys,music);
+\end{lstlisting} 
+
+Les arguments remplissent les fonctions suivantes : 
+\begin{itemize}
+\item \textbf{key}: Référence de la map sous forme de string.
+\item \textbf{tilesets} : Array contenant le nom des tilesets utilisés pour la map.
+\item \textbf{layerKeys} : Le nom des couches de la map.
+\item \textbf{music} : La référence à la musique associée à la map. Il est automatiquement assigné à undefined si l'argument n'est pas rempli.
+\end{itemize}
+L'argument music n'est pas encore pris en compte par le code car la musique n'a pas encore été créée. Il est présent pour les utilisations futures. \\
+
+Chaque objet CustomMap possède une clé \textit{plus} qui permet une définition externe (via Tiled) de certains paramètres comme les coordonnées des pnjs et celles des warps. Chaque objet possède également deux méthodes permettant d'ajouter des pnjs et des warps aux clés correspondantes.\\
+
+Dans le code conçu initialement, chaque objet CustomMap était dépendant de toutes ses composantes y compris les pnjs et les warps. Le problème étant qu'après avoir intégré la clé \textit{plus}, les pnjs/waprs étaient aussi dépendant de l'objet CustomMap! Donc impossible de créer l'un ou l'autre, d'où la nécessité d'utiliser des méthodes, une fois que tous les objets ont été créés. \\ 
+
+
+Les Warps sont également des objets de données. Voici comment déclarer un warp: 
+
+\begin{lstlisting}[language=JavaScript]
+var myWarp = new Warp(isHouse,toMap,newX,newY,x,y,tileWidth,tileHeight,text);
+\end{lstlisting} 
+Un Warp est une zone rectangulaire qui permet le changement de map lorsque le sprite du joueur l'intersecte. Les arguments pour déclarer un warp exercent les fonctions suivantes : 
+\begin{itemize}
+\item \textbf{isHouse}: Booléen servant à définir si le warp s'active directement ou laisse apparaître un phylactère quand le joueur l'intersecte pour l'activer manuellement.
+\item \textbf{toMap} : Nom de la variable contenant un objet CustomMap pour la nouvelle map où le joueur sera amené.
+\item \textbf{newX,newY} : Les coordonnées où le sprite du joueur est affiché sur la nouvelle map.
+\item \textbf{x,y} : Les coordonnées du haut à gauche du rectangle qui compose l'objet Warp.
+\item \textbf{tileWidth,tileHeight} : La largeur et longueur du rectangle en terme de tile de 32x32 pixels. Pour exprimer un rectangle d'une largeur de 64 pixels, il faut utiliser 2 pour tileWidth.
+\item \textbf{text}: Le texte affiché dans la bulle du personnage si le Warp doit être activé manuellement. Exemple : "Entrer?"
+\end{itemize}
 \subsection{Gestion des dialogues : La classe \textit{dialogManager}}
 %expliquer la police de caractères, la dynamique des choix, l'objet %manager , la syntaxe (les arrays avec les callbacks etc...)
 Tout affichage de texte est géré par la classe \textit{dialogManager} et ses méthodes. 

@@ -25,23 +25,23 @@ class CustomMap {
     addPnjs(args){
         this.pnjs.push(args);
     }
-    createMap(){
-        //object["propName1"] = 22; //INCORABLE
-        // associer un tileset;
-        for(let l in this.tilesets){
-            this.tilemap.addTilesetImage(this.tilesets[l],this.tilesets[l]);
-        }
-        // créer les layers ( new tilemapLayer ou makeLayer)
-        let n = 0;
-        // for(let l of this.layerKeys){
-        //     var str = "layer" + n;
-        //     this.layers[str] = {};
-        //     this.layers[str].layerObject = new Phaser.TilemapLayer(game,this.tilemap,0,0);
-        //     this.layers[str].name = l;
-        //     n++;
-        // }
-
-    }
+    // createMap(){
+    //     //object["propName1"] = 22; //INCORABLE
+    //     // associer un tileset;
+    //     for(let l in this.tilesets){
+    //         this.tilemap.addTilesetImage(this.tilesets[l],this.tilesets[l]);
+    //     }
+    //     // créer les layers ( new tilemapLayer ou makeLayer)
+    //     //let n = 0;
+    //     // for(let l of this.layerKeys){
+    //     //     var str = "layer" + n;
+    //     //     this.layers[str] = {};
+    //     //     this.layers[str].layerObject = new Phaser.TilemapLayer(game,this.tilemap,0,0);
+    //     //     this.layers[str].name = l;
+    //     //     n++;
+    //     // }
+    //
+    // }
 
 
 }
