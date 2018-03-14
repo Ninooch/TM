@@ -1,4 +1,4 @@
-\documentclass[11pt]{article}
+  \documentclass[11pt]{article}
 
 \usepackage[utf8]{inputenc}
 
@@ -607,14 +607,23 @@ Cette méthode initialise tous les composants du terrain. Elle prend en compte 2
 \end{itemize}
 La couche de collision possède toutes les tiles avec lesquelles le joueur doit rentrer en collision. \\
 
-
+Cette méthode crée un objet Phaser Map, puis construit visuellement chaque couche avec les tilesets. Les personnages sont ensuite ajoutés et enfin les warps. Chaque carte affichée est enregistrée sous une clé inaccessible en dehors de la méthode une fois que le décor est posé, d'où la nécessité d'utiliser les CustomMaps.
 \subsubsection{méthode \textit{clearMap()}}
 Cette méthode supprime tous les éléments graphiques de l'écran. Elle réinitialise également les clés \textit{currentLayers}, \textit{currentPnjs} et \textit{currentWarps}.
 \subsubsection{méthode \textit{changeMap()}}
+Cette méthode s'active lorsque le joueur pose le pied sur un warp. 
+Elle crée un fondu enchaîné sur du noir, détruit tout ce qu'il y a a l'écran, reconstruit le nouveau décor puis l'écran noir se fond à nouveau sur le jeu.\\
+
+Lors de la réalisation, le fondu a été programmé en plus des autres méthodes mais il ne marchait qu'à moitié : Même si le personnage bougeait, le rectangle noir qui obstruait la fenêtre de vue restait à la même place! C'est en s'aventurant dans la documentation que des méthodes permettant ces effets ont été découvertes...
 %expliquer les maps,collisions, tilesets,calques, warps , l'objet terrainmanager etc... expliquer le fail avec le tween manager pour le fade in et fade out.
 %expliquer le problème avec les données dans la map et la solution
+\subsection{méthode \textit{update()}}
+Cette méthode établit la collision entre le joueur et l'environnement ainsi que les personnages composants la scène. Elle vérifie aussi les détections d'intersections avec les warps pour afficher si besoin une bulle.
+
+Il y a eu des problèmes avec les bulles, car dans une première version du code, elles étaient constamment supprimées. C'est expliqué par le fait que le warp pénétré n'était pas retenu et que le code vérifiait pour chaque warp présent dans la map si le joueur était dedans. Comme les conditions étaient vérifiées, la bulle était supprimée aussitôt qu'elle était créée. Le problème a été géré en associant la zone de warp à une variable et de vérifier le contenu de cette variable avant de supprimer la bulle.
 \subsection{Gestion des combats : La classe \textit{BattleManager}}
-\subsubsection{méthode \textit{clearMap()}}
+Cette state est responsable des combats du jeu. Elle gère les tours des combats et orchestre les affichages. 
+\subsubsection{méthode \textit{init()}}
 \begin{lstlisting}[language=JavaScript]
 
 \end{lstlisting} 
@@ -635,6 +644,18 @@ Cette méthode supprime tous les éléments graphiques de l'écran. Elle réinit
 
 \end{lstlisting} 
 \subsubsection{méthode \textit{clearMap()}}
+\begin{lstlisting}[language=JavaScript]
+
+\end{lstlisting} 
+\subsubsection{méthode \textit{clearMap()}}
+\begin{lstlisting}[language=JavaScript]
+
+\end{lstlisting} 
+\subsubsection{méthode \textit{clearMap()}}
+\begin{lstlisting}[language=JavaScript]
+
+\end{lstlisting} 
+\subsubsection{Gestions des signaux}
 \begin{lstlisting}[language=JavaScript]
 
 \end{lstlisting} 
@@ -654,7 +675,7 @@ Certains éléments qui ont été programmés mériteraient d'être réécrits a
 \section{Scénario alternatif}
 Cette section va brièvement présenter les idées de bases pour le jeu ainsi que le travail effectué sur le scénario. Ce travail a été réalisé tôt dans la durée du projet, lorsque l'espoir de réaliser un jeu complet était encore à l'horizon. Malheureusement, il ne fait pas encore l'objet de la réalisation en ce moment, mais il servira de canevas pour le futur.\\
 
-%expliquer les dialogues, conserver le contenu tout en l'adaptant etc...donner des exemples de situations alternatives . et le résultat actuel, expliquer la complication lié au temps, le rabotage etc..
+%expliquer les dialogues, conserver le contenu tout en l'adaptant etc...donner des exemples de situations alternatives . et le résultat actuel, expliquer la complication lié au temps, le rabotage etc.. relevé dans le livre
 \section{Conception des assets}
 \subsection{Visuel}
 %logiciels utilisé , techniques(travailler avec des tiles, couches de transparence...)inspiration pour les personnages, dessins originaux etc.. restrictions au niveau du pixel art, base pour cohérence etc...
