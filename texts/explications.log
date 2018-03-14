@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.15)  13 MAR 2018 16:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.15)  14 MAR 2018 23:55
 entering extended mode
 **./explications.tex
 (explications.tex
@@ -845,68 +845,99 @@ n/10.95 precedemment
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 542--543
+Underfull \hbox (badness 10000) in paragraph at lines 541--542
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 546--547
+Underfull \hbox (badness 10000) in paragraph at lines 545--546
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 551--552
+Underfull \hbox (badness 10000) in paragraph at lines 550--551
 
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 553--554
+Underfull \hbox (badness 10000) in paragraph at lines 552--553
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 555--556
+Underfull \hbox (badness 10000) in paragraph at lines 554--555
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 557--558
+Underfull \hbox (badness 10000) in paragraph at lines 556--557
 
  []
 
 <assets/victoire.png, id=112, 803.0pt x 451.6875pt>
 File: assets/victoire.png Graphic file (type png)
 <use assets/victoire.png>
-Package pdftex.def Info: assets/victoire.png  used on input line 563. on input 
-line 563.
+Package pdftex.def Info: assets/victoire.png  used on input line 562. on input 
+line 562.
 Package pdftex.def Info: Requested size: 281.05421pt x 158.09299pt on input lin
-e 563.
+e 562.
 
-Underfull \hbox (badness 10000) in paragraph at lines 561--565
-
- []
-
-[20] [21 <./assets/victoire.png>] [22]
-Underfull \hbox (badness 10000) in paragraph at lines 645--646
+Underfull \hbox (badness 10000) in paragraph at lines 560--564
 
  []
 
+[20] [21 <./assets/victoire.png>]
+Overfull \hbox (0.98546pt too wide) in paragraph at lines 603--604
+\OT1/cmr/m/n/10.95 Cette methode ini-tia-lise tous les com-po-sants du ter-rai
+n. Elle prend en compte
+ []
 
-Underfull \hbox (badness 10000) in paragraph at lines 647--648
+
+Overfull \hbox (2.96835pt too wide) in paragraph at lines 606--607
+[]\OT1/cmr/bx/n/10.95 collision \OT1/cmr/m/n/10.95 : Booleen qui definit si l
+e ter-rain possede une couche nommee
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 608--609
 
  []
 
 
-Overfull \hbox (7.4004pt too wide) in paragraph at lines 649--651
-[]\OT1/cmr/m/n/10.95 expliquer les dia-logues, conser-ver le contenu tout en l'
-adap-tant etc...donner
+Underfull \hbox (badness 10000) in paragraph at lines 614--616
+
  []
 
-[23] [24] [25] (explications.aux) ) 
+[22] [23]
+Underfull \hbox (badness 10000) in paragraph at lines 672--673
+
+ []
+
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 674--675
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 676--677
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 684--685
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 686--687
+
+ []
+
+[25] [26] [27] (explications.aux) ) 
 Here is how much of TeX's memory you used:
  4948 strings out of 494953
  67248 string characters out of 3177379
- 288349 words of memory out of 3000000
+ 291349 words of memory out of 3000000
  8202 multiletter control sequences out of 15000+200000
  10810 words of font info for 38 fonts, out of 3000000 for 9000
  198 hyphenation exceptions out of 8191
@@ -921,9 +952,9 @@ Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiK
 TeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 1/public/amsfonts/cm/cmtt9.pfb>
-Output written on explications.pdf (28 pages, 417051 bytes).
+Output written on explications.pdf (30 pages, 423387 bytes).
 PDF statistics:
- 165 PDF objects out of 1000 (max. 8388607)
+ 171 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
