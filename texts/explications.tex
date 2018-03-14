@@ -502,7 +502,6 @@ Cette méthode fonctionne à l'aide des arguments \textit{texts} et \textit{inde
 \subsubsection{méthode \textit{selection()}}
 \begin{lstlisting}[language=JavaScript]
 selection(texts,index){
-    // alert("selection");
     input.enter.onDown.removeAll(this);
     input.up.onDown.removeAll(this);
     input.down.onDown.removeAll(this);
@@ -564,6 +563,7 @@ Cette méthode sert à afficher progressivement une boîte de dialogue ainsi que
 \centering
 \end{figure}
 \subsection{Gestion du terrain : La classe \textit{TerrainManager}}
+Le \textit{terrainManager} est un objet qui grâce à ses méthodes, gère les changement de terrains.
 \subsubsection{méthode \textit{initMap()}}
 \begin{lstlisting}[language=JavaScript]
 
@@ -600,13 +600,19 @@ Cette méthode sert à afficher progressivement une boîte de dialogue ainsi que
         }
     }
 \end{lstlisting} 
-\subsubsection{méthode \textit{clearMap()}}
-\begin{lstlisting}[language=JavaScript]
+Cette méthode initialise tous les composants du terrain. Elle prend en compte 2 arguments :
+\begin{itemize}
+\item \textbf{map} : L'objet CustomMap qui contient les données du terrain que l'on souhaite afficher. 
+\item \textbf{collision} : Booléen qui définit si le terrain possède une couche nommée "Collision".
+\end{itemize}
+La couche de collision possède toutes les tiles avec lesquelles le joueur doit rentrer en collision. \\
 
-\end{lstlisting} 
+
+\subsubsection{méthode \textit{clearMap()}}
+Cette méthode supprime tous les éléments graphiques de l'écran. Elle réinitialise également les clés \textit{currentLayers}, \textit{currentPnjs} et \textit{currentWarps}.
 \subsubsection{méthode \textit{changeMap()}}
 %expliquer les maps,collisions, tilesets,calques, warps , l'objet terrainmanager etc... expliquer le fail avec le tween manager pour le fade in et fade out.
-%expliquer le problème avec les données dans la map et la solution.
+%expliquer le problème avec les données dans la map et la solution
 \subsection{Gestion des combats : La classe \textit{BattleManager}}
 \subsubsection{méthode \textit{clearMap()}}
 \begin{lstlisting}[language=JavaScript]
@@ -642,19 +648,26 @@ Cette méthode sert à afficher progressivement une boîte de dialogue ainsi que
 %\subsection{Publication}
 %système de sauvegarde , gitpages
 \subsection{En résumé}
-Beaucoup de code pour au final, un petit rendu. En effet, programmer un jeu de type RPG est beaucoup plus compliqué que prévu. Chaque fonction pour la progression du jeu est unique et il est très difficile d'avoir ne serait-ce qu'un minimum de scénario. Le niveau de complexité est déjà assez élevé rien qu'en programmant un long dialogue qui ne sera affiché qu'une fois au cours du jeu, comme par exemple les quelques lignes de Pangloss. Ce à quoi mon projet s'approche le plus est peut-être une situation de base inspirée du premier chapitre de Candide, mais il est loin d'être proche d'un jeu. Pourtant tout ce qui a été programmé est indispensable pour chaque jeu vidéo de type RPG car ce sont les éléments de base pour le construire. \\
+Beaucoup de code pour au final, un petit rendu. En effet, programmer un jeu de type RPG est beaucoup plus compliqué que prévu. Chaque fonction pour la progression du jeu est unique et il est très difficile d'avoir ne serait-ce qu'un minimum de scénario. Le niveau de complexité est déjà assez élevé rien qu'en programmant un long dialogue qui ne sera affiché qu'une fois au cours du jeu, comme par exemple les quelques lignes de Pangloss. Ce à quoi mon projet s'approche le plus est peut-être une situation de base inspirée du premier chapitre de Candide, mais il est loin d'être proche d'un jeu. Pourtant tout ce qui a été programmé est indispensable pour chaque jeu vidéo de type RPG car ce sont les éléments de base pour le construire. Le code est quelque chose d'invisible pour le joueur et il peut être très frustrant de constater qu'après tant de code écrit, seul un petit résultat est affiché à l'écran. \\
 
-Certains éléments qui ont été programmés mériteraient d'être réécrits avec les connaissances acquises lors de ce projets. En effet, les premiers programmes ont été créés en découvrant encore Phaser, ils n'exploitent donc pas forcément toutes les fonctionnalités Phaser qui permettent parfois d'avoir un code simple, propre et efficace.\\
+Certains éléments qui ont été programmés mériteraient d'être réécrits avec les connaissances acquises lors de ce projet. En effet, les premiers programmes ont été créés en découvrant encore Phaser, ils n'exploitent donc pas forcément toutes les fonctionnalités Phaser qui permettent parfois d'avoir un code plus simple, propre et efficace.\\
 \section{Scénario alternatif}
-expliquer les dialogues, conserver le contenu tout en l'adaptant etc...donner des exemples de situations alternatives . et le résultat actuel
-expliquer la complication lié au temps, le rabotage etc..
+Cette section va brièvement présenter les idées de bases pour le jeu ainsi que le travail effectué sur le scénario. Ce travail a été réalisé tôt dans la durée du projet, lorsque l'espoir de réaliser un jeu complet était encore à l'horizon. Malheureusement, il ne fait pas encore l'objet de la réalisation en ce moment, mais il servira de canevas pour le futur.\\
+
+%expliquer les dialogues, conserver le contenu tout en l'adaptant etc...donner des exemples de situations alternatives . et le résultat actuel, expliquer la complication lié au temps, le rabotage etc..
 \section{Conception des assets}
 \subsection{Visuel}
 %logiciels utilisé , techniques(travailler avec des tiles, couches de transparence...)inspiration pour les personnages, dessins originaux etc.. restrictions au niveau du pixel art, base pour cohérence etc...
 \subsubsection{Police personnalisée}
 %comment on a fait
+La police du jeu est une police conçue pour le projet. En effet, Phaser permet d'afficher du texte de manière assez simple avec des polices standards, le problème est que les polices décadrent avec l'ambiance du jeu. Phaser permet aussi d'afficher du texte avec des polices bitmap. Il était également possible d'en choisir une déjà existante et de créditer son auteur mais aucune police ne correspondait aux attentes. La meilleure solution était donc de créer une police personnalisée, qui intègrerait sans problème le style graphique du jeu. \\
+
+Pour créer la police, deux sites ont étés utilisés, calligraphr.com ainsi que kvazars.com/littera.\\ Calligraphr permet de télécharger un modèle à remplir avec les lettres souhaitées puis de convertir ensuite ces images en police de format trueTypeFont. Grâce à Littera, il est ensuite possible de convertir cette police en police bitmap pour être utilisée dans le jeu. \\
+
+Un des problèmes rencontrés en cours de réalisation était la précision du rendu. Il fallait utiliser des équivalent de pixels, des carrés de 11X11px pour avoir un rendu pixelisé car les modèles de Calligraph font la grandeur d'une feuille A4. \\
+Un autre problème était le rendu avec Littéra. En effet, le site a appliqué un filtre d'anti-alias automatiquement sur les lettres, ce qui gâchait l'effet du pixel art. Il a donc fallu retoucher toute les lettres à la main sur la feuille finale. Au cours de la réalisation, plusieurs lettres ont du être ajoutées, ce qui a eut comme effet de modifier la disposition des lettres sur la feuille finale et donc de devoir recommencer le travail fastidieux de les redessiner. 
 \subsubsection{Sprites de dialogues}
-techniques(couches, dessins - restrictions), exemple 
+techniques(couches, dessins - restrictions), exemple , projet noir blanc
 \subsubsection{Sprites d'overworld}
 techniques, exemples
 \subsubsection{Tilesets}
