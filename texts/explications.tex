@@ -7,6 +7,7 @@
 \usepackage[francais]{babel}
 \usepackage{listings}
 \usepackage{float}
+\usepackage[toc,page]{appendix}
 
 %https://mysnippets443.wordpress.com/2015/11/28/latex-insert-javascript-code-with-lstlisting-package/
 
@@ -85,6 +86,11 @@ captionpos=b
 
 
 \begin{document}
+\renewcommand{\appendixtocname}{Annexes}
+\renewcommand{\appendixpagename}{Annexes}
+\renewcommand{\refname}{Sources}
+
+
 
 \title{Candide 2.0 ou l'optimisme en jeu vidéo }
 \author{Nina Ionescu 3mg01 \\ Mentor : Jean-Marc Ledermann \\ Lycée Denis de Rougemont}
@@ -113,6 +119,7 @@ Afin d'avoir une meilleure compréhension de ce document, voici un lexique. \\
 \item \textbf{overworld}: Monde extérieur en français. Désigne l'ensemble de maps constituant le jeu.
 \item \textbf{pixel art} : Style graphique inspiré des jeux rétros où les assets sont dessinés à la main en respectant certains formats.
 \item \textbf{pnj}: Abréviation de personnage non-jouable.
+\item \textbf{Phaser} : nom de la librairie utilisée par ce projet. Un objet Phaser est un objet créé à partir des classes de la librairie.
 \item \textbf{sprite}: Image du jeu en partie transparente capable de déplacement.
 \item \textbf{spritesheet}: Image regroupant les frames d'animation d'un sprite.
 \item \textbf{tile} : Carreau en français; petite image carrée à texture répétée.
@@ -707,10 +714,13 @@ Encore une fois, beaucoup de travail pour un petit résultat. Le pixel art deman
 %code à simplifier : signaux
 % ce que ça a apporté
 % ouverture : continuation du projet
-\section{Sources}
-\section{Annexes}%mettre tous les assets finis
-\begin{lstlisting}[language=JavaScript]
 
-\end{lstlisting} 
+\begin{thebibliography}{9}
+\bibitem{nomPourCiter}
+\end{thebibliography}
 
+\begin{appendices}
+\end{appendices}
 \end{document}
+
+

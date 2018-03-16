@@ -67,5 +67,4 @@
 \contentsline {subsection}{\numberline {6.1}Nina Ionescu ou l'optimisme}{27}
 \contentsline {subsection}{\numberline {6.2}Exp\IeC {\'e}rience gagn\IeC {\'e}e}{27}
 \contentsline {subsection}{\numberline {6.3}Continuation du projet}{27}
-\contentsline {section}{\numberline {7}Sources}{27}
-\contentsline {section}{\numberline {8}Annexes}{27}
+\contentsline {section}{Annexes}{27}

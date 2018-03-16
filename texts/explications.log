@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.15)  14 MAR 2018 23:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.15)  16 MAR 2018 13:15
 entering extended mode
 **./explications.tex
 (explications.tex
@@ -454,6 +454,12 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks23
 \@floatcapt=\box29
 )
+("C:\Program Files\MiKTeX 2.9\tex\latex\appendix\appendix.sty"
+Package: appendix 2009/09/02 v1.2b extra appendix facilities
+\c@@pps=\count105
+\c@@ppsavesec=\count106
+\c@@ppsaveapp=\count107
+)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\color.sty"
 Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
 
@@ -465,30 +471,30 @@ Package color Info: Driver file: pdftex.def on input line 147.
 (explications.aux)
 \openout1 = `explications.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
  ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count105
+\scratchcounter=\count108
 \scratchdimen=\dimen112
 \scratchbox=\box30
-\nofMPsegments=\count106
-\nofMParguments=\count107
+\nofMPsegments=\count109
+\nofMParguments=\count110
 \everyMPshowfont=\toks24
-\MPscratchCnt=\count108
+\MPscratchCnt=\count111
 \MPscratchDim=\dimen113
-\MPnumerator=\count109
-\makeMPintoPDFobject=\count110
+\MPnumerator=\count112
+\makeMPintoPDFobject=\count113
 \everyMPtoPDFconversion=\toks25
 ) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -542,29 +548,29 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-LaTeX Info: Redefining \degres on input line 87.
-LaTeX Info: Redefining \dots on input line 87.
-LaTeX Info: Redefining \up on input line 87.
+LaTeX Info: Redefining \degres on input line 88.
+LaTeX Info: Redefining \dots on input line 88.
+LaTeX Info: Redefining \up on input line 88.
 
 
 Package french.ldf Warning: OT1 encoding should not be used for French.
 (french.ldf)                Add \usepackage[T1]{fontenc} to the preamble
-(french.ldf)                of your document; reported on input line 87.
+(french.ldf)                of your document; reported on input line 88.
 
-\c@lstlisting=\count111
+\c@lstlisting=\count114
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 93.
+(Font)              <12> on input line 99.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 93.
+(Font)              <8> on input line 99.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 93.
+(Font)              <6> on input line 99.
 <assets/title.png, id=1, 301.125pt x 169.63374pt>
 File: assets/title.png Graphic file (type png)
 <use assets/title.png>
-Package pdftex.def Info: assets/title.png  used on input line 94. on input line
- 94.
+Package pdftex.def Info: assets/title.png  used on input line 100. on input lin
+e 100.
 Package pdftex.def Info: Requested size: 301.12425pt x 169.63332pt on input lin
-e 94.
+e 100.
 [1
 
 {C:/Users/Nina/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./assets/tit
@@ -579,56 +585,56 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 <assets/ecranTitre.png, id=20, 803.0pt x 451.6875pt>
 File: assets/ecranTitre.png Graphic file (type png)
 <use assets/ecranTitre.png>
-Package pdftex.def Info: assets/ecranTitre.png  used on input line 103. on inpu
-t line 103.
+Package pdftex.def Info: assets/ecranTitre.png  used on input line 109. on inpu
+t line 109.
 Package pdftex.def Info: Requested size: 264.99081pt x 149.05733pt on input lin
-e 103.
+e 109.
 
-Overfull \hbox (6.33582pt too wide) in paragraph at lines 107--108
+Overfull \hbox (6.33582pt too wide) in paragraph at lines 113--114
 []\OT1/cmr/m/n/10.95 Afin d'avoir une meilleure comprehension de ce do-cu-ment
 , voici un lexique. 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 107--108
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
 
  []
 
-
-Overfull \hbox (7.4004pt too wide) in paragraph at lines 126--128
+[1 <./assets/ecranTitre.png>]
+Overfull \hbox (7.4004pt too wide) in paragraph at lines 133--135
 []\OT1/cmr/m/n/10.95 expliquer les dia-logues, conser-ver le contenu tout en l'
 adap-tant etc...donner
  []
 
-[1 <./assets/ecranTitre.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 129--130
+
+Underfull \hbox (badness 10000) in paragraph at lines 136--137
 
  []
 
 <assets/cunegondeScn.png, id=25, 803.0pt x 451.6875pt>
 File: assets/cunegondeScn.png Graphic file (type png)
 <use assets/cunegondeScn.png>
-Package pdftex.def Info: assets/cunegondeScn.png  used on input line 141. on in
-put line 141.
+Package pdftex.def Info: assets/cunegondeScn.png  used on input line 148. on in
+put line 148.
 Package pdftex.def Info: Requested size: 264.99081pt x 149.05733pt on input lin
-e 141.
+e 148.
 [2]
 <assets/panglossHead.png, id=29, 82.05656pt x 94.10156pt>
 File: assets/panglossHead.png Graphic file (type png)
 <use assets/panglossHead.png>
-Package pdftex.def Info: assets/panglossHead.png  used on input line 148. on in
-put line 148.
+Package pdftex.def Info: assets/panglossHead.png  used on input line 155. on in
+put line 155.
 Package pdftex.def Info: Requested size: 65.64532pt x 75.28134pt on input line 
-148.
+155.
 <assets/candide.png, id=30, 25.59563pt x 51.19125pt>
 File: assets/candide.png Graphic file (type png)
 <use assets/candide.png>
-Package pdftex.def Info: assets/candide.png  used on input line 153. on input l
-ine 153.
+Package pdftex.def Info: assets/candide.png  used on input line 160. on input l
+ine 160.
 Package pdftex.def Info: Requested size: 33.27429pt x 66.5486pt on input line 1
-53.
+60.
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--155
+Underfull \hbox (badness 10000) in paragraph at lines 158--162
 
  []
 
@@ -636,77 +642,77 @@ Underfull \hbox (badness 10000) in paragraph at lines 151--155
 <assets/chateau.png, id=36, 106.3975pt x 225.84375pt>
 File: assets/chateau.png Graphic file (type png)
 <use assets/chateau.png>
-Package pdftex.def Info: assets/chateau.png  used on input line 158. on input l
-ine 158.
+Package pdftex.def Info: assets/chateau.png  used on input line 165. on input l
+ine 165.
 Package pdftex.def Info: Requested size: 106.39723pt x 225.84319pt on input lin
-e 158.
+e 165.
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--173
+Underfull \hbox (badness 10000) in paragraph at lines 179--180
 
  []
 
 [4 <./assets/candide.png> <./assets/chateau.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 177--178
+Underfull \hbox (badness 10000) in paragraph at lines 184--185
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 180--181
+Underfull \hbox (badness 10000) in paragraph at lines 187--188
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 182--183
+Underfull \hbox (badness 10000) in paragraph at lines 189--190
 
  []
 
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 184.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 191.
 [5]
 <assets/boutons.png, id=48, 722.7pt x 501.875pt>
 File: assets/boutons.png Graphic file (type png)
 <use assets/boutons.png>
-Package pdftex.def Info: assets/boutons.png  used on input line 208. on input l
-ine 208.
+Package pdftex.def Info: assets/boutons.png  used on input line 215. on input l
+ine 215.
 Package pdftex.def Info: Requested size: 216.81166pt x 150.56366pt on input lin
-e 208.
+e 215.
  [6 <./assets/boutons.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 229--231
+Underfull \hbox (badness 10000) in paragraph at lines 236--238
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--233
+Underfull \hbox (badness 10000) in paragraph at lines 239--240
 
  []
 
 <assets/introScreen.png, id=54, 803.0pt x 451.6875pt>
 File: assets/introScreen.png Graphic file (type png)
 <use assets/introScreen.png>
-Package pdftex.def Info: assets/introScreen.png  used on input line 238. on inp
-ut line 238.
+Package pdftex.def Info: assets/introScreen.png  used on input line 245. on inp
+ut line 245.
 Package pdftex.def Info: Requested size: 264.99081pt x 149.05733pt on input lin
-e 238.
+e 245.
 [7]
 <assets/candideSprite.png, id=58, 140.525pt x 269.005pt>
 File: assets/candideSprite.png Graphic file (type png)
 <use assets/candideSprite.png>
-Package pdftex.def Info: assets/candideSprite.png  used on input line 245. on i
-nput line 245.
+Package pdftex.def Info: assets/candideSprite.png  used on input line 252. on i
+nput line 252.
 Package pdftex.def Info: Requested size: 70.26231pt x 134.50217pt on input line
- 245.
+ 252.
 
-Underfull \hbox (badness 10000) in paragraph at lines 251--252
+Underfull \hbox (badness 10000) in paragraph at lines 258--259
 
  []
 
 [8 <./assets/introScreen.png> <./assets/candideSprite.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 262--263
+Underfull \hbox (badness 10000) in paragraph at lines 269--270
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 277--278
+Underfull \hbox (badness 10000) in paragraph at lines 284--285
 
  []
 
@@ -714,98 +720,98 @@ Underfull \hbox (badness 10000) in paragraph at lines 277--278
 <assets/bulleDialog.png, id=68, 154.32657pt x 203.25937pt>
 File: assets/bulleDialog.png Graphic file (type png)
 <use assets/bulleDialog.png>
-Package pdftex.def Info: assets/bulleDialog.png  used on input line 284. on inp
-ut line 284.
+Package pdftex.def Info: assets/bulleDialog.png  used on input line 291. on inp
+ut line 291.
 Package pdftex.def Info: Requested size: 77.16309pt x 101.62943pt on input line
- 284.
+ 291.
 <assets/bulleMaison.png, id=69, 154.32657pt x 159.59625pt>
 File: assets/bulleMaison.png Graphic file (type png)
 <use assets/bulleMaison.png>
-Package pdftex.def Info: assets/bulleMaison.png  used on input line 285. on inp
-ut line 285.
+Package pdftex.def Info: assets/bulleMaison.png  used on input line 292. on inp
+ut line 292.
 Package pdftex.def Info: Requested size: 77.16309pt x 79.79791pt on input line 
-285.
+292.
  [10 <./assets/bulleDialog.png> <./assets/bulleMaison.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 303--304
+Underfull \hbox (badness 10000) in paragraph at lines 310--311
 
  []
 
 
-Overfull \hbox (20.0745pt too wide) in paragraph at lines 305--307
+Overfull \hbox (20.0745pt too wide) in paragraph at lines 312--314
 \OT1/cmr/m/n/10.95 Ces methodes sont uti-lisees dans la methode \OT1/cmr/m/i
 t/10.95 turn(cible)\OT1/cmr/m/n/10.95 , qui choi-sit aleatoirement
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 305--307
+Underfull \hbox (badness 10000) in paragraph at lines 312--314
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 310--311
+Underfull \hbox (badness 10000) in paragraph at lines 317--318
 
  []
 
 <assets/health.png, id=76, 117.43875pt x 60.225pt>
 File: assets/health.png Graphic file (type png)
 <use assets/health.png>
-Package pdftex.def Info: assets/health.png  used on input line 315. on input li
-ne 315.
+Package pdftex.def Info: assets/health.png  used on input line 322. on input li
+ne 322.
 Package pdftex.def Info: Requested size: 117.43845pt x 60.22484pt on input line
- 315.
+ 322.
 <assets/healthP2.png, id=77, 55.20625pt x 16.06pt>
 File: assets/healthP2.png Graphic file (type png)
 <use assets/healthP2.png>
-Package pdftex.def Info: assets/healthP2.png  used on input line 316. on input 
-line 316.
+Package pdftex.def Info: assets/healthP2.png  used on input line 323. on input 
+line 323.
 Package pdftex.def Info: Requested size: 55.2061pt x 16.05995pt on input line 3
-16.
+23.
 <assets/healthBar.png, id=78, 183.68625pt x 60.225pt>
 File: assets/healthBar.png Graphic file (type png)
 <use assets/healthBar.png>
-Package pdftex.def Info: assets/healthBar.png  used on input line 317. on input
- line 317.
+Package pdftex.def Info: assets/healthBar.png  used on input line 324. on input
+ line 324.
 Package pdftex.def Info: Requested size: 183.68578pt x 60.22484pt on input line
- 317.
+ 324.
 
-Overfull \hbox (1.19699pt too wide) in paragraph at lines 315--318
+Overfull \hbox (1.19699pt too wide) in paragraph at lines 322--325
 [][] [] [] 
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 321--322
+Underfull \hbox (badness 10000) in paragraph at lines 328--329
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 335--336
+Underfull \hbox (badness 10000) in paragraph at lines 342--343
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 337--338
+Underfull \hbox (badness 10000) in paragraph at lines 344--345
 
  []
 
 
-Overfull \hbox (7.97832pt too wide) in paragraph at lines 339--340
+Overfull \hbox (7.97832pt too wide) in paragraph at lines 346--347
 []\OT1/cmr/m/n/10.95 Dans le code concu ini-tia-le-ment, chaque ob-jet Cus-tom
 -Map etait dependant
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 339--340
+Underfull \hbox (badness 10000) in paragraph at lines 346--347
 
  []
 
 [12 <./assets/health.png> <./assets/healthP2.png> <./assets/healthBar.png>]
-Overfull \hbox (10.76236pt too wide) in paragraph at lines 358--360
+Overfull \hbox (10.76236pt too wide) in paragraph at lines 365--367
 []\OT1/cmr/m/n/10.95 Tout af-fi-chage de texte est gere par la classe \OT1/cm
 r/m/it/10.95 dia-log-Ma-na-ger \OT1/cmr/m/n/10.95 et ses methodes.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 366--367
+Underfull \hbox (badness 10000) in paragraph at lines 373--374
 
  []
 
@@ -813,133 +819,133 @@ Underfull \hbox (badness 10000) in paragraph at lines 366--367
 <assets/choix.png, id=91, 803.0pt x 451.6875pt>
 File: assets/choix.png Graphic file (type png)
 <use assets/choix.png>
-Package pdftex.def Info: assets/choix.png  used on input line 378. on input lin
-e 378.
+Package pdftex.def Info: assets/choix.png  used on input line 385. on input lin
+e 385.
 Package pdftex.def Info: Requested size: 264.99081pt x 149.05733pt on input lin
-e 378.
+e 385.
  [14 <./assets/choix.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 433--435
+Underfull \hbox (badness 10000) in paragraph at lines 440--442
 
  []
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 442--443
+Underfull \hbox (badness 10000) in paragraph at lines 449--450
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 444--446
+Underfull \hbox (badness 10000) in paragraph at lines 451--453
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 447--448
+Underfull \hbox (badness 10000) in paragraph at lines 454--455
 
  []
 
 [16] [17]
-Overfull \hbox (4.61375pt too wide) in paragraph at lines 500--501
+Overfull \hbox (4.61375pt too wide) in paragraph at lines 507--508
 \OT1/cmr/m/n/10.95 Cette methode fonc-tionne a l'aide des ar-gu-ments \OT1/cm
 r/m/it/10.95 texts \OT1/cmr/m/n/10.95 et \OT1/cmr/m/it/10.95 in-dex \OT1/cmr/m/
 n/10.95 precedemment
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 541--542
+Underfull \hbox (badness 10000) in paragraph at lines 548--549
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 545--546
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 550--551
-
- []
-
-[19]
 Underfull \hbox (badness 10000) in paragraph at lines 552--553
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 554--555
+Underfull \hbox (badness 10000) in paragraph at lines 557--558
+
+ []
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 559--560
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 556--557
+Underfull \hbox (badness 10000) in paragraph at lines 561--562
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 563--564
 
  []
 
 <assets/victoire.png, id=112, 803.0pt x 451.6875pt>
 File: assets/victoire.png Graphic file (type png)
 <use assets/victoire.png>
-Package pdftex.def Info: assets/victoire.png  used on input line 562. on input 
-line 562.
+Package pdftex.def Info: assets/victoire.png  used on input line 569. on input 
+line 569.
 Package pdftex.def Info: Requested size: 281.05421pt x 158.09299pt on input lin
-e 562.
+e 569.
 
-Underfull \hbox (badness 10000) in paragraph at lines 560--564
+Underfull \hbox (badness 10000) in paragraph at lines 567--571
 
  []
 
 [20] [21 <./assets/victoire.png>]
-Overfull \hbox (0.98546pt too wide) in paragraph at lines 603--604
+Overfull \hbox (0.98546pt too wide) in paragraph at lines 610--611
 \OT1/cmr/m/n/10.95 Cette methode ini-tia-lise tous les com-po-sants du ter-rai
 n. Elle prend en compte
  []
 
 
-Overfull \hbox (2.96835pt too wide) in paragraph at lines 606--607
+Overfull \hbox (2.96835pt too wide) in paragraph at lines 613--614
 []\OT1/cmr/bx/n/10.95 collision \OT1/cmr/m/n/10.95 : Booleen qui definit si l
 e ter-rain possede une couche nommee
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 608--609
+Underfull \hbox (badness 10000) in paragraph at lines 615--616
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 614--616
+Underfull \hbox (badness 10000) in paragraph at lines 621--623
 
  []
 
 [22] [23]
-Underfull \hbox (badness 10000) in paragraph at lines 672--673
+Underfull \hbox (badness 10000) in paragraph at lines 679--680
 
  []
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 674--675
+Underfull \hbox (badness 10000) in paragraph at lines 681--682
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 676--677
+Underfull \hbox (badness 10000) in paragraph at lines 683--684
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 684--685
+Underfull \hbox (badness 10000) in paragraph at lines 691--692
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 686--687
+Underfull \hbox (badness 10000) in paragraph at lines 693--694
 
  []
 
 [25] [26] [27] (explications.aux) ) 
 Here is how much of TeX's memory you used:
- 4948 strings out of 494953
- 67248 string characters out of 3177379
- 291349 words of memory out of 3000000
- 8202 multiletter control sequences out of 15000+200000
- 10810 words of font info for 38 fonts, out of 3000000 for 9000
+ 5050 strings out of 494953
+ 68718 string characters out of 3177379
+ 292749 words of memory out of 3000000
+ 8301 multiletter control sequences out of 15000+200000
+ 11416 words of font info for 40 fonts, out of 3000000 for 9000
  198 hyphenation exceptions out of 8191
  41i,8n,40p,1107b,1692s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/pub
@@ -952,7 +958,7 @@ Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiK
 TeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 1/public/amsfonts/cm/cmtt9.pfb>
-Output written on explications.pdf (30 pages, 423387 bytes).
+Output written on explications.pdf (30 pages, 423671 bytes).
 PDF statistics:
  171 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
