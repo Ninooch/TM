@@ -7,7 +7,22 @@ function setDialog(langue){
         globals.dialogs.intro = [["Ce jeu se joue à l'aide des touches directionnelles et de la touche enter. Appuyez sur entrer pour continuer.",function(){globals.dialogManager.stop();globals.dialogs.intro.currentIndex=1;globals.dialogManager.desc(globals.dialogs.intro);}],["Il y avait en Westphalie, dans le château de monsieur le Baron de Thunder-Then-Tronckh, un jeune garçon à qui la nature avait donné les moeurs les plus douces...",function(){game.state.start("game");gameRef.introDone=true;}]];
         globals.dialogs.pnj1Ch1 = ["Je suis le jardinier de monseigneur le baron et de madame son épouse."];
         //["Ce jeu se joue à l'aide des touches directionnelles et de la touche enter. Appuyez sur entrer pour continuer.",function(){this.currentIndex=1;}]
-        globals.dialogs.pnjTestDialogs = [["bonjour! je suis un test . tu peux choisir entre un et deux.",["combat","option deux"],[function(){globals.battleData.set.ennemy1 = globals.pnjs.martin2; globals.battleData.set.helper = globals.pnjs.martin2; globals.battleData.set.player = globals.player;globals.battleData.set.ennemy2 = globals.pnjs.martin3; globals.pnjs.martin2.startCombat();},function(){globals.dialogManager.stop(true,false);globals.pnjs.martin2.currentIndex = 2;globals.dialogManager.startDialog(globals.pnjs.martin2)}]],"j'affirme que tu as bien choisi l'option une","j'affirme que tu as bien choisi l'option deux"];
+        globals.dialogs.pnjTestDialogs = [["Bonjour Candide! Souhaiterais-tu t'entraîner au combat ?",["Combat !","Non merci"],
+        [function(){
+            globals.battleData.set.ennemy1 = globals.pnjs.martin2;
+            //globals.battleData.set.helper = globals.pnjs.martin2;
+            globals.battleData.set.player = globals.player;
+            //globals.battleData.set.ennemy2 = globals.pnjs.martin3;
+            globals.pnjs.martin2.startCombat();}
+            ,function(){
+                globals.dialogManager.stop(true,false);
+                globals.pnjs.martin2.currentIndex = 2;
+                ;globals.dialogManager.startDialog(globals.pnjs.martin2)
+            }]
+        ],["Très bien, remettons cela pour une prochaine fois.",function(){
+            globals.dialogManager.stop(true,true);
+            globals.pnjs.martin2.currentIndex = 0;
+        }]];
         globals.dialogs.pangloss =[
             ["Oh Candide, bonjour! Viens, tu arrives à point nommé pour ma bénéfique leçon de métaphysico-théologo-cosmonigologie.",function(){
                 globals.pnjs.pangloss.currentIndex=1;
@@ -47,12 +62,29 @@ function setDialog(langue){
             globals.dialogManager.stop(true,false);
             globals.dialogManager.startDialog(globals.pnjs.cunegonde);}
         ],
-    ["...", function(){
-        globals.pnjs.cunegonde.currentIndex = 2;
-        globals.dialogManager.stop(true,false);
-        globals.dialogManager.startDialog(globals.pnjs.cunegonde);}
-    ],
-    "Tu sais, Candide, j'aime bien la science... Et je me suis dit qu'on pourrait essayer de comprendre ensemble ce que c'est, une raison suffisante..."];
+        ["...", function(){
+            globals.pnjs.cunegonde.currentIndex = 2;
+            globals.dialogManager.stop(true,false);
+            globals.dialogManager.startDialog(globals.pnjs.cunegonde);}
+        ],
+        "Tu sais, Candide, j'aime bien la science... Et je me suis dit qu'on pourrait essayer de comprendre ensemble ce que c'est, une raison suffisante..."];
+
+        globals.dialogs.endDemo = [["Merci d'avoir joué à l'ébauche de Candide 2.0 ou l'optimisme en jeu vidéo. Bien que bref, j'espère que le moment passé sur ce projet fut agréable. A bientôt! ",
+        function(){
+            globals.dialogManager.stop();
+            let title = game.add.image(250,180,"title");
+            let tween = game.add.tween(title).from({alpha:0},800, Phaser.Easing.Linear.None,true,1160);
+
+        } ]];
+
+        globals.dialogs.paquette = [
+            ["Bonjour Candide! Regarde, j'ai un message que l'on m'a confié à te remettre.",function(){
+                game.state.start("txt",true,false,
+                function(){
+                    globals.dialogManager.desc(globals.dialogs.endDemo);
+                });
+            }]
+        ];
 
 
         globals.battleData.text = {

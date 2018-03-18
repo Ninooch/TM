@@ -31,6 +31,7 @@ var preloadState = {
         game.load.image("health","assets/sprites/game/health.png");
         game.load.spritesheet("healthP2","assets/sprites/game/healthP2.png",11,16);
         game.load.audio("campanella","assets/musiques/paganiniCampanella.mp3");
+        game.load.image("title","assets/sprites/game/title.png");
         //tilemaps
         //game.load.tilemap("testmap","assets/maps/test.json",null,Phaser.Tilemap.TILED_JSON);
         //game.load.tilemap("testmap2","assets/maps/test2.json",null,Phaser.Tilemap.TILED_JSON);
@@ -53,7 +54,8 @@ var preloadState = {
         game.load.spritesheet("panglossFaceAnimation","assets/sprites/faces_animations/panglossFaceAnimation.png",110,130);
         game.load.spritesheet("pangloss","assets/sprites/sprite_animations/panglossSprite.png",35,67);
         game.load.spritesheet("animationBase","assets/sprites/faces_animations/base.png",110,130);
-
+        game.load.spritesheet("paquette","assets/sprites/sprite_animations/paquetteBase.png",35,67);
+        game.load.spritesheet("paquetteFaceAnimation","assets/sprites/faces_animations/paquetteFaceAnimation.png",110,130);
 
 
 
