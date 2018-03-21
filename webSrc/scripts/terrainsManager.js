@@ -21,7 +21,7 @@ class TerrainManager {
 
         //détruire les pnjs
         for(let l in this.currentPnjs){
-            this.currentPnjs[l].destroy();
+            this.currentPnjs[l].kill();
         }
         this.currentPnjs = [];
         this.currentWarps = [];
@@ -56,7 +56,13 @@ class TerrainManager {
         this.currentLayers[0].resizeWorld();
 
         for(let l in map.pnjs){
-            game.add.existing(map.pnjs[l]);
+            if(!map.pnjs[l].alive){
+                map.pnjs[l].revive();
+                map.pnjs[l].bringToTop();
+            }
+                game.add.existing(map.pnjs[l]);
+
+
             this.currentPnjs.push(map.pnjs[l]);
         }
         for(let l in map.warps){
@@ -78,6 +84,11 @@ class TerrainManager {
 
     update(){
         game.physics.arcade.collide(globals.player,this.collision);
+
+        for(let l in this.currentPnjs){
+            console.log(this.currentPnjs[l].bulleIsOnScreen);
+            this.currentPnjs[l].dialUpdate();
+        }
 
         for(let l in this.currentWarps){
             if(checkPnjOverlap(this.currentWarps[l],globals.player)){

@@ -230,9 +230,9 @@ selection(texts,index){
 }
 
 startDialog(pnj){
+    pnj.canBulle = false;
     this.pnj = pnj;
     pnj.destroyBulle();
-    pnj.canBulle = false;
     pnj.createFaceAnimation(); // pour pouvoir utiliser l'animation du pnj avec add.existing
 
     this.start(); //important de mettre start() avant parce que sinon this.dialbox n'existe pas !!!

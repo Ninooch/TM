@@ -1,5 +1,5 @@
 class CustomMap {
-    constructor(key,tilesets,layerKeys,music){
+    constructor(key,tilesets,layerKeys,music,fonctionInit){
 
         this.key = key;
         this.tilemap = game.add.tilemap(key);
@@ -11,6 +11,8 @@ class CustomMap {
         this.tilesets = tilesets;
 
         this.layerKeys = layerKeys;
+
+        this.fonctionInit = fonctionInit;
     }
     addWarps(args){
         this.warps.push(args);

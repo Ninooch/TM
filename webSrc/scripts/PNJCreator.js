@@ -36,7 +36,7 @@ destroyBulle(){ // ça marche
     this.bulle.destroy();
 }
 
-update(){
+dialUpdate(){
     game.physics.arcade.collide(globals.player,this);
 
     if(this.canBulle){
@@ -44,20 +44,22 @@ update(){
             // alert("Bulle");
             this.createBulle();
         }
-        else if (!checkPnjOverlap(this,globals.player) && this.bulleIsOnScreen){
-            this.destroyBulle();
-        }
+    }
 
-        if(this.bulleIsOnScreen && !globals.dialogManager.onscreen){
-            if(input.enter.isDown){
-                //alert("you typed enter");
-                //dialogManager.start();
-                globals.dialogManager.startDialog(this);
-            }
+    if(!checkPnjOverlap(this,globals.player) && this.bulleIsOnScreen){
+        this.destroyBulle();
+    }
+
+    if(this.bulleIsOnScreen && !globals.dialogManager.onscreen){
+        if(input.enter.isDown){
+            //alert("you typed enter");
+            //dialogManager.start();
+            globals.dialogManager.startDialog(this);
         }
     }
 }
 }
+
 
 function checkSpriteOverlap(spriteA, spriteB) {
 

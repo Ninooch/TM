@@ -16,7 +16,7 @@ function setDialog(langue){
             globals.pnjs.martin2.startCombat();}
             ,function(){
                 globals.dialogManager.stop(true,false);
-                globals.pnjs.martin2.currentIndex = 2;
+                globals.pnjs.martin2.currentIndex = 1;
                 ;globals.dialogManager.startDialog(globals.pnjs.martin2)
             }]
         ],["Très bien, remettons cela pour une prochaine fois.",function(){

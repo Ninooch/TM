@@ -6,24 +6,24 @@
 \contentsline {subsection}{\numberline {2.2}R\IeC {\'e}sultat final}{2}
 \contentsline {subsection}{\numberline {2.3}Adaptation}{3}
 \contentsline {section}{\numberline {3}D\IeC {\'e}roulement du jeu}{4}
-\contentsline {section}{\numberline {4}Fonctionement du code}{6}
-\contentsline {subsection}{\numberline {4.1}Syst\IeC {\`e}me g\IeC {\'e}n\IeC {\'e}ral}{7}
-\contentsline {subsection}{\numberline {4.2}Commencement}{8}
-\contentsline {subsection}{\numberline {4.3}En r\IeC {\'e}sum\IeC {\'e}}{8}
-\contentsline {section}{\numberline {5}Sc\IeC {\'e}nario alternatif}{8}
-\contentsline {section}{\numberline {6}Conception des assets}{9}
-\contentsline {subsection}{\numberline {6.1}Visuel}{9}
-\contentsline {subsubsection}{\numberline {6.1.1}Police personnalis\IeC {\'e}e}{9}
-\contentsline {subsubsection}{\numberline {6.1.2}Sprites de dialogues}{9}
-\contentsline {subsubsection}{\numberline {6.1.3}Sprites d'overworld}{9}
-\contentsline {subsubsection}{\numberline {6.1.4}Tilesets}{10}
-\contentsline {subsubsection}{\numberline {6.1.5}Tilemap}{10}
-\contentsline {subsection}{\numberline {6.2}Musical}{10}
-\contentsline {subsection}{\numberline {6.3}En r\IeC {\'e}sum\IeC {\'e}}{10}
-\contentsline {section}{\numberline {7}Conclusion}{10}
-\contentsline {subsection}{\numberline {7.1}Nina Ionescu ou l'optimisme}{10}
-\contentsline {subsection}{\numberline {7.2}Exp\IeC {\'e}rience gagn\IeC {\'e}e}{11}
-\contentsline {subsection}{\numberline {7.3}Continuation du projet}{11}
+\contentsline {section}{\numberline {4}Fonctionement du code}{11}
+\contentsline {subsection}{\numberline {4.1}Syst\IeC {\`e}me g\IeC {\'e}n\IeC {\'e}ral}{11}
+\contentsline {subsection}{\numberline {4.2}Commencement}{12}
+\contentsline {subsection}{\numberline {4.3}En r\IeC {\'e}sum\IeC {\'e}}{12}
+\contentsline {section}{\numberline {5}Sc\IeC {\'e}nario alternatif}{13}
+\contentsline {section}{\numberline {6}Conception des assets}{13}
+\contentsline {subsection}{\numberline {6.1}Visuel}{13}
+\contentsline {subsubsection}{\numberline {6.1.1}Police personnalis\IeC {\'e}e}{13}
+\contentsline {subsubsection}{\numberline {6.1.2}Sprites de dialogues}{14}
+\contentsline {subsubsection}{\numberline {6.1.3}Sprites d'overworld}{14}
+\contentsline {subsubsection}{\numberline {6.1.4}Tilesets}{14}
+\contentsline {subsubsection}{\numberline {6.1.5}Tilemap}{14}
+\contentsline {subsection}{\numberline {6.2}Musical}{14}
+\contentsline {subsection}{\numberline {6.3}En r\IeC {\'e}sum\IeC {\'e}}{14}
+\contentsline {section}{\numberline {7}Conclusion}{15}
+\contentsline {subsection}{\numberline {7.1}Nina Ionescu ou l'optimisme}{15}
+\contentsline {subsection}{\numberline {7.2}Exp\IeC {\'e}rience gagn\IeC {\'e}e}{15}
+\contentsline {subsection}{\numberline {7.3}Continuation du projet}{15}
 \contentsline {section}{Annexes}{}
 \contentsline {section}{\numberline {A}Images}{}
 \contentsline {section}{\numberline {B}Fonctionement du code}{}
