@@ -41,7 +41,7 @@ dialUpdate(){
 
     if(this.canBulle){
         if(checkPnjOverlap(this,globals.player) && !this.bulleIsOnScreen){
-            // alert("Bulle");
+            console.log("Bulle");
             this.createBulle();
         }
     }

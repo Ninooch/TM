@@ -33,7 +33,8 @@ class TerrainManager {
     initMap(map,collision){ //dépendra aussi des pnjs, des objets de Tiled et éventuellement des animations, à voir , prendre en compte la musique aussi
         //l'argument layers est un array qui contient tout les noms des couches de la map
         this.currentMap = game.add.tilemap(map.key);
-
+        console.log(this.currentMap.getLayer("layer1"))
+        console.log(this.currentMap.layers[0].name)
         for(let l in map.tilesets){
             this.currentMap.addTilesetImage(map.tilesets[l],map.tilesets[l]); // tilesetIm c'est le "nom".pnj et tileseImKey c'est le nom dans le cache de Phaser, faire en sorte qu'ils portent le même nom, comme ça un argument en moins dans la fonction
         }
@@ -45,6 +46,7 @@ class TerrainManager {
             let layer = this.currentMap.createLayer(k);
             this.currentLayers.push(layer);
         }
+        this.currentMap.plus.animation.enable();
 
         if(collision){
             this.collision = this.currentMap.createLayer("Collision");
@@ -52,7 +54,7 @@ class TerrainManager {
             this.collision.resizeWorld();
             this.collision.visible = false;
         }
-        this.currentMap.plus.animation.enable();
+
         this.currentLayers[0].resizeWorld();
 
         for(let l in map.pnjs){
@@ -60,8 +62,9 @@ class TerrainManager {
                 map.pnjs[l].revive();
                 map.pnjs[l].bringToTop();
             }
+            else{
                 game.add.existing(map.pnjs[l]);
-
+            }
 
             this.currentPnjs.push(map.pnjs[l]);
         }
@@ -77,7 +80,7 @@ class TerrainManager {
             this.clearMap(true);
             this.initMap(newMap,true);
             initPlayer(x,y);
-            console.log("fait")
+            //console.log("fait")
             game.camera.flash(0x000000,500);
         },this);
     }
@@ -86,7 +89,6 @@ class TerrainManager {
         game.physics.arcade.collide(globals.player,this.collision);
 
         for(let l in this.currentPnjs){
-            console.log(this.currentPnjs[l].bulleIsOnScreen);
             this.currentPnjs[l].dialUpdate();
         }
 

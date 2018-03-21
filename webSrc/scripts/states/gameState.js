@@ -16,7 +16,7 @@ var gameState = {
         createMap1();
 //globals.music.campanella.play();
 
-
+        globals.terrainManager.currentPnjs = []; //solution rapide pour éviter la double bulle des pnjs.
         globals.terrainManager.initMap(globals.maps.chateau,true);
 
         initPlayer(1182,1152);
