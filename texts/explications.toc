@@ -8,23 +8,22 @@
 \contentsline {subsection}{\numberline {2.3}Adaptation}{3}
 \contentsline {section}{\numberline {3}D\IeC {\'e}roulement du jeu}{5}
 \contentsline {section}{\numberline {4}Fonctionement du code}{12}
-\contentsline {subsection}{\numberline {4.1}Syst\IeC {\`e}me g\IeC {\'e}n\IeC {\'e}ral}{12}
-\contentsline {subsection}{\numberline {4.2}Commencement}{13}
-\contentsline {subsection}{\numberline {4.3}En r\IeC {\'e}sum\IeC {\'e}}{13}
-\contentsline {section}{\numberline {5}Sc\IeC {\'e}nario alternatif}{14}
-\contentsline {section}{\numberline {6}Conception des assets}{14}
-\contentsline {subsection}{\numberline {6.1}Visuel}{14}
-\contentsline {subsubsection}{\numberline {6.1.1}Police personnalis\IeC {\'e}e}{14}
-\contentsline {subsubsection}{\numberline {6.1.2}Sprites de dialogues}{15}
-\contentsline {subsubsection}{\numberline {6.1.3}Sprites d'overworld}{17}
-\contentsline {subsubsection}{\numberline {6.1.4}Tilesets}{18}
+\contentsline {subsection}{\numberline {4.1}Balayage du code}{12}
+\contentsline {subsection}{\numberline {4.2}En r\IeC {\'e}sum\IeC {\'e}}{12}
+\contentsline {section}{\numberline {5}Sc\IeC {\'e}nario alternatif}{13}
+\contentsline {section}{\numberline {6}Conception des assets}{13}
+\contentsline {subsection}{\numberline {6.1}Visuel}{13}
+\contentsline {subsubsection}{\numberline {6.1.1}Police personnalis\IeC {\'e}e}{13}
+\contentsline {subsubsection}{\numberline {6.1.2}Sprites de dialogues}{14}
+\contentsline {subsubsection}{\numberline {6.1.3}Sprites d'overworld}{16}
+\contentsline {subsubsection}{\numberline {6.1.4}Tilesets}{17}
 \contentsline {subsubsection}{\numberline {6.1.5}Tilemap}{18}
 \contentsline {subsection}{\numberline {6.2}Musical}{18}
-\contentsline {subsection}{\numberline {6.3}En r\IeC {\'e}sum\IeC {\'e}}{19}
-\contentsline {section}{\numberline {7}Conclusion}{19}
-\contentsline {subsection}{\numberline {7.1}Nina Ionescu ou l'optimisme}{19}
-\contentsline {subsection}{\numberline {7.2}Exp\IeC {\'e}rience gagn\IeC {\'e}e}{20}
-\contentsline {subsection}{\numberline {7.3}Continuation du projet}{20}
+\contentsline {subsection}{\numberline {6.3}En r\IeC {\'e}sum\IeC {\'e}}{18}
+\contentsline {section}{\numberline {7}Conclusion}{18}
+\contentsline {subsection}{\numberline {7.1}Nina Ionescu ou l'optimisme}{18}
+\contentsline {subsection}{\numberline {7.2}Exp\IeC {\'e}rience gagn\IeC {\'e}e}{19}
+\contentsline {subsection}{\numberline {7.3}Continuation du projet}{19}
 \contentsline {section}{Annexes}{}
 \contentsline {section}{\numberline {A}Images}{}
 \contentsline {subsection}{\numberline {A.1}Syst\IeC {\`e}me g\IeC {\'e}n\IeC {\'e}ral}{}

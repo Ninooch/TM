@@ -297,7 +297,7 @@ Une fois la base créée, l'animation est dessinée en modifiant la frame pour c
 \caption{La marquise de Parolignac en cours de réalisation}
 \end{figure}
 
-Chaque sprite demande un travail considérable , il faut donc énormément de temps pour illustrer chaque personnage unique de Candide. Pour les personnages qui servent uniquement à habiter le décor, une solution a été pensée : dessiner quelques alternatives physiques ( diverses coupes de cheveux, nez, bouches,...) en niveaux de gris puis les associer à une couleur. Il sera alors beaucoup plus simple de recolorer et d'associer différentes parties pour recycler une partie du travail effectué.\\
+Chaque sprite demande un travail considérable , il faut donc énormément de temps pour illustrer chaque personnage unique de Candide. Pour les personnages qui servent uniquement à habiter le décor, une solution a été pensée : dessiner quelques alternatives physiques ( diverses coupes de cheveux, nez, bouches,...) en niveaux de gris puis les associer à une couleur. Il sera alors beaucoup plus simple de recolorer et d'associer différentes parties pour recycler le travail effectué et gagner un peu de temps.\\
 La technique des niveaux de gris a été appliquée pour les barres de vies lors des combats, car il aurait été trop compliqué de coder en prenant compte 3 images distinctes. Malheureusement, cette technique n'a pas encore été testée pour la réalisation de personnage.
 \subsubsection{Sprites d'overworld}
 %techniques, exemples
@@ -308,13 +308,14 @@ Tous les sprites de ce type ont également une base commune.
 \end{figure}
 L'animation de marche a été assez difficile à dessiner car il fallait que le résultat semble fluide et naturel.\\
 
-Ces sprites reprennent les plus gros détails des personnages et ont un coloriage plus minimaliste. Plus de détails pourraient être cependant ajoutés.
+Ces sprites reprennent les plus gros détails des personnages et ont un coloriage plus minimaliste. Plus de détails pourraient être cependant ajoutés. Les personnages sans détails dans le jeu sont simplement là pour signaler l'emplacement d'un pnj. A l'avenir, chaque pnj aura son propre sprite.
 \begin{figure}[H]
 \includegraphics[scale=1.5]{panglossSprite}
 \centering
 \end{figure}
 \subsubsection{Tilesets}
 %techniques, exemples
+Ce qui est important lors de la réalisation de Tileset est d'avoir une texture d'image qui se répète. Si la transition n'est pas 
 \subsubsection{Tilemap}
 \subsection{Musical}
 %logiciel utilisé , techniques (trouver une suite d'accord, les instruments etc..) , éventuellement les bruitages , la campanella midi file
@@ -404,40 +405,60 @@ composée par Niccoló Paganini et transcrit par R. Lopez\\
 \caption{pixel art de L.H.O.O.Q. figurant dans la collection de Pococurante.}
 \end{figure}
 
+\textit{Note}: Tous les sprites sont mon interprétation du personnage original. Certains détails sont donc une liberté artistique et s'éloignent un peu de ce qui a été écrit par Voltaire.
+
 \begin{figure}[H]
 \includegraphics[scale=0.4]{cacamboFaceAnimation}
 \centering
 \caption{sprite de dialogue de Cacambo}
+Cacambo vient du Pérou, d'où le choix de lui faire porter ce bonnet. Il est confient en lui, contrairement à Candide.
 \end{figure}
 
 \begin{figure}[H]
 \includegraphics[scale=0.4]{panglossSyphilisFaceAnimation}
 \centering
 \caption{sprite de dialogue de Pangloss atteint de la syphilis}
+Pangloss lors de sa rencontre en Hollande est ravagé par la syphilis. Il a les yeux vitreux, des blessures et une dent en moins.
 \end{figure}
 
 \begin{figure}[H]
 \includegraphics[scale=0.4]{jacquesFaceAnimation}
 \centering
 \caption{sprite de dialogue de Jacques}
+Jacques est un personnage bienveillant envers Candide, d'où le sourire léger qu'il arbore.
 \end{figure}
 
 \begin{figure}[H]
 \includegraphics[scale=0.4]{vieilleFaceAnimation}
 \centering
 \caption{sprite de dialogue de la vieille}
+La vieille est une femme qui a vécu beaucoup de misère. Cela se reflète dans son regard légèrement inquiet et ses marques de vieillesse. Comme c'est une femme originaire d'Italie, elle porte un châle.
 \end{figure}
 
 \begin{figure}[H]
 \includegraphics[scale=0.4]{martinFaceAnimation}
 \centering
 \caption{sprite de dialogue de Martin}
+Martin voit du négatif partout. Il ne s'occupe plus vraiment de lui car cela n'a plus d'importance à ses yeux. C'est pourquoi il a les cheveux en bataille et une barbe de quelques jours. Son teint est grisâtre à cause de la fumée. Il a également des cernes car la vie le fatigue. Son jeune âge accentue la puissance de son discours.
 \end{figure}
 
 \begin{figure}[H]
 \includegraphics[scale=0.4]{marquiseFaceAnimation}
 \centering
 \caption{sprite de dialogue de la marquise de Parolignac}
+C'est une femme tenancière d'un bar à Paris. Elle porte un maquillage important, pour attirer la sympathie des clients. Elle sert de l'alcool et des jeux de cartes voir plus si affinité.
+\end{figure}
+\begin{figure}[H]
+\includegraphics[scale=0.2]{fontPage1}
+\caption{première feuille de la police}
+\end{figure}
+\begin{figure}[H]
+\includegraphics[scale=0.2]{fontPage2}
+\caption{deuxième feuille de la police}
+\end{figure}
+\begin{figure}[H]
+\includegraphics[scale=0.2]{fontPage3}
+\caption{troisième feuille de la police}
 \end{figure}
 
 \newpage
@@ -493,7 +514,7 @@ var gameState = {
     }
 };
 \end{lstlisting} 
-\textit{Extrait du code de la state "Game".}\\\\
+\textit{Extrait du code de la state "Game".}
 La méthode \textit{update()} est une fonction qui utilise \textit{requestAnimationFrame}. Sont présentes dans cette méthode, toutes les fonctions qui servent à interagir avec le joueur, c'est à dire la détection de la collision, les changements de maps au contact d'une zone de warp et l'apparition des bulles de dialogues des personnages non-jouables quand le joueur les approche. La fonction qui sert à faire marcher le joueur est aussi présente dans la fonction \textit{update()}.
 \subsubsection{Battle}
 La state "Battle" est utilisée lors des combats pour initier l'interface de combat. Une nouvelle state est utilisée car il est plus facile de créer un contenu visuel à partir d'une state vide que de modifier une state déjà existante. En effet, la state de combat ne requiert pas une détection de collision ni la création de personnages non-jouables.\\
@@ -508,7 +529,7 @@ Cette state sert uniquement à afficher du texte. Une fonction est passée en ar
 \subsection{Joueur}
 %expliquer les déplacements, les directions , les interactions etc...
 Le joueur est un sprite qui peut se déplacer lorsqu'une touche directionnelle est enfoncée. Ces déplacements sont activés uniquement quand la propriété "canMove" = true. Cette propriété sert à ce que le personnage ne puisse pas se déplacer pendant les dialogues. Le sprite possède 4 animations de marche qui sont jouées quand l'image se déplace.\\
-\begin{figure}[h]
+\begin{figure}[H]
 \includegraphics[scale=0.5]{candideSprite}
 \centering
 \caption{le sprite du joueur avec les différentes frames des animations de marche}

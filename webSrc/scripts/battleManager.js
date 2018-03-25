@@ -186,10 +186,10 @@ turnBattle(data){
 }
 
 initEnnemy(data){
-    this.ennemy1Sprite = game.add.sprite(data.ennemy1X,data.ennemy1Y,"player",8);
+    this.ennemy1Sprite = game.add.sprite(data.ennemy1X,data.ennemy1Y,data.ennemy1.key,8);
     this.ennemy1Sprite.healthbar = new Healthbar(0,229,data.ennemy1);
     if(!data.singleEnnemy){
-        this.ennemy2Sprite = game.add.sprite(data.ennemy2X,data.ennemy2Y,"player",8);
+        this.ennemy2Sprite = game.add.sprite(data.ennemy2X,data.ennemy2Y,data.ennemy2.key,8);
         this.ennemy2Sprite.healthbar = new Healthbar(0,168,data.ennemy2);
     }
 }
