@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.15)  25 MAR 2018 12:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.15)  25 MAR 2018 17:37
 entering extended mode
 **./explications.tex
 (explications.tex
@@ -624,14 +624,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 139--140
 
  []
 
-<assets/cunegondeScn.png, id=25, 803.0pt x 451.6875pt>
+[2]
+<assets/cunegondeScn.png, id=28, 803.0pt x 451.6875pt>
 File: assets/cunegondeScn.png Graphic file (type png)
 <use assets/cunegondeScn.png>
 Package pdftex.def Info: assets/cunegondeScn.png  used on input line 151. on in
 put line 151.
 Package pdftex.def Info: Requested size: 264.99081pt x 149.05733pt on input lin
 e 151.
-[2]
 <assets/panglossHead.png, id=29, 82.05656pt x 94.10156pt>
 File: assets/panglossHead.png Graphic file (type png)
 <use assets/panglossHead.png>
@@ -639,7 +639,8 @@ Package pdftex.def Info: assets/panglossHead.png  used on input line 158. on in
 put line 158.
 Package pdftex.def Info: Requested size: 65.64532pt x 75.28134pt on input line 
 158.
-<assets/candide.png, id=30, 25.59563pt x 51.19125pt>
+ [3 <./assets/cunegondeScn.png>]
+<assets/candide.png, id=34, 25.59563pt x 51.19125pt>
 File: assets/candide.png Graphic file (type png)
 <use assets/candide.png>
 Package pdftex.def Info: assets/candide.png  used on input line 163. on input l
@@ -651,8 +652,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 161--165
 
  []
 
-[3 <./assets/cunegondeScn.png> <./assets/panglossHead.png>]
-<assets/chateau.png, id=36, 106.3975pt x 225.84375pt>
+<assets/chateau.png, id=35, 106.3975pt x 225.84375pt>
 File: assets/chateau.png Graphic file (type png)
 <use assets/chateau.png>
 Package pdftex.def Info: assets/chateau.png  used on input line 168. on input l
@@ -664,21 +664,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 172--173
 
  []
 
-<assets/gameplay1.png, id=37, 803.0pt x 451.6875pt>
+[4 <./assets/panglossHead.png> <./assets/candide.png> <./assets/chateau.png>]
+<assets/gameplay1.png, id=43, 803.0pt x 451.6875pt>
 File: assets/gameplay1.png Graphic file (type png)
 <use assets/gameplay1.png>
 Package pdftex.def Info: assets/gameplay1.png  used on input line 183. on input
  line 183.
 Package pdftex.def Info: Requested size: 281.05421pt x 158.09299pt on input lin
 e 183.
-<assets/gameplay2.png, id=38, 803.0pt x 451.6875pt>
+<assets/gameplay2.png, id=44, 803.0pt x 451.6875pt>
 File: assets/gameplay2.png Graphic file (type png)
 <use assets/gameplay2.png>
 Package pdftex.def Info: assets/gameplay2.png  used on input line 184. on input
  line 184.
 Package pdftex.def Info: Requested size: 281.05421pt x 158.09299pt on input lin
 e 184.
-<assets/gameplay3.png, id=39, 803.0pt x 451.6875pt>
+<assets/gameplay3.png, id=45, 803.0pt x 451.6875pt>
 File: assets/gameplay3.png Graphic file (type png)
 <use assets/gameplay3.png>
 Package pdftex.def Info: assets/gameplay3.png  used on input line 185. on input
@@ -691,7 +692,7 @@ Overfull \hbox (1.0737pt too wide) in paragraph at lines 181--188
 -ron de Thunde-
  []
 
-[4 <./assets/candide.png> <./assets/chateau.png>] [5]
+[5]
 Underfull \hbox (badness 10000) in paragraph at lines 189--190
 
  []
@@ -712,97 +713,92 @@ Package pdftex.def Info: assets/gameplay4.png  used on input line 193. on input
 Package pdftex.def Info: Requested size: 281.05421pt x 158.09299pt on input lin
 e 193.
 
-Overfull \hbox (4.29787pt too wide) in paragraph at lines 198--199
+Overfull \hbox (4.29787pt too wide) in paragraph at lines 200--201
 []\OT1/cmr/m/n/10.95 Le long dis-cours rebarbatif de Pan-gloss sert a ac-cen-
 tuer le c^ote desagreable
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--199
+Underfull \hbox (badness 10000) in paragraph at lines 200--201
 
  []
 
 <assets/gameplay5.png, id=58, 803.0pt x 451.6875pt>
 File: assets/gameplay5.png Graphic file (type png)
 <use assets/gameplay5.png>
-Package pdftex.def Info: assets/gameplay5.png  used on input line 203. on input
- line 203.
+Package pdftex.def Info: assets/gameplay5.png  used on input line 205. on input
+ line 205.
 Package pdftex.def Info: Requested size: 281.05421pt x 158.09299pt on input lin
-e 203.
+e 205.
 [7 <./assets/choix.png> <./assets/gameplay4.png>]
 <assets/gameplay6.png, id=64, 803.0pt x 451.6875pt>
 File: assets/gameplay6.png Graphic file (type png)
 <use assets/gameplay6.png>
-Package pdftex.def Info: assets/gameplay6.png  used on input line 210. on input
- line 210.
+Package pdftex.def Info: assets/gameplay6.png  used on input line 213. on input
+ line 213.
 Package pdftex.def Info: Requested size: 281.05421pt x 158.09299pt on input lin
-e 210.
+e 213.
 <assets/gameplay7.png, id=65, 803.0pt x 451.6875pt>
 File: assets/gameplay7.png Graphic file (type png)
 <use assets/gameplay7.png>
-Package pdftex.def Info: assets/gameplay7.png  used on input line 211. on input
- line 211.
+Package pdftex.def Info: assets/gameplay7.png  used on input line 214. on input
+ line 214.
 Package pdftex.def Info: Requested size: 281.05421pt x 158.09299pt on input lin
-e 211.
+e 214.
  [8 <./assets/gameplay5.png>]
 <assets/gameplay8.png, id=70, 803.0pt x 451.6875pt>
 File: assets/gameplay8.png Graphic file (type png)
 <use assets/gameplay8.png>
-Package pdftex.def Info: assets/gameplay8.png  used on input line 219. on input
- line 219.
+Package pdftex.def Info: assets/gameplay8.png  used on input line 223. on input
+ line 223.
 Package pdftex.def Info: Requested size: 281.05421pt x 158.09299pt on input lin
-e 219.
+e 223.
 
 [9 <./assets/gameplay6.png> <./assets/gameplay7.png>]
 <assets/gameplay9.png, id=76, 803.0pt x 451.6875pt>
 File: assets/gameplay9.png Graphic file (type png)
 <use assets/gameplay9.png>
-Package pdftex.def Info: assets/gameplay9.png  used on input line 227. on input
- line 227.
+Package pdftex.def Info: assets/gameplay9.png  used on input line 231. on input
+ line 231.
 Package pdftex.def Info: Requested size: 281.05421pt x 158.09299pt on input lin
-e 227.
+e 231.
 <assets/gameplay11.png, id=77, 803.0pt x 451.6875pt>
 File: assets/gameplay11.png Graphic file (type png)
 <use assets/gameplay11.png>
-Package pdftex.def Info: assets/gameplay11.png  used on input line 228. on inpu
-t line 228.
+Package pdftex.def Info: assets/gameplay11.png  used on input line 232. on inpu
+t line 232.
 Package pdftex.def Info: Requested size: 281.05421pt x 158.09299pt on input lin
-e 228.
+e 232.
  [10 <./assets/gameplay8.png>]
 <assets/gameplay12.png, id=83, 803.0pt x 451.6875pt>
 File: assets/gameplay12.png Graphic file (type png)
 <use assets/gameplay12.png>
-Package pdftex.def Info: assets/gameplay12.png  used on input line 235. on inpu
-t line 235.
+Package pdftex.def Info: assets/gameplay12.png  used on input line 239. on inpu
+t line 239.
 Package pdftex.def Info: Requested size: 281.05421pt x 158.09299pt on input lin
-e 235.
+e 239.
  [11 <./assets/gameplay9.png> <./assets/gameplay11.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 245--246
+Underfull \hbox (badness 10000) in paragraph at lines 249--250
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 251--252
+Underfull \hbox (badness 10000) in paragraph at lines 254--255
 
  []
 
 [12 <./assets/gameplay12.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 253--254
+Underfull \hbox (badness 10000) in paragraph at lines 256--257
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 255--256
+Underfull \hbox (badness 10000) in paragraph at lines 265--266
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 264--265
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 266--267
+Underfull \hbox (badness 10000) in paragraph at lines 267--268
 
  []
 
@@ -862,313 +858,305 @@ Package pdftex.def Info: assets/panglossSprite.png  used on input line 313. on
 input line 313.
 Package pdftex.def Info: Requested size: 39.52254pt x 76.78667pt on input line 
 313.
-
-Underfull \hbox (badness 10000) in paragraph at lines 322--323
-
- []
-
+<assets/chateauTset.png, id=114, 72.27pt x 96.36pt>
+File: assets/chateauTset.png Graphic file (type png)
+<use assets/chateauTset.png>
+Package pdftex.def Info: assets/chateauTset.png  used on input line 320. on inp
+ut line 320.
+Package pdftex.def Info: Requested size: 72.2698pt x 96.35974pt on input line 3
+20.
 [17 <./assets/animationBase.png> <./assets/panglossSprite.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 329--330
+<assets/terrain1.png, id=120, 152.82094pt x 176.91093pt>
+File: assets/terrain1.png Graphic file (type png)
+<use assets/terrain1.png>
+Package pdftex.def Info: assets/terrain1.png  used on input line 325. on input 
+line 325.
+Package pdftex.def Info: Requested size: 152.82054pt x 176.91049pt on input lin
+e 325.
+
+Underfull \hbox (badness 10000) in paragraph at lines 331--332
 
  []
 
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 333--334
+[18 <./assets/chateauTset.png> <./assets/terrain1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 338--339
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 335--336
+Underfull \hbox (badness 10000) in paragraph at lines 342--343
 
  []
 
-[19] [1]
-<assets/martinBase.png, id=128, 105.39375pt x 50.43843pt>
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 344--345
+
+ []
+
+[20] [1]
+<assets/martinBase.png, id=137, 105.39375pt x 50.43843pt>
 File: assets/martinBase.png Graphic file (type png)
 <use assets/martinBase.png>
-Package pdftex.def Info: assets/martinBase.png  used on input line 385. on inpu
-t line 385.
+Package pdftex.def Info: assets/martinBase.png  used on input line 394. on inpu
+t line 394.
 Package pdftex.def Info: Requested size: 105.39348pt x 50.4383pt on input line 
-385.
-<assets/cacamboSprite.png, id=129, 26.34843pt x 50.43843pt>
+394.
+<assets/cacamboSprite.png, id=138, 26.34843pt x 50.43843pt>
 File: assets/cacamboSprite.png Graphic file (type png)
 <use assets/cacamboSprite.png>
-Package pdftex.def Info: assets/cacamboSprite.png  used on input line 391. on i
-nput line 391.
-Package pdftex.def Info: Requested size: 26.34836pt x 50.4383pt on input line 3
-91.
-<assets/sparles.png, id=130, 192.72pt x 32.12pt>
+Package pdftex.def Info: assets/cacamboSprite.png  used on input line 400. on i
+nput line 400.
+Package pdftex.def Info: Requested size: 26.34836pt x 50.4383pt on input line 4
+00.
+<assets/sparles.png, id=139, 192.72pt x 32.12pt>
 File: assets/sparles.png Graphic file (type png)
 <use assets/sparles.png>
-Package pdftex.def Info: assets/sparles.png  used on input line 397. on input l
-ine 397.
+Package pdftex.def Info: assets/sparles.png  used on input line 406. on input l
+ine 406.
 Package pdftex.def Info: Requested size: 192.71951pt x 32.1199pt on input line 
-397.
-<assets/tableaux.png, id=131, 65.24374pt x 90.3375pt>
+406.
+<assets/tableaux.png, id=140, 65.24374pt x 90.3375pt>
 File: assets/tableaux.png Graphic file (type png)
 <use assets/tableaux.png>
-Package pdftex.def Info: assets/tableaux.png  used on input line 403. on input 
-line 403.
+Package pdftex.def Info: assets/tableaux.png  used on input line 412. on input 
+line 412.
 Package pdftex.def Info: Requested size: 65.24358pt x 90.33727pt on input line 
-403.
-<assets/cacamboFaceAnimation.png, id=132, 772.8875pt x 521.95pt>
+412.
+<assets/cacamboFaceAnimation.png, id=141, 772.8875pt x 521.95pt>
 File: assets/cacamboFaceAnimation.png Graphic file (type png)
 <use assets/cacamboFaceAnimation.png>
-Package pdftex.def Info: assets/cacamboFaceAnimation.png  used on input line 41
-1. on input line 411.
+Package pdftex.def Info: assets/cacamboFaceAnimation.png  used on input line 42
+0. on input line 420.
 Package pdftex.def Info: Requested size: 309.14952pt x 208.77629pt on input lin
-e 411.
+e 420.
  [2 <./assets/martinBase.png> <./assets/cacamboSprite.png> <./assets/sparles.pn
 g> <./assets/tableaux.png>]
-<assets/panglossSyphilisFaceAnimation.png, id=140, 772.8875pt x 521.95pt>
+<assets/panglossSyphilisFaceAnimation.png, id=150, 772.8875pt x 521.95pt>
 File: assets/panglossSyphilisFaceAnimation.png Graphic file (type png)
 <use assets/panglossSyphilisFaceAnimation.png>
 Package pdftex.def Info: assets/panglossSyphilisFaceAnimation.png  used on inpu
-t line 418. on input line 418.
+t line 427. on input line 427.
 Package pdftex.def Info: Requested size: 309.14952pt x 208.77629pt on input lin
-e 418.
+e 427.
  [3 <./assets/cacamboFaceAnimation.png>]
-<assets/jacquesFaceAnimation.png, id=146, 772.8875pt x 521.95pt>
+<assets/jacquesFaceAnimation.png, id=155, 772.8875pt x 521.95pt>
 File: assets/jacquesFaceAnimation.png Graphic file (type png)
 <use assets/jacquesFaceAnimation.png>
-Package pdftex.def Info: assets/jacquesFaceAnimation.png  used on input line 42
-5. on input line 425.
+Package pdftex.def Info: assets/jacquesFaceAnimation.png  used on input line 43
+4. on input line 434.
 Package pdftex.def Info: Requested size: 309.14952pt x 208.77629pt on input lin
-e 425.
+e 434.
 
 [4 <./assets/panglossSyphilisFaceAnimation.png>]
-<assets/vieilleFaceAnimation.png, id=151, 772.8875pt x 521.95pt>
+<assets/vieilleFaceAnimation.png, id=160, 772.8875pt x 521.95pt>
 File: assets/vieilleFaceAnimation.png Graphic file (type png)
 <use assets/vieilleFaceAnimation.png>
-Package pdftex.def Info: assets/vieilleFaceAnimation.png  used on input line 43
-2. on input line 432.
+Package pdftex.def Info: assets/vieilleFaceAnimation.png  used on input line 44
+1. on input line 441.
 Package pdftex.def Info: Requested size: 309.14952pt x 208.77629pt on input lin
-e 432.
+e 441.
  [5 <./assets/jacquesFaceAnimation.png>]
-<assets/martinFaceAnimation.png, id=156, 772.8875pt x 521.95pt>
+<assets/martinFaceAnimation.png, id=165, 772.8875pt x 521.95pt>
 File: assets/martinFaceAnimation.png Graphic file (type png)
 <use assets/martinFaceAnimation.png>
-Package pdftex.def Info: assets/martinFaceAnimation.png  used on input line 439
-. on input line 439.
+Package pdftex.def Info: assets/martinFaceAnimation.png  used on input line 448
+. on input line 448.
 Package pdftex.def Info: Requested size: 309.14952pt x 208.77629pt on input lin
-e 439.
+e 448.
  [6 <./assets/vieilleFaceAnimation.png>]
-<assets/marquiseFaceAnimation.png, id=161, 772.8875pt x 521.95pt>
+<assets/marquiseFaceAnimation.png, id=170, 772.8875pt x 521.95pt>
 File: assets/marquiseFaceAnimation.png Graphic file (type png)
 <use assets/marquiseFaceAnimation.png>
 Package pdftex.def Info: assets/marquiseFaceAnimation.png  used on input line 4
-46. on input line 446.
+55. on input line 455.
 Package pdftex.def Info: Requested size: 309.14952pt x 208.77629pt on input lin
-e 446.
-<assets/fontPage1.png, id=162, 1673.25125pt x 2375.87625pt>
+e 455.
+<assets/fontPage1.png, id=171, 1673.25125pt x 2375.87625pt>
 File: assets/fontPage1.png Graphic file (type png)
 <use assets/fontPage1.png>
-Package pdftex.def Info: assets/fontPage1.png  used on input line 452. on input
- line 452.
+Package pdftex.def Info: assets/fontPage1.png  used on input line 461. on input
+ line 461.
 Package pdftex.def Info: Requested size: 334.64432pt x 475.16684pt on input lin
-e 452.
+e 461.
  [7 <./assets/martinFaceAnimation.png>]
-<assets/fontPage2.png, id=167, 1673.25125pt x 2375.87625pt>
+<assets/fontPage2.png, id=176, 1673.25125pt x 2375.87625pt>
 File: assets/fontPage2.png Graphic file (type png)
 <use assets/fontPage2.png>
-Package pdftex.def Info: assets/fontPage2.png  used on input line 456. on input
- line 456.
+Package pdftex.def Info: assets/fontPage2.png  used on input line 465. on input
+ line 465.
 Package pdftex.def Info: Requested size: 334.64432pt x 475.16684pt on input lin
-e 456.
+e 465.
  [8 <./assets/marquiseFaceAnimation.png>]
-<assets/fontPage3.png, id=172, 1673.25125pt x 2375.87625pt>
+<assets/fontPage3.png, id=182, 1673.25125pt x 2375.87625pt>
 File: assets/fontPage3.png Graphic file (type png)
 <use assets/fontPage3.png>
-Package pdftex.def Info: assets/fontPage3.png  used on input line 460. on input
- line 460.
+Package pdftex.def Info: assets/fontPage3.png  used on input line 469. on input
+ line 469.
 Package pdftex.def Info: Requested size: 334.64432pt x 475.16684pt on input lin
-e 460.
+e 469.
  [9 <./assets/fontPage1.png>] [10 <./assets/fontPage2.png>] [11 <./assets/fontP
 age3.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 468--469
+Underfull \hbox (badness 10000) in paragraph at lines 477--478
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 470--471
+Underfull \hbox (badness 10000) in paragraph at lines 479--480
 
  []
 
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 472.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 481.
 [12]
-<assets/boutons.png, id=191, 722.7pt x 501.875pt>
+<assets/boutons.png, id=199, 722.7pt x 501.875pt>
 File: assets/boutons.png Graphic file (type png)
 <use assets/boutons.png>
-Package pdftex.def Info: assets/boutons.png  used on input line 496. on input l
-ine 496.
+Package pdftex.def Info: assets/boutons.png  used on input line 505. on input l
+ine 505.
 Package pdftex.def Info: Requested size: 216.81166pt x 150.56366pt on input lin
-e 496.
+e 505.
 
-Overfull \hbox (7.46062pt too wide) in paragraph at lines 502--503
+Overfull \hbox (7.46062pt too wide) in paragraph at lines 511--512
 []\OT1/cmr/m/n/10.95 La state "Game" uti-lise les methodes \OT1/cmr/m/it/10.95
  create() \OT1/cmr/m/n/10.95 et \OT1/cmr/m/it/10.95 up-date()\OT1/cmr/m/n/10.95
  . Dans la methode
  []
 
 [13 <./assets/boutons.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 520--521
+Underfull \hbox (badness 10000) in paragraph at lines 529--530
 
  []
 
-<assets/introScreen.png, id=196, 803.0pt x 451.6875pt>
+<assets/introScreen.png, id=204, 803.0pt x 451.6875pt>
 File: assets/introScreen.png Graphic file (type png)
 <use assets/introScreen.png>
-Package pdftex.def Info: assets/introScreen.png  used on input line 526. on inp
-ut line 526.
+Package pdftex.def Info: assets/introScreen.png  used on input line 535. on inp
+ut line 535.
 Package pdftex.def Info: Requested size: 264.99081pt x 149.05733pt on input lin
-e 526.
+e 535.
 [14]
-<assets/candideSprite.png, id=200, 140.525pt x 269.005pt>
+<assets/candideSprite.png, id=209, 140.525pt x 269.005pt>
 File: assets/candideSprite.png Graphic file (type png)
 <use assets/candideSprite.png>
-Package pdftex.def Info: assets/candideSprite.png  used on input line 533. on i
-nput line 533.
+Package pdftex.def Info: assets/candideSprite.png  used on input line 542. on i
+nput line 542.
 Package pdftex.def Info: Requested size: 70.26231pt x 134.50217pt on input line
- 533.
+ 542.
 
-Underfull \hbox (badness 10000) in paragraph at lines 531--536
+Underfull \hbox (badness 10000) in paragraph at lines 540--545
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 539--540
+Underfull \hbox (badness 10000) in paragraph at lines 548--549
 
  []
 
 [15 <./assets/introScreen.png> <./assets/candideSprite.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 550--551
+Underfull \hbox (badness 10000) in paragraph at lines 559--560
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 565--566
+Underfull \hbox (badness 10000) in paragraph at lines 574--575
 
  []
 
 [16]
-<assets/bulleDialog.png, id=211, 154.32657pt x 203.25937pt>
+<assets/bulleDialog.png, id=219, 154.32657pt x 203.25937pt>
 File: assets/bulleDialog.png Graphic file (type png)
 <use assets/bulleDialog.png>
-Package pdftex.def Info: assets/bulleDialog.png  used on input line 572. on inp
-ut line 572.
+Package pdftex.def Info: assets/bulleDialog.png  used on input line 581. on inp
+ut line 581.
 Package pdftex.def Info: Requested size: 77.16309pt x 101.62943pt on input line
- 572.
-<assets/bulleMaison.png, id=212, 154.32657pt x 159.59625pt>
+ 581.
+<assets/bulleMaison.png, id=220, 154.32657pt x 159.59625pt>
 File: assets/bulleMaison.png Graphic file (type png)
 <use assets/bulleMaison.png>
-Package pdftex.def Info: assets/bulleMaison.png  used on input line 573. on inp
-ut line 573.
+Package pdftex.def Info: assets/bulleMaison.png  used on input line 582. on inp
+ut line 582.
 Package pdftex.def Info: Requested size: 77.16309pt x 79.79791pt on input line 
-573.
+582.
  [17 <./assets/bulleDialog.png> <./assets/bulleMaison.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 591--592
+Underfull \hbox (badness 10000) in paragraph at lines 600--601
 
  []
 
 
-Overfull \hbox (20.0745pt too wide) in paragraph at lines 593--595
+Overfull \hbox (20.0745pt too wide) in paragraph at lines 602--604
 \OT1/cmr/m/n/10.95 Ces methodes sont uti-lisees dans la methode \OT1/cmr/m/i
 t/10.95 turn(cible)\OT1/cmr/m/n/10.95 , qui choi-sit aleatoirement
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 593--595
+Underfull \hbox (badness 10000) in paragraph at lines 602--604
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 598--599
+Underfull \hbox (badness 10000) in paragraph at lines 607--608
 
  []
 
-<assets/health.png, id=218, 117.43875pt x 60.225pt>
+<assets/health.png, id=226, 117.43875pt x 60.225pt>
 File: assets/health.png Graphic file (type png)
 <use assets/health.png>
-Package pdftex.def Info: assets/health.png  used on input line 603. on input li
-ne 603.
+Package pdftex.def Info: assets/health.png  used on input line 612. on input li
+ne 612.
 Package pdftex.def Info: Requested size: 117.43845pt x 60.22484pt on input line
- 603.
-<assets/healthP2.png, id=219, 55.20625pt x 16.06pt>
+ 612.
+<assets/healthP2.png, id=227, 55.20625pt x 16.06pt>
 File: assets/healthP2.png Graphic file (type png)
 <use assets/healthP2.png>
-Package pdftex.def Info: assets/healthP2.png  used on input line 604. on input 
-line 604.
+Package pdftex.def Info: assets/healthP2.png  used on input line 613. on input 
+line 613.
 Package pdftex.def Info: Requested size: 55.2061pt x 16.05995pt on input line 6
-04.
-<assets/healthBar.png, id=220, 183.68625pt x 60.225pt>
+13.
+<assets/healthBar.png, id=228, 183.68625pt x 60.225pt>
 File: assets/healthBar.png Graphic file (type png)
 <use assets/healthBar.png>
-Package pdftex.def Info: assets/healthBar.png  used on input line 605. on input
- line 605.
+Package pdftex.def Info: assets/healthBar.png  used on input line 614. on input
+ line 614.
 Package pdftex.def Info: Requested size: 183.68578pt x 60.22484pt on input line
- 605.
+ 614.
 
-Overfull \hbox (1.19699pt too wide) in paragraph at lines 603--606
+Overfull \hbox (1.19699pt too wide) in paragraph at lines 612--615
 [][] [] [] 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 609--610
+Underfull \hbox (badness 10000) in paragraph at lines 618--619
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 623--624
+Underfull \hbox (badness 10000) in paragraph at lines 632--633
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 625--626
+Underfull \hbox (badness 10000) in paragraph at lines 634--635
 
  []
 
 
-Overfull \hbox (7.97832pt too wide) in paragraph at lines 627--628
-[]\OT1/cmr/m/n/10.95 Dans le code concu ini-tia-le-ment, chaque ob-jet Cus-tom
--Map etait dependant
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 627--628
+Underfull \hbox (badness 10000) in paragraph at lines 636--637
 
  []
 
 [19 <./assets/health.png> <./assets/healthP2.png> <./assets/healthBar.png>]
-Overfull \hbox (10.76236pt too wide) in paragraph at lines 646--648
+Overfull \hbox (10.76236pt too wide) in paragraph at lines 655--657
 []\OT1/cmr/m/n/10.95 Tout af-fi-chage de texte est gere par la classe \OT1/cm
 r/m/it/10.95 dia-log-Ma-na-ger \OT1/cmr/m/n/10.95 et ses methodes.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 654--655
+Underfull \hbox (badness 10000) in paragraph at lines 663--664
 
  []
 
-[20]
-File: assets/choix.png Graphic file (type png)
-<use assets/choix.png>
-Package pdftex.def Info: assets/choix.png  used on input line 666. on input lin
-e 666.
-Package pdftex.def Info: Requested size: 264.99081pt x 149.05733pt on input lin
-e 666.
- [21]
-Underfull \hbox (badness 10000) in paragraph at lines 721--723
-
- []
-
-[22]
-Underfull \hbox (badness 10000) in paragraph at lines 730--731
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 732--734
+[20] [21]
+Underfull \hbox (badness 10000) in paragraph at lines 725--727
 
  []
 
@@ -1177,90 +1165,93 @@ Underfull \hbox (badness 10000) in paragraph at lines 735--736
 
  []
 
-[23] [24]
-Overfull \hbox (4.61375pt too wide) in paragraph at lines 788--789
+
+Underfull \hbox (badness 10000) in paragraph at lines 737--739
+
+ []
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 740--741
+
+ []
+
+[23]
+Overfull \hbox (4.61375pt too wide) in paragraph at lines 793--794
 \OT1/cmr/m/n/10.95 Cette methode fonc-tionne a l'aide des ar-gu-ments \OT1/cm
 r/m/it/10.95 texts \OT1/cmr/m/n/10.95 et \OT1/cmr/m/it/10.95 in-dex \OT1/cmr/m/
 n/10.95 precedemment
  []
 
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 834--835
+
+ []
+
 [25]
-Underfull \hbox (badness 10000) in paragraph at lines 829--830
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 833--834
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 838--839
 
  []
 
-[26]
-Underfull \hbox (badness 10000) in paragraph at lines 840--841
+
+Underfull \hbox (badness 10000) in paragraph at lines 843--844
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 842--843
+Underfull \hbox (badness 10000) in paragraph at lines 845--846
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 844--845
+Underfull \hbox (badness 10000) in paragraph at lines 847--848
 
  []
 
-<assets/victoire.png, id=252, 803.0pt x 451.6875pt>
-File: assets/victoire.png Graphic file (type png)
-<use assets/victoire.png>
-Package pdftex.def Info: assets/victoire.png  used on input line 850. on input 
-line 850.
-Package pdftex.def Info: Requested size: 281.05421pt x 158.09299pt on input lin
-e 850.
 
-Underfull \hbox (badness 10000) in paragraph at lines 848--852
+Underfull \hbox (badness 10000) in paragraph at lines 849--850
 
  []
 
-[27] [28 <./assets/victoire.png>]
-Overfull \hbox (0.98546pt too wide) in paragraph at lines 891--892
+[26] [27]
+Overfull \hbox (0.98546pt too wide) in paragraph at lines 893--894
 \OT1/cmr/m/n/10.95 Cette methode ini-tia-lise tous les com-po-sants du ter-rai
 n. Elle prend en compte
  []
 
 
-Overfull \hbox (2.96835pt too wide) in paragraph at lines 894--895
+Overfull \hbox (2.96835pt too wide) in paragraph at lines 896--897
 []\OT1/cmr/bx/n/10.95 collision \OT1/cmr/m/n/10.95 : Booleen qui definit si l
 e ter-rain possede une couche nommee
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 896--897
+Underfull \hbox (badness 10000) in paragraph at lines 898--899
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 902--904
+Underfull \hbox (badness 10000) in paragraph at lines 904--906
 
  []
 
-[29] [30] [31] (explications.aux)
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 911--912
+
+ []
+
+[29] [30] (explications.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5198 strings out of 494953
- 72419 string characters out of 3177379
- 292792 words of memory out of 3000000
- 8420 multiletter control sequences out of 15000+200000
+ 5205 strings out of 494953
+ 72558 string characters out of 3177379
+ 301808 words of memory out of 3000000
+ 8426 multiletter control sequences out of 15000+200000
  11416 words of font info for 40 fonts, out of 3000000 for 9000
  198 hyphenation exceptions out of 8191
- 41i,8n,40p,1107b,1739s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,8n,40p,1119b,1741s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/Mi
@@ -1268,11 +1259,12 @@ KTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiKTeX 2.
 9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
 ic/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti
-10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on explications.pdf (53 pages, 1275282 bytes).
+ts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9
+.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on explications.pdf (53 pages, 1248561 bytes).
 PDF statistics:
- 304 PDF objects out of 1000 (max. 8388607)
+ 310 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 226 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 231 words of extra memory for PDF output out of 10000 (max. 10000000)
 
