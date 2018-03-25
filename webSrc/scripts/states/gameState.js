@@ -7,6 +7,7 @@ var gameState = {
 
         if(!gameRef.introDone){
         globals.functions.intro();
+
     }
 
         initInput();
@@ -14,7 +15,6 @@ var gameState = {
 
         setDialog(gameRef.main.langue);
         createMap1();
-//globals.music.campanella.play();
 
         globals.terrainManager.currentPnjs = []; //solution rapide pour éviter la double bulle des pnjs.
         globals.terrainManager.initMap(globals.maps.chateau,true);

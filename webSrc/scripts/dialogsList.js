@@ -4,7 +4,7 @@ function setDialog(langue){
     switch(langue){
         case 0 :
         //globals.dialogs.intro = [["DISCLAIMER: Ce jeu est inspiré par Candide de Voltaire. Par conséquent, certaines idées exprimées dans le livre ne correspondent plus à l'actualité. Toute représentation offensante est en aucun cas souhaitée."]];
-        globals.dialogs.intro = [["Ce jeu se joue à l'aide des touches directionnelles et de la touche enter. Appuyez sur entrer pour continuer.",function(){globals.dialogManager.stop();globals.dialogs.intro.currentIndex=1;globals.dialogManager.desc(globals.dialogs.intro);}],["Il y avait en Westphalie, dans le château de monsieur le Baron de Thunder-Then-Tronckh, un jeune garçon à qui la nature avait donné les moeurs les plus douces...",function(){game.state.start("game");gameRef.introDone=true;}]];
+        globals.dialogs.intro = [["Ce jeu se joue à l'aide des touches directionnelles et de la touche enter. Appuyez sur entrer pour continuer.",function(){globals.dialogManager.stop();globals.dialogs.intro.currentIndex=1;globals.dialogManager.desc(globals.dialogs.intro);}],["Il y avait en Westphalie, dans le château de monsieur le Baron de Thunder-Then-Tronckh, un jeune garçon à qui la nature avait donné les moeurs les plus douces...",function(){game.state.start("game");gameRef.introDone=true;globals.music.campanella.play("",0,1,true);}]];
         globals.dialogs.pnj1Ch1 = ["Je suis le jardinier de monseigneur le baron et de madame son épouse."];
         //["Ce jeu se joue à l'aide des touches directionnelles et de la touche enter. Appuyez sur entrer pour continuer.",function(){this.currentIndex=1;}]
         globals.dialogs.pnjTestDialogs = [["Bonjour Candide! Souhaiterais-tu t'entraîner au combat ?",["Combat !","Non merci"],

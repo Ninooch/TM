@@ -2,7 +2,7 @@
 \contentsline {section}{\numberline {1}Introduction}{1}
 \contentsline {subsection}{\numberline {1.1}Lexique}{1}
 \contentsline {subsection}{\numberline {1.2}Travail r\IeC {\'e}alis\IeC {\'e}}{2}
-\contentsline {section}{\numberline {2}conception du jeu}{2}
+\contentsline {section}{\numberline {2}Conception du jeu}{2}
 \contentsline {subsection}{\numberline {2.1}Projet original}{2}
 \contentsline {subsection}{\numberline {2.2}R\IeC {\'e}sultat final}{3}
 \contentsline {subsection}{\numberline {2.3}Adaptation}{3}
@@ -16,59 +16,57 @@
 \contentsline {subsection}{\numberline {6.1}Visuel}{14}
 \contentsline {subsubsection}{\numberline {6.1.1}Police personnalis\IeC {\'e}e}{14}
 \contentsline {subsubsection}{\numberline {6.1.2}Sprites de dialogues}{15}
-\contentsline {subsubsection}{\numberline {6.1.3}Sprites d'overworld}{15}
-\contentsline {subsubsection}{\numberline {6.1.4}Tilesets}{15}
-\contentsline {subsubsection}{\numberline {6.1.5}Tilemap}{15}
-\contentsline {subsection}{\numberline {6.2}Musical}{15}
-\contentsline {subsection}{\numberline {6.3}En r\IeC {\'e}sum\IeC {\'e}}{15}
-\contentsline {section}{\numberline {7}Conclusion}{16}
-\contentsline {subsection}{\numberline {7.1}Nina Ionescu ou l'optimisme}{16}
-\contentsline {subsection}{\numberline {7.2}Exp\IeC {\'e}rience gagn\IeC {\'e}e}{16}
-\contentsline {subsection}{\numberline {7.3}Continuation du projet}{16}
+\contentsline {subsubsection}{\numberline {6.1.3}Sprites d'overworld}{17}
+\contentsline {subsubsection}{\numberline {6.1.4}Tilesets}{18}
+\contentsline {subsubsection}{\numberline {6.1.5}Tilemap}{18}
+\contentsline {subsection}{\numberline {6.2}Musical}{18}
+\contentsline {subsection}{\numberline {6.3}En r\IeC {\'e}sum\IeC {\'e}}{19}
+\contentsline {section}{\numberline {7}Conclusion}{19}
+\contentsline {subsection}{\numberline {7.1}Nina Ionescu ou l'optimisme}{19}
+\contentsline {subsection}{\numberline {7.2}Exp\IeC {\'e}rience gagn\IeC {\'e}e}{20}
+\contentsline {subsection}{\numberline {7.3}Continuation du projet}{20}
 \contentsline {section}{Annexes}{}
 \contentsline {section}{\numberline {A}Images}{}
-\contentsline {section}{\numberline {B}Fonctionement du code}{}
-\contentsline {subsection}{\numberline {B.1}Syst\IeC {\`e}me g\IeC {\'e}n\IeC {\'e}ral}{}
-\contentsline {subsection}{\numberline {B.2}Commencement}{}
-\contentsline {subsection}{\numberline {B.3}Gestion des states du jeu}{}
-\contentsline {subsubsection}{\numberline {B.3.1}Boot et Preload}{}
-\contentsline {subsubsection}{\numberline {B.3.2}Menu Principal}{}
-\contentsline {subsubsection}{\numberline {B.3.3}Game}{}
-\contentsline {subsubsection}{\numberline {B.3.4}Battle}{}
-\contentsline {subsubsection}{\numberline {B.3.5}Transition avec texte}{}
-\contentsline {subsection}{\numberline {B.4}Joueur}{}
-\contentsline {subsection}{\numberline {B.5}Les pnjs}{}
-\contentsline {subsubsection}{\numberline {B.5.1}Personnages normaux : La classe \textit {Pnj}}{}
+\contentsline {subsection}{\numberline {A.1}Syst\IeC {\`e}me g\IeC {\'e}n\IeC {\'e}ral}{}
+\contentsline {subsection}{\numberline {A.2}Gestion des states du jeu}{}
+\contentsline {subsubsection}{\numberline {A.2.1}Boot et Preload}{}
+\contentsline {subsubsection}{\numberline {A.2.2}Menu Principal}{}
+\contentsline {subsubsection}{\numberline {A.2.3}Game}{}
+\contentsline {subsubsection}{\numberline {A.2.4}Battle}{}
+\contentsline {subsubsection}{\numberline {A.2.5}Transition avec texte}{}
+\contentsline {subsection}{\numberline {A.3}Joueur}{}
+\contentsline {subsection}{\numberline {A.4}Les pnjs}{}
+\contentsline {subsubsection}{\numberline {A.4.1}Personnages normaux : La classe \textit {Pnj}}{}
 \contentsline {paragraph}{}{}
-\contentsline {subsubsection}{\numberline {B.5.2}Ennemis : La classe \textit {Ennemy}}{}
-\contentsline {subsection}{\numberline {B.6}Les bulles : La classe \textit {Bubble}}{}
-\contentsline {subsection}{\numberline {B.7}Les attaques : La classe \textit {Attaque}}{}
+\contentsline {subsubsection}{\numberline {A.4.2}Ennemis : La classe \textit {Ennemy}}{}
+\contentsline {subsection}{\numberline {A.5}Les bulles : La classe \textit {Bubble}}{}
+\contentsline {subsection}{\numberline {A.6}Les attaques : La classe \textit {Attaque}}{}
 \contentsline {paragraph}{}{}
-\contentsline {subsection}{\numberline {B.8}Les barres de vie: La classe \textit {Healthbar}}{}
-\contentsline {subsection}{\numberline {B.9}Les objets de terrain : Les classes \textit {CustomMap} et \textit {Warp}}{}
-\contentsline {subsection}{\numberline {B.10}Gestion des dialogues : La classe \textit {dialogManager}}{}
-\contentsline {subsubsection}{\numberline {B.10.1}m\IeC {\'e}thode \textit {start()}}{}
-\contentsline {subsubsection}{\numberline {B.10.2}m\IeC {\'e}thode \textit {displayText()}}{}
-\contentsline {subsubsection}{\numberline {B.10.3}m\IeC {\'e}thode \textit {wait()}}{}
+\contentsline {subsection}{\numberline {A.7}Les barres de vie: La classe \textit {Healthbar}}{}
+\contentsline {subsection}{\numberline {A.8}Les objets de terrain : Les classes \textit {CustomMap} et \textit {Warp}}{}
+\contentsline {subsection}{\numberline {A.9}Gestion des dialogues : La classe \textit {dialogManager}}{}
+\contentsline {subsubsection}{\numberline {A.9.1}m\IeC {\'e}thode \textit {start()}}{}
+\contentsline {subsubsection}{\numberline {A.9.2}m\IeC {\'e}thode \textit {displayText()}}{}
+\contentsline {subsubsection}{\numberline {A.9.3}m\IeC {\'e}thode \textit {wait()}}{}
 \contentsline {paragraph}{}{}
-\contentsline {subsubsection}{\numberline {B.10.4}m\IeC {\'e}thode \textit {resume()}}{}
-\contentsline {subsubsection}{\numberline {B.10.5}m\IeC {\'e}thode \textit {question()}}{}
-\contentsline {subsubsection}{\numberline {B.10.6}m\IeC {\'e}thode \textit {selection()}}{}
-\contentsline {subsubsection}{\numberline {B.10.7}m\IeC {\'e}thode \textit {stop()}}{}
-\contentsline {subsubsection}{\numberline {B.10.8}Texte automatique : Les m\IeC {\'e}thodes \textit {startDialog(pnj)}, \textit {startBattleDesc(text,battleDesc)} et \textit {desc(text)}}{}
-\contentsline {subsubsection}{\numberline {B.10.9}m\IeC {\'e}thode \textit {endBattleScreen()}}{}
-\contentsline {subsection}{\numberline {B.11}Gestion du terrain : La classe \textit {TerrainManager}}{}
-\contentsline {subsubsection}{\numberline {B.11.1}m\IeC {\'e}thode \textit {initMap()}}{}
-\contentsline {subsubsection}{\numberline {B.11.2}m\IeC {\'e}thode \textit {clearMap()}}{}
-\contentsline {subsubsection}{\numberline {B.11.3}m\IeC {\'e}thode \textit {changeMap()}}{}
-\contentsline {subsection}{\numberline {B.12}m\IeC {\'e}thode \textit {update()}}{}
-\contentsline {subsection}{\numberline {B.13}Gestion des combats : La classe \textit {BattleManager}}{}
-\contentsline {subsubsection}{\numberline {B.13.1}m\IeC {\'e}thode \textit {init()}}{}
-\contentsline {subsubsection}{\numberline {B.13.2}m\IeC {\'e}thode \textit {clearMap()}}{}
-\contentsline {subsubsection}{\numberline {B.13.3}m\IeC {\'e}thode \textit {clearMap()}}{}
-\contentsline {subsubsection}{\numberline {B.13.4}m\IeC {\'e}thode \textit {clearMap()}}{}
-\contentsline {subsubsection}{\numberline {B.13.5}m\IeC {\'e}thode \textit {clearMap()}}{}
-\contentsline {subsubsection}{\numberline {B.13.6}m\IeC {\'e}thode \textit {clearMap()}}{}
-\contentsline {subsubsection}{\numberline {B.13.7}m\IeC {\'e}thode \textit {clearMap()}}{}
-\contentsline {subsubsection}{\numberline {B.13.8}m\IeC {\'e}thode \textit {clearMap()}}{}
-\contentsline {subsubsection}{\numberline {B.13.9}Gestions des signaux}{}
+\contentsline {subsubsection}{\numberline {A.9.4}m\IeC {\'e}thode \textit {resume()}}{}
+\contentsline {subsubsection}{\numberline {A.9.5}m\IeC {\'e}thode \textit {question()}}{}
+\contentsline {subsubsection}{\numberline {A.9.6}m\IeC {\'e}thode \textit {selection()}}{}
+\contentsline {subsubsection}{\numberline {A.9.7}m\IeC {\'e}thode \textit {stop()}}{}
+\contentsline {subsubsection}{\numberline {A.9.8}Texte automatique : Les m\IeC {\'e}thodes \textit {startDialog(pnj)}, \textit {startBattleDesc(text,battleDesc)} et \textit {desc(text)}}{}
+\contentsline {subsubsection}{\numberline {A.9.9}m\IeC {\'e}thode \textit {endBattleScreen()}}{}
+\contentsline {subsection}{\numberline {A.10}Gestion du terrain : La classe \textit {TerrainManager}}{}
+\contentsline {subsubsection}{\numberline {A.10.1}m\IeC {\'e}thode \textit {initMap()}}{}
+\contentsline {subsubsection}{\numberline {A.10.2}m\IeC {\'e}thode \textit {clearMap()}}{}
+\contentsline {subsubsection}{\numberline {A.10.3}m\IeC {\'e}thode \textit {changeMap()}}{}
+\contentsline {subsubsection}{\numberline {A.10.4}m\IeC {\'e}thode \textit {update()}}{}
+\contentsline {subsection}{\numberline {A.11}Gestion des combats : La classe \textit {BattleManager}}{}
+\contentsline {subsubsection}{\numberline {A.11.1}m\IeC {\'e}thode \textit {init()}}{}
+\contentsline {subsubsection}{\numberline {A.11.2}m\IeC {\'e}thode \textit {clearMap()}}{}
+\contentsline {subsubsection}{\numberline {A.11.3}m\IeC {\'e}thode \textit {clearMap()}}{}
+\contentsline {subsubsection}{\numberline {A.11.4}m\IeC {\'e}thode \textit {clearMap()}}{}
+\contentsline {subsubsection}{\numberline {A.11.5}m\IeC {\'e}thode \textit {clearMap()}}{}
+\contentsline {subsubsection}{\numberline {A.11.6}m\IeC {\'e}thode \textit {clearMap()}}{}
+\contentsline {subsubsection}{\numberline {A.11.7}m\IeC {\'e}thode \textit {clearMap()}}{}
+\contentsline {subsubsection}{\numberline {A.11.8}m\IeC {\'e}thode \textit {clearMap()}}{}
+\contentsline {subsubsection}{\numberline {A.11.9}Gestions des signaux}{}

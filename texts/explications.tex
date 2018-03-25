@@ -133,7 +133,7 @@ Afin d'avoir une meilleure compréhension de ce document, voici un lexique. \\
 \subsection{Travail réalisé}
 Lors de ce projet, une relecture attentive de Candide a été réalisée pour récolter tout ce qui peut servir à une adaptation. J'ai programmé de nombreuses classes et méthodes qui servent d'outils pour la construction du jeu ainsi que quelques fonctions uniques pour que l'histoire prenne place. En parallèle à cela, j'ai dessiné les spritesheets pour les personnages et les décors, tout ce qui sert d'élément de jeu (bulles, conteneurs de texte, ...), une police de caractères et réalisé les maps. Un travail sur de la musique a aussi été envisagé et quelques ébauches musicales pour le jeu ont vu le jour, bien qu'inexploitées dans le rendu final.
 
-\section{conception du jeu}
+\section{Conception du jeu}
 
 \subsection{Projet original}
 Le but du projet original était d'adapter l'entièreté de Candide sous forme de jeu vidéo avec un scénario alternatif et créer tous les assets visuels et auditifs. Le tout en 6 mois, un projet qui aurait été qualifié de totalement réaliste par la pointe d'ironie de Voltaire et celle de mon mentor avisé...\\
@@ -242,31 +242,11 @@ Pour recommencer à jouer, il faut rafraîchir la page.
 
 
 \section{Fonctionement du code}
-Ce projet a été réalisé en javascript, avec les additions de ECMAScript6 et de deux librairies conçues pour la réalisation de jeu-vidéo : Phaser.js ainsi que Phaser-tilemap-plus.js . La majorité du code comprend des objets et des classes créés afin de pouvoir les utiliser comme outils de création.\\
+Ce projet a été réalisé en JavaScript, avec les additions de ECMAScript6 et de deux librairies conçues pour la réalisation de jeu-vidéo : Phaser.js ainsi que Phaser-tilemap-plus.js . La majorité du code comprend des objets et des classes créés afin de pouvoir les utiliser comme outils de création.\\
 
-\textit{Note:} Les extraits de code présentés sont des extraits du code source comprenant les passages les plus importants, ils ne sont pas complets.
+\subsection{Balayage du code}
 
-\subsection{Système général}
-	Avant toute chose, il a fallu concevoir un système qui permette d'atteindre diverses variables au travers de tous les outils du jeu. C'est pourquoi l'objet \textit{globals} (présent dans globals.js), une variable globale a été créée. Cet objet stocke toutes les variables afin d'y avoir accès facilement sans devoir se soucier des scopes des différentes classes et de leur méthodes.\\
-	
-	
-	(Pour retenir les diverses actions effectuées par le joueur ainsi que des données importantes telles que son positionnement ou le décor actuellement chargé à l'écran, un autre objet global (présent dans gameRef.js) est utilisé. Il sert de référence pour initialiser le personnage incarné par le joueur dans l'état où ce dernier l'avait laissé.) (pas encore sûre, voir le local storage)\\
- 
- Afin d'étendre les possibilités futures de diffusion du projet, une option de traduction a été pensée dans le code de départ. Il s'agit d'un chiffre ( 0 pour le français, 1 pour l'anglais, ... ) stocké dans l'objet mentionné au paragraphe ci-dessus. Grâce à cette variable, la fonction de dialogList.js retourne les textes figurants dans le jeu dans leur bonne version. \\
- \begin{lstlisting}[language=JavaScript]
- function setDialog(langue){
-    switch(langue){
-        case 0 : 
-        globals.dialogs.myChar=["Bonjour"];
-    break;
-        case 1:
-        globals.dialogs.myChar=["Hello"];
-		break;
- 	}
- }
-\end{lstlisting}
-\textit{Exemple de la fonction traductrice pour le dialogue d'un personnage quelconque}
-\subsection{Commencement}
+
 \subsection{En résumé}
 Beaucoup de code pour au final, un petit rendu. En effet, programmer un jeu de type RPG est beaucoup plus compliqué que prévu. Chaque fonction pour la progression du jeu est unique et il est très difficile d'avoir ne serait-ce qu'un minimum de scénario. Le niveau de complexité est déjà assez élevé rien qu'en programmant un long dialogue qui ne sera affiché qu'une fois au cours du jeu, comme par exemple les quelques lignes de Pangloss. Ce à quoi mon projet s'approche le plus est peut-être une situation de base inspirée du premier chapitre de Candide, mais il est loin d'être proche d'un jeu. Pourtant tout ce qui a été programmé est indispensable pour chaque jeu vidéo de type RPG car ce sont les éléments de base pour le construire. Le code est quelque chose d'invisible pour le joueur et il peut être très frustrant de constater qu'après tant de code écrit, seul un petit résultat est affiché à l'écran. \\
 
@@ -278,6 +258,7 @@ Cette section va brièvement présenter les idées de bases pour le jeu ainsi qu
 \section{Conception des assets}
 \subsection{Visuel}
 %logiciels utilisé , techniques(travailler avec des tiles, couches de transparence...)inspiration pour les personnages, dessins originaux etc.. restrictions au niveau du pixel art, base pour cohérence etc...
+Tous les dessins ont été réalisés avec le logiciel Pyxel Edit et les maps avec le logiciel Tiled.
 \subsubsection{Police personnalisée}
 %comment on a fait
 La police du jeu est une police conçue pour le projet. En effet, Phaser permet d'afficher du texte de manière assez simple avec des polices standards, le problème est que les polices décadrent avec l'ambiance du jeu. Phaser permet aussi d'afficher du texte avec des polices bitmap. Il était également possible d'en choisir une déjà existante et de créditer son auteur mais aucune police ne correspondait aux attentes. La meilleure solution était donc de créer une police personnalisée, qui intègrerait sans problème le style graphique du jeu. \\
@@ -285,25 +266,74 @@ La police du jeu est une police conçue pour le projet. En effet, Phaser permet 
 Pour créer la police, deux sites ont étés utilisés, calligraphr.com ainsi que kvazars.com/littera.\\ Calligraphr permet de télécharger un modèle à remplir avec les lettres souhaitées puis de convertir ensuite ces images en police de format trueTypeFont. Grâce à Littera, il est ensuite possible de convertir cette police en police bitmap pour être utilisée dans le jeu. \\
 
 Un des problèmes rencontrés en cours de réalisation était la précision du rendu. Il fallait utiliser des équivalent de pixels, des carrés de 11X11px pour avoir un rendu pixelisé car les modèles de Calligraph font la grandeur d'une feuille A4. \\
-Un autre problème était le rendu avec Littéra. En effet, le site a appliqué un filtre d'anti-alias automatiquement sur les lettres, ce qui gâchait l'effet du pixel art. Il a donc fallu retoucher toute les lettres à la main sur la feuille finale. Au cours de la réalisation, plusieurs lettres ont du être ajoutées, ce qui a eut comme effet de modifier la disposition des lettres sur la feuille finale et donc de devoir recommencer le travail fastidieux de les redessiner. 
+Un autre problème était le rendu avec Littéra. En effet, le site a appliqué un filtre d'anti-alias automatiquement sur les lettres, ce qui gâchait l'effet du pixel art. Il a donc fallu retoucher toute les lettres à la main sur l'image finale. En cours de la réalisation, plusieurs lettres ont du être ajoutées, ce qui a eut comme effet de modifier la disposition des lettres sur la feuille finale et donc de devoir recommencer le travail fastidieux de les redessiner. 
 \subsubsection{Sprites de dialogues}
-techniques(couches, dessins - restrictions), exemple , projet noir blanc
+%techniques(couches, dessins - restrictions), exemple , projet noir blanc
+
+Pour garder une cohérence stylistique ainsi que pour simplifier le travail, tous les sprites de dialogues ont une base commune de 35X67 pixels: 
+\begin{figure}[H]
+\includegraphics{base}
+\centering
+\end{figure}
+Ensuite, les traits caractéristiques de chaque personnage sont dessinés par dessus cette base. Seuls quelques pixels servent à changer totalement l'expression d'un personnage. Ces traits sont donc primordiaux pour donner une individualité aux personnages. Il faut que le joueur ressente leur caractère au premier regard. Voici un recueil des traits principaux des personnages dont quelques visages sont déjà familiers.\\
+\begin{figure}[H]
+\includegraphics[scale=0.7]{faces_Candide}
+\centering
+\caption{Ebauche des personnages.}
+\end{figure}
+De gauche à droite :\\\textit{première colonne} : Candide , Cunégonde, Pangloss, Paquette, Cacambo\\
+\textit{deuxième colonne}: Martin, la vieille, le baron de Thunder-ten-Tronckh, moi-même, la marquise de Parolignac\\
+\textit{troisième colonne} :  Une fille de l'Eldorado, un Oreillon, une Oreillonne, Jacques le bienfaiteur\\
+\textit{quatrième colonne} : Voltaire, Pangloss atteint de la syphilis, meneer Vonderdendur, le frère de Cunégonde,signore Poccocurante\\
+\textit{cinquième colonne} : frère Giroflée, la baronne de Thunder-ten-Tronckh, l'esclave de Vonderdendur, un potentiel villageois , l'inquisiteur de Lisbonne \\
+\textit{sixième colonne} : le roi des Bulgares, l'abbé périgourdin, le vieux Turc\\
+
+Cette illustration montre la richesse du pixel art, les personnages sont cohérents entre eux pourtant ils ont chacun leur propre design.\\
+
+Une fois la base créée, l'animation est dessinée en modifiant la frame pour créer le mouvement des paupières et des lèvres du personnage. Les couleurs de bases sont ensuite définies sur une couche en dessous des contours puis les détails sont rajoutés en transparence sur une couche supérieure. 
+\begin{figure}[H]
+\includegraphics[scale=1.5]{exempleTM}
+\centering
+\caption{La marquise de Parolignac en cours de réalisation}
+\end{figure}
+
+Chaque sprite demande un travail considérable , il faut donc énormément de temps pour illustrer chaque personnage unique de Candide. Pour les personnages qui servent uniquement à habiter le décor, une solution a été pensée : dessiner quelques alternatives physiques ( diverses coupes de cheveux, nez, bouches,...) en niveaux de gris puis les associer à une couleur. Il sera alors beaucoup plus simple de recolorer et d'associer différentes parties pour recycler une partie du travail effectué.\\
+La technique des niveaux de gris a été appliquée pour les barres de vies lors des combats, car il aurait été trop compliqué de coder en prenant compte 3 images distinctes. Malheureusement, cette technique n'a pas encore été testée pour la réalisation de personnage.
 \subsubsection{Sprites d'overworld}
-techniques, exemples
+%techniques, exemples
+Tous les sprites de ce type ont également une base commune.
+\begin{figure}[H]
+\includegraphics[scale=1]{animationBase}
+\centering
+\end{figure}
+L'animation de marche a été assez difficile à dessiner car il fallait que le résultat semble fluide et naturel.\\
+
+Ces sprites reprennent les plus gros détails des personnages et ont un coloriage plus minimaliste. Plus de détails pourraient être cependant ajoutés.
+\begin{figure}[H]
+\includegraphics[scale=1.5]{panglossSprite}
+\centering
+\end{figure}
 \subsubsection{Tilesets}
-techniques, exemples
+%techniques, exemples
 \subsubsection{Tilemap}
 \subsection{Musical}
-logiciel utilisé , techniques (trouver une suite d'accord, les instruments etc..) , éventuellement les bruitages , la campanella midi file
+%logiciel utilisé , techniques (trouver une suite d'accord, les instruments etc..) , éventuellement les bruitages , la campanella midi file
+Le logiciel Bosca Ceoil a été utilisé pour créer des ébauches musicales qui ne figurent pas dans le projet final. Il n'est pas facile de composer une musique qui sied bien à l'atmosphère d'un jeu vidéo. Les musiques de l'opéra Candide de Bernstein auraient pu être utilisées mais transcrire une musique est très compliqué et les fichiers midis trouvés n'avaient pas un joli rendu.\\
+
+Étant cependant une grande admiratrice de Paganini, la Campanella a été choisie comme musique accompagnatrice du jeu. Un fichier midi a été utilisé avec Bosca Ceoil et le tout avait un rendu agréable.  
 \subsection{En résumé}
 Encore une fois, beaucoup de travail pour un petit résultat. Le pixel art demande beaucoup de patience et créer un univers cohérent et agréable visuellement est difficile sans assets complets. Malheureusement, une partie des assets n'est pas encore utilisée dans le projet rendu. En effet, ayant pensé avoir le temps de développer plus d'histoire, d'autres personnages ont été dessinés au début du projet. Ils figureront tout de même en annexe.
 \section{Conclusion}
 \subsection{Nina Ionescu ou l'optimisme} 
-Ah, que dire de la naïve candeur d'un programmeur encore nouveau face à la réalisation d'un jeu vidéo ? En réalisant ce travail, j'ai réalisé que programmer un jeu vidéo était beaucoup plus compliqué que ce qu'il en a l'air. D'autant plus lorsque le temps est relativement limité et que tout doit être réalisé, du code jusqu'au décor. Et encore, il s'agit d'une adaptation, je n'ose pas imaginer la charge de travail avec un scénario original. C'est pourquoi, ce sont souvent des équipes expérimentées ,dont les membres ont chacun une fonction bien précise pour la création du jeu, qui arrivent à un résultat convaincant au bout d'une année. Il y a aussi des développeurs indépendants qui créent des merveilles mais ces jeux prennent généralement des années complètes à être conçus et ce en prenant compte que créer des jeux vidéos est le métier de ces développeurs. \\
+Ah, que dire de la naïve candeur d'un programmeur encore nouveau face à la réalisation d'un jeu vidéo ? En réalisant ce travail, j'ai réalisé que programmer un jeu vidéo était beaucoup plus compliqué que ce qu'il en a l'air. D'autant plus lorsque le temps est relativement limité et que tout doit être réalisé, du code jusqu'au décor. Et encore, il s'agit d'une adaptation, je n'ose pas imaginer la charge de travail avec un scénario original. C'est pourquoi, ce sont souvent des équipes expérimentées , dont les membres ont chacun une fonction bien précise pour la création du jeu, qui arrivent à un résultat convaincant au bout d'une année. Il y a aussi des développeurs indépendants qui créent des merveilles mais ces jeux prennent généralement des années complètes à être conçus et ce en prenant compte que créer des jeux vidéos est le métier de ces développeurs. \\
 
 Je n'ai pas tout de suite réalisé que ça ne serait pas possible de mener à bout ce projet dans les temps donnés. C'est pourquoi de nombreux dessins de personnages intervenant bien plus tard dans le jeu ont été réalisés au départ. Garder une motivation élevée pendant si longtemps relève aussi un grand défi : Quand le jeu n'est qu'une ébauche, il y a encore de quoi s'émerveiller car tout semble aller vite. Mais dès qu'il y a un minimum de réalisé, même si le code est bien présent, le jeu ne semble guère avoir avancé... Néanmoins, si je ne m'étais pas fixé un si haut objectif, quoique irréalisable, j'ai la certitude que je n'aurais pas produit autant que tout ce que ce projet a à présenter.
 \subsection{Expérience gagnée}
-Ce projet m'a permis d'acquérir une meilleure compréhension de Javascript, plus en particulier des classes, de méthodes et des scopes des fonctions. Il a réussi à me faire mieux comprendre la logique, un peu carrée, de la réalisation de programme. J'ai également appris à chercher les erreurs de manière plus efficace pour éviter un maximum de les reproduire ensuite. \\ J'ai appris à m'organiser en classant tous ce qui était produit dans des dossiers appropriés et ainsi ne pas se perdre lors de recherche de fichiers.\\ J'ai appris intuitivement diverses techniques de base en pixel art et pour une première, les résultats sont très satisfaisant à mon goût. 
+Ce projet m'a permis d'acquérir une meilleure compréhension de Javascript, plus en particulier des classes, de méthodes et des scopes des fonctions. Il a réussi à me faire mieux comprendre la logique un peu carrée, de la réalisation de programme. J'ai également appris à chercher les erreurs de manière plus efficace pour éviter un maximum de les reproduire ensuite. Il vaudrait cependant la peine d'améliorer certains codes écrits au début du projet car ils n'exploitaient pas encore toutes les fonctionnalités de Phaser.\\ 
+
+J'ai appris à m'organiser en classant tout ce qui était produit dans des dossiers appropriés afin de ne pas se perdre lors de recherche de fichiers.\\
+
+J'ai aussi appris intuitivement diverses techniques de base en pixel art et pour une première, les résultats sont très satisfaisants à mon goût. 
 \subsection{Continuation du projet}
 Bien loin d'être terminé, ce projet m'a permis de me lancer sérieusement sur la route d'un long travail. J'ai envie de le continuer, de voir tous les personnages terminés et animés, des cinématiques et des combats ayant du sens. Mon but ultime serait de procurer un instant de plaisir aux potentiels joueurs qui découvriraient Candide sous un nouvel angle. 
 %long !!! --> désillusion XD 
@@ -315,11 +345,35 @@ Bien loin d'être terminé, ce projet m'a permis de me lancer sérieusement sur 
 \pagenumbering{gobble}
 \begin{thebibliography}{9}
 \bibitem{nomPourCiter}
-sources : \
-Phaser.js par Richard Davey \
-Phaser-tilemap-plus par Colin Vella \
-Bosca Ceoil par Terry Cavanagh \
-Pyxel Edit par Danik ( pseudonyme )\
+\textbf{Phaser}\\
+créé par Richard Davey\\
+\textit{http://phaser.io/}
+\bibitem{}
+\textbf{Phaser-tilemap-plus}\\
+créé par Colin Vella\\
+\textit{https://github.com/colinvella/phaser-tilemap-plus}
+\bibitem{}
+\textbf{Pyxel Edit}\\
+créé par l'utilisateur utilisant le pseudonyme Danik\\
+\textit{http://pyxeledit.com/}
+\bibitem{}
+\textbf{Tiled}\\
+créé par Thorbjørn Lindeijer\\
+\textit{http://www.mapeditor.org/}
+\bibitem{}
+\textbf{Bosca Ceoil}\\
+créé par Terry Cavanagh\\
+\textit{https://boscaceoil.net/}
+\bibitem{}
+\textbf{La Campanella}\\
+composée par Niccoló Paganini et transcrit par R. Lopez\\
+\textit{https://www.classicalarchives.com/midi/composer/3114.html}
+\bibitem{}
+\textbf{Calligraphr}\\
+\textit{https://www.calligraphr.com/en/}
+\bibitem{}
+\textbf{Littera}\\
+\textit{http://www.kvazars.com/littera/}
 \end{thebibliography}
 
 
@@ -387,16 +441,10 @@ Pyxel Edit par Danik ( pseudonyme )\
 \end{figure}
 
 \newpage
-\section{Fonctionement du code}
-Ce projet a été réalisé en javascript, avec les additions de ECMAScript6 et de deux librairies conçues pour la réalisation de jeu-vidéo : Phaser.js ainsi que Phaser-tilemap-plus.js . La majorité du code comprend des objets et des classes créés afin de pouvoir les utiliser comme outils de création.\\
-
 \textit{Note:} Les extraits de code présentés sont des extraits du code source comprenant les passages les plus importants, ils ne sont pas complets.
 
 \subsection{Système général}
 	Avant toute chose, il a fallu concevoir un système qui permette d'atteindre diverses variables au travers de tous les outils du jeu. C'est pourquoi l'objet \textit{globals} (présent dans globals.js), une variable globale a été créée. Cet objet stocke toutes les variables afin d'y avoir accès facilement sans devoir se soucier des scopes des différentes classes et de leur méthodes.\\
-	
-	
-	(Pour retenir les diverses actions effectuées par le joueur ainsi que des données importantes telles que son positionnement ou le décor actuellement chargé à l'écran, un autre objet global (présent dans gameRef.js) est utilisé. Il sert de référence pour initialiser le personnage incarné par le joueur dans l'état où ce dernier l'avait laissé.) (pas encore sûre, voir le local storage)\\
  
  Afin d'étendre les possibilités futures de diffusion du projet, une option de traduction a été pensée dans le code de départ. Il s'agit d'un chiffre ( 0 pour le français, 1 pour l'anglais, ... ) stocké dans l'objet mentionné au paragraphe ci-dessus. Grâce à cette variable, la fonction de dialogList.js retourne les textes figurants dans le jeu dans leur bonne version. \\
  \begin{lstlisting}[language=JavaScript]
@@ -412,14 +460,14 @@ Ce projet a été réalisé en javascript, avec les additions de ECMAScript6 et 
  }
 \end{lstlisting}
 \textit{Exemple de la fonction traductrice pour le dialogue d'un personnage quelconque}
-\subsection{Commencement}
+
 \subsection{Gestion des states du jeu}
 %qu'est-ce qu'une state, comment ça marche etc...\\\\
-Les states, propres à Phaser, représentent une section du jeu. Chaque objet state a son lot de fonctions Phaser, à savoir \textit{preload()}, \textit{create()}, \textit{update()} et \textit{render()}. L'utilisation de ces fonctions va être décrite dans les paragraphes ci-dessous.
+Les states, propres à Phaser, représentent une section du jeu. Chaque objet State a son lot de méthodes, à savoir \textit{preload()}, \textit{create()}, \textit{update()} et \textit{render()}. L'utilisation de ces fonctions va être décrite dans les paragraphes ci-dessous.
 
 \subsubsection{Boot et Preload}
 %boot fait démarrer le jeu, preload pour les assets etc...
-La state "Boot" fait démarrer le jeu. Elle déclenche la state "Preload". Preload est une state qui utilise uniquement la fonction \textit{preload()}, qui sert à associer tous les assets du jeu à un nom et les stocker dans le cache pour pouvoir les utiliser dans le code. Une fois tous les éléments stockés, la state "Menu principal" est enclenchée. Le choix d'utiliser une unique state pour ce travail permet une meilleure organisation au sein du code.
+La state "Boot" fait démarrer le jeu. Elle déclenche la state "Preload". Preload est une state qui utilise uniquement la méthode \textit{preload()}, qui sert à associer tous les assets du jeu à un nom et les stocker dans le cache pour pouvoir les utiliser dans le code. Une fois tous les éléments stockés, la state "Menu principal" est enclenchée. Le choix d'utiliser une unique state pour ce travail permet une meilleure organisation au sein du code.
 \subsubsection{Menu Principal}
 %expliquer la fonction avec les boutons, dans un premier temps elle est avec une sprite sheet pour chaque langue, éventuelle amélioration.\\
 La state "Menu principal" permet au joueur de lancer le jeu ou d'en modifier la langue. Les boutons qui permettent de faire une action sont des objets Phaser. L'ensemble des boutons est initié dans une seule fonction. Cette fonction dépend de la langue que le joueur a choisi. Chaque bouton a sa propre spritesheet, ce qui pourrait poser problème au niveau de la taille et du temps pour les dessiner si d'autres langues sont ajoutées. Une option serait de générer dans le code, les textes dans les boutons à la place de les dessiner à la main.
@@ -836,7 +884,7 @@ Elle crée un fondu enchaîné sur du noir, détruit tout ce qu'il y a a l'écra
 Lors de la réalisation, le fondu a été programmé en plus des autres méthodes mais il ne marchait qu'à moitié : Même si le personnage bougeait, le rectangle noir qui obstruait la fenêtre de vue restait à la même place! C'est en s'aventurant dans la documentation que des méthodes permettant ces effets ont été découvertes...
 %expliquer les maps,collisions, tilesets,calques, warps , l'objet terrainmanager etc... expliquer le fail avec le tween manager pour le fade in et fade out.
 %expliquer le problème avec les données dans la map et la solution
-\subsection{méthode \textit{update()}}
+\subsubsection{méthode \textit{update()}}
 Cette méthode établit la collision entre le joueur et l'environnement ainsi que les personnages composants la scène. Elle vérifie aussi les détections d'intersections avec les warps pour afficher si besoin une bulle.
 
 Il y a eu des problèmes avec les bulles, car dans une première version du code, elles étaient constamment supprimées. C'est expliqué par le fait que le warp pénétré n'était pas retenu et que le code vérifiait pour chaque warp présent dans la map si le joueur était dedans. Comme les conditions étaient vérifiées, la bulle était supprimée aussitôt qu'elle était créée. Le problème a été géré en associant la zone de warp à une variable et de vérifier le contenu de cette variable avant de supprimer la bulle.

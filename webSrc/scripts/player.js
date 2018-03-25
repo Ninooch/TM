@@ -16,7 +16,7 @@ function initPlayer(x,y){
     globals.player.customProps = {};
 
     globals.player.customProps.animationSpeed = 6;
-    globals.player.customProps.speed = 750;
+    globals.player.customProps.speed = 150;
     globals.player.customProps.canMove = true;
 
     globals.player.rectangle = getBounds(globals.player);
