@@ -1,7 +1,7 @@
   \documentclass[11pt]{article}
 
 \usepackage[utf8]{inputenc}
-
+\usepackage{hyperref}
 \usepackage{graphicx}
 \graphicspath{{assets/}}
 \usepackage[francais]{babel}
@@ -138,7 +138,7 @@ Lors de ce projet, une relecture attentive de Candide a été réalisée pour r�
 \subsection{Projet original}
 Le but du projet original était d'adapter l'entièreté de Candide sous forme de jeu vidéo avec un scénario alternatif et créer tous les assets visuels et auditifs. Le tout en 6 mois, un projet qui aurait été qualifié de totalement réaliste par la pointe d'ironie de Voltaire et celle de mon mentor avisé...\\
 
-Dans ce projet, le joueur pourrait incarner Candide et vivre une aventure propre aux choix qu'il serait amené à faire durant le jeu. Il dialoguerait avec les personnages qui proposeraient des quêtes à remplir et influenceraient le jeu, il collecterait des objets trouvés le long de son voyage pour les revendre ou les utiliser lors de combats à l'épée ou philosophiques. Il récolterait une collection de graines pour les planter au final dans son jardin... Le tout agrémenté de belles cinématiques.\\ Le jeu n'aurait pas forcément été agréable avec le joueur, le but étant que ce dernier ressente ce qu'a ressenti Candide lors de son périple. Un exemple de choix qui avait été imaginé était  que le joueur ait le choix très tôt dans le jeu de choisir combien de sucre il souhaite dans son thé. Un choix apparemment innocent qui aurait révélé ses conséquences beaucoup plus tard dans le jeu, lorsque Candide rencontrerait l'esclave qui travaille pour la production de sucre. En fonction de la réponse du début, l'esclave aurait été plus ou moins maltraité. 
+Dans ce projet, le joueur pourrait incarner Candide et vivre une aventure propre aux choix qu'il serait amené à faire durant le jeu. Il dialoguerait avec les personnages qui proposeraient des quêtes à remplir et influenceraient le jeu, il collecterait des objets trouvés le long de son voyage pour les revendre ou les utiliser lors de combats à l'épée ou philosophiques. Il récolterait une collection de graines pour les planter au final dans son jardin... Le tout agrémenté de belles cinématiques.\\ Le jeu aurait parfois malmené le joueur, le but étant que ce dernier ressente ce qu'a ressenti Candide lors de son périple. Un exemple de choix qui avait été imaginé était  que le joueur ait le choix très tôt dans le jeu de choisir combien de sucre il souhaite dans son thé. Un choix apparemment innocent qui aurait révélé ses conséquences beaucoup plus tard dans le jeu, lorsque Candide rencontrerait l'esclave qui travaille pour la production de sucre. En fonction de la réponse du début, l'esclave aurait été plus ou moins maltraité. 
 
 
 \subsection{Résultat final}
@@ -163,7 +163,7 @@ Le personnage de Candide doit faire transparaître de la naïveté, de l'innocen
 \includegraphics[scale=1.3]{candide}
 \centering
 \end{figure}
-Le décor doit également illustrer ce qu'il est écrit dans le livre : Il y a la cour et le château. Le château \textit{avait une porte et des fenêtres} et il est fait de pierres taillées. Pour illustrer une part d'ironie de Voltaire, quelques pierres sont irrégulières, voire manquantes.
+Le décor doit également illustrer ce qu'il est écrit dans le livre : Il y a la cour et le "\textit{château de M. le baron de Thunder-ten-Tronckh}"\footnote{VOLTAIRE,\textit{Candide ou l'Optimisme}, p.20.}. Le château "\textit{avait une porte et des fenêtres}"\footnote{Ibid., p.21.} et il est fait de pierres taillées. Pour illustrer une part d'ironie de Voltaire, quelques pierres sont irrégulières, voire manquantes.
 \begin{figure}[H]
 \includegraphics{chateau}
 \centering
@@ -174,35 +174,36 @@ Malheureusement, le décor n'est pas complet à cause du temps que la création 
 
 
 %plus d'exemple si temps
-
+\newpage
 \section{Déroulement du jeu}
 %expliquer les dialogues, conserver le contenu tout en l'adaptant etc...donner des exemples de situations alternatives . et le résultat actuel
 %expliquer la complication lié au temps, le rabotage etc..
-Tout commence dans la cour du château de monsieur le Baron de Thunde-ten-tronckh où les fleurs de son jardin se balancent au vent. Le joueur peut se déplacer avec les touches directionnelles du clavier pour parler à Pangloss.
+Tout commence dans la cour du château de monsieur le Baron de Thunder-ten-Tronckh où les fleurs de son jardin se balancent au vent. Le joueur peut se déplacer avec les touches directionnelles du clavier pour parler à Pangloss.
 \begin{figure}[H]
-\includegraphics[scale=0.35]{gameplay1}
-\includegraphics[scale=0.35]{gameplay2}
-\includegraphics[scale=0.35]{gameplay3}
+\includegraphics[scale=0.32]{gameplay1}
+\includegraphics[scale=0.32]{gameplay2}
+\includegraphics[scale=0.32]{gameplay3}
 \centering
-\caption{première rencontre avec Pangloss}
+\caption{Première rencontre avec Pangloss}
 \end{figure}
+\paragraph{}
 Pangloss déclame son célèbre discours qui fait de lui un grand philosophe puis demande au joueur de faire son premier choix : agréer de répondre toujours positivement ou non. \\
 
 \begin{figure}[H]
 \includegraphics[scale=0.35]{choix}
 \includegraphics[scale=0.35]{gameplay4}
 \centering
-\caption{les conséquences de la réponse négative}
+\caption{Les conséquences de la réponse négative}
 \label{panChoix}
 \end{figure}
 
 
 Le long discours rébarbatif de Pangloss sert à accentuer le côté désagréable du personnage, surtout si le joueur refuse de toujours répondre positivement. \\
-
+\newpage
 Le joueur est libre de se promener dans l'environnement pour y rencontrer quelques personnages.
 
 \begin{figure}[H]
-\includegraphics[scale=0.35]{gameplay5}
+\includegraphics[scale=0.28]{gameplay5}
 \centering
 \caption{2 pnjs}
 \end{figure} 
@@ -210,35 +211,35 @@ Le joueur est libre de se promener dans l'environnement pour y rencontrer quelqu
 Celui du haut propose un combat à l'épée. Le joueur peut l'accepter quand il en a envie. 
 
 \begin{figure}[H]
-\includegraphics[scale=0.35]{gameplay6}
-\includegraphics[scale=0.35]{gameplay7}
+\includegraphics[scale=0.30]{gameplay6}
+\includegraphics[scale=0.30]{gameplay7}
 \centering
-\caption{déroulement du combat}
+\caption{Déroulement du combat}
 \label{gagne}
 \end{figure}
-
-Le joueur peut également aller voir Cunégonde dans le petit bois, appelé parc, à gauche du château.
+\newpage
+Le joueur peut également aller voir Cunégonde dans "\textit{le petit bois qu'on appelait parc}"\footnote{VOLTAIRE,\textit{Candide ou l'Optimisme}, p.22.}, à gauche du château.
 
 \begin{figure}[H]
-\includegraphics[scale=0.35]{gameplay8}
+\includegraphics[scale=0.30]{gameplay8}
 \centering
-\caption{rencontre avec Cunégonde}
+\caption{Rencontre avec Cunégonde}
 \end{figure}
 
 Enfin, il peut retourner au château, où il rencontrera Paquette.
 
 \begin{figure}[H]
-\includegraphics[scale=0.35]{gameplay9}
-\includegraphics[scale=0.35]{gameplay11}
+\includegraphics[scale=0.29]{gameplay9}
+\includegraphics[scale=0.29]{gameplay11}
 \centering
 \caption{Au château}
 \end{figure}
-
+\newpage
 C'est déjà la fin de cette petite démonstration. 
 \begin{figure}[H]
 \includegraphics[scale=0.35]{gameplay12}
 \centering
-\caption{message de fin}
+\caption{Message de fin}
 \end{figure}
 
 Pour recommencer à jouer, il faut rafraîchir la page.
@@ -246,14 +247,41 @@ Pour recommencer à jouer, il faut rafraîchir la page.
 
 
 \section{Fonctionement du code}
-Ce projet a été réalisé en JavaScript, avec les additions de ECMAScript6 et de deux librairies conçues pour la réalisation de jeu-vidéo : Phaser.js ainsi que Phaser-tilemap-plus.js . La majorité du code est composé d'objets et de classes créés afin de pouvoir les utiliser comme outils de création.\\
+Ce projet a été réalisé en JavaScript, avec les additions de ECMAScript6 et de deux librairies conçues pour la réalisation de jeu-vidéo : Phaser.js ainsi que Phaser-tilemap-plus.js . La majorité du code est composé d'objets et de classes afin de pouvoir les utiliser comme outils de création.\\
 
 \subsection{Balayage du code}
-De nombreuses classes ont ét
+Premièrement, un système pour stocker des variables globales a été conçu afin d'éviter des problèmes liés aux scopes\footnote{\label{scope} Accessibilité des variables contenues dans les parties du code. }. Le code a été aménagé pour permettre une traduction des textes. \\
+
+Le jeu est divisé en différentes parties, appelées states qui ont chacune une utilité précise comme par exemple charger tous les assets ou afficher des transitions sous forme de texte.\\
+
+On peut regrouper les différentes classes qui ont été créées en deux groupes, les "Manager" et les "Créatrices".\\Parmi les classes "Manager" figurent : \\
+
+\begin{itemize}
+\item \textbf{DialogManager} : Classe responsable de l'affichage de texte en tout genre. Elle gère les animations des personnages quand ils parlent. Elle gère également la description automatique lors des phases de combats.\\
+\item \textbf{TerrainManager} : Classe responsable des décors qui sont affichés. Elle gère les interaction du joueur avec l'environnement comme la collision, les changements de terrain au contact d'un warp et l'affichage des bulles des pnjs.\\
+\item \textbf{BattleManager} : Classe responsable des batailles du jeu. Elle gère les actions proposées au joueur, la dynamique en tour par tour et détecte lorsque le joueur remporte ou perd un combat.
+\end{itemize}
+\paragraph{}
+Parmi les classes "Créatrices", il y a: \\
+
+\begin{itemize}
+\item \textbf{Pnj} : Crée un sprite à l'effigie d'un personnage. Associe un dialogue et une position à ce sprite.
+\item \textbf{Ennemy} : Crée un pnj doté d'attaques et de points de vie.\\
+\item \textbf{Attaque} : Crée des attaques. Associe un nom et nombre de dommage aux attaques.
+\item \textbf{Healthbar} : Crée des barres de vies qui s'adaptent lors des combats aux dégâts reçus.
+\item \textbf{Bubble} : Crée un sprite en forme de phylactère lorsque le joueur interagit avec les pnjs.
+\item \textbf{CustomMap} : Recueille un ensemble de données pour créer une map. 
+\item \textbf{Warp} : Crée un rectangle qui engendre un changement de map une fois intersecté.
+\end{itemize}
+\paragraph{}
+Le joueur est un sprite animé qui se déplace lorsque les touches directionnelles du claviers sont utilisées. Il peut interagir avec son environnement.\\
+
+Plus de précisions sont disponibles pour les amateurs de programmation dans la partie B des annexes.
+
 \subsection{En résumé}
 Beaucoup de code pour au final, un petit rendu. En effet, programmer un jeu de type RPG est beaucoup plus compliqué que prévu. Chaque fonction pour la progression du jeu est unique et il est très difficile d'avoir ne serait-ce qu'un minimum de scénario. Le niveau de complexité est déjà assez élevé rien qu'en programmant un long dialogue qui ne sera affiché qu'une fois au cours du jeu, comme par exemple les quelques lignes de Pangloss. Ce à quoi mon projet s'approche le plus est peut-être une situation de base inspirée du premier chapitre de Candide, mais il est loin d'être proche d'un jeu. Pourtant tout ce qui a été programmé est indispensable pour chaque jeu vidéo de type RPG car ce sont les éléments de base pour le construire. Le code est quelque chose d'invisible pour le joueur et il peut être très frustrant de constater qu'après tant de code écrit, seul un petit résultat est affiché à l'écran. \\
 
-Certains éléments qui ont été programmés mériteraient d'être réécrits avec les connaissances acquises lors de ce projet. En effet, les premiers programmes ont été créés en découvrant encore Phaser, ils n'exploitent donc pas forcément toutes les fonctionnalités Phaser qui permettent parfois d'avoir un code plus simple, propre et efficace.\\
+Certains éléments qui ont été programmés mériteraient d'être réécrits avec les connaissances acquises lors de ce projet. En effet, les premiers programmes ont été créés en découvrant encore Phaser, ils n'exploitent donc pas toutes les fonctionnalités de cette librairie qui permettent parfois d'avoir un code plus simple, propre et efficace.\\
 
 %expliquer les dialogues, conserver le contenu tout en l'adaptant etc...donner des exemples de situations alternatives . et le résultat actuel, expliquer la complication lié au temps, le rabotage etc.. relevé dans le livre
 \section{Conception des assets}
@@ -266,7 +294,7 @@ La police du jeu est une police conçue pour le projet. En effet, Phaser permet 
 
 Pour créer la police, deux sites ont étés utilisés, Calligraphr ainsi que Littera\\ Calligraphr permet de télécharger un modèle à remplir avec les lettres souhaitées puis de convertir ensuite ces images en police de format TrueTypeFont. Grâce à Littera, il est ensuite possible de convertir cette police en police bitmap afin qu'elle soit utilisée dans le jeu.\\
 
-Quelques problèmes ont été rencontrés lors de la réalisation,comme la taille des modèles de Calligraphr qui est trop grande pour du pixel art ou le fait que Littera applique un filtre d'anti-alias sur la police, ce qui a pour effet de gâcher le pixel art. Il a fallu redessiner chaque lettre sur l'image finale pour y remédier, et ce à chaque modification de la police.
+Quelques problèmes ont été rencontrés lors de la réalisation, comme la taille des modèles de Calligraphr qui est trop grande pour du pixel art ou le fait que Littera applique un filtre d'anti-alias sur la police, ce qui a pour effet de gâcher le pixel art. Il a fallu redessiner chaque lettre sur l'image finale pour y remédier, et ce à chaque modification de la police.
 \subsubsection{Sprites de dialogues}
 %techniques(couches, dessins - restrictions), exemple , projet noir blanc
 
@@ -298,7 +326,7 @@ Une fois la base créée, l'animation est dessinée en modifiant la frame pour c
 \end{figure}
 
 Chaque sprite demande un travail considérable , il faut donc énormément de temps pour illustrer chaque personnage de Candide. Pour les personnages qui servent uniquement à habiter le décor, une solution a été pensée : dessiner quelques alternatives physiques (diverses coupes de cheveux, nez, bouches,...) en niveaux de gris puis les associer à une couleur. Il sera alors beaucoup plus simple de recolorer et d'associer différentes parties pour recycler le travail effectué et gagner un peu de temps.\\
-La technique des niveaux de gris a été appliquée pour les barres de vies lors des combats, car il aurait été trop compliqué de coder en prenant compte 3 images distinctes. Malheureusement, cette technique n'a pas encore pu être testée pour la réalisation de personnage.
+La technique des niveaux de gris a été appliquée pour les barres de vies lors des combats, car il aurait été trop compliqué de coder en utilisant 3 images distinctes. Malheureusement, cette technique n'a pas encore pu être testée pour la réalisation de personnage.
 \subsubsection{Sprites d'overworld}
 %techniques, exemples
 Ce sont les sprites que le joueur peut voir dans le décor. Tous les sprites de ce type ont également une base commune.
@@ -332,20 +360,21 @@ Le logiciel Bosca Ceoil a été utilisé pour créer des ébauches musicales qui
 
 Étant cependant une grande admiratrice de Paganini, la Campanella a été choisie comme musique accompagnatrice du jeu. Un fichier midi a été utilisé avec Bosca Ceoil et le tout avait un rendu agréable.  
 \subsection{En résumé}
-Encore une fois, beaucoup de travail pour un petit résultat. Le pixel art demande beaucoup de patience et créer un univers cohérent et agréable visuellement est difficile sans assets complets. Malheureusement, une partie des assets n'est pas encore utilisée dans le projet rendu. En effet, ayant pensé avoir le temps de développer plus d'histoire, d'autres personnages ont été dessinés au début du projet. Ils figureront tout de même en annexe.
+Encore une fois, beaucoup de travail pour un petit résultat. Le pixel art demande énormément de patience et créer un univers cohérent et agréable visuellement est difficile sans assets complets. Malheureusement, une partie des assets n'est pas encore utilisée dans le projet rendu. En effet, ayant pensé avoir le temps de développer plus d'histoire, d'autres personnages ont été dessinés au début du projet. Ils figureront tout de même en annexe.
 \section{Conclusion}
 \subsection{Nina Ionescu ou l'optimisme} 
-Ah, que dire de la naïve candeur d'un programmeur encore nouveau face à la réalisation d'un jeu vidéo ? En réalisant ce travail, j'ai réalisé que programmer un jeu vidéo était beaucoup plus compliqué que ce qu'il en a l'air. D'autant plus lorsque le temps est relativement limité et que tout doit être réalisé, du code jusqu'au décor. Et encore, il s'agit d'une adaptation, je n'ose pas imaginer la charge de travail avec un scénario original. C'est pourquoi, ce sont souvent des équipes expérimentées, dont les membres ont chacun une fonction bien précise pour la création du jeu, qui arrivent à un résultat convaincant au bout d'une année. Il y a aussi des développeurs indépendants qui créent des merveilles mais ces jeux prennent généralement plusieurs années à être conçus tout en prenant en compte que créer des jeux vidéos est le métier de ces développeurs. \\
+Ah, que dire de la candeur d'un programmeur néophyte face à la création d'un jeu vidéo ? En travaillant sur ce travail, j'ai réalisé que programmer un jeu vidéo était beaucoup plus compliqué que ce qu'il en a l'air. D'autant plus lorsque le temps est relativement limité et que tout doit être créé, du code jusqu'au décor. Et encore, il s'agit d'une adaptation, je n'ose pas imaginer la charge de travail avec un scénario original. C'est pourquoi, ce sont souvent des équipes expérimentées, dont les membres ont chacun une fonction bien précise pour la création du jeu, qui arrivent à un résultat convaincant au bout d'une année. Il y a aussi des développeurs professionnels et indépendants qui créent des merveilles mais sur plusieurs années. \\
 
-Je n'ai pas tout de suite réalisé que ça ne serait pas possible de mener à bout ce projet dans le temps à disposition. C'est pourquoi de nombreux dessins de personnages intervenant bien plus tard dans le jeu ont été réalisés au départ. Garder une motivation élevée pendant si longtemps est un grand défi : Quand le jeu n'est qu'une ébauche, il y a encore de quoi s'émerveiller car tout semble aller vite. Mais dès qu'il y a un minimum de réalisé, même si le code est bien présent, le jeu ne semble guère avoir avancé... Néanmoins, si je ne m'étais pas fixé un objectif si haut voire irréalisable , j'ai la certitude que je n'aurais pas produit autant que tout ce que ce projet a à présenter.
+Je n'ai pas tout de suite réalisé que ça ne serait pas possible de mener à bout ce projet dans le temps à disposition. C'est pourquoi de nombreux dessins de personnages intervenant bien plus tard dans le jeu ont été réalisés au départ. Garder une motivation élevée pendant si longtemps est un défi : Quand le jeu n'est qu'une ébauche, il y a encore de quoi s'émerveiller car tout semble aller vite. Mais plus le code devient complexe, moins le jeu semble progresser.\\
+ Le fait de m'être fixé un objectif si haut m'a permis de produire tout ce que ce projet a à présenter.
 \subsection{Expérience gagnée}
-Ce projet m'a permis d'acquérir une meilleure compréhension de JavaScript, plus en particulier des classes, de méthodes et des scopes des fonctions. Il a réussi à me faire mieux comprendre la logique un peu carrée de la réalisation de programme. J'ai également appris à chercher les erreurs de manière plus efficace pour éviter un maximum de les reproduire ensuite. Il vaudrait cependant la peine d'améliorer certains codes écrits au début du projet car ils n'exploitaient pas encore toutes les fonctionnalités de Phaser.\\ 
+Ce projet m'a permis d'acquérir une meilleure compréhension de JavaScript, plus en particulier des classes, des méthodes et des scopes des fonctions. Il a réussi à me faire mieux comprendre la logique un peu carrée de la réalisation de programme. J'ai également appris à chercher les erreurs de manière plus efficace pour éviter un maximum de les reproduire ensuite. Il vaudrait cependant la peine d'améliorer certains codes écrits au début du projet car ils n'exploitaient pas encore toutes les fonctionnalités de Phaser.\\ 
 
 J'ai appris à m'organiser en classant tout ce qui était produit dans des dossiers appropriés afin de ne pas me perdre lors de recherche de fichiers.\\
 
 J'ai aussi appris intuitivement diverses techniques de base en pixel art et pour une première, les résultats sont très satisfaisants à mon goût. 
 \subsection{Continuation du projet}
-Bien loin d'être terminé, ce projet m'a permis de me lancer sérieusement sur la route d'un long travail. J'ai envie de le continuer, de voir tous les personnages terminés et animés, des cinématiques et des combats ayant du sens. Mon but ultime serait de procurer un instant de plaisir aux potentiels joueurs qui découvriraient Candide sous un nouvel angle. 
+Bien loin d'être terminé, ce projet m'a permis de me lancer sérieusement sur la route d'un long travail. Ce qui a été réalisé me motive pour continuer. Mon but ultime serait de procurer du plaisir aux potentiels joueurs qui découvriraient Candide sous un nouvel angle. 
 %long !!! --> désillusion XD 
 %code à simplifier : signaux
 % ce que ça a apporté
@@ -354,36 +383,43 @@ Bien loin d'être terminé, ce projet m'a permis de me lancer sérieusement sur 
 \newpage
 \pagenumbering{gobble}
 \begin{thebibliography}{9}
+\bibitem{candide}
+\textbf{Candide}\\
+VOLTAIRE, \textit{Candide ou l'Optimisme},[s.l.],Éditions Larousse, coll. Petits Classiques, 2007.
 \bibitem{nomPourCiter}
 \textbf{Phaser}\\
-créé par Richard Davey\\
-\textit{http://phaser.io/}
+créé par Richard DAVEY\\
+\url{http://phaser.io/}
 \bibitem{}
 \textbf{Phaser-tilemap-plus}\\
-créé par Colin Vella\\
-\textit{https://github.com/colinvella/phaser-tilemap-plus}
+créé par Colin VELLA\\
+\url{https://github.com/colinvella/phaser-tilemap-plus}
 \bibitem{}
 \textbf{Pyxel Edit}\\
 créé par l'utilisateur utilisant le pseudonyme Danik\\
-\textit{http://pyxeledit.com/}
+\url{http://pyxeledit.com/}
 \bibitem{}
 \textbf{Tiled}\\
-créé par Thorbjørn Lindeijer\\
-\textit{http://www.mapeditor.org/}
+créé par Thorbjørn LINDEIJER\\
+\url{http://www.mapeditor.org/}
 \bibitem{}
 \textbf{Bosca Ceoil}\\
-créé par Terry Cavanagh\\
-\textit{https://boscaceoil.net/}
+créé par Terry CAVANAGH\\
+\url{https://boscaceoil.net/}
 \bibitem{}
 \textbf{La Campanella}\\
-composée par Niccoló Paganini et transcrit par R. Lopez\\
-\textit{https://www.classicalarchives.com/midi/composer/3114.html}
+Niccoló PAGANINI transcrit par R. LOPEZ, \textit{Concerto pour violon no 2 en si mineur, Op. 7 MS 48 : Rondo La Campanella}.\\
+\url{https://www.classicalarchives.com/midi/composer/3114.html}
 \bibitem{}
 \textbf{Calligraphr}\\
-\textit{https://www.calligraphr.com/en/}
+\url{https://www.calligraphr.com/en/}
 \bibitem{}
 \textbf{Littera}\\
-\textit{http://www.kvazars.com/littera/}
+\url{http://www.kvazars.com/littera/}
+\bibitem{duchamp}
+\textbf{L.H.O.O.Q}\\
+Marcel DUCHAMP, \textit{L.H.O.O.Q}, 1919, estampe, 19.7 X 12.4 cm, Centre national d'art et de culture Georges-Pompidou, Paris.
+
 \end{thebibliography}
 
 
@@ -420,7 +456,7 @@ composée par Niccoló Paganini et transcrit par R. Lopez\\
 \includegraphics[scale=0.4]{cacamboFaceAnimation}
 \centering
 \caption{Sprite de dialogue de Cacambo}
-Cacambo vient du Pérou, d'où le choix de lui faire porter ce bonnet. Il est confient en lui, contrairement à Candide.
+Cacambo vient du Pérou, d'où le choix de lui faire porter ce bonnet. Il est confiant en lui, contrairement à Candide.
 \end{figure}
 
 \begin{figure}[H]
@@ -455,7 +491,7 @@ Martin voit du négatif partout. Il ne s'occupe plus vraiment de lui car cela n'
 \includegraphics[scale=0.4]{marquiseFaceAnimation}
 \centering
 \caption{Sprite de dialogue de la marquise de Parolignac}
-C'est une femme tenancière d'un bar à Paris. Elle porte un maquillage important, pour attirer la sympathie des clients. Elle sert de l'alcool et des jeux de cartes voir plus si affinité.
+C'est une femme tenancière d'un bar à Paris. Elle porte un maquillage important, pour attirer la sympathie des clients. Elle sert de l'alcool et des jeux de cartes, voire plus si affinité.
 \end{figure}
 \begin{figure}[H]
 \includegraphics[scale=0.2]{fontPage1}
@@ -471,10 +507,10 @@ C'est une femme tenancière d'un bar à Paris. Elle porte un maquillage importan
 \end{figure}
 
 \newpage
-\textit{Note:} Les extraits de code présentés sont extraits du code source et ne présente que les passages les plus importants, ils ne sont pas complets.
-
 \subsection{Système général}
-	Avant toute chose, il a fallu concevoir un système qui permette d'atteindre diverses variables au travers de tous les outils du jeu. C'est pourquoi l'objet \textit{globals}, qui est une variable globale a été créée. Cet objet stocke toutes les variables afin d'y avoir accès facilement sans devoir se soucier des scopes\footnote{Accessibilités des variables contenues dans les parties du code.} des différentes classes et de leur méthodes.\\
+\textit{Note:} Tous les morceaux de code présentés dans les paragraphes suivants sont des extraits du code source.\\
+
+	Avant toute chose, il a fallu concevoir un système qui permette d'atteindre diverses variables au travers de tous les outils du jeu. C'est pourquoi l'objet \textit{globals}, qui est une variable globale a été créée. Cet objet stocke toutes les variables afin d'y avoir accès facilement sans devoir se soucier des scopes\footnote{Voir note au bas de la page \pageref{scope}} des différentes classes et de leur méthodes.\\
  
  Afin d'étendre les possibilités futures de diffusion du projet, une option de traduction a été pensée dans le code dès le départ. Il s'agit d'un chiffre ( 0 pour le français, 1 pour l'anglais, ... ) stocké dans l'objet \textit{globals} mentionné au paragraphe ci-dessus. Grâce à cette variable, la fonction de dialogList.js retourne les textes figurants dans le jeu dans leur bonne version. \\
  \begin{lstlisting}[language=JavaScript]
@@ -911,44 +947,53 @@ Lors de la réalisation, le fondu a été programmé en plus des autres méthode
 Cette méthode établit la collision entre le joueur et l'environnement ainsi que les personnages composants la scène. Elle vérifie aussi les détections d'intersections avec les warps pour afficher si besoin une bulle.\\
 
 Il y a eu des problèmes avec les bulles, car dans une première version du code, elles étaient constamment supprimées. C'est expliqué par le fait que le warp pénétré n'était pas retenu et que le code vérifiait pour chaque warp présent dans la map si le joueur était dedans. Comme les conditions étaient vérifiées, la bulle était supprimée aussitôt qu'elle était créée. Le problème a été géré en associant la zone de warp à une variable et de vérifier le contenu de cette variable avant de supprimer la bulle.
-\subsection{Gestion des combats : La classe \textit{BattleManager}}
-Cette state est responsable des combats du jeu. Elle gère les tours des combats et orchestre les affichages. 
-\subsubsection{méthode \textit{init()}}
-\begin{lstlisting}[language=JavaScript]
-
-\end{lstlisting} 
-\subsubsection{méthode \textit{clearMap()}}
-\begin{lstlisting}[language=JavaScript]
-
-\end{lstlisting} 
-\subsubsection{méthode \textit{clearMap()}}
-\begin{lstlisting}[language=JavaScript]
-
-\end{lstlisting} 
-\subsubsection{méthode \textit{clearMap()}}
-\begin{lstlisting}[language=JavaScript]
-
-\end{lstlisting} 
-\subsubsection{méthode \textit{clearMap()}}
-\begin{lstlisting}[language=JavaScript]
-
-\end{lstlisting} 
-\subsubsection{méthode \textit{clearMap()}}
-\begin{lstlisting}[language=JavaScript]
-
-\end{lstlisting} 
-\subsubsection{méthode \textit{clearMap()}}
-\begin{lstlisting}[language=JavaScript]
-
-\end{lstlisting} 
-\subsubsection{méthode \textit{clearMap()}}
-\begin{lstlisting}[language=JavaScript]
-
-\end{lstlisting} 
-\subsubsection{Gestions des signaux}
-\begin{lstlisting}[language=JavaScript]
-
-\end{lstlisting} 
+%\subsection{Gestion des combats : La classe \textit{BattleManager}}
+%Cette state est responsable des combats du jeu. Elle gère les tours des combats et orchestre les affichages. 
+%\subsubsection{méthode \textit{init()}}
+%Cette méthode place les menus ainsi que les sprites de profil des participants au combat. 
+%\subsubsection{méthode \textit{clearMap()}}
+%\begin{lstlisting}[language=JavaScript]
+%eventHandler(callbacks,data){ 
+  %  let ctx = this;
+  %  let str;
+  %  let txt;
+  %  if(ctx.nxtTurnReady){
+  %      switch(callbacks[ctx.arrayIndex]){
+  %          case "player":
+          %  ctx.arrayIndex++;
+            %if(data.player.isAlive){
+                %ctx.turn.player.currentAction.tour(ctx.turn.player.target);
+                %ctx.healthBarUpdate(data);
+                %ctx.callEnd();
+                %ctx.turn.player.ready = false;
+                %str = `${globals.player.name} $%{(data.isPhi)?%globals.battleData.text.argumente:globals.battleData.text.attaque}%${ctx.turn.player.target.name}. $%{ctx.turn.player.currentAction.desc()}`;
+%                txt = [[str,function()%{ctx.eventCall(callbacks,data)}]];
+%                globals.dialogManager.startBattleDesc(txt,%{is:true,callback:true,time:900});
+           % }else{
+          %      ctx.eventCall(callbacks,data);
+         %   }
+        %    break;
+       %     case "ennemy1":
+      %      ctx.arrayIndex++;
+     %       if(data.ennemy1.isAlive){
+    %            data.ennemy1.turn(data);
+   %             ctx.healthBarUpdate(data);
+  %              ctx.callEnd();
+ %               str = `${data.ennemy1.name} ${(data.isPhi)?%globals.battleData.text.argumente:globals.battleData.text.attaque}%${data.ennemy1.target.name}. ${data.ennemy1.msg} `;
+%                txt = [[str,function()%{ctx.eventCall(callbacks,data)}]];
+ %               ctx.playerSprite.healthbar.turn(globals.battleData.set.player);
+%                globals.dialogManager.startBattleDesc(txt,%{is:true,callback:true,time:900});
+        %    }else{
+       %         ctx.eventCall(callbacks,data);
+       %     }
+      %      break;
+     %       case "newTurn":
+    %        ctx.startTurn(data);
+   %         break;
+  %      }
+ %   }
+%}
+%\end{lstlisting} 
 %expliquer la dynamique de combat, les points de vie etc..
 
 %\subsection{Du code à l'application}

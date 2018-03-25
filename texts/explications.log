@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.15)  25 MAR 2018 17:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.15)  26 MAR 2018 00:14
 entering extended mode
 **./explications.tex
 (explications.tex
@@ -339,13 +339,129 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
-Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+Package: hyperref 2017/03/14 v6.85a Hypertext links for LaTeX
 
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks16
 )
+("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+)
+\@linkdim=\dimen103
+\Hy@linkcounter=\count87
+\Hy@pagecounter=\count88
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
+File: pd1enc.def 2017/03/14 v6.85a Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+\Hy@SavedSpaceFactor=\count89
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4498.
+Package hyperref Info: Link nesting OFF on input line 4503.
+Package hyperref Info: Hyper index ON on input line 4506.
+Package hyperref Info: Plain pages OFF on input line 4513.
+Package hyperref Info: Backreferencing OFF on input line 4518.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4751.
+\c@Hy@tempcnt=\count90
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5104.
+\XeTeXLinkMargin=\dimen104
+\Fld@menulength=\count91
+\Field@Width=\dimen105
+\Fld@charsize=\dimen106
+Package hyperref Info: Hyper figures OFF on input line 6358.
+Package hyperref Info: Link nesting OFF on input line 6363.
+Package hyperref Info: Hyper index ON on input line 6366.
+Package hyperref Info: backreferencing OFF on input line 6373.
+Package hyperref Info: Link coloring OFF on input line 6378.
+Package hyperref Info: Link coloring with OCG OFF on input line 6383.
+Package hyperref Info: PDF/A mode OFF on input line 6388.
+LaTeX Info: Redefining \ref on input line 6428.
+LaTeX Info: Redefining \pageref on input line 6432.
+\Hy@abspage=\count92
+\c@Item=\count93
+\c@Hfootnote=\count94
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
+File: hpdftex.def 2017/03/14 v6.85a Hyperref driver for pdfTeX
+\Fld@listcount=\count95
+\c@bookmark@seq@number=\count96
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip43
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
@@ -360,8 +476,8 @@ Package graphics Info: Driver file: pdftex.def on input line 99.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
 File: pdftex.def 2017/06/24 v1.0g Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen103
-\Gin@req@width=\dimen104
+\Gin@req@height=\dimen107
+\Gin@req@width=\dimen108
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
 Package: babel 2017/11/03 3.15 The Babel package
@@ -393,10 +509,10 @@ File: babel.def 2017/11/03 3.15 Babel common definitions
 ("C:\Program Files\MiKTeX 2.9\tex\generic\babel\switch.def"
 File: switch.def 2017/11/03 3.15 Babel switching mechanism
 )
-\babel@savecnt=\count87
-\U@D=\dimen105
+\babel@savecnt=\count97
+\U@D=\dimen109
 )
-\FB@nonchar=\count88
+\FB@nonchar=\count98
 \FBcolonsp=\toks17
 \FBthinsp=\toks18
 Package babel Info: Making : an active character on input line 322.
@@ -404,41 +520,41 @@ Package babel Info: Making ; an active character on input line 323.
 Package babel Info: Making ! an active character on input line 324.
 Package babel Info: Making ? an active character on input line 325.
 \FBguillsp=\toks19
-\FBguill@level=\count89
+\FBguill@level=\count99
 \FB@everypar=\toks20
-\FB@Mht=\dimen106
-\mc@charclass=\count90
-\mc@charfam=\count91
-\mc@charslot=\count92
-\std@mcc=\count93
-\dec@mcc=\count94
-\c@FBcaption@count=\count95
-\listindentFB=\skip43
-\descindentFB=\skip44
-\labelwidthFB=\skip45
-\leftmarginFB=\skip46
-\parindentFFN=\dimen107
-\FBfnindent=\skip47
+\FB@Mht=\dimen110
+\mc@charclass=\count100
+\mc@charfam=\count101
+\mc@charslot=\count102
+\std@mcc=\count103
+\dec@mcc=\count104
+\c@FBcaption@count=\count105
+\listindentFB=\skip44
+\descindentFB=\skip45
+\labelwidthFB=\skip46
+\leftmarginFB=\skip47
+\parindentFFN=\dimen111
+\FBfnindent=\skip48
 )))
 ("C:\Program Files\MiKTeX 2.9\tex\latex\carlisle\scalefnt.sty")
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.sty"
-\lst@mode=\count96
+\lst@mode=\count106
 \lst@gtempboxa=\box26
 \lst@token=\toks21
-\lst@length=\count97
-\lst@currlwidth=\dimen108
-\lst@column=\count98
-\lst@pos=\count99
-\lst@lostspace=\dimen109
-\lst@width=\dimen110
-\lst@newlines=\count100
-\lst@lineno=\count101
-\lst@maxwidth=\dimen111
+\lst@length=\count107
+\lst@currlwidth=\dimen112
+\lst@column=\count108
+\lst@pos=\count109
+\lst@lostspace=\dimen113
+\lst@width=\dimen114
+\lst@newlines=\count110
+\lst@lineno=\count111
+\lst@maxwidth=\dimen115
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count102
-\lst@skipnumbers=\count103
+\c@lstnumber=\count112
+\lst@skipnumbers=\count113
 \lst@framebox=\box27
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.cfg"
@@ -448,7 +564,7 @@ Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count104
+\c@float@type=\count114
 \float@exts=\toks22
 \float@box=\box28
 \@float@everytoks=\toks23
@@ -456,9 +572,9 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\appendix\appendix.sty"
 Package: appendix 2009/09/02 v1.2b extra appendix facilities
-\c@@pps=\count105
-\c@@ppsavesec=\count106
-\c@@ppsaveapp=\count107
+\c@@pps=\count115
+\c@@ppsavesec=\count116
+\c@@ppsaveapp=\count117
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\color.sty"
 Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
@@ -502,63 +618,45 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 88.
 LaTeX Font Info:    ... okay on input line 88.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 88.
 LaTeX Font Info:    ... okay on input line 88.
- ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+\AtBeginShipoutBox=\box30
+Package hyperref Info: Link coloring OFF on input line 88.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count118
+)
+LaTeX Info: Redefining \ref on input line 88.
+LaTeX Info: Redefining \pageref on input line 88.
+LaTeX Info: Redefining \nameref on input line 88.
+
+(explications.out) (explications.out)
+\@outlinefile=\write3
+\openout3 = `explications.out'.
+
+
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count108
-\scratchdimen=\dimen112
-\scratchbox=\box30
-\nofMPsegments=\count109
-\nofMParguments=\count110
+\scratchcounter=\count119
+\scratchdimen=\dimen116
+\scratchbox=\box31
+\nofMPsegments=\count120
+\nofMParguments=\count121
 \everyMPshowfont=\toks24
-\MPscratchCnt=\count111
-\MPscratchDim=\dimen113
-\MPnumerator=\count112
-\makeMPintoPDFobject=\count113
+\MPscratchCnt=\count122
+\MPscratchDim=\dimen117
+\MPnumerator=\count123
+\makeMPintoPDFobject=\count124
 \everyMPtoPDFconversion=\toks25
 ) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
-)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
-
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
-)))
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
-
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
-
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
-
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
-Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
-)
-
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
-Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
 )
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 38.
@@ -576,14 +674,14 @@ Package french.ldf Warning: OT1 encoding should not be used for French.
 (french.ldf)                Add \usepackage[T1]{fontenc} to the preamble
 (french.ldf)                of your document; reported on input line 88.
 
-\c@lstlisting=\count114
+\c@lstlisting=\count125
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 99.
+(Font)              <12> on input line 100.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 99.
+(Font)              <8> on input line 100.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 99.
-<assets/title.png, id=1, 301.125pt x 169.63374pt>
+(Font)              <6> on input line 100.
+<assets/title.png, id=223, 301.125pt x 169.63374pt>
 File: assets/title.png Graphic file (type png)
 <use assets/title.png>
 Package pdftex.def Info: assets/title.png  used on input line 100. on input lin
@@ -596,12 +694,22 @@ e 100.
 le.png>] (explications.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 3.
- [2])
-\tf@toc=\write3
-\openout3 = `explications.toc'.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.38 ...berline {A.4}Les pnjs}{}{subsection.1.A.4}
+                                                   [2])
+\tf@toc=\write4
+\openout4 = `explications.toc'.
 
- [3]
-<assets/ecranTitre.png, id=20, 803.0pt x 451.6875pt>
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.103 \newpage
+               [3]
+<assets/ecranTitre.png, id=300, 803.0pt x 451.6875pt>
 File: assets/ecranTitre.png Graphic file (type png)
 <use assets/ecranTitre.png>
 Package pdftex.def Info: assets/ecranTitre.png  used on input line 109. on inpu
@@ -624,23 +732,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 139--140
 
  []
 
-[2]
-<assets/cunegondeScn.png, id=28, 803.0pt x 451.6875pt>
+<assets/cunegondeScn.png, id=306, 803.0pt x 451.6875pt>
 File: assets/cunegondeScn.png Graphic file (type png)
 <use assets/cunegondeScn.png>
 Package pdftex.def Info: assets/cunegondeScn.png  used on input line 151. on in
 put line 151.
 Package pdftex.def Info: Requested size: 264.99081pt x 149.05733pt on input lin
 e 151.
-<assets/panglossHead.png, id=29, 82.05656pt x 94.10156pt>
+[2]
+<assets/panglossHead.png, id=311, 82.05656pt x 94.10156pt>
 File: assets/panglossHead.png Graphic file (type png)
 <use assets/panglossHead.png>
 Package pdftex.def Info: assets/panglossHead.png  used on input line 158. on in
 put line 158.
 Package pdftex.def Info: Requested size: 65.64532pt x 75.28134pt on input line 
 158.
- [3 <./assets/cunegondeScn.png>]
-<assets/candide.png, id=34, 25.59563pt x 51.19125pt>
+<assets/candide.png, id=312, 25.59563pt x 51.19125pt>
 File: assets/candide.png Graphic file (type png)
 <use assets/candide.png>
 Package pdftex.def Info: assets/candide.png  used on input line 163. on input l
@@ -652,143 +759,202 @@ Underfull \hbox (badness 10000) in paragraph at lines 161--165
 
  []
 
-<assets/chateau.png, id=35, 106.3975pt x 225.84375pt>
+[3 <./assets/cunegondeScn.png> <./assets/panglossHead.png>]
+<assets/chateau.png, id=321, 105.89563pt x 168.63pt>
 File: assets/chateau.png Graphic file (type png)
 <use assets/chateau.png>
 Package pdftex.def Info: assets/chateau.png  used on input line 168. on input l
 ine 168.
-Package pdftex.def Info: Requested size: 106.39723pt x 225.84319pt on input lin
+Package pdftex.def Info: Requested size: 105.89536pt x 168.62958pt on input lin
 e 168.
 
 Underfull \hbox (badness 10000) in paragraph at lines 172--173
 
  []
 
-[4 <./assets/panglossHead.png> <./assets/candide.png> <./assets/chateau.png>]
-<assets/gameplay1.png, id=43, 803.0pt x 451.6875pt>
+[4 <./assets/candide.png> <./assets/chateau.png>]
+<assets/gameplay1.png, id=334, 803.0pt x 451.6875pt>
 File: assets/gameplay1.png Graphic file (type png)
 <use assets/gameplay1.png>
 Package pdftex.def Info: assets/gameplay1.png  used on input line 183. on input
  line 183.
-Package pdftex.def Info: Requested size: 281.05421pt x 158.09299pt on input lin
+Package pdftex.def Info: Requested size: 256.96526pt x 144.54294pt on input lin
 e 183.
-<assets/gameplay2.png, id=44, 803.0pt x 451.6875pt>
+<assets/gameplay2.png, id=335, 803.0pt x 451.6875pt>
 File: assets/gameplay2.png Graphic file (type png)
 <use assets/gameplay2.png>
 Package pdftex.def Info: assets/gameplay2.png  used on input line 184. on input
  line 184.
-Package pdftex.def Info: Requested size: 281.05421pt x 158.09299pt on input lin
+Package pdftex.def Info: Requested size: 256.96526pt x 144.54294pt on input lin
 e 184.
-<assets/gameplay3.png, id=45, 803.0pt x 451.6875pt>
+<assets/gameplay3.png, id=336, 803.0pt x 451.6875pt>
 File: assets/gameplay3.png Graphic file (type png)
 <use assets/gameplay3.png>
 Package pdftex.def Info: assets/gameplay3.png  used on input line 185. on input
  line 185.
-Package pdftex.def Info: Requested size: 281.05421pt x 158.09299pt on input lin
+Package pdftex.def Info: Requested size: 256.96526pt x 144.54294pt on input lin
 e 185.
 
-Overfull \hbox (1.0737pt too wide) in paragraph at lines 181--188
+Overfull \hbox (5.36246pt too wide) in paragraph at lines 181--188
 []\OT1/cmr/m/n/10.95 Tout com-mence dans la cour du ch^ateau de mon-sieur le Ba
--ron de Thunde-
+-ron de Thunder-
  []
 
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 189--190
+
+Underfull \hbox (badness 10000) in paragraph at lines 190--191
 
  []
 
-[6 <./assets/gameplay1.png> <./assets/gameplay2.png> <./assets/gameplay3.png>]
-<assets/choix.png, id=56, 803.0pt x 451.6875pt>
+[5pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.191 
+       <./assets/gameplay1.png> <./assets/gameplay2.png> <./assets/gameplay3.pn
+g>]
+<assets/choix.png, id=346, 803.0pt x 451.6875pt>
 File: assets/choix.png Graphic file (type png)
 <use assets/choix.png>
-Package pdftex.def Info: assets/choix.png  used on input line 192. on input lin
-e 192.
-Package pdftex.def Info: Requested size: 281.05421pt x 158.09299pt on input lin
-e 192.
-<assets/gameplay4.png, id=57, 803.0pt x 451.6875pt>
-File: assets/gameplay4.png Graphic file (type png)
-<use assets/gameplay4.png>
-Package pdftex.def Info: assets/gameplay4.png  used on input line 193. on input
- line 193.
+Package pdftex.def Info: assets/choix.png  used on input line 193. on input lin
+e 193.
 Package pdftex.def Info: Requested size: 281.05421pt x 158.09299pt on input lin
 e 193.
+<assets/gameplay4.png, id=347, 803.0pt x 451.6875pt>
+File: assets/gameplay4.png Graphic file (type png)
+<use assets/gameplay4.png>
+Package pdftex.def Info: assets/gameplay4.png  used on input line 194. on input
+ line 194.
+Package pdftex.def Info: Requested size: 281.05421pt x 158.09299pt on input lin
+e 194.
 
-Overfull \hbox (4.29787pt too wide) in paragraph at lines 200--201
+Overfull \hbox (4.29787pt too wide) in paragraph at lines 201--202
 []\OT1/cmr/m/n/10.95 Le long dis-cours rebarbatif de Pan-gloss sert a ac-cen-
 tuer le c^ote desagreable
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--201
+Underfull \hbox (badness 10000) in paragraph at lines 201--202
 
  []
 
-<assets/gameplay5.png, id=58, 803.0pt x 451.6875pt>
+[6pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.202 \newpage
+               <./assets/choix.png> <./assets/gameplay4.png>]
+<assets/gameplay5.png, id=356, 803.0pt x 451.6875pt>
 File: assets/gameplay5.png Graphic file (type png)
 <use assets/gameplay5.png>
-Package pdftex.def Info: assets/gameplay5.png  used on input line 205. on input
- line 205.
-Package pdftex.def Info: Requested size: 281.05421pt x 158.09299pt on input lin
-e 205.
-[7 <./assets/choix.png> <./assets/gameplay4.png>]
-<assets/gameplay6.png, id=64, 803.0pt x 451.6875pt>
+Package pdftex.def Info: assets/gameplay5.png  used on input line 206. on input
+ line 206.
+Package pdftex.def Info: Requested size: 224.83847pt x 126.47163pt on input lin
+e 206.
+<assets/gameplay6.png, id=357, 803.0pt x 451.6875pt>
 File: assets/gameplay6.png Graphic file (type png)
 <use assets/gameplay6.png>
-Package pdftex.def Info: assets/gameplay6.png  used on input line 213. on input
- line 213.
-Package pdftex.def Info: Requested size: 281.05421pt x 158.09299pt on input lin
-e 213.
-<assets/gameplay7.png, id=65, 803.0pt x 451.6875pt>
+Package pdftex.def Info: assets/gameplay6.png  used on input line 214. on input
+ line 214.
+Package pdftex.def Info: Requested size: 240.90186pt x 135.5073pt on input line
+ 214.
+<assets/gameplay7.png, id=358, 803.0pt x 451.6875pt>
 File: assets/gameplay7.png Graphic file (type png)
 <use assets/gameplay7.png>
-Package pdftex.def Info: assets/gameplay7.png  used on input line 214. on input
- line 214.
-Package pdftex.def Info: Requested size: 281.05421pt x 158.09299pt on input lin
-e 214.
- [8 <./assets/gameplay5.png>]
-<assets/gameplay8.png, id=70, 803.0pt x 451.6875pt>
+Package pdftex.def Info: assets/gameplay7.png  used on input line 215. on input
+ line 215.
+Package pdftex.def Info: Requested size: 240.90186pt x 135.5073pt on input line
+ 215.
+ [7pdfTeX warning (ext4): destination with the same identifier (name{figure.3})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.220 \newpage
+              pdfTeX warning (ext4): destination with the same identifier (name
+{figure.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.220 \newpage
+               <./assets/gameplay5.png> <./assets/gameplay6.png> <./assets/game
+play7.png>]
+<assets/gameplay8.png, id=369, 803.0pt x 451.6875pt>
 File: assets/gameplay8.png Graphic file (type png)
 <use assets/gameplay8.png>
-Package pdftex.def Info: assets/gameplay8.png  used on input line 223. on input
- line 223.
-Package pdftex.def Info: Requested size: 281.05421pt x 158.09299pt on input lin
-e 223.
-
-[9 <./assets/gameplay6.png> <./assets/gameplay7.png>]
-<assets/gameplay9.png, id=76, 803.0pt x 451.6875pt>
+Package pdftex.def Info: assets/gameplay8.png  used on input line 224. on input
+ line 224.
+Package pdftex.def Info: Requested size: 240.90186pt x 135.5073pt on input line
+ 224.
+<assets/gameplay9.png, id=370, 803.0pt x 451.6875pt>
 File: assets/gameplay9.png Graphic file (type png)
 <use assets/gameplay9.png>
-Package pdftex.def Info: assets/gameplay9.png  used on input line 231. on input
- line 231.
-Package pdftex.def Info: Requested size: 281.05421pt x 158.09299pt on input lin
-e 231.
-<assets/gameplay11.png, id=77, 803.0pt x 451.6875pt>
+Package pdftex.def Info: assets/gameplay9.png  used on input line 232. on input
+ line 232.
+Package pdftex.def Info: Requested size: 232.86403pt x 130.98601pt on input lin
+e 232.
+<assets/gameplay11.png, id=371, 803.0pt x 451.6875pt>
 File: assets/gameplay11.png Graphic file (type png)
 <use assets/gameplay11.png>
-Package pdftex.def Info: assets/gameplay11.png  used on input line 232. on inpu
-t line 232.
-Package pdftex.def Info: Requested size: 281.05421pt x 158.09299pt on input lin
-e 232.
- [10 <./assets/gameplay8.png>]
-<assets/gameplay12.png, id=83, 803.0pt x 451.6875pt>
+Package pdftex.def Info: assets/gameplay11.png  used on input line 233. on inpu
+t line 233.
+Package pdftex.def Info: Requested size: 232.86403pt x 130.98601pt on input lin
+e 233.
+ [8pdfTeX warning (ext4): destination with the same identifier (name{figure.5})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.237 \newpage
+              pdfTeX warning (ext4): destination with the same identifier (name
+{figure.6}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.237 \newpage
+               <./assets/gameplay8.png> <./assets/gameplay9.png> <./assets/game
+play11.png>]
+<assets/gameplay12.png, id=382, 803.0pt x 451.6875pt>
 File: assets/gameplay12.png Graphic file (type png)
 <use assets/gameplay12.png>
-Package pdftex.def Info: assets/gameplay12.png  used on input line 239. on inpu
-t line 239.
+Package pdftex.def Info: assets/gameplay12.png  used on input line 240. on inpu
+t line 240.
 Package pdftex.def Info: Requested size: 281.05421pt x 158.09299pt on input lin
-e 239.
- [11 <./assets/gameplay9.png> <./assets/gameplay11.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 249--250
+e 240.
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--251
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--255
+Underfull \hbox (badness 10000) in paragraph at lines 253--254
 
  []
 
-[12 <./assets/gameplay12.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 256--257
+
+Underfull \hbox (badness 10000) in paragraph at lines 255--256
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--258
+
+ []
+
+[9pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.258 
+       <./assets/gameplay12.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 260--261
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 261--262
 
  []
 
@@ -798,460 +964,813 @@ Underfull \hbox (badness 10000) in paragraph at lines 265--266
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 267--268
+Underfull \hbox (badness 10000) in paragraph at lines 269--270
 
  []
 
-[13]
-<assets/base.png, id=96, 83.5622pt x 91.84312pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 282--283
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 284--285
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 293--294
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--296
+
+ []
+
+[11]
+<assets/base.png, id=402, 83.5622pt x 91.84312pt>
 File: assets/base.png Graphic file (type png)
 <use assets/base.png>
-Package pdftex.def Info: assets/base.png  used on input line 275. on input line
- 275.
+Package pdftex.def Info: assets/base.png  used on input line 303. on input line
+ 303.
 Package pdftex.def Info: Requested size: 83.56198pt x 91.84288pt on input line 
-275.
-<assets/faces_Candide.png, id=97, 414.79968pt x 587.19376pt>
+303.
+<assets/faces_Candide.png, id=403, 414.79968pt x 587.19376pt>
 File: assets/faces_Candide.png Graphic file (type png)
 <use assets/faces_Candide.png>
-Package pdftex.def Info: assets/faces_Candide.png  used on input line 280. on i
-nput line 280.
+Package pdftex.def Info: assets/faces_Candide.png  used on input line 308. on i
+nput line 308.
 Package pdftex.def Info: Requested size: 290.3578pt x 411.03282pt on input line
- 280.
+ 308.
 
-Underfull \hbox (badness 10000) in paragraph at lines 278--283
-
- []
-
-[14 <./assets/base.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 284--290
+Underfull \hbox (badness 10000) in paragraph at lines 306--311
 
  []
 
-[15 <./assets/faces_Candide.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 291--292
+[12 <./assets/base.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 312--318
 
  []
 
-<assets/exempleTM.png, id=106, 124.21407pt x 48.18pt>
+[13pdfTeX warning (ext4): destination with the same identifier (name{figure.8})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.318 
+       <./assets/faces_Candide.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 319--320
+
+ []
+
+<assets/exempleTM.png, id=415, 124.21407pt x 48.18pt>
 File: assets/exempleTM.png Graphic file (type png)
 <use assets/exempleTM.png>
-Package pdftex.def Info: assets/exempleTM.png  used on input line 295. on input
- line 295.
+Package pdftex.def Info: assets/exempleTM.png  used on input line 323. on input
+ line 323.
 Package pdftex.def Info: Requested size: 186.32062pt x 72.26978pt on input line
- 295.
-<assets/animationBase.png, id=107, 140.525pt x 269.005pt>
+ 323.
+<assets/animationBase.png, id=416, 140.525pt x 269.005pt>
 File: assets/animationBase.png Graphic file (type png)
 <use assets/animationBase.png>
-Package pdftex.def Info: assets/animationBase.png  used on input line 306. on i
-nput line 306.
+Package pdftex.def Info: assets/animationBase.png  used on input line 334. on i
+nput line 334.
 Package pdftex.def Info: Requested size: 140.52464pt x 269.00433pt on input lin
-e 306.
-[16 <./assets/exempleTM.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 309--310
+e 334.
+[14pdfTeX warning (ext4): destination with the same identifier (name{figure.9})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.337 L
+       'animation de marche a été assez difficile à dessiner car il falla...
+ <./assets/exempleTM.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 337--338
 
  []
 
-<assets/panglossSprite.png, id=113, 26.34843pt x 51.19125pt>
+<assets/panglossSprite.png, id=423, 26.34843pt x 51.19125pt>
 File: assets/panglossSprite.png Graphic file (type png)
 <use assets/panglossSprite.png>
-Package pdftex.def Info: assets/panglossSprite.png  used on input line 313. on 
-input line 313.
+Package pdftex.def Info: assets/panglossSprite.png  used on input line 341. on 
+input line 341.
 Package pdftex.def Info: Requested size: 39.52254pt x 76.78667pt on input line 
-313.
-<assets/chateauTset.png, id=114, 72.27pt x 96.36pt>
+341.
+<assets/chateauTset.png, id=424, 72.27pt x 96.36pt>
 File: assets/chateauTset.png Graphic file (type png)
 <use assets/chateauTset.png>
-Package pdftex.def Info: assets/chateauTset.png  used on input line 320. on inp
-ut line 320.
+Package pdftex.def Info: assets/chateauTset.png  used on input line 348. on inp
+ut line 348.
 Package pdftex.def Info: Requested size: 72.2698pt x 96.35974pt on input line 3
-20.
-[17 <./assets/animationBase.png> <./assets/panglossSprite.png>]
-<assets/terrain1.png, id=120, 152.82094pt x 176.91093pt>
+48.
+[15 <./assets/animationBase.png> <./assets/panglossSprite.png>]
+<assets/terrain1.png, id=431, 152.82094pt x 176.91093pt>
 File: assets/terrain1.png Graphic file (type png)
 <use assets/terrain1.png>
-Package pdftex.def Info: assets/terrain1.png  used on input line 325. on input 
-line 325.
+Package pdftex.def Info: assets/terrain1.png  used on input line 353. on input 
+line 353.
 Package pdftex.def Info: Requested size: 152.82054pt x 176.91049pt on input lin
-e 325.
+e 353.
 
-Underfull \hbox (badness 10000) in paragraph at lines 331--332
-
- []
-
-[18 <./assets/chateauTset.png> <./assets/terrain1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 338--339
+Underfull \hbox (badness 10000) in paragraph at lines 359--360
 
  []
 
+[16pdfTeX warning (ext4): destination with the same identifier (name{figure.10}
+) has been already used, duplicate ignored
 
-Underfull \hbox (badness 10000) in paragraph at lines 342--343
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.362 \subsection
+                 {En résumé}pdfTeX warning (ext4): destination with the same 
+identifier (name{figure.11}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.362 \subsection
+                 {En résumé} <./assets/chateauTset.png> <./assets/terrain1.pn
+g>]
+Underfull \hbox (badness 10000) in paragraph at lines 366--367
 
  []
 
-[19]
-Underfull \hbox (badness 10000) in paragraph at lines 344--345
+
+Underfull \hbox (badness 10000) in paragraph at lines 371--372
 
  []
 
-[20] [1]
-<assets/martinBase.png, id=137, 105.39375pt x 50.43843pt>
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 373--374
+
+ []
+
+[18]pdfTeX warning (ext4): destination with the same identifier (name{page.}) h
+as been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.426 \newpage
+               [1pdfTeX warning (ext4): destination with the same identifier (n
+ame{cite.}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.426 \newpage
+              pdfTeX warning (ext4): destination with the same identifier (name
+{cite.}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.426 \newpage
+              pdfTeX warning (ext4): destination with the same identifier (name
+{cite.}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.426 \newpage
+              pdfTeX warning (ext4): destination with the same identifier (name
+{cite.}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.426 \newpage
+              pdfTeX warning (ext4): destination with the same identifier (name
+{cite.}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.426 \newpage
+              pdfTeX warning (ext4): destination with the same identifier (name
+{cite.}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.426 \newpage
+              ]
+<assets/martinBase.png, id=468, 105.39375pt x 50.43843pt>
 File: assets/martinBase.png Graphic file (type png)
 <use assets/martinBase.png>
-Package pdftex.def Info: assets/martinBase.png  used on input line 394. on inpu
-t line 394.
+Package pdftex.def Info: assets/martinBase.png  used on input line 430. on inpu
+t line 430.
 Package pdftex.def Info: Requested size: 105.39348pt x 50.4383pt on input line 
-394.
-<assets/cacamboSprite.png, id=138, 26.34843pt x 50.43843pt>
+430.
+<assets/cacamboSprite.png, id=469, 26.34843pt x 50.43843pt>
 File: assets/cacamboSprite.png Graphic file (type png)
 <use assets/cacamboSprite.png>
-Package pdftex.def Info: assets/cacamboSprite.png  used on input line 400. on i
-nput line 400.
+Package pdftex.def Info: assets/cacamboSprite.png  used on input line 436. on i
+nput line 436.
 Package pdftex.def Info: Requested size: 26.34836pt x 50.4383pt on input line 4
-00.
-<assets/sparles.png, id=139, 192.72pt x 32.12pt>
+36.
+<assets/sparles.png, id=470, 192.72pt x 32.12pt>
 File: assets/sparles.png Graphic file (type png)
 <use assets/sparles.png>
-Package pdftex.def Info: assets/sparles.png  used on input line 406. on input l
-ine 406.
+Package pdftex.def Info: assets/sparles.png  used on input line 442. on input l
+ine 442.
 Package pdftex.def Info: Requested size: 192.71951pt x 32.1199pt on input line 
-406.
-<assets/tableaux.png, id=140, 65.24374pt x 90.3375pt>
+442.
+<assets/tableaux.png, id=471, 65.24374pt x 90.3375pt>
 File: assets/tableaux.png Graphic file (type png)
 <use assets/tableaux.png>
-Package pdftex.def Info: assets/tableaux.png  used on input line 412. on input 
-line 412.
+Package pdftex.def Info: assets/tableaux.png  used on input line 448. on input 
+line 448.
 Package pdftex.def Info: Requested size: 65.24358pt x 90.33727pt on input line 
-412.
-<assets/cacamboFaceAnimation.png, id=141, 772.8875pt x 521.95pt>
+448.
+<assets/cacamboFaceAnimation.png, id=472, 772.8875pt x 521.95pt>
 File: assets/cacamboFaceAnimation.png Graphic file (type png)
 <use assets/cacamboFaceAnimation.png>
-Package pdftex.def Info: assets/cacamboFaceAnimation.png  used on input line 42
-0. on input line 420.
+Package pdftex.def Info: assets/cacamboFaceAnimation.png  used on input line 45
+6. on input line 456.
 Package pdftex.def Info: Requested size: 309.14952pt x 208.77629pt on input lin
-e 420.
- [2 <./assets/martinBase.png> <./assets/cacamboSprite.png> <./assets/sparles.pn
-g> <./assets/tableaux.png>]
-<assets/panglossSyphilisFaceAnimation.png, id=150, 772.8875pt x 521.95pt>
+e 456.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.461 
+       [2pdfTeX warning (ext4): destination with the same identifier (name{figu
+re.12}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.461 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+13}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.461 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+14}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.461 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+15}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.461 
+       <./assets/martinBase.png> <./assets/cacamboSprite.png> <./assets/sparles
+.png> <./assets/tableaux.png>]
+<assets/panglossSyphilisFaceAnimation.png, id=484, 772.8875pt x 521.95pt>
 File: assets/panglossSyphilisFaceAnimation.png Graphic file (type png)
 <use assets/panglossSyphilisFaceAnimation.png>
 Package pdftex.def Info: assets/panglossSyphilisFaceAnimation.png  used on inpu
-t line 427. on input line 427.
+t line 463. on input line 463.
 Package pdftex.def Info: Requested size: 309.14952pt x 208.77629pt on input lin
-e 427.
- [3 <./assets/cacamboFaceAnimation.png>]
-<assets/jacquesFaceAnimation.png, id=155, 772.8875pt x 521.95pt>
+e 463.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.468 
+       [3pdfTeX warning (ext4): destination with the same identifier (name{figu
+re.16}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.468 
+       <./assets/cacamboFaceAnimation.png>]
+<assets/jacquesFaceAnimation.png, id=490, 772.8875pt x 521.95pt>
 File: assets/jacquesFaceAnimation.png Graphic file (type png)
 <use assets/jacquesFaceAnimation.png>
-Package pdftex.def Info: assets/jacquesFaceAnimation.png  used on input line 43
-4. on input line 434.
+Package pdftex.def Info: assets/jacquesFaceAnimation.png  used on input line 47
+0. on input line 470.
 Package pdftex.def Info: Requested size: 309.14952pt x 208.77629pt on input lin
-e 434.
+e 470.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.475 
+       [4pdfTeX warning (ext4): destination with the same identifier (name{figu
+re.17}) has been already used, duplicate ignored
 
-[4 <./assets/panglossSyphilisFaceAnimation.png>]
-<assets/vieilleFaceAnimation.png, id=160, 772.8875pt x 521.95pt>
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.475 
+       <./assets/panglossSyphilisFaceAnimation.png>]
+<assets/vieilleFaceAnimation.png, id=497, 772.8875pt x 521.95pt>
 File: assets/vieilleFaceAnimation.png Graphic file (type png)
 <use assets/vieilleFaceAnimation.png>
-Package pdftex.def Info: assets/vieilleFaceAnimation.png  used on input line 44
-1. on input line 441.
+Package pdftex.def Info: assets/vieilleFaceAnimation.png  used on input line 47
+7. on input line 477.
 Package pdftex.def Info: Requested size: 309.14952pt x 208.77629pt on input lin
-e 441.
- [5 <./assets/jacquesFaceAnimation.png>]
-<assets/martinFaceAnimation.png, id=165, 772.8875pt x 521.95pt>
+e 477.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.482 
+       [5pdfTeX warning (ext4): destination with the same identifier (name{figu
+re.18}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.482 
+       <./assets/jacquesFaceAnimation.png>]
+<assets/martinFaceAnimation.png, id=503, 772.8875pt x 521.95pt>
 File: assets/martinFaceAnimation.png Graphic file (type png)
 <use assets/martinFaceAnimation.png>
-Package pdftex.def Info: assets/martinFaceAnimation.png  used on input line 448
-. on input line 448.
+Package pdftex.def Info: assets/martinFaceAnimation.png  used on input line 484
+. on input line 484.
 Package pdftex.def Info: Requested size: 309.14952pt x 208.77629pt on input lin
-e 448.
- [6 <./assets/vieilleFaceAnimation.png>]
-<assets/marquiseFaceAnimation.png, id=170, 772.8875pt x 521.95pt>
+e 484.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.489 
+       [6pdfTeX warning (ext4): destination with the same identifier (name{figu
+re.19}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.489 
+       <./assets/vieilleFaceAnimation.png>]
+<assets/marquiseFaceAnimation.png, id=509, 772.8875pt x 521.95pt>
 File: assets/marquiseFaceAnimation.png Graphic file (type png)
 <use assets/marquiseFaceAnimation.png>
 Package pdftex.def Info: assets/marquiseFaceAnimation.png  used on input line 4
-55. on input line 455.
+91. on input line 491.
 Package pdftex.def Info: Requested size: 309.14952pt x 208.77629pt on input lin
-e 455.
-<assets/fontPage1.png, id=171, 1673.25125pt x 2375.87625pt>
+e 491.
+<assets/fontPage1.png, id=510, 1673.25125pt x 2375.87625pt>
 File: assets/fontPage1.png Graphic file (type png)
 <use assets/fontPage1.png>
-Package pdftex.def Info: assets/fontPage1.png  used on input line 461. on input
- line 461.
+Package pdftex.def Info: assets/fontPage1.png  used on input line 497. on input
+ line 497.
 Package pdftex.def Info: Requested size: 334.64432pt x 475.16684pt on input lin
-e 461.
- [7 <./assets/martinFaceAnimation.png>]
-<assets/fontPage2.png, id=176, 1673.25125pt x 2375.87625pt>
+e 497.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.499 \end{figure}
+                   [7pdfTeX warning (ext4): destination with the same identifie
+r (name{figure.20}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.499 \end{figure}
+                   <./assets/martinFaceAnimation.png>]
+<assets/fontPage2.png, id=516, 1673.25125pt x 2375.87625pt>
 File: assets/fontPage2.png Graphic file (type png)
 <use assets/fontPage2.png>
-Package pdftex.def Info: assets/fontPage2.png  used on input line 465. on input
- line 465.
+Package pdftex.def Info: assets/fontPage2.png  used on input line 501. on input
+ line 501.
 Package pdftex.def Info: Requested size: 334.64432pt x 475.16684pt on input lin
-e 465.
- [8 <./assets/marquiseFaceAnimation.png>]
-<assets/fontPage3.png, id=182, 1673.25125pt x 2375.87625pt>
+e 501.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.503 \end{figure}
+                   [8pdfTeX warning (ext4): destination with the same identifie
+r (name{figure.21}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.503 \end{figure}
+                   <./assets/marquiseFaceAnimation.png>]
+<assets/fontPage3.png, id=522, 1673.25125pt x 2375.87625pt>
 File: assets/fontPage3.png Graphic file (type png)
 <use assets/fontPage3.png>
-Package pdftex.def Info: assets/fontPage3.png  used on input line 469. on input
- line 469.
+Package pdftex.def Info: assets/fontPage3.png  used on input line 505. on input
+ line 505.
 Package pdftex.def Info: Requested size: 334.64432pt x 475.16684pt on input lin
-e 469.
- [9 <./assets/fontPage1.png>] [10 <./assets/fontPage2.png>] [11 <./assets/fontP
-age3.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 477--478
+e 505.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.507 \end{figure}
+                   [9pdfTeX warning (ext4): destination with the same identifie
+r (name{figure.22}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.507 \end{figure}
+                   <./assets/fontPage1.png>]pdfTeX warning (ext4): destination 
+with the same identifier (name{page.}) has been already used, duplicate ignored
+
+<to be read again> 
+                   \relax 
+l.508 
+       [10pdfTeX warning (ext4): destination with the same identifier (name{fig
+ure.23}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.508 
+       <./assets/fontPage2.png>]pdfTeX warning (ext4): destination with the sam
+e identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.509 \newpage
+               [11pdfTeX warning (ext4): destination with the same identifier (
+name{figure.24}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.509 \newpage
+               <./assets/fontPage3.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 511--512
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 479--480
+Underfull \hbox (badness 10000) in paragraph at lines 513--514
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 515--516
 
  []
 
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 481.
-[12]
-<assets/boutons.png, id=199, 722.7pt x 501.875pt>
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 517.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.537 \subsubsection
+                    {Menu Principal} [12]
+<assets/boutons.png, id=557, 722.7pt x 501.875pt>
 File: assets/boutons.png Graphic file (type png)
 <use assets/boutons.png>
-Package pdftex.def Info: assets/boutons.png  used on input line 505. on input l
-ine 505.
+Package pdftex.def Info: assets/boutons.png  used on input line 541. on input l
+ine 541.
 Package pdftex.def Info: Requested size: 216.81166pt x 150.56366pt on input lin
-e 505.
+e 541.
 
-Overfull \hbox (7.46062pt too wide) in paragraph at lines 511--512
+Overfull \hbox (7.46062pt too wide) in paragraph at lines 547--548
 []\OT1/cmr/m/n/10.95 La state "Game" uti-lise les methodes \OT1/cmr/m/it/10.95
  create() \OT1/cmr/m/n/10.95 et \OT1/cmr/m/it/10.95 up-date()\OT1/cmr/m/n/10.95
  . Dans la methode
  []
 
-[13 <./assets/boutons.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 529--530
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.552  
+              createMap1(); [13pdfTeX warning (ext4): destination with the same
+ identifier (name{figure.25}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.552  
+              createMap1(); <./assets/boutons.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 565--566
 
  []
 
-<assets/introScreen.png, id=204, 803.0pt x 451.6875pt>
+<assets/introScreen.png, id=567, 803.0pt x 451.6875pt>
 File: assets/introScreen.png Graphic file (type png)
 <use assets/introScreen.png>
-Package pdftex.def Info: assets/introScreen.png  used on input line 535. on inp
-ut line 535.
+Package pdftex.def Info: assets/introScreen.png  used on input line 571. on inp
+ut line 571.
 Package pdftex.def Info: Requested size: 264.99081pt x 149.05733pt on input lin
-e 535.
-[14]
-<assets/candideSprite.png, id=209, 140.525pt x 269.005pt>
+e 571.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.574 \subsection
+                 {Joueur} [14]
+<assets/candideSprite.png, id=582, 140.525pt x 269.005pt>
 File: assets/candideSprite.png Graphic file (type png)
 <use assets/candideSprite.png>
-Package pdftex.def Info: assets/candideSprite.png  used on input line 542. on i
-nput line 542.
+Package pdftex.def Info: assets/candideSprite.png  used on input line 578. on i
+nput line 578.
 Package pdftex.def Info: Requested size: 70.26231pt x 134.50217pt on input line
- 542.
+ 578.
 
-Underfull \hbox (badness 10000) in paragraph at lines 540--545
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 548--549
-
- []
-
-[15 <./assets/introScreen.png> <./assets/candideSprite.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 559--560
+Underfull \hbox (badness 10000) in paragraph at lines 576--581
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 574--575
+Underfull \hbox (badness 10000) in paragraph at lines 584--585
 
  []
 
-[16]
-<assets/bulleDialog.png, id=219, 154.32657pt x 203.25937pt>
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.591 \subsection
+                 {Les pnjs} [15pdfTeX warning (ext4): destination with the same
+ identifier (name{figure.26}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.591 \subsection
+                 {Les pnjs} <./assets/introScreen.png> <./assets/candideSprite.
+png>]
+Underfull \hbox (badness 10000) in paragraph at lines 595--596
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 610--611
+
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.614 \subsection
+                 {Les bulles : La classe \textit{Bubble}} [16]
+<assets/bulleDialog.png, id=597, 154.32657pt x 203.25937pt>
 File: assets/bulleDialog.png Graphic file (type png)
 <use assets/bulleDialog.png>
-Package pdftex.def Info: assets/bulleDialog.png  used on input line 581. on inp
-ut line 581.
+Package pdftex.def Info: assets/bulleDialog.png  used on input line 617. on inp
+ut line 617.
 Package pdftex.def Info: Requested size: 77.16309pt x 101.62943pt on input line
- 581.
-<assets/bulleMaison.png, id=220, 154.32657pt x 159.59625pt>
+ 617.
+<assets/bulleMaison.png, id=598, 154.32657pt x 159.59625pt>
 File: assets/bulleMaison.png Graphic file (type png)
 <use assets/bulleMaison.png>
-Package pdftex.def Info: assets/bulleMaison.png  used on input line 582. on inp
-ut line 582.
+Package pdftex.def Info: assets/bulleMaison.png  used on input line 618. on inp
+ut line 618.
 Package pdftex.def Info: Requested size: 77.16309pt x 79.79791pt on input line 
-582.
- [17 <./assets/bulleDialog.png> <./assets/bulleMaison.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 600--601
+618.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.632 \item \textbf
+                   {minPdg} : Nombre de dégâts minimal que l'attaque inflige.
+[17pdfTeX warning (ext4): destination with the same identifier (name{figure.27}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.632 \item \textbf
+                   {minPdg} : Nombre de dégâts minimal que l'attaque inflige.
+ <./assets/bulleDialog.png> <./assets/bulleMaison.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 636--637
 
  []
 
 
-Overfull \hbox (20.0745pt too wide) in paragraph at lines 602--604
+Overfull \hbox (20.0745pt too wide) in paragraph at lines 638--640
 \OT1/cmr/m/n/10.95 Ces methodes sont uti-lisees dans la methode \OT1/cmr/m/i
 t/10.95 turn(cible)\OT1/cmr/m/n/10.95 , qui choi-sit aleatoirement
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 602--604
+Underfull \hbox (badness 10000) in paragraph at lines 638--640
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 607--608
+Underfull \hbox (badness 10000) in paragraph at lines 643--644
 
  []
 
-<assets/health.png, id=226, 117.43875pt x 60.225pt>
+<assets/health.png, id=607, 117.43875pt x 60.225pt>
 File: assets/health.png Graphic file (type png)
 <use assets/health.png>
-Package pdftex.def Info: assets/health.png  used on input line 612. on input li
-ne 612.
+Package pdftex.def Info: assets/health.png  used on input line 648. on input li
+ne 648.
 Package pdftex.def Info: Requested size: 117.43845pt x 60.22484pt on input line
- 612.
-<assets/healthP2.png, id=227, 55.20625pt x 16.06pt>
+ 648.
+<assets/healthP2.png, id=608, 55.20625pt x 16.06pt>
 File: assets/healthP2.png Graphic file (type png)
 <use assets/healthP2.png>
-Package pdftex.def Info: assets/healthP2.png  used on input line 613. on input 
-line 613.
+Package pdftex.def Info: assets/healthP2.png  used on input line 649. on input 
+line 649.
 Package pdftex.def Info: Requested size: 55.2061pt x 16.05995pt on input line 6
-13.
-<assets/healthBar.png, id=228, 183.68625pt x 60.225pt>
+49.
+<assets/healthBar.png, id=609, 183.68625pt x 60.225pt>
 File: assets/healthBar.png Graphic file (type png)
 <use assets/healthBar.png>
-Package pdftex.def Info: assets/healthBar.png  used on input line 614. on input
- line 614.
+Package pdftex.def Info: assets/healthBar.png  used on input line 650. on input
+ line 650.
 Package pdftex.def Info: Requested size: 183.68578pt x 60.22484pt on input line
- 614.
+ 650.
 
-Overfull \hbox (1.19699pt too wide) in paragraph at lines 612--615
-[][] [] [] 
+Overfull \hbox (1.19699pt too wide) in paragraph at lines 648--651
+[][] [] []
  []
 
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.653 \subsection
+                 {Les objets de terrain : Les classes \textit{CustomMap} et ...
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 618--619
+Underfull \hbox (badness 10000) in paragraph at lines 654--655
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 632--633
+Underfull \hbox (badness 10000) in paragraph at lines 668--669
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 634--635
+Underfull \hbox (badness 10000) in paragraph at lines 670--671
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 636--637
+Underfull \hbox (badness 10000) in paragraph at lines 672--673
 
  []
 
-[19 <./assets/health.png> <./assets/healthP2.png> <./assets/healthBar.png>]
-Overfull \hbox (10.76236pt too wide) in paragraph at lines 655--657
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.676 
+       [19pdfTeX warning (ext4): destination with the same identifier (name{fig
+ure.28}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.676 
+       <./assets/health.png> <./assets/healthP2.png> <./assets/healthBar.png>]
+Overfull \hbox (10.76236pt too wide) in paragraph at lines 691--693
 []\OT1/cmr/m/n/10.95 Tout af-fi-chage de texte est gere par la classe \OT1/cm
 r/m/it/10.95 dia-log-Ma-na-ger \OT1/cmr/m/n/10.95 et ses methodes.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 663--664
+Underfull \hbox (badness 10000) in paragraph at lines 699--700
 
  []
 
-[20] [21]
-Underfull \hbox (badness 10000) in paragraph at lines 725--727
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.705 	
+       		[function(){callback 1},function(){callback 2}] [20]pdfTeX warning (ex
+t4): destination with the same identifier (name{page.}) has been already used, 
+duplicate ignored
+<to be read again> 
+                   \relax 
+l.743  
+                      this.wait(isDialog,true,null,false); [21]
+Underfull \hbox (badness 10000) in paragraph at lines 761--763
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 735--736
+Underfull \hbox (badness 10000) in paragraph at lines 771--772
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 737--739
+Underfull \hbox (badness 10000) in paragraph at lines 773--775
 
  []
 
-[22]
-Underfull \hbox (badness 10000) in paragraph at lines 740--741
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.775 
+       [22]
+Underfull \hbox (badness 10000) in paragraph at lines 776--777
 
  []
 
-[23]
-Overfull \hbox (4.61375pt too wide) in paragraph at lines 793--794
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.806 \end{itemize}
+                    [23]
+Overfull \hbox (4.61375pt too wide) in paragraph at lines 829--830
 \OT1/cmr/m/n/10.95 Cette methode fonc-tionne a l'aide des ar-gu-ments \OT1/cm
 r/m/it/10.95 texts \OT1/cmr/m/n/10.95 et \OT1/cmr/m/it/10.95 in-dex \OT1/cmr/m/
 n/10.95 precedemment
  []
 
-[24]
-Underfull \hbox (badness 10000) in paragraph at lines 834--835
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.830 
+       [24]
+Underfull \hbox (badness 10000) in paragraph at lines 870--871
 
  []
 
-[25]
-Underfull \hbox (badness 10000) in paragraph at lines 838--839
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 843--844
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 845--846
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 847--848
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.871 
+       [25]
+Underfull \hbox (badness 10000) in paragraph at lines 874--875
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 849--850
+Underfull \hbox (badness 10000) in paragraph at lines 879--880
 
  []
 
-[26] [27]
-Overfull \hbox (0.98546pt too wide) in paragraph at lines 893--894
+
+Underfull \hbox (badness 10000) in paragraph at lines 881--882
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 883--884
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 885--886
+
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.886 
+       [26]pdfTeX warning (ext4): destination with the same identifier (name{pa
+ge.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.915  
+              } [27]
+Overfull \hbox (0.98546pt too wide) in paragraph at lines 929--930
 \OT1/cmr/m/n/10.95 Cette methode ini-tia-lise tous les com-po-sants du ter-rai
 n. Elle prend en compte
  []
 
 
-Overfull \hbox (2.96835pt too wide) in paragraph at lines 896--897
+Overfull \hbox (2.96835pt too wide) in paragraph at lines 932--933
 []\OT1/cmr/bx/n/10.95 collision \OT1/cmr/m/n/10.95 : Booleen qui definit si l
 e ter-rain possede une couche nommee
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 898--899
+Underfull \hbox (badness 10000) in paragraph at lines 934--935
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 904--906
+Underfull \hbox (badness 10000) in paragraph at lines 940--942
 
  []
 
-[28]
-Underfull \hbox (badness 10000) in paragraph at lines 911--912
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.946 \subsubsection
+                    {méthode \textit{update()}} [28]
+Underfull \hbox (badness 10000) in paragraph at lines 947--948
 
  []
 
-[29] [30] (explications.aux)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1006.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1006 \end{document}
+                      [29]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1006.
+ (explications.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1006.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1006.
+
+Package rerunfilecheck Info: File `explications.out' has not changed.
+(rerunfilecheck)             Checksum: D8CAE285009CC060ECB4AACAF1302CA0;4237.
+
 
 LaTeX Warning: There were multiply-defined labels.
 
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1006.
  ) 
 Here is how much of TeX's memory you used:
- 5205 strings out of 494953
- 72558 string characters out of 3177379
- 301808 words of memory out of 3000000
- 8426 multiletter control sequences out of 15000+200000
- 11416 words of font info for 40 fonts, out of 3000000 for 9000
+ 9106 strings out of 494953
+ 131566 string characters out of 3177379
+ 381680 words of memory out of 3000000
+ 11987 multiletter control sequences out of 15000+200000
+ 11761 words of font info for 41 fonts, out of 3000000 for 9000
  198 hyphenation exceptions out of 8191
- 41i,8n,40p,1119b,1741s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 30i,8n,40p,1098b,2012s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/Mi
@@ -1261,10 +1780,12 @@ ype1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
 ic/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
 ts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9
 .pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:
-/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on explications.pdf (53 pages, 1248561 bytes).
+/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on explications.pdf (50 pages, 1345323 bytes).
 PDF statistics:
- 310 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 231 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 940 PDF objects out of 1000 (max. 8388607)
+ 320 named destinations out of 1000 (max. 500000)
+ 671 words of extra memory for PDF output out of 10000 (max. 10000000)
 
