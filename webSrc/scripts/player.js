@@ -10,6 +10,8 @@ function initPlayer(x,y){
 
     game.camera.follow(globals.player);
 
+    globals.player.items = [];
+
     globals.player.maxHealth = 100;
     globals.player.setHealth(100);
     globals.player.isAlive = true;

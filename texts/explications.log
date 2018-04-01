@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.15)  26 MAR 2018 12:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.15)  27 MAR 2018 17:12
 entering extended mode
 **./explications.tex
 (explications.tex
@@ -698,7 +698,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.38 ...berline {A.4}Les pnjs}{}{subsection.1.A.4}
+l.37 ...umberline {B.2}Joueur}{}{subsection.1.B.2}
                                                    [2])
 \tf@toc=\write4
 \openout4 = `explications.toc'.
@@ -1756,7 +1756,7 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1006.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1006.
 
 Package rerunfilecheck Info: File `explications.out' has not changed.
-(rerunfilecheck)             Checksum: D8CAE285009CC060ECB4AACAF1302CA0;4237.
+(rerunfilecheck)             Checksum: 397B3D1B6444D9F80D3BA82BE1DBA29A;4212.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1765,8 +1765,8 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1006.
  ) 
 Here is how much of TeX's memory you used:
  9106 strings out of 494953
- 131566 string characters out of 3177379
- 381680 words of memory out of 3000000
+ 131544 string characters out of 3177379
+ 381679 words of memory out of 3000000
  11987 multiletter control sequences out of 15000+200000
  11761 words of font info for 41 fonts, out of 3000000 for 9000
  198 hyphenation exceptions out of 8191
@@ -1783,7 +1783,7 @@ ts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9
 /Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti9.pfb><C:/Program 
 Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on explications.pdf (50 pages, 1345809 bytes).
+Output written on explications.pdf (50 pages, 1345527 bytes).
 PDF statistics:
  940 PDF objects out of 1000 (max. 8388607)
  320 named destinations out of 1000 (max. 500000)

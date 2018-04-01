@@ -1,0 +1,8 @@
+class MenuManager{
+    constructor(){
+
+    }
+    init(){
+        
+    }
+}

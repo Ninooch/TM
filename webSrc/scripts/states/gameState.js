@@ -15,7 +15,13 @@ var gameState = {
 
         setDialog(gameRef.main.langue);
         createMap1();
+        input.menu.onDown.addOnce(function(){
+            let sp = game.add.sprite(game.camera.x,game.camera.y,"title");
+            sp.bringToTop();
+            //faire une classe avec une récursion des signaux : quand on affiche le menu, on enclenche le signal pour le fermer etc.
 
+            //nom des graines c'est en fonctino de ce qu'il a appris
+        });
         globals.terrainManager.currentPnjs = []; //solution rapide pour éviter la double bulle des pnjs.
         globals.terrainManager.initMap(globals.maps.chateau,true);
 
