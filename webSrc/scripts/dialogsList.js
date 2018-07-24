@@ -10,9 +10,9 @@ function setDialog(langue){
         globals.dialogs.pnjTestDialogs = [["Bonjour Candide! Souhaiterais-tu t'entraîner au combat ?",["Combat !","Non merci"],
         [function(){
             globals.battleData.set.ennemy1 = globals.pnjs.martin2;
-            //globals.battleData.set.helper = globals.pnjs.martin2;
+            globals.battleData.set.helper = globals.pnjs.helper1;
             globals.battleData.set.player = globals.player;
-            //globals.battleData.set.ennemy2 = globals.pnjs.martin3;
+            globals.battleData.set.ennemy2 = globals.pnjs.martin3;
             globals.pnjs.martin2.startCombat();}
             ,function(){
                 globals.dialogManager.stop(true,false);

@@ -15,11 +15,13 @@ globals.battleManager = new BattleManager();
 
 globals.attacks.cpsDroit = new Attaque("coup droit",20,1);
 globals.attacks.cpsCote = new Attaque("coup de côté",25,1);
+globals.attacks.cpsMagistral = new Attaque("coup magistral",50,0.8);
+globals.attacks.cpsDiag = new Attaque("coup en diagonale",25,0.9);
 
 globals.battleData.player = { //meilleure idée pour traduction : faire des méthodes avec les arguments étant les joueurs etc..
     attack1:globals.attacks.cpsDroit,
     attack2:globals.attacks.cpsCote,
-    attack3:globals.attacks.cpsDroit,
+    attack3:globals.attacks.cpsDiag,
     attack4:undefined,
     attnb:4, //nb d'attaques plus 1
     arg1:undefined,
@@ -30,10 +32,10 @@ globals.battleData.player = { //meilleure idée pour traduction : faire des mét
 }
 globals.battleData.helper = {
     attack1:globals.attacks.cpsDroit,
-    attack2:undefined,
-    attack3:undefined,
+    attack2:globals.attacks.cpsDiag,
+    attack3:globals.attacks.cpsMagistral,
     attack4:undefined,
-    attnb:2,
+    attnb:4,
     arg1:undefined,
     arg2:undefined,
     arg3:undefined,
@@ -44,7 +46,7 @@ globals.battleData.helper = {
 
 globals.battleData.set = {
     //let variable = (condition) ? valueIfTrue : valueIfFalse;
-    solo : true,
+    solo : false,
     player:globals.player,
     helper:"",
     isPhi : false,
@@ -52,8 +54,8 @@ globals.battleData.set = {
     playerX : (!this.solo) ? 540 : 600,
     helperX : 570,
     helperY : 120,
-    helperName : "Cacambo", //changer en cours de route ( en fonction du jeu)
-    singleEnnemy : true,
+    helperName : "Helper", //changer en cours de route ( en fonction du jeu)
+    singleEnnemy :false,
     ennemy1 : "",
     ennemy2 : "",
     ennemy1X :(this.singleEnnemy) ? 200 : 230,
@@ -92,8 +94,8 @@ globals.functions.intro = function(){
 function createMap1 (){
 
     globals.pnjs.martin2 = new Ennemy({x:200,y:250,key:"pnjTest",frame:0,health:50,name:"Ennemy1",attack1:globals.attacks.cpsCote},globals.dialogs.pnjTestDialogs);
-
-    //globals.pnjs.martin3 = new Ennemy({x:200,y:250,key:"martin",frame:0,health:100,name:"Ennemy2",attack1:globals.attacks.cpsCote},globals.dialogs.pnjTestDialogs);
+    globals.pnjs.helper1 = new Ennemy({x:200,y:250,key:"pnjTest",frame:0,health:100,name:"Helper",attack1:globals.attacks.cpsCote,attack2:globals.attacks.cpsMagistral},globals.pnjTestDialogs);
+    globals.pnjs.martin3 = new Ennemy({x:200,y:250,key:"pnjTest",frame:0,health:50,name:"Ennemy2",attack1:globals.attacks.cpsCote},globals.dialogs.pnjTestDialogs);
     globals.pnjs.cunegonde = new Pnj(40*32,30*32,"cunegonde",0,"Cunégonde",globals.dialogs.cunegonde,"cunegondeFaceAnimation");
     globals.maps.chateau = new CustomMap("chateau",["terrain1","chateau"],["layer1"]);
     globals.maps.bois = new CustomMap("bois",["terrain1"],["Calque de Tile 1"]);

@@ -1,0 +1,1 @@
+x=msgbox("Votre TM est rempli d'erreurs et ne fonctionnera pas.", 2+16, "Erreur concernant 'TM_Candide' ")
